@@ -1,0 +1,371 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Google Fonts */
+    /* Noto Sans KR를 weight별로 활용 */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;350;500;900&display=swap');
+
+    /* Typography System */
+    body {
+        font-family: 'Noto Sans KR', sans-serif;
+        background-color: #fafafa;
+        color: #222;
+    }
+
+    /* 상단 헤더 */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 40px;
+        border-bottom: 1px solid #ddd;
+        background-color: #fff;
+    }
+
+    .header .logo img {
+        height: 28px;
+    }
+
+    /* 메인 컨테이너 */
+    .account-container {
+        display: flex;
+        padding: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 40px;
+    }
+
+    /* 왼쪽 사이드바 */
+    .sidebar {
+        width: 220px;
+    }
+
+    .sidebar .back-link {
+        /* display: inline-block;
+    color: #000;
+    font-size: 14px;
+    margin-bottom: 24px;
+    text-decoration: none; */
+        display: inline-block;
+        font-size: 18px;
+        /* 크기 키우기 */
+        font-weight: 600;
+        /* 선명하게 */
+        color: #333;
+        /* 기본 텍스트 컬러 */
+        padding: 8px 12px;
+        /* 버튼처럼 여백 확보 */
+        border-radius: 8px;
+        /* 둥근 모서리 */
+        background-color: rgba(255, 255, 255, 0.8);
+        /* 반투명 배경으로 카드 느낌 */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        transition: transform 0.2s ease, background-color 0.2s, color 0.2s;
+    }
+
+    .sidebar .back-link:hover {
+        transform: translateX(-4px) scale(1.05);
+        background-color: rgba(229, 9, 20, 0.1);
+        /* 넷플릭스 레드 계열 연하게 */
+        color: #ff3366;
+    }
+
+    .sidebar .back-link:active {
+        transform: translateX(-2px) scale(0.98);
+    }
+
+    .sidebar .menu {
+        list-style: none;
+    }
+
+    .sidebar .menu li {
+        margin-bottom: 18px;
+    }
+
+    .sidebar .menu a {
+        text-decoration: none;
+        color: #444;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sidebar .menu a.active,
+    .sidebar .menu a:hover {
+        color: #e50914;
+        font-weight: 600;
+    }
+
+    .sidebar .menu a.active {
+        background-color: #f4f4f4;
+        border-left: 4px solid #e50914;
+        padding-left: 12px;
+    }
+
+    /* 프로필 관리 */
+    .profile-list {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 16px 20px;
+    }
+
+    .profile-list h3 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .profile-list .profiles {
+        display: flex;
+        gap: 10px;
+    }
+
+    .profile-list .profiles img {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        object-fit: cover;
+        /* cursor: pointer; */
+    }
+
+    /* .profile-list .profiles img:hover {
+    transform: scale(1.08);
+} */
+
+    .profiles img.active {
+        outline: 3px solid #e50914;
+    }
+
+    /* 설정 버튼 */
+    .profile-settings-btn {
+        margin-left: auto;
+        margin-right: 40px;
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        color: #555;
+        transition: color 0.2s, transform 0.2s;
+    }
+
+    .profile-settings-btn:hover {
+        transform: scale(1.1);
+        color: #b0060f;
+    }
+
+    /* 드롭다운 메뉴 */
+    .profile {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    /* 아이콘 + 화살표 묶음 */
+    .profile-toggle {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        position: relative;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    /* ▼ 화살표 기본 상태 */
+    .profile-toggle .arrow {
+        display: inline-block;
+        font-size: 12px;
+        color: #ff3366;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-origin: center;
+    }
+
+    /* 드롭다운 열릴 때 화살표 회전 (▼ → ▲) */
+    .profile-toggle.active .arrow {
+        display: inline-block;
+        font-size: 12px;
+        color: #ff3366;
+        transition: transform 0.3s ease;
+        transform-origin: center;
+        transform: rotate(180deg);
+    }
+
+    .profile-toggle:hover {
+        opacity: 0.8;
+    }
+
+    .profile-toggle img {
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        object-fit: cover;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        right: 0;
+        top: 45px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        width: 200px;
+        display: none;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+        z-index: 100;
+    }
+
+    /* 드롭다운 활성화 상태 */
+    .dropdown-menu.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .dropdown-menu ul {
+        list-style: none;
+        padding: 8px 0;
+        margin: 0;
+    }
+
+    .dropdown-menu li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 12px 16px;
+        color: #333;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: #f5f5f5;
+    }
+
+
+
+
+    /* 오른쪽 메인 콘텐츠 */
+    .membership-manage-content {
+        flex: 1;
+    }
+
+    .account {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 48px;
+        padding: 40px;
+    }
+
+    .account__nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .account__nav a.active {
+        font-weight: 700;
+    }
+
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 24px;
+    }
+
+    .card--membership {
+        border-top: 6px solid purple;
+    }
+
+    .card__link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+    }
+
+
+    /* Footer 영역 */
+    .footer {
+        border-top: 1px solid #ddd;
+        background-color: #fafafa;
+        color: #555;
+        padding: 50px 0;
+        margin-top: 60px;
+    }
+
+    .footer-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .footer-question {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .footer-question a {
+        color: #0071eb;
+        text-decoration: none;
+    }
+
+    .footer-question a:hover {
+        text-decoration: underline;
+    }
+
+    /* 링크 목록 */
+    .footer-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        list-style: none;
+        gap: 12px 20px;
+        margin-bottom: 40px;
+    }
+
+    .footer-links a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+    }
+
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+
+    /* 회사 정보 */
+    .footer-info {
+        font-size: 12px;
+        line-height: 1.6;
+        color: #777;
+    }
+
+    .footer-info p+p {
+        margin-top: 4px;
+    }
+
+
+    @media (max-width: 768px) {
+        .account-container {
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 100%;
+        }
+    }

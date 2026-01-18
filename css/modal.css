@@ -1,0 +1,228 @@
+/* ✅modal  */
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow-y: auto;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal-img {
+    display: block;
+    margin: 50px auto 20px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; 
+}
+
+/* ✅ 모달 콘텐츠 */
+.modal-content.wide {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    color: #f5f5f5;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    cursor: grab;
+    max-width: 960px;
+    margin: auto;
+    border-radius: 8px;
+    padding: 30px;
+    animation: fadeIn 0.3s ease;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.modal-content.wide::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* ✅ 닫기 버튼 */
+.close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    font-size: 40px;
+    cursor: pointer;
+    color: white;
+}
+
+.close:hover {
+    color: #ff2c2c;
+}
+
+/* 드래그 스크롤 영역 */
+.episode-scroll {
+    overflow: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    cursor: grab;
+}
+
+.episode-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+} 
+
+/* ✅ 시리즈 정보 */
+.series-info {
+    padding: 24px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    margin: 24px 0;
+}
+
+/* ✅ 시리즈 제목 + 설명 정렬 */
+.series-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.series-title {
+    font-size: 2rem;
+    color: #ff3366;
+    font-weight: 700;
+    margin: 0;
+    flex: 1 1 auto;
+}
+
+.series-description {
+    flex: 1 1 50%;
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.5;
+    margin: 0;
+}
+.series-meta-list {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0;
+    font-size: 0.95rem;
+    color: #bbb;
+}
+
+.series-meta-list li {
+    margin-bottom: 6px;
+}
+
+.series-meta-list strong {
+    color: #eee;
+}
+
+/* ✅ 에피소드 리스트 */
+.episode-scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    cursor: grab;
+}
+
+.episode-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.episode {
+    display: flex;
+    background-color: #2c2c2c;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.episode:hover {
+    background-color: #3d0d0d;
+    transform: scale(1.02);
+    box-shadow: 0 0 12px rgba(255, 51, 102, 0.4);
+}
+
+.episode:active {
+    background-color: #ff3366;
+    color: #fff;
+    transform: scale(0.98);
+}
+
+.episode-left {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    position: relative;
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.episode-number {
+    position: static;
+    top: 8px;
+    left: 8px;
+    background-color: #ff3366;
+    color: #fff;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    box-shadow: 0 1px 4px #b1121baa;
+    z-index: 2;
+}
+
+.episode-left iframe {
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.episode-right {
+    padding: 16px 10px 0px 35px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.episode-right h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+    color: #f5f5f5;
+    font-weight: 700;
+}
+
+.duration {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #999;
+    margin-left: 8px;
+}
+
+.episode-right p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #ccc;
+    margin: 0;
+}

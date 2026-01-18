@@ -1,0 +1,523 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "맑은 고딕", "나눔고딕", sans-serif;
+  background-color: #f8f8f8;
+  color: #222;
+}
+
+/* =======================
+  상단 헤더
+======================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background-color: rgba(88, 53, 102, 0.5);
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgba(200, 180, 200, 0.4);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.header .logo img {
+  height: 28px;
+}
+
+/* =======================
+  메인 컨테이너
+======================= */
+.profile-setting-container {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* =======================
+  왼쪽 사이드바
+======================= */
+.sidebar {
+  width: 220px;
+}
+
+.sidebar .back-link {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s, color 0.2s;
+}
+
+.sidebar .back-link:hover {
+  transform: translateX(-4px) scale(1.05);
+  background-color: rgba(229, 9, 20, 0.1);
+  color: #ff3366;
+}
+
+.sidebar .back-link:active {
+  transform: translateX(-2px) scale(0.98);
+}
+
+.sidebar .menu {
+  list-style: none;
+}
+
+.sidebar .menu li {
+  margin-bottom: 18px;
+}
+
+.sidebar .menu a {
+  text-decoration: none;
+  color: #444;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar .menu a.active,
+.sidebar .menu a:hover {
+  color: #e50914;
+  font-weight: 600;
+}
+
+.sidebar .menu a.active {
+  background-color: #f4f4f4;
+  border-left: 4px solid #e50914;
+  padding-left: 12px;
+}
+
+/* =======================
+  드롭다운 메뉴
+======================= */
+.profile {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.profile-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  position: relative;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* ▼ 화살표 기본 상태 */
+.profile-toggle .arrow {
+  display: inline-block;
+  font-size: 12px;
+  color: #ff3366;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+/* 드롭다운 열릴 때 화살표 회전 (▼ → ▲) */
+.profile-toggle.active .arrow {
+  display: inline-block;
+  font-size: 12px;
+  color: #ff3366;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+  transform: rotate(180deg);
+}
+
+.profile-toggle:hover {
+  opacity: 0.8;
+}
+
+.profile-toggle img {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 45px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 200px;
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 100;
+}
+
+.dropdown-menu.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 16px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f5f5f5;
+}
+
+/* =======================
+  오른쪽 메인 콘텐츠
+======================= */
+.profile-setting-content {
+  flex: 1;
+}
+
+.profile-setting-content h1 {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+/* Profile group */
+.profile-group {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+/* 각 프로필 항목 */
+.profile-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid #eee;
+}
+
+.profile-item:first-child {
+  border-top: none;
+}
+
+.profile-item:hover {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
+
+.profile-item img {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+}
+
+.profile-info-edit {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.profile-info-edit p {
+  font-size: 13px;
+  color: #777;
+}
+
+.profile-settings-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #ff3366;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.profile-settings-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Profile lock */
+.profile-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.profile-item img {
+  width: 64px;
+  height: 64px;
+  border-radius: 4px;
+}
+
+.profile-lock {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.profile-lock span {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.profile-lock p {
+  font-size: 13px;
+  color: #777;
+}
+
+.profile-lock-btn {
+  margin-left: auto;
+  /* 오른쪽 끝으로 이동 */
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #ff3366;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.profile-lock-btn:hover {
+  transform: scale(1.1);
+}
+
+/* 설정  */
+.settings-group {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.settings-group h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  /* 왼쪽 정보, 오른쪽 버튼 분리 */
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #fff;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+/* Hover 효과 */
+.setting-item:hover {
+  background-color: #f2f2f2;
+  /* 살짝 밝게 */
+  transform: translateY(-2px);
+  /* 살짝 떠오르는 느낌 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  /* 은은한 그림자 */
+}
+
+
+.setting-item:last-child {
+  border-bottom: none;
+  /* 마지막 항목은 구분선 제거 */
+}
+
+.setting-info {
+  display: flex;
+  flex-direction: column;
+  /* 이름 위, 설명 아래 */
+}
+
+.setting-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.setting-desc {
+  font-size: 14px;
+  color: #757575;
+  margin-top: 4px;
+}
+
+
+/* 프로필 삭제 영역 */
+.delete-profile {
+  /* background-color: #fff;          
+  border: 1px solid #e5e5e5;       
+  border-radius: 8px; */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  /* 버튼 위, 안내문 아래 */
+  gap: 12px;
+  /* 요소 간 간격 */
+  /* max-width: 400px;             */
+}
+
+
+/* 오른쪽 이동 버튼 */
+.go-btn {
+  font-size: 20px;
+  color: #ff3366;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.go-btn:hover {
+  transform: scale(1.1);
+}
+
+
+
+/* 프로필 삭제 버튼(비활성화 상태) */
+.btn-delete {
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  border: #444;
+  border-radius: 8px;
+  padding: 12px 20px;
+  /* pointer-events: none; */
+  opacity: 0.5;
+  /* 반투명으로 비활성 느낌 */
+  cursor: not-allowed;
+  /* 금지 커서 표시 */
+}
+
+/* hover, active 등 상태에서도 그대로 금지 커서 유지 */
+.btn-delete:hover,
+.btn-delete:active {
+  cursor: not-allowed;
+  opacity: 0.5;
+  /* hover시 색상 변경 없앰 */
+  transform: none;
+  /* hover scale 효과 제거 */
+}
+
+/* 안내문 */
+.delete-profile p {
+  font-size: 13px;
+  color: #777;
+  /* 회색 안내문 */
+  margin: 0;
+  text-align: center;
+}
+
+/* Footer 영역 */
+.footer {
+  border-top: 1px solid #ddd;
+  background-color: #fafafa;
+  color: #555;
+  padding: 50px 0;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-question {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.footer-question a {
+  color: #0071eb;
+  text-decoration: none;
+}
+
+.footer-question a:hover {
+  text-decoration: underline;
+}
+
+/* 링크 목록 */
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  list-style: none;
+  gap: 12px 20px;
+  margin-bottom: 40px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* 회사 정보 */
+.footer-info {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #777;
+}
+
+.footer-info p+p {
+  margin-top: 4px;
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .profile-setting-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    margin-bottom: 20px;
+  }
+
+  .profile-item img {
+    width: 48px;
+    height: 48px;
+  }
+}

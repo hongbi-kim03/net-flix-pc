@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Clone – 언어</title>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/language.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+<!-- html 시작 -->
+    <header>
+        <a  href="index.html" class="logo">
+            <img src="images/logo.png" alt="넷플릭스 로고">
+        </a>
+
+        <nav class="gnb">
+            <ul>
+                <li><a href="home.html">홈</a></li>
+                <li><a href="movies.html">영화</a></li>
+                <li><a href="new.html">NEW</a></li>
+                <li><a href="series.html">시리즈</a></li>
+                <li><a href="wishlist.html">내가찜한리스트</a></li>
+                <li><a href="language.html">언어</a></li>
+                <li><a href="login.html">로그인/회원가입</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-right">
+          <form class="search-box" action="search.html">
+            <input type="text" placeholder="제목, 사람, 장르">
+            <button type="submit" class="search-icon">🔍</button>
+          </form>
+        
+        <!-- 알림 드롭다운 -->
+        <div class="dropdown notification">
+            <img class="icon notification" src="images/icon-bell.png" alt="알림">
+            <ul class="dropdown-menu">
+              <li><a href="wishlist.html">❤️찜한 콘텐츠 업데이트</a></li>
+              <li><a href="new.html">NEW! 신규 콘텐츠</a></li>
+            </ul>
+        </div>
+
+        <!-- 프로필 드롭다운 -->
+        <div class="dropdown profile">
+          <img class="icon profile" src="images/icon-profile.png" alt="프로필">
+          <ul class="dropdown-menu">
+            <!-- 메뉴 항목  -->
+            <li><a href="profile.html">⚙️ 프로필관리</a></li>
+            <li><a href="profile-transfer.html">🔁 프로필 이전</a></li>
+            <li><a href="account.html">👤 계정</a></li>
+            
+            <!-- 여기가 메뉴 구분선 -->
+            <li class="divider"></li>
+
+            <li><a href="logout.html">🚪 로그아웃</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- ✅ Main -->
+      <main class="container">
+        <h1>언어별로 찾아보기</h1>
+
+        <div class="custom-select-wrapper">
+        <div class="custom-select" data-value="원어">
+          <span class="selected">원어</span>
+          <ul class="options">
+            <li>원어</li>
+          </ul>
+        </div>
+
+        <div class="custom-select" data-value="영어">
+          <span class="selected">영어</span>
+          <ul class="options">
+            <li>영어</li>
+            <li>한국어</li>
+          </ul>
+        </div>
+
+        <div class="custom-select" data-value="추천 콘텐츠">
+          <span class="selected">추천 콘텐츠</span>
+          <ul class="options">
+            <li>추천 콘텐츠</li>
+            <li>최신 등록순</li>
+            <li>인기순</li>
+          </ul>
+        </div>
+      </div>
+
+    <!-- ✅ 콘텐츠 리스트 -->
+    <section class="language-content">
+      <div class="content-grid">
+        <!-- 카드 1 ~ 40 -->
+        <!-- 카드01 -->
+        <article class="content-card">
+          <img 
+            src="images/language-movie-01.jpg" 
+            alt="드라마 지니 앤 조지아 포스터"
+            class="modal-trigger"
+            data-id="ginny-georgia"
+            data-title="지니 & 조지아"
+            data-description="불행했던 과거를 딛고, 새로운 꿈을 찾아 북부로 향한 엄마와 딸. 매사추세츠, 웰스베리의 작은 마을에서 둘은 새 출발을 할 수 있을까?"
+            data-cast="브리애나휘,안토니아 젠트리, 디젤 라토라카"
+            data-genre="로맨틱한 드라마, 드라마,청춘 드라마"
+            data-feature="감정을 파고드는,로맨틱">
+        </article>
+
+        <!-- 카드02 -->
+        <article class="content-card">
+          <img
+          src="images/language-movie-02.webp"
+          alt="뱀파이어 다이어리 포스터"
+          class="modal-trigger"
+          data-id="vampire-diaries"
+          data-title="뱀파이어 다이어리"
+          data-description="얼레나는 스테판과 대화하기 위해 살바토레의 집으로 가지만,스테판대신 그곳에 있는 데이먼을 발견한다.데이먼은 스테판의 놀라운 과거를 폭로한다."
+          data-cast="니나 도브레브,폴 웨슬리, 이언 서머홀더, 캣 그레이엄,캔디스 킹"
+          data-genre="드라마, 도서 원작 시리즈,청소년시리즈, 미국TV프로그램, 판타지 시리즈"
+          data-feature="긴장감 넘치는, 감정을 파고드는">
+        </article>
+
+        <!-- 카드03 -->
+        <article class="content-card">
+          <img
+          src="images/language-movie-03.jpg"
+          alt="어느날 윌터 형제들과 살게됐다 포스터"
+          class="modal-trigger"
+          data-id="my-life-with-the-walter-boys"
+          data-title="어느날 윌터 형제들과 살게됐다"
+          data-description="비극적인 일을 겪은 후 월터 가족과 함께 살게 된 재키. 시골 마을 생활에 적응해보려 애쓰지만, 집과 학교가 바뀌니 새로운 문제도 생겨난다."
+          data-cast="니키 로드리게스, 세라 래퍼티마크 블루카스"
+          data-genre="로맨틱한 드라마, 드라마, 청춘 드라마"
+          data-feature="설렘주의, 진심 어린, 감정을 파고드는">
+        </article>
+
+        <!-- 카드04 -->
+        <article class="content-card">
+          <img
+          src="images/language-movie-04.webp"
+          alt="가십걸 포스터"
+          class="modal-trigger"
+          data-id="gossip-girl"
+          data-title="가십걸"
+          data-description="맨해튼의 사립학교에 다니는 상류층 학생들. 제멋대로 행동하며 부유층의 특권을 누리는 이들의 일거수일투족을 한 익명의 블로거가 주시하기 시작한다."
+          data-cast="블레이크 라이블리,레이튼 미스터, 펜 배질리"
+          data-genre="드라마, 청춘 드라마, 도서 원작 시리즈"
+          data-feature="화려한, 자극적인">
+        </article>
+
+        <!-- 카드05 -->
+        <article class="content-card">
+          <img
+          src="images/language-movie-05.jpg"
+          alt="목요일 살인 클럽 포스터"
+          class="modal-trigger"
+          data-id="thursday-murder-club"
+          data-title="목요일 살인 클럽"
+          data-description="기발함에는 나이가 없다. 크리스 콜럼버스 감독(《나 홀로 집에》)이 연출한 범죄 영화로, 네 명의 은퇴자들이 조용한 실버타운에서 살인범을 추적한다."
+          data-cast="헬렌 미렌, 피어스 브로스넌, 벤 킹슬리"
+          data-genre="코미디 영화, 스릴러 영화, 미스터리 영화"
+          data-feature="위트 있는, 진심 어린, 긴장감 넘치는">
+        </article>
+
+        <!-- 카드06 -->
+        <article class="content-card">
+          <img
+          src="images/language-movie-06.webp"
+          alt="드라마 길모어 걸스 포스터"
+          class="modal-trigger"
+          data-id="gilmore-girls"
+          data-title="길모어 걸스"
+          data-description="독립심이 강한 싱글맘 로렐라이는 아이비리그 진학은 문제없을 정도로 명석한 두뇌를 가진 딸 로리를 키운다. 이 모녀 사이에는 항상 재치 넘치는 대화가 끊이지 않는다"
+          data-cast="로런 그레이엄, 알렉시스 블레델, 스콧 패터슨"
+          data-genre="로맨틱한 드라마,드라마, 청춘 드라마"
+          data-feature="위트있는, 거부할 수 없는 이끌림, 로맨틱">
+        </article>
+
+        <!-- 카드07 -->
+        <article class="content-card">
+          <img
+          src="images/language-movie-07.webp"
+          alt="드라마 길모어 걸스 포스터"
+          class="modal-trigger"
+          data-id="gilmore-girls"
+          data-title="길모어 걸스"
+          data-description="독립심이 강한 싱글맘 로렐라이는 아이비리그 진학은 문제없을 정도로 명석한 두뇌를 가진 딸 로리를 키운다. 이 모녀 사이에는 항상 재치 넘치는 대화가 끊이지 않는다"
+          data-cast="로런 그레이엄, 알렉시스 블레델, 스콧 패터슨"
+          data-genre="로맨틱한 드라마,드라마, 청춘 드라마"
+          data-feature="위트있는, 거부할 수 없는 이끌림, 로맨틱">
+        </article>
+
+        <!-- 카드08 -->
+        <article class="content-card">
+          <img
+          src="images/language-movie-08.webp"
+          alt="드라마 길모어 걸스 포스터"
+          class="modal-trigger"
+          data-id="gilmore-girls"
+          data-title="길모어 걸스"
+          data-description="독립심이 강한 싱글맘 로렐라이는 아이비리그 진학은 문제없을 정도로 명석한 두뇌를 가진 딸 로리를 키운다. 이 모녀 사이에는 항상 재치 넘치는 대화가 끊이지 않는다"
+          data-cast="로런 그레이엄, 알렉시스 블레델, 스콧 패터슨"
+          data-genre="로맨틱한 드라마,드라마, 청춘 드라마"
+          data-feature="위트있는, 거부할 수 없는 이끌림, 로맨틱">
+        </article>
+
+        <!-- 카드09 -->
+        <article class="content-card">
+          <img
+          src="images/language-movie-09.webp"
+          alt="드라마 길모어 걸스 포스터"
+          class="modal-trigger"
+          data-id="gilmore-girls"
+          data-title="길모어 걸스"
+          data-description="독립심이 강한 싱글맘 로렐라이는 아이비리그 진학은 문제없을 정도로 명석한 두뇌를 가진 딸 로리를 키운다. 이 모녀 사이에는 항상 재치 넘치는 대화가 끊이지 않는다"
+          data-cast="로런 그레이엄, 알렉시스 블레델, 스콧 패터슨"
+          data-genre="로맨틱한 드라마,드라마, 청춘 드라마"
+          data-feature="위트있는, 거부할 수 없는 이끌림, 로맨틱">
+        </article>
+
+        <!-- 카드10 -->
+        <article class="content-card">
+          <img
+          src="images/language-movie-10.webp"
+          alt="드라마 길모어 걸스 포스터"
+          class="modal-trigger"
+          data-id="gilmore-girls"
+          data-title="길모어 걸스"
+          data-description="독립심이 강한 싱글맘 로렐라이는 아이비리그 진학은 문제없을 정도로 명석한 두뇌를 가진 딸 로리를 키운다. 이 모녀 사이에는 항상 재치 넘치는 대화가 끊이지 않는다"
+          data-cast="로런 그레이엄, 알렉시스 블레델, 스콧 패터슨"
+          data-genre="로맨틱한 드라마,드라마, 청춘 드라마"
+          data-feature="위트있는, 거부할 수 없는 이끌림, 로맨틱">
+        </article>
+      </div>
+    </section>
+
+    <!-- ✅ 콘텐츠 리스트 -->
+    <section class="language-content">
+      <div class="content-grid">
+        <!-- 카드11 -->
+        <article class="content-card">
+          <img src="images/language-movie-11.jpg" 
+          alt="블랙 도브 포스터"
+          class="modal-trigger"
+          data-id="black-doves"
+          data-title="블랙 도브"
+          data-description="정치인의 아내로 위장해 살아가던 스파이. 애인이 살해당한 사실을 알게 된 후, 진실을 밝히기 위해 옛 친구인 암살자와 함께 복수의 여정에 나선다."
+          data-cast="키이라 나이틀리, 벤 위쇼, 사라 랭카셔"
+          data-genre="정치 시리즈, 드라마, 영국 작품"
+          data-feature="위트있는, 긴장감 넘치는, 감정을 파고드는">
+        </article>
+
+        <!-- 카드12 -->
+        <article class="content-card">
+          <img src="images/language-movie-12.webp" 
+          alt="하우스 M.D. 드라마 포스터"
+          class="modal-trigger"
+          data-id="house-md"
+          data-title="하우스 M.D."
+          data-description="평범함을 거부하는 천재 의사. 독특한 시각을 가진 그가 전문가 팀원들의 도움으로 그 누구도 풀지 못한 의학적 미스터리를 해결한다."
+          data-cast="휴 로리, 오마 앱스, 로버트 숀레오나드"
+          data-genre="메디컬 시리즈, 드라마, 미국TV프로그램"
+          data-feature="도발적인">
+        </article>
+
+        <!-- 카드13 -->
+        <article class="content-card">
+          <img src="images/language-movie-13.jpg" 
+          alt="론리 플래닛 포스터"
+          class="modal-trigger"
+          data-id="lonely-planet"
+          data-title="론리 플래닛"
+          data-description="오스카 수상 배우 로라 던이 출연하는 화려한 로맨스 영화. 성공한 작가가 이별을 겪은 후 모로코로 떠나는데, 그곳에서 뜻밖의 러브 스토리가 펼쳐진다."
+          data-cast="로라 던, 리암 해스워스, 다이애나 실버스"
+          data-genre="드라마 영화, 로맨틱한 영화, 미국 영화"
+          data-feature="진심 어린, 거부할 수 없는 이끌림, 감정을 파고드는">
+        </article>
+
+        <!-- 카드14 -->
+        <article class="content-card">
+          <img src="images/language-movie-14.webp" 
+          alt="슈츠 포스터"
+          class="modal-trigger"
+          data-id="suits"
+          data-title="슈츠"
+          data-description="명석한 두뇌로 능수능란한 변호사의 마음을 사로잡은 대학 중퇴 청년. 변호사 자격도 없이 거대 로펌의 보조 변호사로 일하게 된다."
+          data-cast="가브리엘 막트,패트릭 J.애덤스,세라 래퍼티"
+          data-genre="드라마,법정 시리즈, 코미디 시리즈"
+          data-feature="위트 있는">
+        </article>
+
+        <!-- 카드15 -->
+        <article class="content-card">
+          <img src="images/language-movie-15.webp" 
+          alt="더 레지던트 포스터"
+          class="modal-trigger"
+          data-id="the-resident"
+          data-title="더 레지던트"
+          data-description="병원에서 근무를 시작한 의대생. 뛰어난 고참 레지던트의 지도 아래 강도 높은 현장 트레이닝을 견디며 병원 생활에 대한 혹독한 교훈을 얻는다."
+          data-cast="맷 주크리,머니시 데이앨,브루스 그린우드"
+          data-genre="메디컬 시리즈,드라마, 미국TV 프로그램"
+          data-feature="긴박감 넘치는">
+        </article>
+
+        <!-- 카드16 -->
+        <article class="content-card">
+          <img src="images/language-movie-16.jpg" 
+          alt="라이프 리스트 포스터"
+          class="modal-trigger"
+          data-id="life-list"
+          data-title="라이프 리스트"
+          data-description="10대 시절 작성한 '라이프 리스트'를 실현해야만 유산을 상속받을 수 있는 젊은 여성(소피아 카슨)의 여정을 그린 영화. 동명의 베스트셀러 소설을 원작으로 했다."
+          data-cast="소피아 카슨, 카일 앨런, 서배스천 더수자"
+          data-genre="드라마 영화, 로맨틱한 영화, 도서 원작 영화"
+          data-feature="진심 어린, 기분좋아지는, 감정을 파고드는">
+        </article>
+
+        <!-- 카드17 -->
+        <article class="content-card">
+          <img src="images/language-movie-17.jpg" 
+          alt="라이프 리스트 포스터"
+          class="modal-trigger"
+          data-id="life-list"
+          data-title="라이프 리스트"
+          data-description="10대 시절 작성한 '라이프 리스트'를 실현해야만 유산을 상속받을 수 있는 젊은 여성(소피아 카슨)의 여정을 그린 영화. 동명의 베스트셀러 소설을 원작으로 했다."
+          data-cast="소피아 카슨, 카일 앨런, 서배스천 더수자"
+          data-genre="드라마 영화, 로맨틱한 영화, 도서 원작 영화"
+          data-feature="진심 어린, 기분좋아지는, 감정을 파고드는">
+        </article>
+
+        <!-- 카드18 -->
+        <article class="content-card">
+          <img src="images/language-movie-18.jpg" 
+          alt="라이프 리스트 포스터"
+          class="modal-trigger"
+          data-id="life-list"
+          data-title="라이프 리스트"
+          data-description="10대 시절 작성한 '라이프 리스트'를 실현해야만 유산을 상속받을 수 있는 젊은 여성(소피아 카슨)의 여정을 그린 영화. 동명의 베스트셀러 소설을 원작으로 했다."
+          data-cast="소피아 카슨, 카일 앨런, 서배스천 더수자"
+          data-genre="드라마 영화, 로맨틱한 영화, 도서 원작 영화"
+          data-feature="진심 어린, 기분좋아지는, 감정을 파고드는">
+        </article>
+
+        <!-- 카드19 -->
+        <article class="content-card">
+          <img src="images/language-movie-19.jpg" 
+          alt="라이프 리스트 포스터"
+          class="modal-trigger"
+          data-id="life-list"
+          data-title="라이프 리스트"
+          data-description="10대 시절 작성한 '라이프 리스트'를 실현해야만 유산을 상속받을 수 있는 젊은 여성(소피아 카슨)의 여정을 그린 영화. 동명의 베스트셀러 소설을 원작으로 했다."
+          data-cast="소피아 카슨, 카일 앨런, 서배스천 더수자"
+          data-genre="드라마 영화, 로맨틱한 영화, 도서 원작 영화"
+          data-feature="진심 어린, 기분좋아지는, 감정을 파고드는">
+        </article>
+
+        <!-- 카드20 -->
+        <article class="content-card">
+          <img src="images/language-movie-20.jpg" 
+          alt="라이프 리스트 포스터"
+          class="modal-trigger"
+          data-id="life-list"
+          data-title="라이프 리스트"
+          data-description="10대 시절 작성한 '라이프 리스트'를 실현해야만 유산을 상속받을 수 있는 젊은 여성(소피아 카슨)의 여정을 그린 영화. 동명의 베스트셀러 소설을 원작으로 했다."
+          data-cast="소피아 카슨, 카일 앨런, 서배스천 더수자"
+          data-genre="드라마 영화, 로맨틱한 영화, 도서 원작 영화"
+          data-feature="진심 어린, 기분좋아지는, 감정을 파고드는">
+        </article>
+      </div>
+    </section>
+
+    <!-- ✅ 콘텐츠 리스트 -->
+    <section class="language-content">
+      <div class="content-grid">
+        <!-- 카드21 -->
+        <article class="content-card">
+          <img 
+          src="images/language-movie-21.jpg" 
+          alt="더 크라운 포스터"
+          class="modal-trigger"
+          data-id="the-crown"
+          data-title="더 크라운"
+          data-description="아버지의 서거로 뒤바뀐 삶. 공주는 이제 여왕 폐하로 불리고, 호칭만큼 무거운 왕관을 써야 한다. 엘리자베스 2세의 일생을 그린 수작. 《빌리 엘리어트》 감독이 연출하고 한스 짐머가 주제곡을 썼다."
+          data-cast="이멜다 스톤턴, 조너선 프라이스, 레슬리 맨빌"
+          data-genre="정치 시리즈, 드라마, 영국 작품"
+          data-feature="거부 할 수 없는 이끌림">
+        </article>
+
+        <article class="content-card">
+          <img 
+          src="images/language-movie-22.jpg" 
+          alt="웬즈데이 포스터"
+          class="modal-trigger"
+          data-id="wednesday"
+          data-title="웬즈데이"
+          data-description="이전 학교에서 끝내주게 사악한 장난을 치는 바람에 퇴학당한 웬즈데이. 부모님은 둘이 처음 사랑에 빠졌던 기숙학교, 네버모어 아카데미로 웬즈데이를 보낸다."
+          data-cast="제나 오르테가, 그웬돌린 크리스티, 캐서린 제타존스"
+          data-genre="정춘 드라마, 청소년 시리즈, 미스터리 시리즈"
+          data-feature="으스스한, 상상의 나래">
+        </article>
+
+        <article class="content-card">
+          <img 
+          src="images/language-movie-23.jpg" 
+          alt="심장이 뛰는 포스터"
+          class="modal-trigger"
+          data-id="heart-beat"
+          data-title="심장이 뛰는"
+          data-description="마이애미 병원에서 근무하는 젊은 레지던트들의 이야기를 그린 의학 드라마. 《The A.V. Club》이 '속도감 있는 전개와 한번 보면 빠져드는' 로맨스가 돋보이는 작품이라고 평했다."
+          data-cast="윌라 피츠제럴드, 콜린 우델, 저스티나 마차도"
+          data-genre="메디컬 시리즈, 드라마, 미국TV프로그램"
+          data-feature="감정을 파고드는">
+        </article>
+
+        <article class="content-card">
+          <img 
+          src="images/language-movie-24.jpg" 
+          alt="그렇게 사건 현장이 되어버렸다 포스터"
+          class="modal-trigger"
+          data-id="the-residence"
+          data-title="그렇게 사건 현장이 되어버렸다"
+          data-description="세계 최고의 탐정이 백악관에서 발생한 살인 사건의 범인을 추적한다. 《Rolling Stone》이 '매력적이고 조금은 엉뚱한 범인 추적 시리즈'라고 호평한 작품."
+          data-cast="우조 아두바, 지안카를로 에스포지토,랜들 박"
+          data-genre="미스터리 시리즈, 코미디 시리즈, 범죄 시리즈"
+          data-feature="색다른, 위트있는, 긴장감 넘치는">
+        </article>
+
+        <article class="content-card">
+          <img 
+          src="images/language-movie-25.jpg" 
+          class="modal-trigger"
+          data-id="stranger-things"
+          alt="기묘한 이야기 포스터"
+          data-title="기묘한 이야기"
+          data-description="인디애나주의 작은 마을에서 행방불명된 소년. 이와 함께 미스터리한 힘을 가진 소녀가 나타난다. 이에 마을에는 기묘한 현상들이 잇따르며 비밀스러운 정부 실험의 실체가 드러나기 시작한다."
+          data-cast="위노나 라이더, 데이비드 하버, 밀리 바비 브라운"
+          data-genre="SF 시리즈, 청소년 시리즈,미국 TV 프로그램"
+          data-feature="불길한, 향수 자극, 무서운">
+        </article>
+
+        <article class="content-card">
+          <img 
+          src="images/language-movie-26.jpg" 
+          alt="블러드 & 워터 포스터"
+          class="modal-trigger"
+          data-id="blood-and-water"
+          data-title="블러드 & 워터"
+          data-description="처음엔 예감에 불과했다. 가족의 아픈 과거를 잊고 싶은 10대 소녀 풀렝. 어느 날, 파티에서 마주친 17살 소녀를 보고 유괴된 언니를 떠올린다. 어쩌면 우린 자매일지도."
+          data-cast="아마 카마타, 코시 응게마,게일 마발라네"
+          data-genre="드라마, 청춘 드라마, 남아공 작품"
+          data-feature="긴장감 넘치는">
+        </article>
+
+        <article class="content-card">
+          <img 
+          src="images/language-movie-27.jpg" 
+          alt="블러드 & 워터 포스터"
+          class="modal-trigger"
+          data-id="blood-and-water"
+          data-title="블러드 & 워터"
+          data-description="처음엔 예감에 불과했다. 가족의 아픈 과거를 잊고 싶은 10대 소녀 풀렝. 어느 날, 파티에서 마주친 17살 소녀를 보고 유괴된 언니를 떠올린다. 어쩌면 우린 자매일지도."
+          data-cast="아마 카마타, 코시 응게마,게일 마발라네"
+          data-genre="드라마, 청춘 드라마, 남아공 작품"
+          data-feature="긴장감 넘친는">
+        </article>
+
+        <article class="content-card">
+          <img 
+          src="images/language-movie-28.jpg" 
+          class="modal-trigger"
+          data-id="blood-and-water"
+          alt="블러드 & 워터 포스터"
+          data-title="블러드 & 워터"
+          data-description="처음엔 예감에 불과했다. 가족의 아픈 과거를 잊고 싶은 10대 소녀 풀렝. 어느 날, 파티에서 마주친 17살 소녀를 보고 유괴된 언니를 떠올린다. 어쩌면 우린 자매일지도."
+          data-cast="아마 카마타, 코시 응게마,게일 마발라네"
+          data-genre="드라마, 청춘 드라마, 남아공 작품"
+          data-feature="긴장감 넘친는">
+        </article>
+
+        <article class="content-card">
+          <img 
+          src="images/language-movie-29.jpg" 
+          alt="블러드 & 워터 포스터"
+          class="modal-trigger"
+          data-id="blood-and-water"
+          data-title="블러드 & 워터"
+          data-description="처음엔 예감에 불과했다. 가족의 아픈 과거를 잊고 싶은 10대 소녀 풀렝. 어느 날, 파티에서 마주친 17살 소녀를 보고 유괴된 언니를 떠올린다. 어쩌면 우린 자매일지도."
+          data-cast="아마 카마타, 코시 응게마,게일 마발라네"
+          data-genre="드라마, 청춘 드라마, 남아공 작품"
+          data-feature="긴장감 넘친는">
+        </article>
+
+        <article class="content-card">
+          <img 
+          src="images/language-movie-30.jpg" 
+          alt="블러드 & 워터 포스터"
+          class="modal-trigger"
+          data-id="blood-and-water"
+          data-title="블러드 & 워터"
+          data-description="처음엔 예감에 불과했다. 가족의 아픈 과거를 잊고 싶은 10대 소녀 풀렝. 어느 날, 파티에서 마주친 17살 소녀를 보고 유괴된 언니를 떠올린다. 어쩌면 우린 자매일지도."
+          data-cast="아마 카마타, 코시 응게마,게일 마발라네"
+          data-genre="드라마, 청춘 드라마, 남아공 작품"
+          data-feature="긴장감 넘친는">
+        </article>
+      </div>
+    </section>
+
+    <!-- ✅ 콘텐츠 리스트 -->
+    <section class="language-content">
+      <div class="content-grid">
+        <!-- 카드31 -->
+        <article class="content-card">
+          <img 
+          src="images/language-movie-31.jpg" 
+          alt="아우터뱅크스 포스터"
+          class="modal-trigger"
+          data-id="outer-banks"
+          data-title="아우터뱅크스"
+          data-description="어딘가에 살아있어. 실종된 아버지가 단서를 남긴 거라고 확신하는 존 B. 그는 포그스 친구들과 추적에 나서지만, 상황은 복잡하게 꼬여간다. 걷잡을 수 없을 만큼."
+          data-cast="체이스 스토크스, 매들린 클라인, 매디슨 베일리"
+          data-genre="드라마, 청춘 드라마, 청소년 시리즈"
+          data-feature="긴장감 넘치는, 흥미진진">
+        </article>
+
+        <article class="content-card">
+          <img 
+          src="images/language-movie-32.webp" 
+          alt="덱스터 포스터"
+          class="modal-trigger"
+          data-id="dexter"
+          data-title="덱스터"
+          data-description="낮에는 마이애미 경찰서의 혈흔 분석가로 일하는 온순한 성격의 덱스터. 밤이 되면 살인자만 골라서 죽이는 연쇄 살인자로 변신한다."
+          data-cast="마이클 C.홀, 제니퍼 카펜터, 데이빗 제야스"
+          data-genre="드라마, 도서 원작 시리즈, 미스터리 시리즈"
+          data-feature="불길한, 어두운">
+        </article>
+
+        <article class="content-card">
+          <img 
+          src="images/language-movie-33.jpg" 
+          alt="매니페스트 포스터"
+          class="modal-trigger"
+          data-id="manifest"
+          data-title="매니페스트"
+          data-description="828편 실종 후 남은 가족들이 겪어야 했던 과거의 상황이 그려진다. 벤은 머릿속에 들리는 목소리에서 벗어나기 위해 캘과 함께 놀이공원에 간다."
+          data-cast="멜리사 록스버그, 조시 댈러스, J.R라미레스"
+          data-genre="드르마, SF시리즈, 미스터리 시리즈"
+          data-feature="발상의 전환,긴장감 넘치는">
+        </article>
+
+        <article class="content-card">
+          <img 
+          src="images/language-movie-34.jpg" 
+          alt="소년의 시간 포스터"
+          class="modal-trigger"
+          data-id="adolescence"
+          data-title="소년의 시간"
+          data-description="같은 반 친구를 살해한 혐의를 받는 13세 소년을 주인공으로 한 긴장감 넘치는 드라마. '원샷으로 완성된 걸작'(《The Times》)이라 불리며, 2025년 에미상에서 8관왕을 차지했다."
+          data-cast="스티븐그레이엄, 애슐리 월터스, 에린 도허티"
+          data-genre="드라마, 영국 작품, 범죄 시리즈"
+          data-feature="거부 할 수 없는 이끌림, 감정을 파고드는">
+        </article>
+
+        <article class="content-card">
+          <img 
+          src="images/language-movie-35.jpg" 
+          alt="그레이맨 포스터"
+          class="modal-trigger"
+          data-id="the-gray-man"
+          data-title="그레이맨"
+          data-description="이름도 없다. 두려움도 없다. 망설임도 없다. CIA 훈련 이후 유령이자 그림자로 존재하게 된 남자. 이제 조직은 가장 위험한 요원인 그를 세상에서 없애려 한다."
+          data-cast="라이언 고슬링, 크리스 에반스, 아나 데 아르마스"
+          data-genre="도서 원작 영화, 액션 & 어드벤처 영화, 미국 영화"
+          data-feature="액션 대 폭발, 긴장감 넘치는">
+        </article>
+        
+        <article class="content-card">
+          <img 
+          src="images/language-movie-36.jpg" 
+          alt="그레이맨 포스터"
+          class="modal-trigger"
+          data-id="the-gray-man"
+          data-title="그레이맨"
+          data-description="이름도 없다. 두려움도 없다. 망설임도 없다. CIA 훈련 이후 유령이자 그림자로 존재하게 된 남자. 이제 조직은 가장 위험한 요원인 그를 세상에서 없애려 한다."
+          data-cast="라이언 고슬링, 크리스 에반스, 아나 데 아르마스"
+          data-genre="도서 원작 영화, 액션 & 어드벤처 영화, 미국 영화"
+          data-feature="액션 대 폭발, 긴장감 넘치는">
+        </article>
+
+        <article class="content-card">
+          <img 
+          src="images/language-movie-37.jpg" 
+          alt="그레이맨 포스터"
+          class="modal-trigger"
+          data-id="the-gray-man"
+          data-title="그레이맨"
+          data-description="이름도 없다. 두려움도 없다. 망설임도 없다. CIA 훈련 이후 유령이자 그림자로 존재하게 된 남자. 이제 조직은 가장 위험한 요원인 그를 세상에서 없애려 한다."
+          data-cast="라이언 고슬링, 크리스 에반스, 아나 데 아르마스"
+          data-genre="도서 원작 영화, 액션 & 어드벤처 영화, 미국 영화"
+          data-feature="액션 대 폭발, 긴장감 넘치는">
+        </article>
+
+        <article class="content-card">
+          <img 
+          src="images/language-movie-38.jpg" 
+          alt="그레이맨 포스터"
+          class="modal-trigger"
+          data-id="the-gray-man"
+          data-title="그레이맨"
+          data-description="이름도 없다. 두려움도 없다. 망설임도 없다. CIA 훈련 이후 유령이자 그림자로 존재하게 된 남자. 이제 조직은 가장 위험한 요원인 그를 세상에서 없애려 한다."
+          data-cast="라이언 고슬링, 크리스 에반스, 아나 데 아르마스"
+          data-genre="도서 원작 영화, 액션 & 어드벤처 영화, 미국 영화"
+          data-feature="액션 대 폭발, 긴장감 넘치는">
+        </article>
+
+        <article class="content-card">
+          <img 
+          src="images/language-movie-39.jpg" 
+          alt="그레이맨 포스터"
+          class="modal-trigger"
+          data-id="the-gray-man"
+          data-title="그레이맨"
+          data-description="이름도 없다. 두려움도 없다. 망설임도 없다. CIA 훈련 이후 유령이자 그림자로 존재하게 된 남자. 이제 조직은 가장 위험한 요원인 그를 세상에서 없애려 한다."
+          data-cast="라이언 고슬링, 크리스 에반스, 아나 데 아르마스"
+          data-genre="도서 원작 영화, 액션 & 어드벤처 영화, 미국 영화"
+          data-feature="액션 대 폭발, 긴장감 넘치는">
+        </article>
+
+        <article class="content-card">
+          <img 
+          src="images/language-movie-40.jpg" 
+          alt="그레이맨 포스터"
+          class="modal-trigger"
+          data-id="the-gray-man"
+          data-title="그레이맨"
+          data-description="이름도 없다. 두려움도 없다. 망설임도 없다. CIA 훈련 이후 유령이자 그림자로 존재하게 된 남자. 이제 조직은 가장 위험한 요원인 그를 세상에서 없애려 한다."
+          data-cast="라이언 고슬링, 크리스 에반스, 아나 데 아르마스"
+          data-genre="도서 원작 영화, 액션 & 어드벤처 영화, 미국 영화"
+          data-feature="액션 대 폭발, 긴장감 넘치는">
+        </article>
+      </div>
+    </section>
+
+
+  </main>
+
+      <!-- 모달 구조 -->
+      <div 
+        id="image-modal" 
+        class="modal" 
+        role="dialog" 
+        aria-hidden="true">
+
+      <div class="modal-content">
+        <button class="close" aria-label="모달 닫기">&times;</button>
+
+        <img id="modal-img" src="#" alt="모달 이미지" />
+        <h2 id="modal-title">제목</h2>
+
+        <p id="modal-description">설명</p>
+        <ul class="meta-info">
+          <li><strong>출연:</strong> <span id="modal-cast"></span></li>
+          <li><strong>장르:</strong> <span id="modal-genre"></span></li>
+          <li><strong>시리즈특징:</strong> <span id="modal-feature"></span></li>
+        </ul>
+
+      <!-- 회차 목록 스크롤 -->
+        <div class="episode-scroll" aria-label="에피소드 목록">
+          <h2 class="episodee-title">회차</h2>
+          <div class="episode-list">
+
+            <!-- ✅ JS가 여기에 회차를 넣음 -->
+            <div class="episode-list" id="episode-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- ✅ footer -->
+        <footer class="footer">
+
+          <!-- footer menu -->
+          <nav class="footer-menu">
+            <ul>
+              <li><a href="help-center.html">고객센터</a></li>
+              <li><a href="gift-cards.html">기프트카드</a></li>
+              <li><a href="https://ir.netflix.net" target="_blank" rel="noopener noreferrer">투자 정보(IR)</a></li>
+              <li><a href="terms.html">이용약관</a></li>
+              <li><a href="privacy-policy.html">개인정보 처리방침</a></li>
+              <li><a href="legal-notices.html">법적고지</a></li>
+              <li><a href="company-info.html">회사 정보</a></li>
+              <li><a href="contact.html">문의하기</a></li>
+          </ul>
+          </nav>
+
+          <!-- footer middle -->
+          <div class="footer-middle">
+            <div class="footer-icon">
+              <img src="images/icon.png" alt="NETFLIX 아이콘">
+              <p>© Netflix Clone</p>
+            </div>
+
+            <div class="footer-info">
+            <p>넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)</p>
+            <p>대표: 레지널드 숀 톰프슨</p>
+            <p>이메일 주소: korea@netflix.com</p>
+            <p>주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층 우편번호 03161</p>
+            <p>사업자등록번호: 165-87-00119</p>
+            <p>클라우드 호스팅: Amazon Web Services Inc.</p>
+            <p>공정거래위원회 웹사이트</p>
+          </div>
+        </div>
+
+        <!-- footer bottom -->
+        <div class="footer-bottom">
+
+        <!-- SNS -->
+        <div class="footer-sns">
+          <a href="https://www.instagram.com/netflixkr/" target="_blank"><img src="images/footer-instagram.png" alt="인스타그램"></a>
+          <a href="https://www.youtube.com/@NetflixKorea" target="_blank"><img src="images/footer-YouTube.png" alt="유튜브"></a>
+          <a href="https://www.facebook.com/NetflixKR/?locale=ko_KR" target="_blank"><img src="images/footer-facebook.png" alt="페이스북"></a>
+          <a href="https://x.com/netflixkr" target="_blank"><img src="images/footer-twitter.png" alt="트위터"></a>
+        </div>
+
+        <!-- utils (language + search) -->
+        <div class="footer-utils">
+
+          <!-- language display -->
+          <div class="footer-language">
+          <span class="footer-language-icon">🌐</span>
+          <span class="footer-language-code">KR</span>
+          <span class="footer-language__sep">·</span>
+          <span class="footer-language-code">EN</span>
+        </div>
+
+        <!-- search -->
+        <div class="footer-search">
+          <input type="text" placeholder="위치찾기" />
+          <button aria-label="search">🔍</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/language.js"></script>
+</body>
+</html>

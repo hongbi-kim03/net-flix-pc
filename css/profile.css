@@ -1,0 +1,639 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+  color: #333;
+}
+
+/* =======================
+  상단 헤더
+======================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.header .logo img {
+  height: 28px;
+}
+
+/* =======================
+  메인 컨테이너
+======================= */
+.account-container {
+  display: flex;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+/* =======================
+  왼쪽 사이드바
+======================= */
+.sidebar {
+  width: 220px;
+}
+
+.sidebar .back-link {
+  display: inline-block;
+  font-size: 18px;            
+  font-weight: 600;           
+  color: #333;                 
+  padding: 8px 12px;         
+  border-radius: 8px;         
+  background-color: rgba(255, 255, 255, 0.8); 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s, color 0.2s;
+}
+
+.sidebar .back-link:hover {
+  transform: translateX(-4px) scale(1.05);
+  background-color: rgba(229, 9, 20, 0.1); 
+  color: #ff3366;
+}
+
+.sidebar .back-link:active {
+  transform: translateX(-2px) scale(0.98);
+}
+
+.sidebar .menu {
+  list-style: none;
+}
+
+.sidebar .menu li {
+  margin-bottom: 18px;
+}
+
+.sidebar .menu a {
+  text-decoration: none;
+  color: #444;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar .menu a.active,
+.sidebar .menu a:hover {
+  color: #e50914;
+  font-weight: 600;
+}
+
+.sidebar .menu a.active {
+  background-color: #f4f4f4;
+  border-left: 4px solid #e50914;
+  padding-left: 12px;
+}
+
+/* =======================
+  오른쪽 메인 콘텐츠
+======================= */
+.account-content {
+  flex: 1;
+}
+
+.account-content h1 {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+/* =======================
+  카드형 박스
+======================= */
+.membership-box,
+.quick-links,
+.profile-list {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 24px;
+  margin-bottom: 32px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.membership-box:hover,
+.quick-links:hover,
+.profile-list:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* =======================
+  빠른 링크
+======================= */
+.quick-links h3 {
+  font-size: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.quick-links ul {
+  list-style: none;
+}
+
+.quick-links li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: #333;
+  border-top: 1px solid #eee;
+  transition: background 0.2s;
+}
+
+.quick-links li:first-child a {
+  border-top: none;
+}
+
+.quick-links li a:hover {
+  background-color: #f8f8f8;
+}
+
+/* =======================
+  프로필 리스트
+======================= */
+.profiles {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.profile-subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 0 8px 0;
+  color: #555;
+}
+
+/* 프로필 항목 */
+.profile-item {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  gap: 15px;
+  /* padding: 14px 0; */
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  padding: 12px 10px;
+  border-bottom: 1px solid #ddd; 
+}
+
+.current-profile-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #fff;
+  background: #ff3366;
+  border-radius: 999px;
+  line-height: 1;
+  margin-left: 10px;
+  animation: fadeIn 0.25s ease;
+}
+
+/* 마지막 프로필은 구분선 제거 */
+.profile-item:last-child {
+  border-bottom: none;
+}
+
+.profile-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background-color: #f5f5f5;
+}
+
+.profile-item img {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.profile-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  white-space: nowrap
+}
+
+/* 설정 버튼 */
+.profile-settings-btn {
+  margin-left: auto;
+  margin-right: 40px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.profile-settings-btn:hover {
+  transform: scale(1.1);
+  color: #b0060f;
+}
+
+/* 프로필 삭제 버튼 기본 스타일 */
+.delete-profile-btn {
+  position: absolute; 
+  top: 6px;
+  right: 6px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%; 
+  background-color: rgba(0,0,0,0.6); 
+  color: #fff; 
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+  opacity: 0; 
+}
+
+.profile-item {
+  position: relative; 
+}
+
+.profile-item:hover .delete-profile-btn {
+  opacity: 1;
+  transform: scale(1.1); 
+  background-color: #ff3366;
+}
+
+/* 클릭 시 눌린 느낌 */
+.delete-profile-btn:active {
+  transform: scale(0.95);
+}
+
+/* 새 프로필 추가 버튼 */
+.add-profile {
+  margin-top: 16px;
+  width: auto;              
+  max-width: 200px;        
+  padding: 8px 14px;        
+  background: linear-gradient(90deg, #ff3366, #ff6680); /* #ff3366 → #ff6680 그라데이션 */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+  display: block;           
+  margin-left: auto;        
+  margin-right: auto;       
+}
+
+.add-profile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* =======================
+  드롭다운 메뉴
+======================= */
+.profile {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.profile-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  position: relative;
+  color: #fff;
+  font-size: 16px;
+}
+
+.profile-toggle .arrow {
+  display: inline-block;
+  font-size: 12px;
+  color: #ff3366;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.profile-toggle.active .arrow {
+  /* transform: rotate(180deg); */
+  display: inline-block;
+  font-size: 12px;
+  color: #ff3366;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+  transform: rotate(180deg);
+}
+
+.profile-toggle:hover {
+  opacity: 0.8;
+}
+
+.profile-toggle img {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 45px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  width: 200px;
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 100;
+}
+
+.dropdown-menu.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 16px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+  .account-container { flex-direction: column; padding: 20px; }
+  .sidebar { width: 100%; }
+}
+
+/* Footer 영역 */
+.footer {
+  border-top: 1px solid #ddd;
+  background-color: #fafafa;
+  color: #555;
+  padding: 50px 0;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-question {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.footer-question a {
+  color: #0071eb;
+  text-decoration: none;
+}
+
+.footer-question a:hover {
+  text-decoration: underline;
+}
+
+/* 링크 목록 */
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  list-style: none;
+  gap: 12px 20px;
+  margin-bottom: 40px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* 회사 정보 */
+.footer-info {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #777;
+}
+
+.footer-info p + p {
+  margin-top: 4px;
+}
+
+/* modal */
+.modal { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%;
+  height: 100%; 
+  background: rgba(0,0,0,0.5); 
+  display: none; 
+  justify-content: center; 
+  align-items: center; 
+  z-index: 1000;
+}
+.modal.active {
+  display: flex;
+}
+
+/* ===========================
+      MODAL CONTENT 박스
+=========================== */
+  .modal-content {
+  position: relative;
+  width: 650px;  
+  height: 500px; 
+  padding: 40px 30px;
+  border-radius: 12px; 
+  text-align: center; 
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  gap: 10px;
+  }
+
+  /* 모달 닫기 버튼 */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 60px;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  border-radius: 4px;
+  transition: 0.2s;
+  background: none;
+  color: #ff6699;
+}
+
+.close-modal:hover {
+  transform: scale(1.15);  
+}
+
+/* ===========================
+      모달 설명글
+=========================== */
+  .modal-description {
+    font-size: 1rem;
+    color: #fff; 
+    line-height: 1.4;
+    margin-top: -5px;
+    margin-bottom: 5px;
+  }
+
+  /* ===========================
+      프로필 이미지 선택
+=========================== */
+  .image-select {
+    height: 5rem;
+    width: 5rem;
+    display: flex;
+    gap: 10px;
+    justify-content: center; 
+  }
+
+.image-select img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.image-select img:hover {
+  transform: scale(1.15);
+}
+
+.image-select img.selected {
+  border-color: #ff3366;
+  transform: scale(1.2);
+  animation: pulse 0.3s ease;
+}
+
+/* ===========================
+      모달 제목
+=========================== */
+.modal-content h3 {
+  color: #fff;         
+  font-size: 2rem;     
+  font-weight: 600;    
+  margin-bottom: 10px; 
+  text-align: center;
+}
+
+/* ===========================
+      입력창
+=========================== */
+.modal-content input {
+  width: 50%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* ===========================
+      버튼 영역 (그룹)
+=========================== */
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* 공통 버튼 스타일 */
+.modal-actions button {
+  padding: 8px 12px;
+  width: 100%;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+/* 저장 버튼 */
+#save-profile {
+  background: #ff3366;
+  color: white;
+}
+
+#save-profile:hover {
+  background: #e52a58;
+}
+
+/* 취소 버튼 */
+#cancel-profile {
+  background: #eee;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+#cancel-profile:hover {
+  background: #e0e0e0;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .account-container { flex-direction: column; padding: 20px; }
+  .sidebar { width: 100%; }
+}

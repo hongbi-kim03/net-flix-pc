@@ -1,0 +1,309 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "맑은 고딕", "나눔고딕";
+        background-color: #fafafa;
+        color: #222;
+    }
+
+    /* 상단 헤더 */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 40px;
+        border-bottom: 1px solid #ddd;
+        background-color: #fff;
+    }
+
+    .header .logo img {
+        height: 28px;
+    }
+
+    
+    /* 프로필 관리 */
+    .profile-list {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 16px 20px;
+    }
+
+    .profile-list h3 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .profile-list .profiles {
+        display: flex;
+        gap: 10px;
+    }
+
+    .profile-list .profiles img {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    .profiles img.active {
+        outline: 3px solid #e50914; 
+    }
+
+    /* 설정 버튼 */
+    .profile-settings-btn {
+        margin-left: auto;
+        margin-right: 40px;
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        color: #555;
+        transition: color 0.2s, transform 0.2s;
+    }
+
+    .profile-settings-btn:hover {
+        transform: scale(1.1);
+        color: #b0060f;
+    }
+
+    /* 드롭다운 메뉴 */
+    .profile {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    /* 아이콘 + 화살표 묶음 */
+    .profile-toggle {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        position: relative;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    /* ▼ 화살표 기본 상태 */
+    .profile-toggle .arrow {
+        display: inline-block;
+        font-size: 12px;
+        color: #ff3366;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-origin: center;
+    }
+
+    /* 드롭다운 열릴 때 화살표 회전 (▼ → ▲) */
+    .profile-toggle.active .arrow {
+        display: inline-block;
+        font-size: 12px;
+        color: #ff3366;
+        transition: transform 0.3s ease;
+        transform-origin: center;
+        transform: rotate(180deg);
+    }
+
+    .profile-toggle:hover {
+        opacity: 0.8;
+    }
+
+    .profile-toggle img {
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        object-fit: cover;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        right: 0;
+        top: 45px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        width: 200px;
+        display: none;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+        z-index: 100;
+    }
+
+    /* 드롭다운 활성화 상태 */
+    .dropdown-menu.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .dropdown-menu ul {
+        list-style: none;
+        padding: 8px 0;
+        margin: 0;
+    }
+
+    .dropdown-menu li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 12px 16px;
+        color: #333;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: #f5f5f5;
+    }
+
+    main {
+        max-width: 440px;        
+        margin: 80px auto;       
+        padding: 0 20px;          
+        text-align: center;       
+    }
+
+    main h1 {
+        font-weight: 700;
+        font-size: 26px;
+        margin-bottom: 10px;    
+    }
+
+    main p {
+        color: #555;          
+        font-size: 14px;
+        margin-bottom: 40px;      
+    }
+
+    /* 본인 확인 방법 목록 컨테이너 */
+    .methods {
+        display: flex;
+        flex-direction: column;   
+        gap: 15px;               
+    }
+
+    /* 본인 확인 각 방법 박스 */
+    .method {
+        display: flex;
+        align-items: center;      
+        border: 1px solid #ddd;  
+        border-radius: 6px;      
+        padding: 15px 20px;      
+        cursor: pointer;         
+        transition: background 0.2s, border-color 0.2s; 
+    }
+
+    .method:hover {
+        background: #f2f2f2;     
+        border-color: #999;       
+    }
+
+    /* 아이콘 스타일 */
+    .method-icon {
+        font-size: 24px;
+        margin-right: 15px;
+        color: #555;
+        min-width: 30px;         
+        text-align: center;       
+    }
+
+    /* 텍스트 영역 */
+    .method-text {
+        text-align: left;
+        flex: 1;                  
+    }
+
+    .method-text strong {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 4px;       
+    }
+
+    .method-text small {
+        font-size: 12px;
+        color: #777;             
+    }
+
+    /* 고객센터 문의 문구 */
+    .help {
+        margin-top: 50px;
+        font-size: 13px;
+        color: #555;
+    }
+
+    .help a {
+        color: #0071eb;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    /* Footer 영역 */
+    .footer {
+        border-top: 1px solid #ddd;
+        background-color: #fafafa;
+        color: #555;
+        padding: 50px 0;
+        margin-top: 60px;
+    }
+
+    .footer-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .footer-question {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .footer-question a {
+        color: #0071eb;
+        text-decoration: none;
+    }
+
+    .footer-question a:hover {
+        text-decoration: underline;
+    }
+
+    /* 링크 목록 */
+    .footer-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        list-style: none;
+        gap: 12px 20px;
+        margin-bottom: 40px;
+    }
+
+    .footer-links a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+    }
+
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+
+    /* 회사 정보 */
+    .footer-info {
+        font-size: 12px;
+        line-height: 1.6;
+        color: #777;
+    }
+
+    .footer-info p + p {
+        margin-top: 4px;
+    }

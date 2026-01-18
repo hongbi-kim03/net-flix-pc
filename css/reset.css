@@ -1,0 +1,25 @@
+/* Reset */
+body, ul, li, h1, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR Light',sans-serif;
+    background: linear-gradient(135deg, #2b0f3e, #000000);  
+    color: white;
+}
+
+ul, li {
+    list-style: none
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+address {
+    font-style: normal;
+}

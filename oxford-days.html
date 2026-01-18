@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>옥스퍼드에서의날들 상세정보</title>
+    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="넷플릭스 로고" />
+            </a>
+        </div>
+
+        <div class="profile">
+            <div class="profile-toggle" id="profile-btn">
+                <img src="images/icon-profile.png" alt="프로필 아이콘"/>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="dropdown-menu" id="dropdown">
+                <ul>
+                    <li><a href="index.html">← 넷플릭스로 돌아가기</a></li>
+                    <li><a href="account.html">계정</a></li>
+                    <li><a href="profile.html">프로필 관리</a></li>
+                    <li><a href="help-center.html">고객 센터</a></li>
+                    <li><a href="logout.html">로그아웃</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="detail-container">
+
+    <!-- 상단 콘텐츠 -->
+    <section class="detail-hero">
+        <div class="detail-info">
+        <h1 class="title-ko">옥스퍼드에서의날들</h1>
+        <p class="title-en">Days in Oxford</p>
+
+            <div class="action-buttons">
+                <button class="btn-like" aria-label="찜하기">♡</button>
+                <button class="btn-share">공유하기</button>
+            </div>
+        </div>
+
+            <div class="detail-poster">
+                <img src="images/oxford-days-poster.jpg" alt="옥스퍼드에서의 날들 포스터">
+            </div>
+        </section>
+
+        <!-- 평점 / 예매율 / 시청자 수 -->
+        <section class="detail-stats">
+            <ul class="stats-list">
+                <li>
+                    <strong>⭐평점</strong>
+                    <span>8.3 / 10</span>
+                </li>
+                <li>
+                    <strong>🔥예매율</strong>
+                    <span>21.7%</span>
+                </li>
+                <li>
+                    <strong>👥시청자 수</strong>
+                    <span>1,920,000명</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 탭 메뉴 -->
+        <section class="detail-tabs">
+            <ul class="tab-menu">
+                <li class="active"><button type="button">주요정보</button></li>
+                <li><button type="button">실관람평</button></li>
+                <li><button type="button">예고편 / 스틸컷</button></li>
+            </ul>
+
+            <!-- 탭 콘텐츠 -->
+            <div class="tab-content">
+
+            <!-- 주요정보 -->
+            <section class="tab-panel active">
+                <h2 class="sr-only">주요정보</h2>
+
+                <!-- 작품 설명 -->
+                <div class="summary">
+                    <p>
+                        의욕 넘치는 뉴요커(소피아 카슨)가 옥스퍼드에서 시를 공부하는 동안 사랑에 빠진다.
+                        베스트 셀러 소설을 각색한 위트 있으면서도 심금을 울리는 영화.
+                    </p>
+                </div>
+
+                <!-- 상세 정보 리스트 -->
+                <dl class="info-list">
+                    <dt>감독</dt>
+                    <dd>아이안 모리스</dd>
+
+                    <dt>출연</dt>
+                    <dd>
+                        소피아 카슨,코리 밀크리스트,더 그레이 스콧,캐서린 맥코맥,해리 트레볼드윈,  
+                        에스메 킹덤,니킬 파마,포비 길버트
+                    </dd>
+
+                    <dt>각본</dt>
+                    <dd>앨리슨 버넷,멜리사 오스본</dd>
+                
+                    <dt>장르</dt>
+                    <dd>
+                        로맨틱 코미디 영화,코미디 영화,로맥틱한 영화,도서 원작 영화,미국 영화
+                    </dd>
+
+                    <dt>영화 특징</dt>
+                    <dd>진심이통하는,달콤 쌉싸름,감정을 파고드는</dd>
+
+                    <dt>관람 등급</dt>
+                    <dd>15세 이상 관람가</dd>
+                </dl>
+
+                <!-- 리뷰 유도 영역 -->
+                <section class="review-cta">
+                    <p class="cta-title">
+                        옥스퍼드에서의 날들에 대한 개성 있는 이야기가 있어요!
+                    </p>
+
+                    <div class="cta-box">
+                        <!-- 왼쪽: 아이콘 + Netflix -->
+                        <div class="curation-left">
+                            <img src="images/icon.png" alt="넷플릭스 아이콘" class="netflix-icon">
+                            <span class="netflix-text">Netflix</span>
+                        </div>
+
+                        <!-- 가운데: 텍스트 -->
+                        <div class="cta-center">
+                            <p>
+                                옥스퍼드에서의 날들 재미있게 보셨나요?<br>
+                                영화의 어떤 점이 좋았는지 이야기해주세요.
+                            </p>
+                        </div>
+                </div> <!-- ✅ cta-box 닫힘-->
+            </section> <!-- ✅ review-cta 닫힘-->
+
+            <!-- 관람평 작성 영역 -->
+            <section class="review-write" id="review-form">
+                <h4 class="review-form-title">관람평 작성</h4>
+
+                <!-- 안내 문구 -->
+                <p class="review-guide">
+                    ℹ️ 관람평 작성은 <strong>주요정보</strong> 탭에서만 가능합니다.
+                </p>
+
+                <!-- 유저 프로필 + 입력 -->
+                <div class="review-write-box">
+                    <div class="review-avatar">
+                        <img src="images/icon-user.png" alt="유저 아이콘">
+                    </div>
+
+                    <div class="review-input-area">
+                        <textarea
+                            class="review-input"
+                            placeholder="관람평을 남겨주세요"
+                            rows="2"
+                            maxlength="300">
+                        </textarea>
+
+                        <!-- 펼쳐지는 영역 -->
+                        <div class="review-expand">
+                            <!-- 별점 -->
+                            <div class="star-rating">
+                                <input type="radio" name="rating" id="rate5" value="5">
+                                <label for="rate5">★</label>
+
+                                <input type="radio" name="rating" id="rate4" value="4">
+                                <label for="rate4">★</label>
+
+                                <input type="radio" name="rating" id="rate3" value="3">
+                                <label for="rate3">★</label>
+
+                                <input type="radio" name="rating" id="rate2" value="2">
+                                <label for="rate2">★</label>
+
+                                <input type="radio" name="rating" id="rate1" value="1">
+                                <label for="rate1">★</label>
+                            </div>
+
+                            <!-- 글자 수 -->
+                            <span class="text-count">0 / 300</span>
+
+                            <!-- 버튼 -->
+                            <div class="review-actions">
+                                <button type="button" class="btn-cancel">취소</button>
+                                <button type="submit" class="btn-submit">등록</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 로그인 필요 안내 (비로그인 시) -->
+                <!--
+                <div class="review-login-guide">
+                    <p>로그인 후 관람평을 작성할 수 있습니다.</p>
+                    <a href="login.html" class="btn-login">로그인</a>
+                </div>
+                -->
+            </section>
+
+            <!-- 주요정보 관람평 작성 -->
+            <section class="review-preview">
+                <div class="review-header">
+                    <h3>관람평</h3>
+                </div>
+
+                <ul class="review-list">
+                    <li class="review-card">
+                        <div class="review-inner">
+
+                        <!-- 왼쪽: 유저 이미지 -->
+                        <div class="review-avatar">
+                            <img src="images/icon-user.png" alt="유저 아이콘">
+                        </div>
+
+                    <!-- 오른쪽: 리뷰 내용 -->
+                    <!-- 첫번째 리뷰 -->
+                    <div class="review-content">
+                    <div class="review-top">
+                        <span class="review-user">movie_lover</span>
+                        <span class="review-date">2026.01.03</span>
+                    </div>
+
+                    <div class="review-rating">
+                        ★★★★☆ <span class="score">4.0</span>
+                    </div>
+
+                    <p class="review-text">
+                        옥스퍼드의 풍경만으로도 이미 반은 완성된 영화.
+                        잔잔하지만 오래 남아요.
+                    </p>
+
+                    <div class="review-actions">
+                        <button class="btn-like">👍 12</button>
+                    </div>
+                    </li>
+
+                    <!-- 두번째 리뷰 -->
+                    <li class="review-card">
+                        <div class="review-inner">
+
+                        <!-- 왼쪽: 유저 이미지 -->
+                        <div class="review-avatar">
+                            <img src="images/icon-user.png" alt="유저 아이콘">
+                        </div>
+
+                        <!-- 오른쪽: 리뷰 내용 -->
+                        <div class="review-content">
+                            <div class="review-top">
+                                <span class="review-user">netflix_pick</span>
+                                <span class="review-date">2026.01.01</span>
+                            </div>
+
+                            <div class="review-rating">
+                                ★★★★☆ <span class="score">4.0</span>
+                            </div>
+
+                            <p class="review-text">
+                                큰 사건은 없지만 감정선이 정말 섬세해요.
+                                혼자 보기 좋은 영화.
+                            </p>
+
+                            <div class="review-actions">
+                                <button class="btn-like">👍 8</button>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </section> <!-- ✅ tab-panel 닫힘 -->
+
+        <!-- 실관람평 -->
+        <section class="tab-panel">
+            <h2 class="sr-only">실관람평</h2>
+
+            <!-- 리뷰 유도 영역 -->
+            <section class="review-cta">
+                <p class="cta-title">
+                    옥스퍼드에서의 날들에 대한 개성 있는 이야기가 있어요!
+                </p>
+
+                <div class="cta-box">
+                    <!-- 왼쪽: 로고 + Netflix -->
+                    <div class="curation-left">
+                        <img src="images/icon.png" alt="넷플릭스 아이콘" class="netflix-icon">
+                        <span class="netflix-text">Netflix</span>
+                    </div>
+
+                    <!-- 가운데: 텍스트 -->
+                    <div class="cta-center">
+                        <p>
+                            옥스퍼드에서의 날들를 재미있게 보셨나요?<br>
+                            영화의 어떤 점이 좋았는지 이야기해주세요.
+                        </p>
+                    </div>
+                </div> <!-- ✅ cta-box 닫힘-->
+            </section> <!-- ✅ review-cta 닫힘-->
+
+        <!-- 주요정보 관람평 작성 -->
+        <section class="review-preview">
+            <div class="review-header">
+                <h3>관람평</h3>
+            </div>
+
+            <ul class="review-list">
+                <li class="review-card">
+                    <div class="review-inner">
+
+                    <!-- 왼쪽: 유저 이미지 -->
+                    <div class="review-avatar">
+                        <img src="images/icon-user.png" alt="유저 아이콘">
+                    </div>
+
+                    <!-- 오른쪽: 리뷰 내용 -->
+                    <!-- 첫번째 리뷰 -->
+                    <div class="review-content">
+                    <div class="review-top">
+                        <span class="review-user">movie_lover</span>
+                        <span class="review-date">2026.01.03</span>
+                    </div>
+
+                    <div class="review-rating">
+                        ★★★★☆ <span class="score">4.0</span>
+                    </div>
+
+                    <p class="review-text">
+                        옥스퍼드의 풍경만으로도 이미 반은 완성된 영화.  
+                        잔잔하지만 오래 남아요.
+                    </p>
+
+                    <div class="review-actions">
+                        <button class="btn-like">👍 12</button>
+                    </div>
+                    </li>
+
+                    <!-- 두번째 리뷰 -->
+                    <li class="review-card">
+                        <div class="review-inner">
+
+                        <!-- 왼쪽: 유저 이미지 -->
+                        <div class="review-avatar">
+                            <img src="images/icon-user.png" alt="유저 아이콘">
+                        </div>
+
+                        <!-- 오른쪽: 리뷰 내용 -->
+                        <div class="review-content">
+                            <div class="review-top">
+                                <span class="review-user">netflix_pick</span>
+                                <span class="review-date">2026.01.01</span>
+                            </div>
+
+                            <div class="review-rating">
+                                ★★★★☆ <span class="score">4.0</span>
+                            </div>
+
+                            <p class="review-text">
+                                대사 하나하나가 인상적이었고
+                                여운이 길게 남는 작품이었습니다.
+                            </p>
+
+                            <div class="review-actions">
+                                <button class="btn-like">👍 8</button>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </section> <!-- ✅ tab-panel 닫힘 -->
+
+    <!-- 예고편 / 스틸컷 -->
+    <section class="tab-panel">
+        <h2 class="sr-only">예고편 및 스틸컷</h2>
+
+        <!-- 예고편 영역 -->
+        <section class="trailer-section">
+            <h3 class="section-title">메인 예고편</h3>
+
+            <div class="trailer-slider grab-slider">
+                <ul class="trailer-list">
+                    <li class="slide">
+                        <div class="trailer-video">
+                            <iframe 
+                                src="https://www.youtube.com/embed/EKQPCiUSRAo?enablejsapi=1&rel=0"
+                                allow="autoplay; encrypted-media"
+                                allowfullscreen
+                                title="옥스퍼드에서의 날들 예고편01">
+                            </iframe>
+                        </div>
+                    </li>
+
+                    <li class="slide">
+                        <div class="trailer-video">
+                            <iframe 
+                                src="https://www.youtube.com/embed/EKQPCiUSRAo?enablejsapi=1&rel=0"
+                                allow="autoplay; encrypted-media"
+                                allowfullscreen
+                                title="옥스퍼드에서의 날들 예고편02">
+                            </iframe>
+                        </div>
+                    </li>
+
+                    <li class="slide">
+                        <div class="trailer-video">
+                            <iframe 
+                                src="https://www.youtube.com/embed/EKQPCiUSRAo?enablejsapi=1&rel=0"
+                                allow="autoplay; encrypted-media"
+                                allowfullscreen
+                                title="옥스퍼드에서의 날들 예고편03">
+                            </iframe>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 스틸컷 영역 -->
+        <section class="stillcut-section">
+            <h3 class="section-title">스틸컷</h3>
+
+            <!-- 🔥 슬라이더 래퍼 추가 -->
+            <div class="stillcut-slider grab-slider">
+                <ul class="stillcut-list">
+                    <li class="slide">
+                        <img src="images/oxford-still-01.webp" alt="옥스퍼드에서의 날들 스틸컷 01">
+                    </li>
+                    <li class="slide">
+                        <img src="images/oxford-still-02.webp" alt="옥스퍼드에서의 날들 스틸컷 02">
+                    </li>
+                    <li class="slide">
+                        <img src="images/oxford-still-03.webp" alt="옥스퍼드에서의 날들 스틸컷 03">
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </section>
+</main>
+
+    <!-- footer -->
+    <footer class="footer">
+
+        <!-- footer menu -->
+        <nav class="footer-menu">
+            <a href="help-center.html">고객센터</a>
+            <a href="gift-cards.html">기프트카드</a>
+            <a href="https://ir.netflix.net" target="_blank" rel="noopener noreferrer">투자 정보(IR)</a>
+            <a href="terms.html">이용약관</a>
+            <a href="privacy-policy.html">개인정보 처리방침</a>
+            <a href="legal-notices.html">법적고지</a>
+            <a href="company-info.html">회사 정보</a>
+            <a href="contact.html">문의하기</a>
+        </nav>
+
+        <!-- footer middle -->
+        <div class="footer-middle">
+            <div class="footer-icon">
+                <img src="images/icon.png" alt="NETFLIX 로고">
+                <p>© Netflix Clone</p>
+            </div>
+
+            <div class="footer-info">
+                <p>넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)</p>
+                <p>대표: 레지널드 숀 톰프슨</p>
+                <p>이메일 주소: korea@netflix.com</p>
+                <p>주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층 우편번호 03161</p>
+                <p>사업자등록번호: 165-87-00119</p>
+                <p>클라우드 호스팅: Amazon Web Services Inc.</p>
+                <p>공정거래위원회 웹사이트</p>
+            </div>
+
+            <!-- footer bottom -->
+            <div class="footer-bottom">
+
+                <!-- SNS -->
+                <div class="footer-sns">
+                    <a href="https://www.instagram.com/netflixkr/" target="_blank"><img src="images/footer-instagram.png" alt="인스타그램"></a>
+                    <a href="https://www.youtube.com/@NetflixKorea" target="_blank"><img src="images/footer-YouTube.png" alt="유튜브"></a>
+                    <a href="https://www.facebook.com/NetflixKR/?locale=ko_KR" target="_blank"><img src="images/footer-facebook.png" alt="페이스북"></a>
+                    <a href="https://x.com/netflixkr" target="_blank"><img src="images/footer-twitter.png" alt="트위터"></a>
+                </div>
+
+                <!-- utils (language + search) -->
+                <div class="footer-utils">
+
+                    <!-- language display -->
+                    <div class="footer-language">
+                        <span class="footer-language-icon">🌐</span>
+                        <span class="footer-language-code">KR</span>
+                        <span class="footer-language__sep">·</span>
+                        <span class="footer-language-code">EN</span>
+                    </div>
+
+                <!-- search -->
+                <div class="footer-search">
+                    <form action="location.html">
+                        <input type="text" placeholder="위치찾기" />
+                        <button type="submit" aria-label="search">🔍</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="js/detail.js"></script>
+</body>
+</html>

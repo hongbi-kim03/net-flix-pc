@@ -1,0 +1,255 @@
+    /* header */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        z-index: 10;
+        display: flex;
+        background-color: rgba(88, 53, 102, 0.5);
+        backdrop-filter: blur(4px);
+        border-bottom: 1px solid rgba(200, 180, 200, 0.4);
+        align-items: center;
+        padding: 0 20px;
+        justify-content: space-between;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+        flex-wrap: nowrap;
+    }
+
+    /* 로고 */
+    .logo img {
+        cursor: pointer;
+    }
+
+    /* gnb    */
+    nav.gnb {
+        flex: 1;
+        margin-left: 40px;
+        white-space: nowrap;
+        gap: clamp(16px, 3vw, 32px);
+    }
+
+    nav.gnb ul {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+        white-space: nowrap;
+    }
+
+    nav.gnb ul li a {
+        color: white;
+        font-size: 16px;
+        text-decoration: none;
+        cursor: pointer;
+        padding: 8px 0;
+        transition: color 0.3s ease;
+    }
+
+    nav.gnb ul li a:hover {
+        color: #e50914;
+    }
+
+    /* GNB 오른쪽 영역 메뉴 스타일 오른쪽 검색, 알림, 프로필 */
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding-right: 20px;
+        flex-shrink: 0;
+    }
+
+    /*검색 박스 (form)*/
+    .search-box {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    /* input */
+    .search-box input {
+        background: rgba(255, 255, 255, 0.08);
+        border: none;
+        border-radius: 6px;
+        padding: 6px 30px 6px 10px;
+        color: white;
+        font-size: 14px;
+        width: 160px;
+        transition: width 0.3s ease, background 0.3s ease;
+    }
+
+    .search-box input::placeholder {
+        color: #bbb;
+    }
+
+    .search-box input:focus {
+        outline: none;
+        width: 220px;
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* 검색 버튼 (아이콘) */
+    .search-icon {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        padding: 0;
+        color: #bbb;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    /* hover 시 살짝 강조 (선택) */
+    .search-icon:hover {
+        color: #fff;
+    }
+
+    /* 알림+프로필 공통 드롭다운 */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    /* 알림 드롭다운 */
+    .dropdown-notification {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        transition: filter 0.3s ease, transform 0.2s ease;
+    }
+
+    .icon.notification {
+        filter: brightness(0) invert(1);
+        transition: filter 0.3s ease, transform 0.3s ease;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    /* 알림 아이콘 마우스 올렸을떄 드롭다운메뉴까지 그대로유지 */
+    .dropdown:hover .icon.notification {
+        content: url('../images/icon-bell-active.png');
+        filter: brightness(1) invert(0.8) sepia(1) saturate(5) hue-rotate(-10deg);
+        transform: scale(1.1);
+        transition: transform 0.2s ease;
+    }
+
+    /* 프로필 드롭다운 */
+    .dropdown-profile {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        transition: filter 0.3s ease, transform 0.2s ease;
+    }
+
+    /* 프로필아이콘 마우스 올렸을떄 드롭다운메뉴까지 그대로유지 */
+    .dropdown:hover .icon.profile {
+        transform: scale(1.1);
+        filter: brightness(1) invert(0.8) sepia(1) saturate(5) hue-rotate(-10deg);
+    }
+
+    /* 드롭다운 메뉴 */
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: #222;
+        color: white;
+        list-style: none;
+        padding: 10px 0;
+        border-radius: 5px;
+        min-width: 180px;
+        max-height: 300px;
+        overflow-y: auto;
+        z-index: 100;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    /* 마우스 올리면 드롭다운 표시 */
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .dropdown-menu li {
+        padding: 12px 20px;
+        cursor: pointer;
+        font-size: 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        transition: background-color 0.2s ease;
+    }
+
+    .dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown-menu li:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    /* 스크롤바 커스터마이징 */
+    .dropdown-menu::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .dropdown-menu::-webkit-scrollbar-thumb {
+        background: #555;
+        border-radius: 3px;
+    }
+
+    .dropdown-menu::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    /* 프로필 드롭다운 썸네일 */
+    .profile-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .profile-item:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .profile-thumb {
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+        object-fit: cover;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* 구분선 스타일 */
+    .divider {
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.15);
+        margin: 6px 0;
+        border: none;
+    }
+
+    @keyframes fadeDown {
+        from {
+            opacity: 0;
+            transform: translateY(-5px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }

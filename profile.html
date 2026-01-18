@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>프로필 페이지</title>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="images/logo.png" alt="넷플릭스 로고" />
+    </div>
+
+    <div class="profile">
+      <div class="profile-toggle" id="profile-btn">
+        <img src="images/icon-profile.png" alt="프로필 아이콘"/>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="dropdown-menu" id="dropdown">
+        <ul>
+          <li><a href="index.html">← 넷플릭스로 돌아가기</a></li>
+          <li><a href="account.html">계정</a></li>
+          <li><a href="profile.html">프로필 관리</a></li>
+          <li><a href="help-center.html">고객 센터</a></li>
+          <li><a href="logout.html">로그아웃</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="account-container">
+    <aside class="sidebar">
+      <a href="index.html" class="back-link">← 넷플릭스로 돌아가기</a>
+      <ul class="menu">
+        <li><a href="account.html">개요</a></li>
+        <li><a href="membership-manage.html">멤버십</a></li>
+        <li><a href="devices.html">디바이스</a></li>
+        <li><a href="profile.html" class="active">프로필</a></li>
+      </ul>
+    </aside>
+
+    <section class="account-content">
+      <h1>프로필</h1>
+
+    <div class="profiles">
+
+    <!-- 프로필 1 -->
+    <h2 class="profile-subtitle">프로필 설정</h2>
+    <div class="profile-item">
+      <img src="images/icon-profile.png" alt="프로필01" />
+      <span class="profile-name">김홍비</span>
+
+      <span class="current-profile-tag" >현재 프로필</span>
+
+      <button class="profile-settings-btn" onclick="location.href='profile-settings.html'">▶</button>
+    </div>
+
+    <!-- 프로필 2 -->
+    <div class="profile-item">
+      <img src="images/profile01.png" alt="프로필02" />
+      <span class="profile-name">김홍비</span>
+      <button class="profile-settings-btn" onclick="location.href='profile-settings.html'">▶</button>
+      <button class="delete-profile-btn">✕</button>
+    </div>
+    
+    <!-- 프로필 3 -->
+    <div class="profile-item">
+      <img src="images/profile02.png" alt="프로필03" />
+      <span class="profile-name">김홍비</span>
+      <button class="profile-settings-btn" onclick="location.href='profile-settings.html'">▶</button>
+      <button class="delete-profile-btn">✕</button>
+    </div>
+
+    <!-- 프로필 4 -->
+    <div class="profile-item">
+      <img src="images/profile03.png" alt="프로필04" />
+      <span class="profile-name">김홍비</span>
+      <button class="profile-settings-btn" onclick="location.href='profile-settings.html'">▶</button>
+      <button class="delete-profile-btn">✕</button>
+    </div>
+
+    <!-- 프로필 추가 버튼-->
+    <button class="add-profile" id="add-profile">프로필 추가</button>
+    </div>
+</section>
+
+</main>
+
+  <!-- 프로필 모달 -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h3>새 프로필 추가</h3>
+      <button id="close-modal" class="close-modal">&times;</button>
+
+      <!-- 설명 문구 -->
+      <p class="modal-description">
+        넷플릭스를 시청할 다른 사용자를 등록하시려면<br>
+        프로필을 추가하세요.
+      </p>
+
+      <div class="image-select">
+        <img src="images/profile01.png" class="select-img" />
+        <img src="images/profile02.png" class="select-img" />
+        <img src="images/profile03.png" class="select-img" />
+        <img src="images/profile04.png" class="select-img" />
+      </div>
+
+      <!-- 이름 입력 -->
+      <input type="text" id="profile-name" placeholder="이름 입력" />
+      
+      <!-- 저장/취 버튼 -->
+      <div class="modal-actions">
+        <button id="save-profile">저장</button>
+        <button id="cancel-profile">취소</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <p class="footer-question">
+        질문이 있으신가요? <a href="help-center.html">고객 센터에 문의하세요</a>
+      </p>
+
+      <ul class="footer-links">
+        <li><a href="https://ir.netflix.net" target="_blank" rel="noopener noreferrer">투자 정보(IR)</a></li>
+        <li><a href="terms.html">이용 약관</a></li>
+        <li><a href="gift-cards.html">기프트 카드</a></li>
+        <li><a href="#">미디어 센터</a></li>
+        <li><a href="#">입사 정보</a></li>
+        <li><a href="#">쿠키 설정</a></li>
+        <li><a href="privacy-policy.html">개인정보 처리방침</a></li>
+        <li><a href="#">음성 및 자막</a></li>
+        <li><a href="help-center.html">고객 센터</a></li>
+      </ul>
+
+      <div class="footer-info">
+        <p>넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)</p>
+        <p>대표: 레지널드 숀 톰프슨</p>
+        <p>이메일 주소: korea@netflix.com</p>
+        <p>주소: 대한민국 서울특별시 종로구 종로 26, 센트로폴리스 A동 20층, 우편번호 03161</p>
+        <p>사업자등록번호: 165-87-00119</p>
+        <p>호스팅 서비스: Amazon Web Services Inc.</p>
+        <p>공정거래위원회 웹사이트</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/profile.js"></script>
+  </body>
+</html>

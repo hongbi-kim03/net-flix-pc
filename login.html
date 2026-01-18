@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Netflix Clone – 로그인</title>
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/footer-login.css">
+
+
+    </head>
+    <body>
+
+    <!-- ✅ header 영역 -->
+    <header class="header">
+        <a href="index.html">
+            <img src="images/logo.png" alt="넷플릭스 로고">
+        </a>
+    </header>
+
+    <!-- ✅main 영역 -->
+    <main class="background">
+        <div class="overlay"></div>
+        <div class="login-container">
+            <h1>로그인</h1>
+
+            <form id="login-form">
+                <div class="login-div">
+                    <!-- 이메일 입력 -->
+                    <input type="email" id="email" placeholder="이메일 주소 또는 휴대폰 번호"required onblur="validateEmail()" onfocus="resetInput(this)"/>
+                    <div id="email-error" class="error"></div> <!-- 이메일 오류 표시 -->
+
+                    <div class="password-div">
+                        <!-- 비밀번호 입력 -->
+                        <input type="password" id="password" placeholder="비밀번호" required onblur="passwordOnblur()" onfocus="resetInput(this)" />
+                        <button type="button" id="password-icon" class="password-icon" onclick="togglePassword()"></button>
+                        
+                    </div>
+                    <div id="password-error" class="error"></div>
+                </div>
+                
+
+                <button type="submit">로그인</button>
+        
+                <div class="divider">또는</div>
+
+                <button type="button" class="code-login">로그인 코드 사용하기</button>
+
+                <div class="options">
+                    <label class="remember-me"><input type="checkbox">로그인 정보저장</label>
+                    <div class="find-password">
+                        <a href="#">비밀번호를 잊으셨나요?</a>
+                    </div>
+                </div>
+                
+                <p class="signup">넷플릭스 회원이 아닌가요? <a href="#">지금 가입하세요.</a></p>
+                <p class="recaptcha">이 페이지는 Google reCAPTCHA의 보호를 받아 사용자가 로봇이 아님을 확인합니다.<a href="#">자세히 알아보기.</a></p>
+            </form>
+        </div>
+    </div>
+    
+    <!-- ✅ footer -->
+    <footer class="footer">
+
+        <!-- footer menu -->
+        <nav class="footer-menu">
+            <ul>
+                <li><a href="help-center.html">고객센터</a></li>
+                <li><a href="gift-cards.html">기프트카드</a></li>
+                <li><a href="https://ir.netflix.net" target="_blank" rel="noopener noreferrer">투자 정보(IR)</a></li>
+                <li><a href="terms.html">이용약관</a></li>
+                <li><a href="privacy-policy.html">개인정보 처리방침</a></li>
+                <li><a href="legal-notices.html">법적고지</a></li>
+                <li><a href="company-info.html">회사 정보</a></li>
+                <li><a href="contact.html">문의하기</a></li>
+            </ul>
+        </nav>
+
+        <!-- footer middle -->
+        <div class="footer-middle">
+            <div class="footer-icon">
+                <img src="images/icon.png" alt="NETFLIX 아이콘">
+                <p>© Netflix Clone</p>
+            </div>
+
+            <div class="footer-info">
+                <p>넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 ( 부담)</p>
+                <p>대표: 레지널드 숀 톰프슨</p>
+                <p>이메일 주소: korea@netflix.com</p>
+                <p>주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층 우편번호 03161</p>
+                <p>사업자등록번호: 165-87-00119</p>
+                <p>클라우드 호스팅: Amazon Web Services Inc.</p>
+                <p>공정거래위원회 웹사이트</p>
+            </div>
+        </div>  
+
+        <!-- footer bottom -->
+        <div class="footer-bottom">
+            <!-- SNS -->
+            <div class="footer-sns">
+                <a href="https://www.instagram.com/netflixkr/" target="_blank"><img src="images/footer-instagram.png" alt="인스타그램"></a>
+                <a href="https://www.youtube.com/@NetflixKorea" target="_blank"><img src="images/footer-YouTube.png" alt="유튜브"></a>
+                <a href="https://www.facebook.com/NetflixKR/?locale=ko_KR" target="_blank"><img src="images/footer-facebook.png" alt="페이스북"></a>
+                <a href="https://x.com/netflixkr" target="_blank"><img src="images/footer-twitter.png" alt="트위터"></a>
+            </div>
+
+            <!-- utils (language + search) -->
+            <div class="footer-utils">
+                <!-- language display -->
+                <div class="footer-language">
+                    <span class="footer-language-icon">🌐</span>
+                    <span class="footer-language-code">KR</span>
+                    <span class="footer-language__sep">·</span>
+                    <span class="footer-language-code">EN</span>
+                </div>
+
+                <!-- search -->
+                <div class="footer-search">
+                    <input type="text" placeholder="위치찾기" />
+                    <button aria-label="search">🔍</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+<script src="js/login.js"></script>

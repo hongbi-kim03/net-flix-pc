@@ -1,0 +1,308 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* 공통 */
+    body {
+        font-family: "맑은 고딕", "나눔고딕", "sans-serif";
+        background: #fafafa;
+        color: #333;
+    }
+
+    /* 헤더 */
+    header {
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* 전체 너비 */
+        height: 60px;
+        display: flex;
+        background-color: rgba(88, 53, 102, 0.5);
+        backdrop-filter: blur(4px);
+        border-bottom: 1px solid rgba(200, 180, 200, 0.4);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+        align-items: center;
+        padding: 16px 40px;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        position: sticky;
+        z-index: 100;
+    }
+
+    .left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .logo img {
+        cursor: pointer;
+    }
+
+    .help-title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    /* 유저 드롭다운 */
+    .user-dropdown {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .user-dropdown .user-name {
+        margin-right: 5px;
+    }
+
+    .user-dropdown .arrow {
+        display: inline-block;
+        font-size: 12px;
+        transition: transform 0.3s ease;
+        transform-origin: center;
+        color: #ff3366;
+    }
+
+    /* active 클래스 있을 때 화살표 회전 */
+    .user-dropdown.active .arrow {
+        transform: rotate(180deg);
+    }
+
+    .user-dropdown:hover .user-name,
+    .user-dropdown:hover .arrow {
+        opacity: 0.8;
+    }
+
+    /* 드롭다운 메뉴 */
+    .dropdown-menu {
+        position: absolute;
+        top: 45px;
+        right: 0;
+        width: 180px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        display: none;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        z-index: 100;
+        list-style: none;
+    }
+
+    /* active 클래스 있을 때 메뉴 표시 */
+    .user-dropdown.active .dropdown-menu {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .dropdown-menu ul {
+        padding: 8px 0;
+        margin: 0;
+    }
+
+    .dropdown-menu li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 12px 16px;
+        color: #000;
+        text-decoration: none;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    /* =======================
+    메인 컨테이너
+    ======================= */
+    .company-container {
+        display: flex;
+        padding: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 40px;
+    }
+
+    /* =======================
+    왼쪽 사이드바
+    ======================= */
+    .sidebar {
+        width: 220px;
+    }
+
+    .sidebar .back-link {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+        padding: 8px 12px;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        transition: transform 0.2s ease, background-color 0.2s, color 0.2s;
+    }
+
+    .sidebar .back-link:hover {
+        transform: translateX(-4px) scale(1.05);
+        background-color: rgba(229, 9, 20, 0.1);
+        color: #ff3366;
+    }
+
+    .sidebar .back-link:active {
+        transform: translateX(-2px) scale(0.98);
+    }
+
+    .sidebar .menu {
+        list-style: none;
+        margin-top: 25px;
+        padding-left: 0;
+    }
+
+    .sidebar .menu li {
+        margin-bottom: 18px;
+    }
+
+    .sidebar .menu a {
+        text-decoration: none;
+        color: #444;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    /* hover */
+    .sidebar .menu a:hover {
+        background-color: #f6f6f6;
+        color: #e50914;
+    }
+
+    /* active */
+    .sidebar .menu a.active {
+        background-color: #f4f4f4;
+        border-left: 4px solid #e50914;
+        padding-left: 16px;
+        color: #e50914;
+        font-weight: 700;
+    }
+
+    /* =======================
+    오른쪽 메인 콘텐츠
+    ======================= */
+    .company-content {
+        flex: 1;
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        line-height: 1.7;
+    }
+
+    /* 섹션 공통 */
+    .company-section {
+        margin-bottom: 28px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .company-section:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .company-content h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #222;
+    }
+
+    /* 서브 제목 */
+    .company-section h2 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #444;
+    }
+
+    /* 본문 텍스트 */
+    .company-content p {
+        font-size: 15px;
+        color: #555;
+        margin-bottom: 10px;
+        line-height: 1.7;
+    }
+
+    /* footer 영역 */
+    footer {
+        border-top: 1px solid #ddd;
+        background-color: #fafafa;
+        padding: 50px 0;
+        margin-top: 60px;
+        color: #555;
+    }
+
+    /* 컨테이너 */
+    .footer-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* 링크 목록 */
+    .footer-links {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 12px 20px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-links li {
+        list-style: none;
+    }
+
+    .footer-links a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+    }
+
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .company-container {
+            flex-direction: column;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .sidebar {
+            width: 100%;
+        }
+
+        .company-content {
+            padding: 20px;
+        }
+    }

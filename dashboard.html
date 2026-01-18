@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title> 로그인 후 메인 페이지 </title>
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/modal.css">
+    </head>
+    <body>
+        
+    <!-- html 시작 -->
+    <header>
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="넷플릭스 로고">
+      </a>
+
+      <nav class="gnb">
+        <ul>
+          <li><a href="dashboard.html">홈</a></li>
+          <li><a href="movies.html">영화</a></li>
+          <li><a href="new.html">NEW</a></li>
+          <li><a href="series.html">시리즈</a></li>
+          <li><a href="wishlist.html">내가찜한리스트</a></li>
+          <li><a href="language.html">언어</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-right">
+        <form class="search-box" action="search.html">
+          <input type="text" placeholder="제목, 사람, 장르">
+          <button type="submit" class="search-icon">🔍</button>
+        </form>
+      
+      <!-- 알림 드롭다운 -->
+      <div class="dropdown notification">
+        <img class="icon notification" src="images/icon-bell.png" alt="알림">
+        <ul class="dropdown-menu">
+          <li><a href="wishlist.html">❤️찜한 콘텐츠 업데이트</a></li>
+          <li><a href="new.html">NEW! 신규 콘텐츠</a></li>
+          <li><a href="series.html">🔥인기 콘텐츠</a></li>
+          <li class="notice-item" data-title="폭군의 셰프">신규 콘텐츠<br> 폭군의 셰프</li>
+        </ul>
+      </div>
+
+    <!-- 프로필 드롭다운 -->
+    <div class="dropdown profile">
+      <img class="icon profile" src="images/icon-profile.png" alt="프로필">
+
+        <ul class="dropdown-menu">
+            <!-- 프로필 목록 -->
+            <li class="profile-item">
+              <img src="images/profile01.png"alt="김홍비 프로필" class="profile-thumb">
+                <span>김홍비</span>
+              </li>
+              <li class="profile-item">
+              <img src="images/profile02.png"alt="김홍비 프로필" class="profile-thumb">
+                <span>김홍비</span>
+              </li>
+
+              <!-- 메뉴 항목  -->
+                <li><a href="profile.html">⚙️ 프로필관리</a></li>
+                <li><a href="profile-transfer.html">🔁 프로필 이전</a></li>
+                <li><a href="account.html">👤 계정</a></li>
+
+              <!-- 여기가 메뉴 구분선 -->
+                <li class="divider"></li>
+
+                <li><a href="logout.html">🚪 로그아웃</a></li>
+            </ul>
+</header>
+
+<!-- main start -->
+<main>
+  <h2 class="slider-title">TOP 10 시리즈</h2>
+
+  <div class="slider-wrapper">
+    <div class="slider">
+
+  <!-- 카드 1 -->
+  <div class="card">
+    <div class="rank-badge">1</div>
+    <div class="card-image card01"></div>
+    <div class="card-buttons">
+      <button class="btn like modal-trigger"
+        data-img="images/tyrant-chef-thumbnail.webp"
+        data-title="폭군의 셰프"
+        data-description="시간을 거슬러 과거로 가게된 현대의 셰프가 폭군으로 악명 높은 왕을 만난다.<br>
+                          그녀는 탁월한 요리 솜씨로 왕의 마음과 입맛을 모두 사로잡을 수 있을까?"
+        data-cast="임윤아, 이세민, 강한나"
+        data-genre="로맨틱한 드라마, 드라마, 시대물"
+        data-feature="유쾌 발랄, 로맨틱"> 상세정보
+      </button>
+      <button class="btn ticket"><span class="heart">🤍</span> 찜하기</button>
+    </div>
+  </div>
+  <div class="card">
+  <div class="rank-badge">2</div>
+  <div class="card-image card02"></div>
+  <div class="card-buttons">
+    <button class="btn like modal-trigger"
+      data-img="images/esquire-thumbnail.webp"
+      data-title="에스콰이어"
+      data-description="치열한 법조계에 발을 들인 신입 변호사. <br>
+                        깐깐한 멘토의 지도 아래 각양각색의 사건을 해결해 나간다. <br>
+                        51개국에서 TOP 10에 오른 드라마 시리즈."
+      data-cast="이진욱, 정채연, 이학주"
+      data-genre="드라마, 법정 시리즈, 한국 드라마"
+      data-feature="감명을 주는, 진심 어린, 감정을 파고드는">상세정보
+    </button>
+    <button class="btn ticket"><span class="heart">🤍</span> 찜하기</button>
+  </div>
+</div>
+
+<!-- 카드 3 -->
+<div class="card">
+  <div class="rank-badge">3</div>
+  <div class="card-image card03"></div>
+  <div class="card-buttons">
+    <button class="btn like modal-trigger"
+      data-img="images/aema-thumbnail.jpg"
+      data-title="애마"
+      data-description="이하늬가 연기력으로 인정받고자 하는 80년대 인기 스타로 출연한다. 배우를 돈벌이 수단으로만 이용하는 냉혹한 제작사 대표는 진선규가 연기한다.<br>"
+      data-cast="이하늬, 방화린, 진선규"
+      data-genre="드라마, 코미디 시리즈, 한국 드라마"
+      data-feature="향수 자극, 아찔하고 발칙하게, 달콤 쌉싸름">상세정보
+    </button>
+    <button class="btn ticket"><span class="heart">🤍</span> 찜하기</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="rank-badge">4</div>
+  <div class="card-image card04"></div>
+  <div class="card-buttons">
+    <button class="btn like modal-trigger"
+      data-img="images/wednesday-thumbnail.jpg"
+      data-title="웬즈데이 시즌 2"
+      data-description="공부는 잠시 미뤄두자. 웬즈데이 아담스와 든든한 친구 '씽'에게는 거대한 연쇄 살인을 멈추는 것이 급선무.<br>"
+      data-cast="제나 오르테가, 렌델린 크리스티, 캐서린 제타 존스"
+      data-genre="청춘 드라마, 청소년 시리즈, 미스터리 시리즈"
+      data-feature="으스스한, 상상의 나래">상세정보
+    </button>
+    <button class="btn ticket"><span class="heart">🤍</span> 찜하기</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="rank-badge">5</div>
+  <div class="card-image card05"></div>
+  <div class="card-buttons">
+    <button class="btn like modal-trigger"
+      data-img="images/demon-slayer-thumbnail.webp"
+      data-title="귀멸의 칼날 합동강화훈련편"
+      data-description="깊고 고요한 밤, 마침내 키부츠지 무잔과 카가야 우부야시키 저택에서 대면한다.
+      습격 경고를 받고 달려가는 탄지로와 주들. 그들은 너무 늦기 전에 저택에 도착할 수 있을까.<br>"
+      data-cast="하나에 나츠키, 키토 아카리, 시모노 히로 외"
+      data-genre="일본 소년 만화를 만나다, SF & 판타지 애니, 액션 애니"
+      data-feature="상상의 나래, 어두운, 흥미진진">상세정보
+    </button>
+    <button class="btn ticket"><span class="heart">🤍</span> 찜하기</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="rank-badge">6</div>
+  <div class="card-image card06"></div>
+  <div class="card-buttons">
+    <button class="btn like modal-trigger"
+      data-img="images/myturn-thumbnail.webp"
+      data-title="한탕프로젝트 마이턴"
+      data-description="각 분야의 연예인들이 모여 트로트 그룹을 결성한다. 이들은 국민의 마음을 사로잡을 수 있을까, 아니면 모두의 이목을 끌며 화려하게 주저앉을까?<br>"
+      data-cast="이경규, 탁재훈, 추성훈 외"
+      data-genre="코미디 시리즈, 한국 드라마"
+      data-feature="일상스러움, 위로 있는">상세정보
+    </button>
+    <button class="btn ticket"><span class="heart">🤍</span> 찜하기</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="rank-badge">7</div>
+  <div class="card-image card07"></div>
+  <div class="card-buttons">
+    <button class="btn like modal-trigger"
+      data-img="images/island-hero-thumbnail.webp"
+      data-title="섬총각 영웅"
+      data-description="가수 임영웅이 도시의 불빛을 떠나 자연이 펼쳐진 섬으로 향한다.
+                        가까운 친구들과 함께하는 여정속에서,진심 어린 이야기를 나눈다."
+      data-cast="임영웅, 궤도, 임태훈"
+      data-genre="리얼리티 시리즈"
+      data-feature="힐링, 재밌는">상세정보
+    </button>
+    <button class="btn ticket"><span class="heart">🤍</span> 찜하기</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="rank-badge">8</div>
+  <div class="card-image card08"></div>
+  <div class="card-buttons">
+    <button class="btn like modal-trigger"
+      data-img="images/krieger-thumbnail.jpg"
+      data-title="트리거"
+      data-description="대한민국 거리에 불법 총기가 범람한다. 혼돈으로 치닫는 일상, 폭력으로 뒤덮인 도시.<br>
+                        과거의 그림자에 갇힌 경찰과 의문의 조력자가 계속되는 재앙을 막고자 질주한다."
+      data-cast="김남길, 김영광, 박훈"
+      data-genre="드라마, 액션 & 어드벤처 시리즈, 범죄 시리즈"
+      data-feature="긴장감 넘치는">상세정보
+    </button>
+    <button class="btn ticket"><span class="heart">🤍</span> 찜하기</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="rank-badge">9</div>
+  <div class="card-image card09"></div>
+  <div class="card-buttons">
+    <button class="btn like modal-trigger"
+      data-img="images/try-thumbnail.jpg"
+      data-title="트라이"
+      data-description="몰락한 럭비 스타 역할을 맡은 윤계상(《아무도 없는 숲속에서》)이 침체된 모교 팀을 
+                        다시 일으키기 위해 감독으로 돌아온다."
+      data-cast="윤계상, 임세미, 김요한"
+      data-genre="드라마, 창춘 드라마, 청소년 시리즈"
+      data-feature="응원하고픈, 감명을 주는">
+      상세정보
+    </button>
+    <button class="btn ticket"><span class="heart">🤍</span> 찜하기</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="rank-badge">10</div>
+  <div class="card-image card10"></div>
+  <div class="card-buttons">
+    <button class="btn like modal-trigger"
+      data-img="images/survivor-thumbnail.jpg"
+      data-title="나는 생존자다"
+      data-description="잔혹한 수용 시설부터 믿음이라는 이름 아래 사람들을 착취한 사이비 종교까지.<br>
+                        생존자들이 침묵을 깨는 순간, 대한민국에서 벌어졌다고는 상상할 수 없는 끔찍한 비밀이 드러난다."
+      data-genre="범죄 시리즈, 다큐멘터리 시리즈, 범죄 실화 다큐멘터리"
+      data-feature="진실을 찾아">상세정보
+    </button>
+    <button class="btn ticket"><span class="heart">🤍</span> 찜하기</button>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="pagination">
+  <button class="dot active" data-index="0"></button>
+  <button class="dot" data-index="1"></button>
+  <button class="dot" data-index="2"></button>
+</div>
+
+<!-- 숏폼 콘텐츠 -->
+<section class="shortform-conten-wrapper">
+  <h2 class="section-title">🔥 인기 숏폼 콘텐츠 모음 🔥</h2>
+
+  <div class="shortform-content">
+    <div class="slide">
+      <iframe src="https://www.youtube.com/embed/2T19384cd3s?enablejsapi=1&rel=0&autoplay=0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="slide">
+      <iframe src="https://www.youtube.com/embed/vHva0Cr5tO0?enablejsapi=1&rel=0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="slide">
+      <iframe src="https://www.youtube.com/embed/ausCWLolX3I?enablejsapi=1&rel=0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="slide">
+      <iframe src="https://www.youtube.com/embed/xQnsFqn44uo?enablejsapi=1&rel=0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="slide">
+      <iframe src="https://www.youtube.com/embed/wZq_QypWnWo?enablejsapi=1&rel=0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- 넷플릭스 소사이어티 -->
+  <section class="curation-section">
+    <div class="curation-container">
+      <!-- 왼쪽 -->
+      <div class="curation-left">
+        <div class="poster-wrapper">
+          <span class="badge">NETFLIX<br>ONLY<br>SOCIETY</span>
+          <img src="images/kpop-demon-hunters-poster.jpg" alt="케이팝 데몬 헌터스 포스터">
+
+          <!-- 줄거리 텍스트 추가 -->
+          <div class="poster-description">
+            <strong>케이팝 데몬 헌터스</strong><br>라면을 후루룩 해치우다가도 다음순간 악마 사냥에 뛰어드는 케이팝 걸그룹 멤버들.<br>
+            어떤것도 멋지게 해내는데, 이제 능력을 발휘해 세상을 구해야야 한다.
+          </div>
+        </div>
+        <div class="buttons left-buttons">
+          <a href="kpop-demon-hunters.html" class="btn info">상세정보</a>
+          <button class="btn ticket"
+            data-title="케이팝 데몬 헌터스"
+            data-img="images/kpop-demon-hunters-poster.jpg"
+            data-description="라면을 후루룩 해치우다가도 악마 사냥에 뛰어드는 멤버들.">
+            <span class="heart">🤍</span> 찜하기
+          </button>
+        </div>
+      </div>
+
+      <!-- 오른쪽 -->
+      <div class="curation-right">
+
+        <!-- 추천 콘텐츠 목록 -->
+        <div class="related-content">
+          <div class="item">
+            <div class="poster-wrapper">
+            <span class="label red">N</span>
+            <img src="images/wednesday-s2-poster.jpg" alt="웬즈데이 시즌2">
+            <div class="poster-description">
+              <strong>웬즈데이 시즌 2</strong><br>미스터리한 사건 속, 그녀의 냉철한 두뇌가 빛난다.
+            </div>
+          </div>
+          <div class="buttons right-buttons">
+            <a href="wednesday-s2.html" class="btn info">상세정보</a>
+            <button class="btn ticket"
+              data-title="웬즈데이 시즌 2"
+              data-img="images/wednesday-s2-poster.jpg"
+              data-description="미스터리한 사건 속, 그녀의 냉철한 두뇌가 빛난다.">
+              <span class="heart">🤍</span> 찜하기
+            </button>
+          </div>
+            </div>
+
+          <div class="item">
+            <div class="poster-wrapper">
+            <span class="label red">N</span>
+            <img src="images/oxford-days-poster.jpg" alt="옥스퍼드에서의날들">
+            <div class="poster-description">
+              <strong>옥스퍼드에서의날들</strong><br>잊지 못할 청춘의 한 페이지를 그리다.
+            </div>
+          </div>
+          <div class="buttons right-buttons">
+            <a href="oxford-days.html" class="btn info">상세정보</a>
+            <button class="btn ticket"
+              data-title="옥스퍼드에서의날들"
+              data-img="images/oxford-days-poster.jpg"
+              data-description="잊지 못할 청춘의 한 페이지를 그리다.">
+              <span class="heart">🤍</span> 찜하기
+            </button>
+          </div>
+            </div>
+          
+          <div class="item">
+            <div class="poster-wrapper">
+            <span class="label red">N</span> 
+            <img src="images/84sqm-poster.jpg" alt="84제곱미터">
+            <div class="poster-description">
+              <strong>84제곱미터</strong><br>도시의 숨겨진 이야기, 그 작은 공간 속에서.
+            </div>
+          </div>
+          <div class="buttons right-buttons">
+            <a href="84sqm.html" class="btn info">상세정보</a>
+            <button class="btn ticket"
+              data-title="84제곱미터"
+              data-img="images/84sqm-poster.jpg"
+              data-description="도시의 숨겨진 이야기, 그 작은 공간 속에서.">
+              <span class="heart">🤍</span> 찜하기
+            </button>
+          </div>
+            </div>
+          
+          <div class="item">
+            <div class="poster-wrapper">
+            <span class="label red">N</span> 
+            <img src="images/my-name-is-vendetta-poster.jpg" alt="마이 네임 이즈 벤데타">
+            <div class="poster-description">
+              <strong>마이 네임 이즈 벤데타</strong><br>복수의 칼날을 숨긴 그의 또 다른 이름.
+            </div>
+          </div>
+          <div class="buttons right-buttons">
+            <a href="my-name-is-vendetta.html" class="btn info">상세정보</a>
+            <button class="btn ticket"
+              data-title="마이 네임 이즈 벤데타"
+              data-img="images/my-name-is-vendetta-poster.jpg"
+              data-description="복수의 칼날을 숨긴 그의 또 다른 이름.">
+              <span class="heart">🤍</span> 찜하기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 가입내용 -->
+<section class="why-join-section">
+  <h2 class="section-title">가입해야 하는 또 다른 이유</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>TV로 즐기세요</h3>
+      <p>스마트 TV, PlayStation, Xbox, Chromecast, Apple TV,<br>블루레이 플레이어 등 다양한 디바이스에서 시청하세요.</p>
+      <img src="images/icon-why-join-tv.png" alt="TV 아이콘">
+    </div>
+    <div class="feature-card">
+      <h3>즐겨 보는 콘텐츠를 저장해 오프라인으로 시청하세요</h3>
+      <p>간편하게 저장하고 빈틈없이 즐겨보세요.</p>
+      <img src="images/icon-why-join-download.png" alt="다운로드 아이콘">
+    </div>
+    <div class="feature-card">
+      <h3>다양한 디바이스로 시청하세요</h3>
+      <p>각종 영화와 시리즈를 스마트폰, 태블릿, 노트북, TV에서<br>무제한으로 스트리밍하세요.</p>
+      <img src="images/icon-why-join-device.png" alt="디바이스 아이콘">
+    </div>
+    <div class="feature-card">
+      <h3>어린이 전용 프로필을 만들어 보세요</h3>
+      <p>자녀가 즐겁게 시청하도록 캐릭터와 즐기는 신나는 모험.<br>넷플릭스 회원이라면 무료입니다.</p>
+      <img src="images/icon-why-join-kids.png" alt="키즈 아이콘">
+    </div>
+  </div>
+</section>
+
+
+<!-- 고객센터 -->
+<section class="support-section">
+  <div class="support-grid">
+    <div class="support-item">
+      <img src="images/icon-headset.png" alt="고객센터">
+      <p>고객센터</p>
+    </div>
+    <div class="support-item">
+      <img src="images/icon-faq.png" alt="자주 묻는 질문">
+      <p>자주 묻는 질문</p>
+    </div>
+    <div class="support-item">
+      <img src="images/icon-contact.png" alt="1:1 문의">
+      <p>1:1 문의</p>
+    </div>
+    <div class="support-item">
+      <img src="images/icon-group.png" alt="단체/대관문의">
+      <p>단체/대관문의</p>
+    </div>
+    <div class="support-item">
+      <img src="images/icon-user01.png" alt="계정 아이콘">
+      <p>계정</p>
+    </div>
+    <div class="support-item">
+      <img src="images/icon-membership.png" alt="멤버십 아이콘">
+      <p>멤버십</p>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- ✅ modal -->
+<!-- ✅ 폭군의 셰프 회차 목록 템플릿 -->
+        <template id="episodes-chef">
+          <div class="episode-scroll">
+            <h2 class="episode-title">회차</h2>
+
+            <div class="episode-list">
+
+              <!-- episode 1 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">1</span>
+                  <iframe src="https://www.youtube.com/embed/C_oUH_P_r5E?enablejsapi=1&rel=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>Course Nº1 고추장 버터 비빔밥 <span class="duration">(79분)</span></h3>
+                  <p>가혹한 상황에 처한 지영은 자유를 되찾기 위해 연회를 준비한다. 하지만 예상치 못한 위기 앞에서 지영의 특별한 요리 솜씨도 무력해지고 마는데.</p>
+                </div>
+              </div>
+
+              <!-- episode 2 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">2</span>
+                  <iframe src="https://www.youtube.com/embed/RcCIYegl7dU?enablejsapi=1&rel=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>Course Nº2 수비드 요리<span class="duration">(79분)</span></h3>
+                  <p>프랑스 요리 대회 우승자 연지영. 오래된 요리책을 통해 과거로 가게 된 그녀는 도착하자마자 폭군으로 알려진 이헌과 마주친다.</p>
+                </div>
+              </div>
+
+              <!-- episode 3 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">3</span>
+                  <iframe src="https://www.youtube.com/embed/WHt-YWMj6Gg?enablejsapi=1&rel=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>Course Nº3 오뜨 퀴진<span class="duration">(80분)</span></h3>
+                  <p>프랑스 요리로 이헌을 사로잡은 지영은 새로운 대령숙수로 임명된다. 그러나 질투에 휩싸인 강목수가 지영을 음모에 빠뜨린다.</p>
+                </div>
+              </div>
+
+              <!-- episode 4 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">4</span>
+                  <iframe src="https://www.youtube.com/embed/o9Ldf6INC4U?enablejsapi=1&rel=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>Course Nº4 ** 시금치 된장국<span class="duration">(80분)</span></h3>
+                  <p>궁중에서 운명을 건 요리 경연에 나선 지영. 이어 슬픔에 젖은 이헌이 술에 취한 채 지영을 불러들인다.</p>
+                </div>
+              </div>
+
+              <!-- episode 5 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">5</span>
+                  <iframe src="https://www.youtube.com/embed/gTwONwrkc1Q?enablejsapi=1&rel=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>Course Nº5 눈꽃 슈니첼<span class="duration">(76분)</span></h3>
+                  <p>뜻밖의 친밀한 시간을 보낸 뒤, 이헌은 지영의 식사를 거부하기 시작한다. 그러나 떨어져 있는 동안에도 두 사람의 마음은 서로를 향한다.</p>
+                </div>
+              </div>
+
+              <!-- episode 6 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">6</span>
+                  <iframe src="https://www.youtube.com/embed/ok9bkGRz9EQ?enablejsapi=1&rel=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>6화<span class="duration"></span></h3>
+                  <p>9월 7일 공개</p>
+                </div>
+              </div>
+
+              <!-- episode 7 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">7</span>
+                  <iframe src="https://www.youtube.com/embed/WV-0yYIqj08?enablejsapi=1&rel=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>7화<span class="duration"></span></h3>
+                  <p>9월 13일 공개</p>
+                </div>
+              </div>
+              <!-- 추가 회차들... -->
+            </div>
+          </div>
+        </template>
+
+        <!-- ✅ 에스콰이어 회차 목록 템플릿 -->
+        <template id="episodes-esquire">
+          <div class="episode-scroll">
+            <h2 class="episode-title">회차</h2>
+            <div class="episode-list">
+
+              <!-- episode 1 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">1</span>
+                  <iframe src="https://www.youtube.com/embed/Ipd9ivKEdYY?enablejsapi=1&rel=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                  </iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>인덕션<span class="duration">(61분)</span></h3>
+                  <p>법무법인 율림에 입사한 신입 변호사 강효린. 시작은 순탄치 않았지만 윤석훈의 팀에 합류하고, 첫 사건에서 허점을 찾아내며 그의 눈에 띈다.</p>
+                </div>
+              </div>
+              
+              <!-- episode 2 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">2</span>
+                  <iframe src="https://www.youtube.com/embed/9Xy3U8slWCU?enablejsapi=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                  </iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>티백과 사랑의 강도는 뜨거운 물에 담가봐야 안다<span class="duration">(66분)</span></h3>
+                  <p>남임 병원에 침입해 난동을 피운 남자의 사건을 맡은 석훈과 효린. 사랑과 걱정, 불의가 얽힌 복잡한 싸움 속에서 점차 신뢰를 얻어간다.</p>
+                </div>
+              </div>
+
+              <!-- episode 3 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">3</span>
+                  <iframe src="https://www.youtube.com/embed/1ANFyygF9gE?enablejsapi=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                  </iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>나비고치 <span class="duration">(68분)</span></h3>
+                  <p>석훈과 효민은 어린아이가 관련된 복잡한 비접촉 교통사고 사건을 맡아 단서를 추적한다. 그 와중에 석훈은 울림의 설립자에게서 파격적이 제안을 받는다.</p>
+                </div>
+              </div>
+
+              <!-- episode 4 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">4</span>
+                  <iframe src="https://www.youtube.com/embed/JG8HathE1Dg?enablejsapi=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                  </iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>렉스 탈리오니스(lex talionis)<span class="duration">(68분)</span></h3>
+                  <p>아동 학대 혐의를 받는 기업 대표를 변호하던 중, 도덕적 신념을 두고 충돌하는 효민과 석훈.얼마후 석훈이 갑자기 사라지자,효민은 걱정에 흽싸인다.</p>
+                </div>
+              </div>
+
+              <!-- episode 5 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">5</span>
+                  <iframe src="https://www.youtube.com/embed/aSNKjHPsEWA?enablejsapi=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                  </iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>사랑도 심신미약<span class="duration">(68분)</span></h3>
+                  <p>그림 저작권과 관련된 첫 단독 사건을 맡은 효민. 석훈의 멘토링을 받으며 변론을 준비하지만,재판 도중 뜻밖의 사실이 밝혀지면서 자신감이 흔들린다.</p>
+                </div>
+              </div>
+
+              <!-- episode 6 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">6</span>
+                  <iframe src="https://www.youtube.com/embed/Ocb6d4lHix8?enablejsapi=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                  </iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>나비고치 <span class="duration">(73분)</span></h3>
+                  <p>석훈과 효민은 전 남자 친구를 고소하려는 의뢰인의 동의 여부를 둘러싼 까다로운 사견을 진행한다. 한편,율림 내에서는 권나연의 갑작스러운 취임이 큰 파장을 일으킨다.</p>
+                </div>
+              </div>
+
+              <!-- episode 7 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">7</span>
+                  <iframe src="https://www.youtube.com/embed/yOE_kXx4WHQ?enablejsapi=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                  </iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>무지갯빛 사랑 <span class="duration">(69분)</span></h3>
+                  <p>한 남자가 아내의 조력 자살을 도운 혐의로 체포되자, 석훈이 그 사건을 맡는다.율림에 새로 도입된 성과 보수제도는 내부에서 큰 반발을 불러온다. </p>
+                </div>
+              </div>
+
+              <!-- episode 8 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">8</span>
+                  <iframe src="https://www.youtube.com/embed/yOE_kXx4WHQ?enablejsapi=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                  </iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>8화 <span class="duration"></span></h3>
+                  <p>8월25일 공개 </p>
+                </div>
+              </div>
+
+              <!-- episode 9 -->
+              <div class="episode">
+              <div class="episode-left">
+                <span class="episode-number">9</span>
+                <iframe src="https://www.youtube.com/embed/poMCTp7zmao?enablejsapi=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                </iframe>
+              </div>
+              <div class="episode-right">
+                <h3>9화 <span class="duration"></span></h3>
+                <p>8월31일 공개 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+
+        <!-- ✅ 애마 회차 목록 템플릿 -->
+        <template id="episodes-aema">
+          <div class="episode-scroll">
+            <h2 class="episode-title">회차</h2>
+
+            <div class="episode-list">
+
+              <!-- episode 1 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">1</span>
+                  <iframe src="https://www.youtube.com/embed/y0d0J1W_0O4?enablejsapi=1&rel=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>1화<span class="duration">(47분)</span></h3>
+                  <p>선정적인 대본에 거부감을 느껴 애마부인 주연 자리를 거절한 톱스타 정희란.이에 앙심을 품은 제작자는 희란의 이미지에 타격을 주고자 신인 배우에게 그 역할을 넘기려한다.</p>
+                </div>
+              </div>
+
+              <!-- episode 2 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">2</span>
+                  <iframe src="https://www.youtube.com/embed/y0d0J1W_0O4?enablejsapi=1&rel=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>2화<span class="duration">(53분)</span></h3>
+                  <p>촬영을 시작하기도 전에 온갖 난관이 몰아친다. 점점 깊어지는 희라와 신주애의 갈등. 엄격한 검열 때문에 대본까지 수정할 수밖에 없다.</p>
+                </div>
+              </div>
+
+              <!-- episode 3 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">3</span>
+                  <iframe src="https://www.youtube.com/embed/y0d0J1W_0O4?enablejsapi=1&rel=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>3화<span class="duration">(60분)</span></h3>
+                  <p>설임은 연기력으로 촬영 현장에 나선 주애에게 고난이 이어진다. 힘겨운 상황에서도 자신의 능력을 증명하고자 분투하는 나날. 그런 와중에 주어지는 어느 화려한 저택으로 보내진다.</p>
+                </div>
+              </div>
+
+              <!-- episode 4 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">4</span>
+                  <iframe src="https://www.youtube.com/embed/y0d0J1W_0O4?enablejsapi=1&rel=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>4화<span class="duration">(53분)</span></h3>
+                  <p>영화계의 그늘진 이면을 마주한 주애.충격에 흽싸인채로 배우로서 운명이 걸린 선택의 기로에 선다.이대로 안전한 길을 택해야 할까, 아니면 희란의 충고를 따라 끝까지 맞서야 할까.
+                  </p>
+                </div>
+              </div>
+
+              <!-- episode 5 -->
+              <div class="episode">
+                <div class="episode-left">
+                  <span class="episode-number">5</span>
+                  <iframe src="https://www.youtube.com/embed/y0d0J1W_0O4?enablejsapi=1&rel=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="episode-right">
+                  <h3>5화<span class="duration">(64분)</span></h3>
+                  <p>한밤중에 구중호의 금고를 뒤지던 희란은 뜻밖에 비밀 장부를 발견한다.얼마 뒤,곽 감독은 촬영이 끝난 영화의 필름 전부가 사라졌다는 소식을 접하고 당황한다.</p>
+                </div>
+              </div>
+            </template>
+
+            <!-- ✅ 웬즈데이 회차 목록 템플릿 --> 
+            <template id="episodes-wednesday">
+              <div class="episode-scroll">
+                <h2 class="episode-title">회차</h2>
+
+                <div class="episode-list">
+
+                  <!-- episode 1 -->
+                  <div class="episode">
+                    <div class="episode-left">
+                      <span class="episode-number">1</span>
+                      <iframe src="https://www.youtube.com/embed/ic2063VIGDE?enablejsapi=1&rel=0"
+                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="episode-right">
+                      <h3>새로운 시작은 울적하게<span class="duration">(60분)</span></h3>
+                      <p>알찬 여름 방학을 보내고 돌아온 웬즈데이. 의도치 않게 네버모어의 셀럽이 된 것도 모자라, 위험한 스토커의 표적이 된다.</p>
+                    </div>
+                  </div>
+
+                  <!-- episode 2 -->
+                  <div class="episode">
+                    <div class="episode-left">
+                      <span class="episode-number">2</span>
+                      <iframe src="https://www.youtube.com/embed/ic2063VIGDE?enablejsapi=1&rel=0"
+                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="episode-right">
+                      <h3>내가 아는 악마<span class="duration">(61분)</span></h3>
+                      <p>네버모어의 열띤 장난의 날, 캠퍼스는 그야말로 아수라장이 된다. 웬즈데이는 오랜 적과 마주하고, 원치 않는 동맹을 얻게 된다.</p>
+                    </div>
+                  </div>
+
+                  <!-- episode 3 -->
+                  <div class="episode">
+                    <div class="episode-left">
+                      <span class="episode-number">3</span>
+                      <iframe src="https://www.youtube.com/embed/ic2063VIGDE?enablejsapi=1&rel=0"
+                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="episode-right">
+                      <h3>고통의 부름<span class="duration">(59분)</span></h3>
+                      <p>늘 독립 일꾼, 구디의 책까지 빼앗긴 웬즈데이. 학교 캠핑 여행 중, 결국 발로 뛰며 사건을 추적하기 시작한다.</p>
+                    </div>
+                  </div>
+
+                  <!-- episode 4 -->
+                  <div class="episode">
+                    <div class="episode-left">
+                      <span class="episode-number">4</span>
+                      <iframe src="https://www.youtube.com/embed/ic2063VIGDE?enablejsapi=1&rel=0"
+                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="episode-right">
+                      <h3>고통이 스스로 말할 수 있다면<span class="duration">(60분)</span></h3>
+                      <p>아담스 가족의 과거 수사가 시작됐다. 웬즈데이의 사건을 위해 손발을 걷어붙인 페스터와 씽. 비밀을 감추려던 바잉가는 또 다른 비밀을 마주한다.</p>
+                    </div>
+                  </div>
+
+                  <!-- episode 5 -->
+                  <div class="episode">
+                    <div class="episode-left">
+                      <span class="episode-number">5</span>
+                      <iframe src="https://www.youtube.com/embed/ic2063VIGDE?enablejsapi=1&rel=0"
+                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="episode-right">
+                      <h3>괴물과의 숨박꼭질<span class="duration">(51분)</span></h3>
+                      <p>타일러가 자유롭게 활보 중인 상황에서, 웬즈데이는 위험천만한'디아 데 로스 무에르토스'결투를 준비한다.
+                        퍽슬리는 슬러프의 점점 커지는 식욕 때문에 곤란해진다.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- episode 6 -->
+                  <div class="episode">
+                    <div class="episode-left">
+                      <span class="episode-number">6</span>
+                      <iframe src="https://www.youtube.com/embed/ic2063VIGDE?enablejsapi=1&rel=0"
+                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="episode-right">
+                      <h3>너 자신을 괴롭게 하라<span class="duration">(69분)</span></h3>
+                      <p>네버모어의 과거 망령과 맞닥뜨린 웬즈데이와 이니드.이 사건으로 두 사람은 서로를 바라보는 관점이 바뀌고,
+                        학교 친구 한 명은 그만 위험에 빠진다.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- episode 7 -->
+                  <div class="episode">
+                    <div class="episode-left">
+                      <span class="episode-number">7</span>
+                      <iframe src="https://www.youtube.com/embed/ic2063VIGDE?enablejsapi=1&rel=0"
+                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="episode-right">
+                      <h3>한 푼의 대가<span class="duration">(55분)</span></h3>
+                      <p>다가오는 학교 갈라를 앞두고 도트의 약점을 파혜치는 웬즈데이.이니드는 늑대로 변신하지 않으려 애쓰고,
+                        모티시아는 유산 문제로 할머니와 부딪힌다.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- episode 8 -->
+                    <div class="episode">
+                    <div class="episode-left">
+                      <span class="episode-number">8</span>
+                      <iframe src="https://www.youtube.com/embed/ic2063VIGDE?enablejsapi=1&rel=0"
+                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="episode-right">
+                      <h3>파국을 보여줄게<span class="duration">(48분)</span></h3>
+                      <p>묻혀 있던 가문의 비밀이 드러난 순간.이제 웬즈데이는 어둠의 예언이 실현되는 것을 막기 위해 
+                        사견과 사투를 벌여야 한다.
+                      </p>
+                    </div>
+                  </div>
+                </template>
+
+                <!-- ✅ 귀멸의 칼날 회차 목록 템플릿 --> 
+                  <template id="episodes-demon-slayer">
+                  <div class="episode-scroll">
+                    <h2 class="episode-title">회차</h2>
+
+                    <div class="episode-list">
+
+                      <!-- episode 1 -->
+                      <div class="episode">
+                        <div class="episode-left">
+                          <span class="episode-number">1</span>
+                          <iframe src="https://www.youtube.com/embed/RJayggM6ZKU?enablejsapi=1&rel=0"
+                          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="episode-right">
+                          <h3>키부츠지 무잔을 쓰러뜨리기 위해서<span class="duration">(48분)</span></h3>
+                          <p>탄지로가 치료를 받는 사이, 우부야시키 저택에서 주합 회의가 열린다. 그리고 주들은 귀살대 전체를 강화하기 위한 훈련 계획을 세운다.</p>
+                        </div>
+                      </div>
+
+                      <!-- episode 2 -->
+                        <div class="episode">
+                        <div class="episode-left">
+                          <span class="episode-number">2</span>
+                          <iframe src="https://www.youtube.com/embed/RJayggM6ZKU?enablejsapi=1&rel=0"
+                          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="episode-right">
+                          <h3>수주 토미오카 기유의 아픔<span class="duration">(23분)</span></h3>
+                          <p>기유를 찾아온 탄지로가 자신을 훈련시켜 달라고 끈질기게 조른다. 결국 인내심이 한계에 달한 기유는 탄지로의 부탁을 왜 거절하는지 말해 준다.</p>
+                        </div>
+                      </div>
+
+                      <!-- episode 3 -->
+                      <div class="episode">
+                        <div class="episode-left">
+                          <span class="episode-number">3</span>
+                          <iframe src="https://www.youtube.com/embed/RJayggM6ZKU?enablejsapi=1&rel=0"
+                          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="episode-right">
+                          <h3>탄지로 완괘!!주 훈련 대참가<span class="duration">(23분)</span></h3>
+                          <p>부상에서 회복한 탄지로는 첫 번째 단계에 뛰어든다.그 곳에서 만난 반가운 얼굴은 주에서 은퇴한 우즈이.
+                            탄지로는 가혹한 훈련을 기꺼이 견디며 의지를 불태운다.
+                          </p>
+                        </div>
+                      </div>
+
+                      <!-- episode 4 -->
+                      <div class="episode">
+                        <div class="episode-left">
+                          <span class="episode-number">4</span>
+                          <iframe src="https://www.youtube.com/embed/RJayggM6ZKU?enablejsapi=1&rel=0"
+                          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="episode-right">
+                          <h3>수웃는 얼굴이 될 수 있어<span class="duration">(23분)</span></h3>
+                          <p>탄지로는 무이치로를 만나 다음 단계의 훈련을 시작한다. 무이치로의 엄격한 훈련과 냉혹한 말투에 기가 죽어버리는 동료 대원들. 뭔가 방법이 없을까, 탄지로는 고민에 빠진다.</p>
+                        </div>
+                      </div>
+
+                      <!-- episode 5 -->
+                      <div class="episode">
+                        <div class="episode-left">
+                          <span class="episode-number">5</span>
+                          <iframe src="https://www.youtube.com/embed/RJayggM6ZKU?enablejsapi=1&rel=0"
+                          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="episode-right">
+                          <h3>혈귀를 먹으면서까지<span class="duration">(23분)</span></h3>
+                          <p>미츠리를 만나 몸을 유연하게 만드는 훈련을 받은 탄지로. 다음 단계를 함께할 사람은 살벌하기 그지없는 이구로다. 이 혹독한 훈련을 마치면, 보다 정확하고 날카롭게 검을 쓸 수 있을까?</p>
+                        </div>
+                      </div>
+
+                      <!-- episode 6 -->
+                      <div class="episode">
+                        <div class="episode-left">
+                          <span class="episode-number">6</span>
+                          <iframe src="https://www.youtube.com/embed/RJayggM6ZKU?enablejsapi=1&rel=0"
+                          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="episode-right">
+                          <h3>귀살대 최강<span class="duration">(23분)</span></h3>
+                          <p>젠이츠와 함께 히메지마의 훈련장으로 향한 탄지로. 깊은 산속에 있는 그곳에서 탄지로는 이노스케와 무라타를 다시 만난다.하지만 반가움도 잠시, 힘과 인내를 시험하는 극한의 훈련이 시작된다.</p>
+                        </div>
+                      </div>
+
+                      <!-- episode 7 -->
+                      <div class="episode">
+                        <div class="episode-left">
+                          <span class="episode-number">7</span>
+                          <iframe src="https://www.youtube.com/embed/RJayggM6ZKU?enablejsapi=1&rel=0"
+                          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="episode-right">
+                          <h3>암주 · 히메지마 교메이<span class="duration">(31분)</span></h3>
+                          <p>겐야의 조언을 얻은 탄지로는 가까스로 바위를 움직인다. 지쳐 쓰러진 탄지로 앞에 나타난 히메지마.탄지로의 흔신 마음에 감명받은 그는 사찰에서 고아들을 키우던 시절의 이야기를 털어놓는다.</p>
+                        </div>
+                      </div>
+
+                      <!-- episode 8 -->
+                      <div class="episode">
+                        <div class="episode-left">
+                          <span class="episode-number">8</span>
+                          <iframe src="https://www.youtube.com/embed/RJayggM6ZKU?enablejsapi=1&rel=0"
+                          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="episode-right">
+                          <h3>주 · 결집<span class="duration">(40분)</span></h3>
+                          <p>깊고 고요한 밤, 마침내 키부츠지 무잔과 카가야 우부야시키 저택에서 대면한다.습격 경고를 받고 달려가는 탄지로와 주들. 그들은 너무 늦기 전에 저택에 도착할 수 있을까?</p>
+                        </div>
+                      </div>
+                    </template>
+
+                    <!-- ✅ 한탕프로젝트 마이턴 목록 템플릿 --> 
+                    <template id="episodes-myturn">
+                      <div class="episode-scroll">
+                        <h2 class="episode-title">회차</h2>
+
+                        <div class="episode-list">
+
+                          <!-- episode 1 -->
+                          <div class="episode">
+                            <div class="episode-left">
+                              <span class="episode-number">1</span>
+                              <iframe src="https://www.youtube.com/embed/S2B2dVXs8Lw?enablejsapi=1&rel=0"
+                              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                            <div class="episode-right">
+                              <h3>2025-08-07 정규 PICK ‘트롯돌’ 결성!<span class="duration">(71분)</span></h3>
+                              <p>연예 대상을 받고 싶다면, 탁재훈과 트로트를 하라?! 점괘를 받은 이경규는 욕망이 끓는다. 대상이란 한탕을 위해 멤버들을 끌어모으는데, 하지만 이 멤버들, 제다 제정신이 아니다.</p>
+                            </div>
+                          </div>
+
+                          <!-- episode 2 -->
+                          <div class="episode">
+                            <div class="episode-left">
+                              <span class="episode-number">2</span>
+                              <iframe src="https://www.youtube.com/embed/3_4mxsLinTM?enablejsapi=1&rel=0"
+                              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                            <div class="episode-right">
+                              <h3>2025-08-14 ‘비장의 히든 카드’ 이수지X김원훈 등장<span class="duration">(71분)</span></h3>
+                              <p>대상에 목마른 ‘예능 대부’ 이경규. 성공을 위해서라면 뒤도지 않는다? 한편, 비장의 히든카드로 영입된 이수지와 김원훈. 그런데 정규가 PTSD를 호소한 사연은 뭘까.</p>
+                            </div>
+                          </div>
+                        </template>
+
+                        <!-- ✅ 섬총각영웅 목록 템플릿 -->
+                        <template id="episodes-island-hero">
+                          <div class="episode-scroll">
+                            <h2 class="episode-title">회차</h2>
+
+                            <div class="episode-list">
+
+                              <!-- episode 1 -->
+                              <div class="episode">
+                                <div class="episode-left">
+                                  <span class="episode-number">1</span>
+                                  <iframe src="https://www.youtube.com/embed/Z5VfvVcNAlI?enablejsapi=1&rel=0"
+                                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                </div>
+                                <div class="episode-right">
+                                  <h3>2025-08-26 우리 섬에 히어로가 산다!<span class="duration">(87분)</span></h3>
+                                  <p>임영웅과 궤도, 철가방 요리사 임태훈이 힐링을 꿈꾸며 작은 섬마을에 도착한다.그런데 식당은 고사하고 구멍가게 하나 없는 섬! 밥은 먹고 살아야 하니 통발도 던지고, 탈일도 하고.날마다 바쁘겠는걸?</p>
+                                </div>
+                              </div>
+
+                              <!-- episode 2 -->
+                              <div class="episode">
+                                <div class="episode-left">
+                                  <span class="episode-number">2</span>
+                                  <iframe src="https://www.youtube.com/embed/HAD4WG0ihDQ?enablejsapi=1&rel=0"
+                                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                </div>
+                                <div class="episode-right">
+                                  <h3>2025-09-02 ‘섬’타는 사이<span class="duration">(86분)</span></h3>
+                                  <p>이대로 쫄쫄 굶을 수는 없다! 난생처음 낚시에 도전하는 영웅과 물 만난 친구들.호기롭게 낚싯대를 던져보지만 어째 불안해 보이는걸?그리고 한밥중에 모여 앉은 네 남자가 진한 속마음을 나눈다.</p>
+                                </div>
+                              </div>
+
+                              <!-- episode 3 -->
+                              <div class="episode">
+                                <h3>3화 <span class="duration">공개 예정</span></h3>
+                                <p><strong>제목:</strong> 2025-09-09 공개</p>
+                                <p>다음 회차는 9월 9일 공개 예정입니다. 새로운 이야기를 기대해 주세요!</p>
+                              </div>
+                            </div>
+                          </template>
+
+                          <!-- ✅ 트리거 목록 템플릿 --> 
+                          <template id="episodes-trigger">
+                            <div class="episode-scroll">
+                              <h2 class="episode-title">회차</h2>
+
+                              <div class="episode-list">
+
+                                <!-- episode 1 -->
+                                <div class="episode">
+                                  <div class="episode-left">
+                                    <span class="episode-number">1</span>
+                                    <iframe src="https://www.youtube.com/embed/QOk-7wazEX4?enablejsapi=1&rel=0"
+                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                  </div>
+                                  <div class="episode-right">
+                                    <h3>1화<span class="duration">(50분)</span></h3>
+                                    <p>충격적인 총격 사건이 대한민국의 평화로운 일상을 뒤흔든다.폭력 사태를 멈추고자 분투하는 경찰 이도.하지만 불법 총기의 위협은 이제 시작일 뿐이다.</p>
+                                  </div>
+                                </div>
+
+                                <!-- episode 2 -->
+                                <div class="episode">
+                                  <div class="episode-left">
+                                    <span class="episode-number">2</span>
+                                    <iframe src="https://www.youtube.com/embed/QOk-7wazEX4?enablejsapi=1&rel=0"
+                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                  </div>
+                                  <div class="episode-right">
+                                    <h3>2화<span class="duration">(61분)</span></h3>
+                                    <p>연이어 벌어지는 총격 사건. 이도는 평범한 이들의 손에 총기가 있다는 사실을 알게 된다.그와 안면 있는 사람까지 사건에 얽히면서, 수사는 더욱 첩첩해진다.</p>
+                                  </div>
+                                </div>
+                              </template>
+
+                              <!-- ✅ 트라이 목록 템플릿 -->
+                              <template id="episodes-try">
+                                <div class="episode-scroll">
+                                  <h2 class="episode-title">회차</h2>
+
+                                  <div class="episode-list">
+
+                                    <!-- episode 1 -->
+                                    <div class="episode">
+                                      <div class="episode-left">
+                                        <span class="episode-number">1</span>
+                                        <iframe src="https://www.youtube.com/embed/EC4kYuju3Pc?enablejsapi=1&rel=0"
+                                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                      </div>
+                                      <div class="episode-right">
+                                        <h3>1화<span class="duration">(67분)</span></h3>
+                                        <p>도핑 스캔들 이후 자처를 감췄던 주가람이 부진에 빠진 럭비팀을 이끌기 위해 모교로 돌아온다.그러나 그를 맞이하는 건 동료 교사들과 선수들, 그리고 옛 연인의 적대적 반응이다.</p>
+                                      </div>
+                                    </div>
+
+                                    <!-- episode 2 -->
+                                    <div class="episode">
+                                      <div class="episode-left">
+                                        <span class="episode-number">2</span>
+                                        <iframe src="https://www.youtube.com/embed/EC4kYuju3Pc?enablejsapi=1&rel=0"
+                                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                      </div>
+                                      <div class="episode-right">
+                                        <h3>2화<span class="duration">(62분)</span></h3>
+                                        <p>교직원들과의 충돌로 해임 위기에 놓인 가람. 곧이어 가람에 대한 반발로 윤성준이 팀을 떠나는데,경기를 코앞에 둔 시점이다.</p>
+                                      </div>
+                                    </div>
+                                  </template>
+
+                                    <!-- ✅ 나는 생존자다 목록 템플릿 -->
+                                    <template id="episodes-survivor">
+                                      <div class="episode-scroll">
+                                        <h2 class="episode-title">회차</h2>
+
+                                        <div class="episode-list">
+
+                                          <!-- episode 1 -->
+                                          <div class="episode">
+                                            <div class="episode-left">
+                                              <span class="episode-number">1</span>
+                                              <iframe src="https://www.youtube.com/embed/RvrUpDA3tJQ?enablejsapi=1&rel=0"
+                                              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                            </div>
+                                            <div class="episode-right">
+                                              <h3>형제복지원 사라진 아이들의 비밀<span class="duration">(56분)</span></h3>
+                                              <p>부랑자 교화 시설이라는 명목 아래 수없이 자행되었던 폭행과 성폭력, 강제 노동.형제복지원의 생존자들이 어린 시절 겪었던 참상을 고백한다.</p>
+                                            </div>
+                                          </div>
+
+                                          <!-- episode 2 -->
+                                          <div class="episode">
+                                            <div class="episode-left">
+                                              <span class="episode-number">2</span>
+                                              <iframe src="https://www.youtube.com/embed/RvrUpDA3tJQ?enablejsapi=1&rel=0"
+                                              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                            </div>
+                                            <div class="episode-right">
+                                              <h3>형제복지원 거기서 나는 한 마리 돼지였다<span class="duration">(56분)</span></h3>
+                                              <p>형제복지원이 문을 닫은 후에도 생존자들은 계속해서 고통에 시달려야 했다.아직 정의를 되찾지 못했기에, 피해자들을 대변하고 진실을 파헤쳐야 했다.</p>
+                                            </div>
+                                          </div>
+                                        </template>
+
+<!-- ✅ modal -->
+<div id="image-modal" class="modal">
+  <div class="modal-content wide">
+    <span class="close">&times;</span>
+
+    <img id="modal-img" src="#" alt="모달 이미지">
+    <h2 id="modal-title">제목</h2>
+    <p id="modal-description">설명</p>
+
+    <ul class="meta-info">
+      <li><strong>출연:</strong> <span id="modal-cast"></span></li>
+      <li><strong>장르:</strong> <span id="modal-genre"></span></li>
+      <li><strong>시리즈특징:</strong> <span id="modal-feature"></span></li>
+    </ul>
+
+    <div id="modal-episodes-container"></div>
+  </div>
+</div>
+
+<!-- ✅ footer -->
+<footer class="footer">
+
+    <!-- footer menu -->
+    <nav class="footer-menu">
+      <ul>
+        <li><a href="help-center.html">고객센터</a></li>
+        <li><a href="gift-cards.html">기프트카드</a></li>
+        <li><a href="https://ir.netflix.net" target="_blank" rel="noopener noreferrer">투자 정보(IR)</a></li>
+        <li><a href="terms.html">이용약관</a></li>
+        <li><a href="privacy-policy.html">개인정보 처리방침</a></li>
+        <li><a href="legal-notices.html">법적고지</a></li>
+        <li><a href="company-info.html">회사 정보</a></li>
+        <li><a href="contact.html">문의하기</a></li>
+      </ul>
+    </nav>
+
+    <!-- footer middle -->
+    <div class="footer-middle">
+      <div class="footer-icon">
+        <img src="images/icon.png" alt="넷플릭스 아이콘">
+        <p>© Netflix Clone</p>
+      </div>
+
+      <div class="footer-info">
+        <p>넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)</p>
+        <p>대표: 레지널드 숀 톰프슨</p>
+        <p>이메일 주소: korea@netflix.com</p>
+        <p>주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층 우편번호 03161</p>
+        <p>사업자등록번호: 165-87-00119</p>
+        <p>클라우드 호스팅: Amazon Web Services Inc.</p>
+        <p>공정거래위원회 웹사이트</p>
+      </div>
+    </div>
+
+
+    <!-- footer bottom -->
+    <div class="footer-bottom">
+
+      <!-- SNS -->
+      <div class="footer-sns">
+        <a href="https://www.instagram.com/netflixkr/" target="_blank"><img src="images/footer-instagram.png" alt="인스타그램"></a>
+        <a href="https://www.youtube.com/@NetflixKorea" target="_blank"><img src="images/footer-YouTube.png" alt="유튜브"></a>
+        <a href="https://www.facebook.com/NetflixKR/?locale=ko_KR" target="_blank"><img src="images/footer-facebook.png" alt="페이스북"></a>
+        <a href="https://x.com/netflixkr" target="_blank"><img src="images/footer-twitter.png" alt="트위터"></a>
+      </div>
+
+      <!-- utils (language + search) -->
+      <div class="footer-utils">
+
+        <!-- language display -->
+        <div class="footer-language">
+          <span class="footer-language-icon">🌐</span>
+          <span class="footer-language-code">KR</span>
+          <span class="footer-language__sep">·</span>
+          <span class="footer-language-code">EN</span>
+        </div>
+
+        <!-- search -->
+        <div class="footer-search">
+          <input type="text" placeholder="위치찾기" />
+          <button aria-label="search">🔍</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/index.js"></script>
+<script src="js/modal.js"></script>
+</body>
+</html>

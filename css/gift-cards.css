@@ -1,0 +1,256 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "맑은 고딕", "Noto Sans KR", sans-serif;
+        background: url(../images/gift-cards-background.jpg) no-repeat center/cover;
+        background-color: #fafafa;
+        color: #333;
+    }
+
+    /* 배경이미지 어두운 오버레이 효과 */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+    }
+
+    /* =========================
+    헤더
+    ========================= */
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        height: 64px;
+        padding: 0 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(88, 53, 102, 0.55);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid rgba(200, 180, 200, 0.35);
+    }
+
+    .logo img {
+        height: 28px;
+    }
+
+    /* 오른쪽 영역 */
+    .right {
+        display: flex;
+        align-items: center;
+    }
+
+    /* 로그아웃 버튼 */
+    .logout-btn {
+        display: inline-block;
+        padding: 8px 18px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        background-color: #e50914;
+        border-radius: 20px;
+        text-decoration: none;
+        transition:
+            background-color 0.3s ease,
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+    .logout-btn:hover {
+        background-color: #ff3344;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(229, 9, 20, 0.35);
+    }
+
+    .logout-btn:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    /* =========================
+    메인 영역
+    ========================= */
+    main.gift {
+        min-height: calc(100vh - 64px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+    }
+
+    .gift-content {
+        width: 100%;
+        max-width: 420px;
+        background: #fff;
+        border-radius: 16px;
+        padding: 40px 32px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        text-align: center;
+    }
+
+    /* 제목 */
+    .gift-content h1 {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    /* 설명 */
+    .gift-content .desc {
+        font-size: 15px;
+        color: #666;
+        margin-bottom: 28px;
+    }
+
+    /* 입력창 */
+    .gift-content input {
+        width: 100%;
+        padding: 14px 16px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        font-size: 15px;
+        margin-bottom: 20px;
+        transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .gift-content input:focus {
+        outline: none;
+        border-color: #e50914;
+        box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.15);
+    }
+
+    /* 사용하기 버튼 */
+    .use-btn {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+        background-color: #e50914;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition:
+            background-color 0.3s ease,
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+    .use-btn:hover {
+        background-color: #ff3344;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(229, 9, 20, 0.3);
+    }
+
+    .use-btn:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    /* 도움말 텍스트 */
+    .gift-content .help {
+        margin-top: 20px;
+        font-size: 13px;
+        color: #888;
+    }
+
+    /* =========================
+    접근성 (스크린 리더)
+    ========================= */
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    /* Footer 영역 */
+    .footer {
+        border-top: 1px solid #ddd;
+        background-color: #fafafa;
+        color: #555;
+        padding: 50px 0;
+        margin-top: 60px;
+    }
+
+    .footer-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .footer-question {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .footer-question a {
+        color: #0071eb;
+        text-decoration: none;
+    }
+
+    .footer-question a:hover {
+        text-decoration: underline;
+    }
+
+    /* 링크 목록 */
+    .footer-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        list-style: none;
+        gap: 12px 20px;
+        margin-bottom: 40px;
+    }
+
+    .footer-links a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+    }
+
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+
+    /* 회사 정보 */
+    .footer-info {
+        font-size: 12px;
+        line-height: 1.6;
+        color: #777;
+    }
+
+    .footer-info p+p {
+        margin-top: 4px;
+    }
+
+    /* =========================
+    모바일 대응
+    ========================= */
+    @media (max-width: 480px) {
+        header {
+            padding: 0 20px;
+        }
+
+        .gift-content {
+            padding: 32px 24px;
+        }
+
+        .logout-btn {
+            padding: 6px 14px;
+            font-size: 13px;
+        }
+    }

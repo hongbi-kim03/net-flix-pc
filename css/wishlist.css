@@ -1,0 +1,104 @@
+    body {
+        font-family: "맑은 고딕", "나눔고딕";
+        background: linear-gradient(135deg, #2b0f3e, #000000);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+    } 
+    /* 헤더 */
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center;
+    } 
+    .slider-title {
+        text-align: center;
+        margin: 150px 0 60px;
+        font-size: 28px;
+        text-shadow: 0 0 10px #f9d71c;
+    }   
+
+    .wishlist-count {
+        font-size: 1rem;
+        color: #f9d71c;
+        margin-bottom: 25px;
+        text-shadow: 0 0 8px #f9d71c;
+        text-align: center;
+    }
+
+    /* 카드 컨테이너 */
+    .wishlist-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    /* 카드 스타일 */
+    .wishlist-item {
+        background: #121212;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
+    }
+    .wishlist-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.7);
+    }
+
+    /* 카드 이미지 */
+    .wishlist-item img {
+        width: 100%;
+        object-fit: contain;
+        display: block;
+    }
+
+    /* 카드 텍스트 */
+    .wishlist-item h3 {
+        font-size: 1.1rem;
+        margin: 10px 15px 5px;
+    }
+    .wishlist-item p {
+        font-size: 0.9rem;
+        color: #aaa;
+        margin: 0 15px 15px;
+        line-height: 1.3;
+    }
+
+    /* 찜 취소 버튼 */
+    .remove-btn {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: rgba(255,0,0,0.85);
+        border: none;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+    }
+    .remove-btn:hover {
+        background: #ff3333;
+        transform: scale(1.1);
+    }
+
+    /* 안내 문구 */
+    .empty-message {
+        font-size: 1.2rem;
+        color: #bbb;
+        text-align: center;
+        margin-top: 50px;
+    }

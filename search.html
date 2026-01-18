@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>검색</title>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/search.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <header class="header">
+    <a  href="index.html" class="logo">
+      <img src="images/logo.png" alt="넷플릭스 로고">
+    </a>
+
+    <!--  hamburger (mobile) -->
+    <button class="hamburger" aria-label="메뉴열기">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- ✅ mobile gnb  -->
+      <nav class="gnb mobile">
+        <ul>
+          <li><a href="home.html">홈</a></li>
+          <li><a href="movies.html">영화</a></li>
+          <li><a href="new.html">NEW</a></li>
+          <li><a href="series.html">시리즈</a></li>
+          <li><a href="wishlist.html">내가찜한리스트</a></li>
+          <li><a href="language.html">언어</a></li>
+          <li><a href="login.html">로그인/회원가입</a></li>
+        </ul>
+      </nav>
+
+      <!-- desktop gnb -->
+      <nav class="gnb">
+        <ul>
+          <li><a href="home.html">홈</a></li>
+          <li><a href="movies.html">영화</a></li>
+          <li><a href="new.html">NEW</a></li>
+          <li><a href="series.html">시리즈</a></li>
+          <li><a href="wishlist.html">내가찜한리스트</a></li>
+          <li><a href="language.html">언어</a></li>
+          <li><a href="login.html">로그인/회원가입</a></li>
+        </ul>
+      </nav>
+
+      <!-- desktop gnb -->
+      <div class="nav-right">
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="제목,사람,장르">
+          <span class="search-icon">🔍</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- main -->
+
+    <main>
+
+    <h2 class="slider-title">인기 검색어 TOP 10</h2>
+
+    <!-- category -->
+    <div class="category-wrapper">
+      <div class="category-box active" data-category="all"><span>전체</span></div>
+      <div class="category-box" data-category="reality"><span>리얼리티</span></div>
+      <div class="category-box" data-category="kcontent"><span>K-콘텐츠</span></div>
+      <div class="category-box" data-category="romance"><span>로맨스</span></div>
+      <div class="category-box" data-category="comedy"><span>코미디</span></div>
+      <div class="category-box" data-category="action"><span>액션</span></div>
+
+      <div class="category-box" data-category="SF"><span>sf</span></div>
+      <div class="category-box" data-category="horror"><span>공포</span></div>
+      <div class="category-box" data-category="animation"><span>애니메이션</span></div>
+      <div class="category-box" data-category="global"><span>해외 인기작</span></div>
+    </div>
+
+    <!-- popular search -->
+    <div class="popular-wrapper">
+
+      <!-- background -->
+      <div class="background-container"></div>
+
+      <!-- list -->
+      <div class="popular-container">
+        <ul class="popular-list left" id="popular-left">
+          <li>검색어 1</li>
+          <li>검색어 2</li>
+          <li>검색어 3</li>
+          <li>검색어 4</li>
+          <li>검색어 5</li>
+        </ul>
+
+        <ul class="popular-list right" id="popular-right">
+          <li>검색어 6</li>
+          <li>검색어 7</li>
+          <li>검색어 8</li>
+          <li>검색어 9</li>
+          <li>검색어 10</li>
+        </ul>
+      </div>  
+    </div>
+</main>
+
+<!--✅footer -->
+<footer class="footer">
+
+  <!-- footer menu -->
+  <nav class="footer-menu">
+      <ul>
+          <li><a href="help-center.html">고객센터</a></li>
+          <li><a href="gift-cards.html">기프트카드</a></li>
+          <li><a href="https://ir.netflix.net" target="_blank" rel="noopener noreferrer">투자 정보(IR)</a></li>
+          <li><a href="terms.html">이용약관</a></li>
+          <li><a href="privacy-policy.html">개인정보 처리방침</a></li>
+          <li><a href="legal-notices.html">법적고지</a></li>
+          <li><a href="company-info.html">회사 정보</a></li>
+          <li><a href="contact.html">문의하기</a></li>
+      </ul>
+  </nav>
+
+  <!-- footer middle -->
+  <div class="footer-middle">
+    <div class="footer-icon">
+      <img src="images/icon.png" alt="넷플릭스 아이콘">
+      <p>© Netflix Clone</p>
+    </div>
+
+    <div class="footer-info">
+      <p>넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)</p>
+      <p>대표: 레지널드 숀 톰프슨</p>
+      <p>이메일 주소: korea@netflix.com</p>
+      <p>주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층 우편번호 03161</p>
+      <p>사업자등록번호: 165-87-00119</p>
+      <p>클라우드 호스팅: Amazon Web Services Inc.</p>
+      <p>공정거래위원회 웹사이트</p>
+    </div>
+  </div>
+
+  <!-- footer bottom -->
+  <div class="footer-bottom">
+
+  <!-- SNS -->
+  <div class="footer-sns">
+    <a href="https://www.instagram.com/netflixkr/" target="_blank"><img src="images/footer-instagram.png" alt="인스타그램"></a>
+    <a href="https://www.youtube.com/@NetflixKorea" target="_blank"><img src="images/footer-YouTube.png" alt="유튜브"></a>
+    <a href="https://www.facebook.com/NetflixKR/?locale=ko_KR" target="_blank"><img src="images/footer-facebook.png" alt="페이스북"></a>
+    <a href="https://x.com/netflixkr" target="_blank"><img src="images/footer-twitter.png" alt="트위터"></a>
+  </div>
+
+    <!-- utils (language + search) -->
+    <div class="footer-utils">
+
+      <!-- language display -->
+      <div class="footer-language">
+        <span class="footer-language-icon">🌐</span>
+        <span class="footer-language-code">KR</span>
+        <span class="footer-language__sep">·</span>
+        <span class="footer-language-code">EN</span>
+      </div>
+
+        <!-- search -->
+        <div class="footer-search">
+          <input type="text" placeholder="위치찾기" />
+          <button aria-label="search">🔍</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="js/search.js"></script>
+</body>
+</html>

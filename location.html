@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회사 위치 안내 | 넷플릭스 코리아</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/location.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="location-header">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="넷플릭스 로고">
+        </a>
+        <span class="header-title">회사 위치 안내</span>
+    </header>
+
+    <!-- MAIN -->
+    <main class="location-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <a href="index.html" class="back-btn">← 뒤로가기</a>
+        </aside>
+
+        <!-- CONTENT -->
+        <section class="location-content">
+
+            <!-- HERO -->
+            <section class="location-hero">
+                <h1>Netflix Korea</h1>
+                <p class="location-sub">
+                    넷플릭스서비시스코리아 유한회사<br>
+                    대한민국 공식 본사 위치 안내
+                </p>
+
+                <div class="hero-actions">
+                    <button id="scrollMap" class="btn-primary">📍 지도 보기</button>
+                    <a
+                        href="https://www.google.com/maps?q=센트로폴리스 서울"
+                        target="_blank"
+                        class="btn-outline">길찾기
+                    </a>
+                </div>
+            </section>
+
+            <!-- MAP -->
+            <section class="map-card" id="map">
+                <iframe
+                    title="넷플릭스 코리아 위치"
+                    src="https://www.google.com/maps?q=센트로폴리스%20서울&output=embed"
+                    loading="lazy">
+                </iframe>
+            </section>
+
+            <!-- INFO -->
+            <section class="info-grid">
+                <div class="info-card">
+                    <span>📍</span>
+                    <strong>주소</strong>
+                    <p>서울특별시 종로구 우정국로 26<br>센트로폴리스 A동 20층</p>
+                </div>
+
+                <div class="info-card">
+                    <span>📮</span>
+                    <strong>우편번호</strong>
+                    <p>03161</p>
+                </div>
+
+                <div class="info-card">
+                    <span>📞</span>
+                    <strong>전화</strong>
+                    <p>00-308-321-0161<br>(수신자 부담)</p>
+                </div>
+
+                <div class="info-card">
+                    <span>✉️</span>
+                    <strong>이메일</strong>
+                    <p>korea@netflix.com</p>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-question">
+                질문이 있으신가요? <a href="help-center.html">고객 센터에 문의하세요</a>
+            </p>
+
+            <ul class="footer-links">
+                <li><a href="https://ir.netflix.net" target="_blank" rel="noopener noreferrer">투자 정보(IR)</a></li>
+                <li><a href="terms.html">이용 약관</a></li>
+                <li><a href="gift-cards.html">기프트 카드</a></li>
+                <li><a href="#">미디어 센터</a></li>
+                <li><a href="#">입사 정보</a></li>
+                <li><a href="#">쿠키 설정</a></li>
+                <li><a href="privacy-policy.html">개인정보 처리방침</a></li>
+                <li><a href="#">음성 및 자막</a></li>
+                <li><a href="help-center.html">고객 센터</a></li>
+            </ul>
+
+            <div class="footer-info">
+                <p>넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)</p>
+                <p>대표: 레지널드 숀 톰프슨</p>
+                <p>이메일 주소: korea@netflix.com</p>
+                <p>주소: 대한민국 서울특별시 종로구 종로 26, 센트로폴리스 A동 20층, 우편번호 03161</p>
+                <p>사업자등록번호: 165-87-00119</p>
+                <p>호스팅 서비스: Amazon Web Services Inc.</p>
+                <p>공정거래위원회 웹사이트</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/map.js"></script>
+    <script src="js/location.js"></script>
+</body>
+</html>

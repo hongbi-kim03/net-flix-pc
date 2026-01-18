@@ -1,0 +1,223 @@
+    /* =========================
+    Login Page Footer Wrapper
+    ========================= */
+    .footer-wrap {
+        margin-top: auto;
+        background: #000;
+        padding: 60px 20px;
+    }
+
+    /* =========================
+    Footer Base
+    ========================= */
+    .footer {
+        font-size: 14px;
+        color: #fff;
+        line-height: 1.6;
+        background: #000;
+        padding-top: 20px;
+    }
+
+    .footer a {
+        color: #aaa;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .footer a:hover {
+        color: #fff;
+    }
+
+    /* =========================
+    Footer Menu
+    ========================= */
+    .footer-menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 40px;
+        margin-bottom: 30px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .footer-menu li {
+        list-style: none;
+    }
+
+    .footer-menu li a {
+        font-weight: 500;
+        color: #999;
+    }
+
+    .footer-menu li a:hover {
+        color: #fff;
+    }
+
+    /* =========================
+    Footer Middle
+    ========================= */
+    .footer-middle {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* logo  (로고 이미지 + 텍스트)*/
+    .footer-icon {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-icon img {
+        width: 100px;
+        margin-bottom: 8px;
+    }
+
+    .footer-icon p {
+        font-size: 12px;
+        color: #777;
+    }
+
+    /* info */
+    .footer-info {
+        max-width: 780px;
+        color: #ccc;
+        font-size: 13px;
+        /* line-height: 1.6; */
+    }
+
+    .footer-info p {
+        line-height: 1.6;
+        margin-bottom: 6px;
+    }
+
+    /* sns */
+    .footer-sns {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .footer-sns img {
+        width: 28px;
+        height: 28px;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+    }
+
+    .footer-sns img:hover {
+        opacity: 1;
+    }
+
+    /* =========================
+    Footer Bottom
+    ========================= */
+    .footer-bottom {
+        display: flex;
+        margin-top: 40px;
+        justify-content: center;
+    }
+
+    .footer-utils {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    /* =========================
+    Language Selector
+    ========================= */
+    .footer-language {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        border-radius: 18px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .footer-language-icon {
+        font-size: 16px;
+    }
+
+    .footer-language-code {
+        color: #ddd;
+    }
+
+    /* =========================
+        Search
+    ========================= */
+    .footer-search {
+        position: relative;
+        width: 240px;
+    }
+
+    .footer-search input {
+        width: 100%;
+        padding: 10px 40px 10px 14px;
+        border: 1px solid #333;
+        border-radius: 20px;
+        font-size: 14px;
+        background: #111;
+        color: #fff;
+    }
+
+    .footer-search input::placeholder {
+        color: #777;
+    }
+
+    .footer-search button {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        background: transparent;
+        border: none;
+        font-size: 16px;
+        color: #777;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s, color 0.2s;
+    }
+
+    .footer-search input:focus+button,
+    .footer-search input:not(:placeholder-shown)+button {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* =========================
+    Responsive
+    ========================= */
+    @media (max-width: 768px) {
+        .footer-menu {
+            margin-top: 32px;
+        }
+
+        .footer-middle {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-bottom {
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 360px) {
+        .footer {
+            min-width: 320px;
+        }
+
+        .footer-search {
+            width: 100%;
+        }
+    }

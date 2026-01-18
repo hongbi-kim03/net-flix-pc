@@ -1,0 +1,313 @@
+/* wrap */
+.wrap {
+    min-width: 1000px;
+}
+
+/*배너*/
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.yt-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.yt-background iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+    padding: 64px 60px;
+    color: white;
+}
+
+.banner-description {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 20px 0;
+}
+
+.banner-buttons .btn {
+    margin-right: 12px;
+    padding: 12px 26px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.banner-buttons .btn.play {
+    background-color: white;
+    color: black;
+}
+
+.banner-buttons .btn.info,
+.banner-buttons .btn.bookmark {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: white;
+}
+
+.banner-buttons .btn:hover {
+    opacity: 0.85;
+}
+
+
+/* 000 님이 시청중인 콘텐츠  */
+.section-title {
+    color: #fff;
+    text-align: center;
+    font-size: 28px;
+    margin: 50px 0 50px;
+    text-shadow: 0 0 10px #f9d71c;
+}
+
+.watching-content-wrapper {
+    padding: 40px 0;
+}
+
+.watching-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    /* 💡 줄바꿈 안 함 */
+    /* justify-content: center */
+    padding: 0 20px;
+
+    overflow-x: hidden;
+    /* 스크롤바 숨기기 */
+    /* scroll-behavior: smooth; */
+    cursor: grab;
+    /* 기본 커서 */
+    user-select: none;
+    /* 드래그 시 텍스트 선택 방지 */
+}
+
+.watching-content.active {
+    cursor: grabbing;
+    /* 드래그 중 커서 */
+}
+
+
+.slide {
+    flex: 0 0 calc((100% - 4 * 20px) / 5); /* 💡 전체에서 gap 4개만큼 빼고 5등분 */
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(249, 215, 28, 0.4);
+    transition: box-shadow 0.3s ease, filter 0.3s ease;
+    filter: brightness(0.85);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.slide:hover {
+    filter: brightness(1);
+    box-shadow:
+        0 0 20px #f9d71c,
+        0 0 40px #f9d71c,
+        0 0 60px #f9d71c;
+    z-index: 10;
+}
+
+.slide iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    background: transparent;
+}
+
+
+/* @media (max-width: 1200px) {
+    .slide {
+        flex: 0 0 calc((100% - 3 * 20px) / 4);
+    }
+    }
+
+    @media (max-width: 992px) {
+    .slide {
+        flex: 0 0 calc((100% - 2 * 20px) / 3);
+    }
+    }
+
+    @media (max-width: 768px) {
+    .slide {
+        flex: 0 0 calc((100% - 1 * 20px) / 2);
+    }
+    }
+
+    @media (max-width: 480px) {
+    .slide {
+        flex: 0 0 100%;
+    }
+    } */
+
+/* 오늘 대한민국의 TOP10 영화 */
+.section-top10-movies h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 28px;
+    margin: 50px 0 50px;
+    text-shadow: 0 0 10px #f9d71c;
+}
+
+/* 전체 슬라이더 */
+.top10-slider {
+    display: flex;
+    /* 가로정렬 */
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE, Edge */
+    padding: 0 20px;
+    cursor: grab;
+    user-select: none;
+    border-radius: 20px;
+    background-color: #111;
+    /* 어두운 배경 추천 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.top10-slider::-webkit-scrollbar {
+    display: none;
+    /* ✅ Chrome, Safari 스크롤바 숨김 */
+}
+
+.top10-slider.active {
+    cursor: grabbing;
+}
+
+/* 개별 카드 */
+.top10-slide {
+    display: flex;
+    flex: 0 0 calc((100% - 4 * 20px) / 5);
+    aspect-ratio: 16 / 9;
+    max-width: 20%;
+    /* 💡 최대 크기 제한 */
+    height: auto;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 16px;
+    box-shadow: 0 0 15px rgba(249, 215, 28, 0.4);
+    transition: box-shadow 0.3s ease, filter 0.3s ease;
+    filter: brightness(0.85);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.top10-slide:hover {
+    box-shadow:
+        0 0 20px #f9d71c,
+        0 0 40px #f9d71c,
+        0 0 60px #f9d71c;
+    filter: brightness(1.05);
+}
+
+/* 숫자 영역 */
+.number-area {
+    width: 40px;
+    /* height: 100%; */
+    background-color: #000;
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* 비디오 영역 */
+.video-area {
+    flex: 1;
+    height: auto;
+}
+
+.video-area iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: inherit;
+    /* ✅ 카드와 같은 radius 적용 */
+}
+
+/* 영화 */
+.movies-title {
+    color: #fff;
+    text-align: center;
+    font-size: 28px;
+    margin: 50px 0 50px;
+    text-shadow: 0 0 10px #f9d71c;
+}
+
+.movies-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    padding: 0 20px;
+    overflow-x: hidden;
+    cursor: grab;
+    user-select: none;
+}
+
+.movies-content.active {
+    cursor: grabbing;
+}
+
+.movies-content.slide {
+    flex: 0 0 calc((100% - 4 * 20px) / 5);
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(249, 215, 28, 0.4);
+    transition: box-shadow 0.3s ease, filter 0.3s ease;
+    filter: brightness(0.85);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.movies.slide:hover {
+    filter: brightness(1);
+    box-shadow:
+        0 0 20px #f9d71c,
+        0 0 40px #f9d71c,
+        0 0 60px #f9d71c;
+    z-index: 10;
+}
+
+.movies.slide iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    background: transparent;
+}

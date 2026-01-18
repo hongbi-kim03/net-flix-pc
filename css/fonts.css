@@ -1,0 +1,31 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;350;500;900&display=swap');
+
+/* Typography System */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300; /* Body = Light */
+}
+
+/* 제목 */
+.title {
+font-weight: 900; /* Black */
+}
+
+/* 부제목 */
+.subtitle {
+    font-weight: 500; /* Medium */
+}
+
+/* 본문 */
+.body-text {
+    font-weight: 300; /* Light */
+}
+
+/* 서브 텍스트 */
+.sub-text {
+    font-weight: 350; /* DemiLight */
+    color: #ccc;
+}
+
+

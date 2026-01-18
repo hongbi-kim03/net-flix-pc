@@ -1,0 +1,221 @@
+ /* Reset */
+  body, ul, li, h1, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: linear-gradient(135deg, #2b0f3e, #000000);  
+    color: white;
+  }
+
+  ul, li {
+    list-style: none
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  address {
+    font-style: normal;
+  }
+
+  /* wrap */
+  .wrap {
+    min-width: 1000px;
+  } 
+
+  /* header */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 60px;
+    z-index: 10;
+    display: flex;
+    background-color: rgba(88, 53, 102, 0.5);
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid rgba(200, 180, 200, 0.4); 
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-between;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);  
+    flex-wrap: nowrap; /* 💡 줄바꿈 방지 */
+  }
+
+  /* 로고 */
+  .logo img {
+    cursor: pointer;
+  }
+
+  /* gnb  */
+  nav.gnb {
+    flex: 1;
+    margin-left: 40px;
+    white-space: nowrap;
+  }
+
+  nav.gnb ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    white-space: nowrap;  
+  }
+
+  nav.gnb ul li a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 8px 0;
+    transition: color 0.3s;
+  }
+
+  nav.gnb ul li a:hover {
+    color: #e50914;
+  }
+
+  /* 메인 랜딩 페이지 (Hero Section) */
+  .hero-section.with-background {
+    background-image: url("../images/netflix-bg.png"); /* 배경 이미지 경로 */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 600px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* 넘침 방지 */
+  }
+
+  .hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* 반투명 검정 오버레이 */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  .hero-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .sub-text,
+  .guide-text {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+
+  .hero-form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hero-form input[type="email"] {
+    padding: 14px;
+    font-size: 16px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .hero-form button {
+    padding: 14px 20px;
+    font-size: 16px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .hero-form button:hover {
+    background-color: #f40612;
+  }
+
+  /* 숏폼 컨테이너 */
+  .section-title {
+    color: #fff;
+    text-align: center;
+    font-size: 28px;
+    margin: 50px 0 120px;
+    text-shadow: 0 0 10px #f9d71c;
+  }
+
+  .shortform-content-wrapper {
+    padding: 40px 0;
+  }
+
+  .shortform-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 40px 20px 80px; 
+  }
+
+  .slide {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(249, 215, 28, 0.4);
+    transition: box-shadow 0.3s ease, filter 0.3s ease;
+    filter: brightness(0.85);
+    width: 240px;         
+    height: 426px;       
+    min-width: 240px;
+    flex-shrink: 0;       
+  }
+
+  .slide:hover {
+    filter: brightness(1);
+    box-shadow:
+    0 0 20px #f9d71c,
+    0 0 40px #f9d71c,
+    0 0 60px #f9d71c;
+    z-index: 10;
+  }
+
+  .slide iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    object-fit: contain 
+  }
+
+  @media (max-width: 600px) {
+  .hero-form {
+  flex-direction: column;
+  align-items: center;
+  }
+
+  .hero-form input,
+  .hero-form button {
+  width: 100%;
+  }
+
+  .hero-content h1 {
+  font-size: 24px;
+  }
+}

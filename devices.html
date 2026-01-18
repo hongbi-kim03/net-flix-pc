@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>액세스 및 디바이스 관리</title>
+    <link rel="stylesheet" href="css/devices.css">
+</head>
+<body>
+        <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="넷플릭스 로고" />
+            </a>
+        </div>
+
+        <div class="profile">
+            <div class="profile-toggle" id="profile-btn">
+                <img src="images/icon-profile.png" alt="프로필 아이콘"/>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="dropdown-menu" id="dropdown">
+                <ul>
+                    <li><a href="index.html">← 넷플릭스로 돌아가기</a></li>
+                    <li><a href="account.html">계정</a></li>
+                    <li><a href="profile.html">프로필 관리</a></li>
+                    <li><a href="help-center.html">고객 센터</a></li>
+                    <li><a href="logout.html">로그아웃</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="account-container">
+        <aside class="sidebar">
+            <a href="account.html" class="back-link">←</a>
+        </aside>
+
+        <section class="devices-container">
+            <div class="device-content">
+            <!-- 제목 영역 -->
+            <div class="device-header">
+                <h1>액세스 및 디바이스 관리</h1>
+                <p class="sub-text">
+                    최근 로그인한 디바이스 목록입니다. 잘 모르는 디바이스는 로그아웃 시키거나
+                    비밀번호를 변경해 계정을 보호하세요.
+                </p>
+            </div>
+
+            <!-- 디바이스 카드 목록 -->
+            <div class="device-list">
+                <!-- 디바이스 카드 -->
+                <div class="device-card" data-device-id="device1">
+                    <button class="device-summary" aria-expanded="false">
+                        <span class="left">
+                            <span class="device-badge">현재 디바이스</span>
+                            <h3>PC Chrome - 웹 브라우저</h3>
+                            <time class="device-meta" datetime="2025-12-04T08:10:00+09:00">2025. 12. 4 오전 8:10 GMT+9</time>
+                        </span>
+                        <span class="right">▼</span>
+                    </button>
+                    <div class="device-detail">
+                        <p>표시할 활동 없음</p>
+                        <!-- <button class="logout-btn">로그아웃</button> -->
+                    </div>
+                </div>
+
+                <div class="device-card" data-device-id="device2">
+                    <button class="device-summary" aria-expanded="false">
+                        <span class="left">
+                            <h3>Edge - 웹 브라우저</h3>
+                            <time class="device-meta" datetime="2025-12-08T16:27:00+09:00">2025. 12. 8 오후 4:27 GMT+9</time>
+                        </span>
+                        <span class="right">▼</span>
+                    </button>
+                    <div class="device-detail">
+                        <p>표시할 활동 없음</p>
+                        <button class="logout-btn">로그아웃</button>
+                    </div>
+                </div>
+
+                <div class="device-card" data-device-id="device3">
+                    <button class="device-summary" aria-expanded="false">
+                        <span class="left">
+                            <h3>Apple - iPhone</h3>
+                            <time class="device-meta" datetime="2025-12-06T23:18:00+09:00">2025. 12. 6 오후 11:18 GMT+9</time>
+                        </span>
+                        <span class="right">▼</span>
+                    </button>
+                    <div class="device-detail">
+                        <p>표시할 활동 없음</p>
+                        <button class="logout-btn">로그아웃</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 안내 문구 -->
+            <p class="description">
+                이 목록은 일부가 누락되었을 수 있습니다. 일부 디바이스가 표시되지 않을 수 있으며,
+                특정 디바이스 활동이 표시되지 않을 수 있습니다.
+            </p>
+
+            <!-- 전체 로그아웃 버튼 -->
+            <button class="logout-all-btn">모든 디바이스에서 로그아웃</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-question">
+                질문이 있으신가요? <a href="help-center.html">고객 센터에 문의하세요</a>
+            </p>
+
+            <ul class="footer-links">
+                <li><a href="https://ir.netflix.net" target="_blank" rel="noopener noreferrer">투자 정보(IR)</a></li>
+                <li><a href="terms.html">이용 약관</a></li>
+                <li><a href="gift-cards.html">기프트 카드</a></li>
+                <li><a href="#">미디어 센터</a></li>
+                <li><a href="#">입사 정보</a></li>
+                <li><a href="#">쿠키 설정</a></li>
+                <li><a href="privacy-policy.html">개인정보 처리방침</a></li>
+                <li><a href="#">음성 및 자막</a></li>
+                <li><a href="help-center.html">고객 센터</a></li>
+            </ul>
+
+            <div class="footer-info">
+                <p>넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 대표 리드 헤이스팅스</p>
+                <p>이메일 주소: korea@netflix.com</p>
+                <p>주소: 대한민국 서울특별시 종로구 종로 26, 센트로폴리스 A동 20층, 우편번호 03161</p>
+                <p>사업자등록번호: 165-87-00119</p>
+                <p>호스팅 서비스: Amazon Web Services Inc.</p>
+                <p>공정거래위원회 웹사이트</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/devices.js"></script>
+</body>
+</html>

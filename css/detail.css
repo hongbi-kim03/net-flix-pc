@@ -1,0 +1,928 @@
+    /* =====================
+    기본 설정
+    ===================== */
+    * {
+        box-sizing: border-box;
+    }
+
+    /* =====================
+    접근성 유틸리티
+    ===================== */
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    body {
+        margin: 0;
+        background: linear-gradient(180deg, #14001f 0%, #000000 55%);
+        color: #fff;
+    }
+
+    /* wrap */
+    .wrap {
+        min-width: 1000px;
+    } 
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    button {
+        background: none;
+        border: none;
+        color: inherit;
+        cursor: pointer;
+    }
+
+    /* Header */
+    .header {
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 40px;
+        border-bottom: 1px solid rgba(200, 180, 200, 0.4);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); 
+        
+    }
+
+    .header .logo img {
+        height: 28px;
+    }
+
+    /* 프로필 드롭다운 */
+    .profile {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .profile-toggle {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    .profile-toggle img {
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        object-fit: cover;
+    }
+
+    .profile-toggle .arrow {
+        font-size: 12px;
+        color: #ff3366;
+        transition: transform 0.3s;
+    }
+
+    .profile-toggle.active .arrow {
+        transform: rotate(180deg);
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        right: 0;
+        top: 45px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        width: 200px;
+        display: none;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.25s, transform 0.25s;
+        z-index: 100;
+    }
+
+    .dropdown-menu.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .dropdown-menu ul {
+        list-style: none;
+        padding: 8px 0;
+    }
+
+    .dropdown-menu li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 12px 16px;
+        color: #333;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: #f5f5f5;
+    }
+
+    /* =============================
+    메인 컨테이너
+    ============================= */
+    .reset-password-container {
+        padding: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 40px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    /* 사이드바 */
+    .sidebar {
+        width: 220px;
+    }
+
+    .sidebar .back-link {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+        padding: 8px 12px;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        text-decoration: none;
+        transition: transform 0.2s ease, background-color 0.2s, color 0.2s;
+    }
+
+    .sidebar .back-link:hover {
+        transform: translateX(-4px) scale(1.05);
+        background-color: rgba(229, 9, 20, 0.1);
+        color: #ff3366;
+    }
+
+    /* =====================
+    컨테이너
+    ===================== */
+    .detail-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px 120px; /* 120px 하단 여백 */
+    }
+
+    /* =====================
+    상단 히어로 영역
+    ===================== */
+    .detail-hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 48px;
+        align-items: center;
+        margin-bottom: 48px;
+    }
+
+    .detail-info .title-ko {
+        font-size: 40px;
+        font-weight: 700;
+        margin: 0 0 8px;
+    }
+
+    .detail-info .title-en {
+        font-size: 18px;
+        color: #aaa;
+        margin-bottom: 24px;
+    }
+
+    /* 버튼 영역 */
+        .action-buttons {
+        display: flex;
+        gap: 12px;
+    }
+
+    .btn-like {
+        font-size: 22px;
+        padding: 10px 14px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.1);
+    }
+
+    .btn-like:hover {
+        background: rgba(255,255,255,0.25);
+    }
+
+    .btn-share {
+        padding: 10px 20px;
+        border-radius: 6px;
+        background: #e50914;
+        font-weight: 600;
+    }
+
+    .btn-share:hover {
+        background: #f6121d;
+    }
+
+    /* 포스터 */
+    .detail-poster img {
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    /* =====================
+    평점 / 예매율 / 관객수
+    ===================== */
+    .detail-stats {
+        margin-bottom: 48px;
+    }
+
+    .stats-list {
+        display: flex;
+        justify-content: space-between;
+        padding: 24px;
+        background: #1f1f1f;
+        border-radius: 12px;
+        list-style: none;
+    }
+
+    .stats-list li {
+        text-align: center;
+        flex: 1;
+    }
+
+    .stats-list strong {
+        display: block;
+        font-size: 14px;
+        color: #aaa;
+        margin-bottom: 6px;
+    }
+
+    .stats-list span {
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    /* =====================
+    탭 메뉴
+    ===================== */
+    .detail-tabs {
+        margin-top: 40px;
+    }
+
+    .tab-menu {
+        display: flex;
+        gap: 32px;
+        border-bottom: 1px solid #333;
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        list-style: none;
+    }
+
+    .tab-menu li button {
+        font-size: 16px;
+        color: #aaa;
+        padding-bottom: 8px;
+    }
+
+    .tab-menu li.active button {
+        color: #fff;
+        font-weight: 700;
+        border-bottom: 3px solid #e50914;
+    }
+
+    /* =====================
+    탭 콘텐츠
+    ===================== */
+    .tab-panel {
+        display: none;
+        line-height: 1.7;
+    }
+
+    .tab-panel.active {
+        display: block;
+    }
+
+    /* 주요정보 */
+    .tab-panel p {
+        max-width: 800px;
+    }
+
+    .summary {
+        margin-bottom: 24px;
+        line-height: 1.7;
+    }
+
+    .info-list {
+        /* display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 8px;
+        row-gap: 8px; */
+        margin: 0;
+        line-height: 1.7;
+    }
+
+    /* dt, dd를 문장처럼 흐르게 */
+    .info-list dt,
+    .info-list dd {
+        display: inline;
+        margin: 0;
+    }
+
+    /* 항목 제목 */
+    .info-list dt {
+        font-weight: 500;
+        color: #999;
+    }
+
+    /* 콜론을 dt에 붙임 (자동 맞춤 핵심) */
+    .info-list dt::after {
+        content: " : ";
+        color: #aaa;
+    }
+
+    /* 한 항목이 끝날 때 줄바꿈 */
+    .info-list dd::after {
+        content: "\A";
+        white-space: pre;
+    }
+
+    .review-cta {
+        margin-top: 48px;
+    }
+
+    .cta-title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+
+    .cta-box {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 24px;
+        background: #1f1f1f;
+        padding: 20px 24px;
+        border-radius: 12px;
+    }
+
+    .cta-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .netflix-icon {
+        width: 28px;
+        /* height: auto;
+        flex-shrink: 0; */
+    }
+
+    .netflix-text {
+        font-size: 12px;
+        color: #aaa;
+        letter-spacing: 0.5px;
+    }
+
+    .cta-center p {
+        margin: 0;
+        line-height: 1.6;
+        font-size: 15px;
+    }
+
+    .btn-review {
+        background: #fff;
+        color: #000;
+        padding: 10px 18px;
+        border-radius: 6px;
+        font-weight: 700;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .btn-review:hover {
+        background: #e5e5e5;
+    }
+
+
+    /* =====================
+    관람평 작성 폼
+    ===================== */
+    .review-write {
+        margin-bottom: 24px;
+    }
+
+    /* ℹ️ 안내 문구 */
+    .review-guide {
+        margin: 12px 0 20px;
+        padding: 10px 14px;
+        background: #1f1f1f;
+        border-left: 3px solid #e50914;
+        color: #bbb;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .review-guide strong {
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .review-write-guide::before {
+        content: "ℹ️";
+        margin-right: 6px;
+    }
+
+    .review-write-box {
+        display: flex;
+        gap: 12px;
+        padding: 16px;
+        background: #1c1c1c;
+        border-radius: 8px;
+    }
+
+    .review-write .review-avatar img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .review-input-area {
+        flex: 1;
+    }
+
+    /* textarea */
+    .review-input {
+        width: 100%;
+        background: #2a2a2a;
+        border: 1px solid #333;
+        border-radius: 6px;
+        padding: 12px;
+        color: #fff;
+        font-size: 14px;
+        resize: none;
+        outline: none;
+    }
+
+    .review-input::placeholder {
+        color: #999;
+    }
+
+    /* 펼쳐지는 영역 */
+    .review-expand {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    /* 활성화 */
+    .review-write.active .review-expand {
+        max-height: 200px;
+        opacity: 1;
+        margin-top: 12px;
+    }
+
+    /* 별점 */
+    .star-rating {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap: 4px;
+    }
+
+    .star-rating input {
+        display: none;
+    }
+
+    .star-rating label {
+        font-size: 22px;
+        color: #555;
+        cursor: pointer;
+    }
+
+    .star-rating input:checked ~ label,
+    .star-rating label:hover,
+    .star-rating label:hover ~ label {
+        color: #e50914;
+    }
+
+    /* 글자수 */
+    .text-count {
+        display: block;
+        margin-top: 6px;
+        font-size: 12px;
+        color: #aaa;
+        text-align: right;
+    }
+
+    /* 버튼 */
+    .review-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    .btn-cancel {
+        background: transparent;
+        border: 1px solid #555;
+        color: #ccc;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn-submit {
+        background: #e50914;
+        border: none;
+        color: #fff;
+        padding: 6px 14px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn-submit:disabled {
+        background: #555;
+        cursor: not-allowed;
+    }
+
+    /* 관람평 취소/등록 버튼 */
+    .btn-delete {
+        background: none;
+        border: none;
+        color: #999;
+        font-size: 13px;
+        cursor: pointer;
+        margin-left: 8px;
+    }
+
+    .btn-delete:hover {
+        color: #e50914;
+        text-decoration: underline;
+    }
+
+    /* 주요정보 관람평 */
+    .review-preview {
+        margin-top: 48px;
+    }
+
+    .review-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+
+    .review-header h3 {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .review-more {
+        font-size: 14px;
+        color: #aaa;
+    }
+
+    .review-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        list-style: none;
+    }
+
+    .review-list li {
+        background: #1f1f1f;
+        padding: 16px;
+        border-radius: 8px;
+    }
+
+    .review-card {
+        background: #111;
+        border-radius: 12px;
+        padding: 16px;
+    }
+
+    /* 왼쪽 */
+    .review-inner {
+        display: flex;
+        gap: 12px;
+    }
+
+    .review-avatar {
+        flex-shrink: 0;
+    }
+
+    .review-avatar img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .review-content {
+        flex: 1;
+    }
+
+    .review-top {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        color: #999;
+    }
+
+    .review-rating {
+        margin: 8px 0;
+        font-size: 14px;
+        color: #ffcc00;
+    }
+
+    .review-rating .score {
+        color: #fff;
+        margin-left: 4px;
+    }
+
+    .review-text {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #e5e5e5;
+        margin-bottom: 12px;
+    }
+
+    .review-actions {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .review-actions .btn-like {
+        background: transparent;
+        border: none;
+        color: #aaa;
+        font-size: 13px;
+        cursor: pointer;
+    }
+
+    .review-actions .btn-like:hover {
+        color: #fff;
+    }
+
+    /* 실관람평 */
+
+    /* 예고편 / 스틸컷 */
+
+    /* =====================
+    예고편 영역 전체
+    ===================== */
+    .trailer-slider {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 16px 15vw;
+        scroll-behavior: smooth;
+        cursor: grab;
+    }
+
+    /* 드래그 중 커서*/
+    .trailer-slider:active {
+        cursor: grabbing;
+    }
+
+    /* 스크롤바 숨기기 */
+    .trailer-slider::-webkit-scrollbar {
+        display: none;
+    }
+    .trailer-slider {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    /* 리스트 */
+    .trailer-list {
+        display: flex;
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    /* 개별 슬라이드 */
+    .trailer-list .slide {
+        flex: 0 0 70%;
+        scroll-snap-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* 비디오 래퍼 */
+    .trailer-video {
+        /* display: flex;
+        justify-content: center; */
+        position: relative;
+        width: 100%;
+        max-width: 520px;
+        aspect-ratio: 16 / 9;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #000;
+        user-select: none;
+        -webkit-user-drag: none;
+        transition: transform 0.15s ease;
+    }
+
+    /* 드래그 중 살짝 눌리는 효과 */
+        .trailer-slider.dragging .trailer-video {
+        transform: scale(0.98);
+    }
+
+    /* iframe */
+    .trailer-video iframe {
+        /* width: 100%;
+        max-width: 500px; 
+        aspect-ratio: 16 / 9;
+        border: none;
+        border-radius: 12px;
+        background: #000; */
+            width: 100%;
+        height: 100%;
+        border: none;
+        pointer-events: auto; /* 🔥 iframe 활성 유지 */
+    }
+
+
+    /* =====================
+    스틸컷 슬라이더 (Grab 방식)
+    ===================== */
+    .stillcut-slider {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 16px 15vw; /* 🔥 중앙 정렬 핵심 */
+        scroll-behavior: smooth;
+        cursor: grab;
+    }
+
+    /* 드래그 중 커서 */
+    .stillcut-slider:active {
+        cursor: grabbing;
+    }
+
+    /* 스크롤바 숨기기 */
+    .stillcut-slider::-webkit-scrollbar {
+        display: none;
+    }
+
+    .stillcut-slider {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    /* 리스트 */
+    .stillcut-list {
+        display: flex;
+        gap: 24px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    /* 개별 슬라이드 */
+    .stillcut-list .slide {
+        flex: 0 0 70%;
+        scroll-snap-align: center;
+        display: flex;
+        justify-content: center;     /* 🔥 이미지 중앙 */
+    }
+
+    /* 이미지 비율 유지 */
+    .stillcut-list img {
+        width: 100%;
+        max-width: 500px;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 12px;
+        background: #000;
+        /* pointer-events: auto; */
+        user-select: none;
+        -webkit-user-drag: none;
+        transition: transform 0.15s ease;
+    }
+
+    .stillcut-slider.dragging img {
+        transform: scale(0.98);
+    }
+
+    /* =====================
+    모바일 최적화
+    ===================== */
+        @media (max-width: 768px) {
+        .trailer-slider,
+        .stillcut-slider {
+        padding: 16px 10vw;
+    }
+
+    .trailer-list .slide,
+    .stillcut-list .slide {
+        flex-basis: 85%;
+    }
+
+    .trailer-video,
+    .stillcut-list img {
+        border-radius: 10px;
+    }
+    }
+
+    /* 반응형 */
+    /* PC 기본 (1280px 이상) */
+    .detail-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px 120px;
+    }
+
+    /* mobile (360px) */
+    @media (max-width: 360px) {
+    .detail-container {
+        padding: 24px 12px 64px;
+    }
+
+    .poster img {
+        width: 200px;
+    }
+
+    .detail-title {
+        font-size: 20px;
+    }
+
+    .detail-description {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* 관람평 입력 */
+    .review-write-box {
+        gap: 8px;
+    }
+
+    .review-input {
+        font-size: 14px;
+    }
+
+    .review-item {
+        padding: 12px;
+    }
+
+    .footer {
+        min-width: 320px;
+    }
+    }
+
+    /* 태블릿 세로 / 큰 모바일 (758px ) */
+    @media (max-width: 758px) {
+    .detail-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .poster img {
+        width: 240px;
+    }
+
+    .detail-info {
+        width: 100%;
+    }
+
+    .action-buttons {
+        justify-content: center;
+    }
+
+    .detail-container {
+        padding-bottom: 80px;
+    }
+    }
+
+    /* 태블릿 가로 (1024px) */
+    @media (max-width: 1024px) {
+    .detail-container {
+        padding: 32px 16px 100px;
+    }
+
+    .detail-header {
+        gap: 24px;
+    }
+
+    .poster img {
+        width: 280px;
+    }
+    }

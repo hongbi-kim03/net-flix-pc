@@ -1,0 +1,595 @@
+    /* wrap */
+    .wrap {
+        min-width: 1000px;
+    }
+
+    /* main */
+
+    /*오늘 대한민국의 TOP 10 순위시리즈 */
+    .slider-title {
+        text-align: center;
+        margin: 150px 0 60px;
+        font-size: 28px;
+        text-shadow: 0 0 10px #f9d71c;
+    }
+
+    /* 슬라이더 감싸는 영역 */
+    .slider-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        overflow: hidden;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        padding-right: 230px;
+    }
+
+    /* 슬라이더 영역 */
+    .slider {
+        display: flex;
+        gap: 16px;
+        width: calc(284px * 10 + 16px * 9); /* 카드 10개 + gap 9개 */
+        transition: transform 0.5s ease-in-out;
+    }
+
+    /*카드 스타일 */
+    .card {
+        position: relative;
+        flex: 0 0 303px;
+        height: 475px;
+        border-radius: 10px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: 0 0 10px rgba(249, 215, 28, 0.3);
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .card-image {
+        width: 100%;
+        height: 100%;
+        margin: 10px;
+        border-radius: 4px;
+    }
+
+    /*카드 안에 버튼 스타일*/
+    .card-buttons {
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        padding: 10px;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(249, 215, 28, 0.6);
+    }
+
+    /* 카드 안에 순위 뱃지 */
+    .rank-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #ffffff;
+        padding: 0px 10px;
+        font-family: 'Bebas Neue', sans-serif;
+        /* 강렬한 글꼴 */
+        line-height: 1.1;
+        /* 글자 중심 정렬 */
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 95px;
+        /* letter-spacing: 1px; */
+        z-index: 1;
+        text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.8);
+        transform: scale(1.2);
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(249, 215, 28, 0.6);
+    }
+
+    /* 카드 버튼 영역 */
+    .btn {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: none;
+        padding: 6px 40px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+        text-align: center;
+        /* 가운데 정렬 */
+        white-space: nowrap;
+        /* 줄바꿈 방지 */
+    }
+
+    .btn.like {
+        color: white;
+    }
+
+    .btn:hover {
+        background-color: #f9d71c;
+        color: #111;
+    }
+
+    .card-buttons .btn.ticket.active {
+        background-color: #e50914;
+        color: #fff;
+        box-shadow: 0 0 12px #e50914, 0 0 30px #f44336;
+        transform: scale(1.1);
+        animation: pulse-glow 1.2s infinite alternate;
+    }
+
+    /* 도트 스타일 */
+    .pagination {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .dot {
+        width: 14px;
+        height: 14px;
+        margin: 0 5px;
+        border-radius: 50%;
+        border: none;
+        background-color: #bbb;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .page-dot {
+        width: 14px;
+        height: 14px;
+        background-color: #594e07;
+        /* 어두운 노란색 */
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .dot.active {
+        background: #f9d71c;
+        transform: scale(1.4);
+    }
+
+    .card01 {
+        background: url("../images/top10-series01.webp") no-repeat;
+    }
+
+    .card02 {
+        background: url("../images/top10-series02.jpg") no-repeat;
+    }
+
+    .card03 {
+        background: url("../images/top10-series03.jpg") no-repeat;
+    }
+
+    .card04 {
+        background: url("../images/top10-series04.jpg") no-repeat;
+    }
+
+    .card05 {
+        background: url("../images/top10-series05.webp") no-repeat;
+    }
+
+    .card06 {
+        background: url("../images/top10-series06.webp") no-repeat;
+    }
+
+    .card07 {
+        background: url("../images/top10-series07.webp") no-repeat;
+    }
+
+    .card08 {
+        background: url("../images/top10-series08.jpg") no-repeat;
+    }
+
+    .card09 {
+        background: url("../images/top10-series09.jpg") no-repeat;
+    }
+
+    .card10 {
+        background: url("../images/top10-series10.jpg") no-repeat;
+    } 
+    
+
+    /* 버튼 */
+    .buttons {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 14px;
+        background-color: #444;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    /* 왼쪽 버튼 그룹 */
+    .left-buttons .btn.info {
+        padding: 14px 26px;
+        font-size: 16px;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .left-buttons .btn.ticket {
+        position: relative;
+        background-color: #444;
+        padding: 14px 26px;
+        font-size: 16px;
+        font-weight: 700;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        user-select: none;
+        transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+    }
+
+    /* 왼쪽 상세정보 버튼 hover */
+    .left-buttons .btn.info:hover {
+        background-color: #f9d71c;
+        color: #000;
+        transition: background-color 0.3s ease;
+    }
+
+    .left-buttons .btn.ticket:hover {
+        background-color: #f9d71c;
+        color: #111;
+    }
+
+    .left-buttons .btn.ticket.active {
+        background-color: #e50914;
+        color: #fff;
+        box-shadow: 0 0 15px #e50914, 0 0 30px #ff3b3b;
+        transform: scale(1.1);
+        animation: pulse-glow 1.2s infinite alternate;
+    }
+
+    /* 오른쪽 버튼 그룹 */
+    .right-buttons .btn.info {
+        padding: 10px 18px;
+        font-size: 13px;
+        border-radius: 6px;
+        background-color: #333;
+        text-align: center;
+    }
+
+    .right-buttons .btn.ticket {
+        position: relative;
+        background-color: #333;
+        padding: 10px 18px;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        user-select: none;
+        transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+    }
+
+    .right-buttons .btn.ticket.active {
+        background-color: #e50914;
+        color: #fff;
+        box-shadow: 0 0 12px #e50914, 0 0 30px #f44336;
+        transform: scale(1.1);
+        animation: pulse-glow 1.2s infinite alternate;
+    }
+
+    /* 오른쪽 상세정보 버튼 hover */
+    .right-buttons .btn.info:hover {
+        background-color: #f9d71c;
+        /* 노란색 */
+        color: #000;
+        /* 검은색 글자 (필요 시) */
+        transition: background-color 0.3s ease, color 0.3s ease;
+        cursor: pointer;
+    }
+
+    .right-buttons .btn.ticket:hover {
+        background-color: #f9d71c;
+        color: #111;
+    }
+
+    .right-buttons .btn.ticket.active {
+        background-color: #e50914;
+        color: #fff;
+        box-shadow: 0 0 12px #e50914, 0 0 30px #f44336;
+        transform: scale(1.1);
+        animation: pulse-glow 1.2s infinite alternate;
+    }
+
+    /* 하트 터지는 효과용 스팬 */
+    .btn.ticket .heart {
+        display: inline-block;
+        font-size: 18px;
+        transition: transform 0.3s ease;
+        transform-origin: center;
+    }
+
+    .btn.ticket.active .heart {
+        animation: heart-pop 0.4s ease forwards;
+    }
+
+    /* 오른쪽 콘텐츠 */
+    .curation-right {
+        flex: 1;
+        /* 오른쪽 영역은 나머지 공간 채우기 */
+        /* max-width: 600px; */
+        margin-top: 145px;
+        /* 오른쪽 콘텐츠 아래로 이동 */
+    }
+
+    .curation-right h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    .description {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #ddd;
+        margin-bottom: 30px;
+        justify-content: center;
+    }
+
+    /* 넷플릭스의 새로운 콘텐츠 */
+    .section-title {
+        color: #fff;
+        text-align: center;
+        font-size: 28px;
+        margin: 50px 0 50px;
+        text-shadow: 0 0 10px #f9d71c;
+    }
+
+    .new-content-wrapper {
+        padding: 40px 0;
+    }
+
+    .new-content {
+        display: flex;
+        gap: 20px;
+        flex-wrap: nowrap;
+        /* 💡 줄바꿈 안 함 */
+        /* justify-content: center */
+        padding: 0 20px;
+
+        overflow-x: hidden;
+        /* 스크롤바 숨기기 */
+        /* scroll-behavior: smooth; */
+        cursor: grab;
+        /* 기본 커서 */
+        user-select: none;
+        /* 드래그 시 텍스트 선택 방지 */
+    }
+
+    .new-content.active {
+        cursor: grabbing;
+        /* 드래그 중 커서 */
+    }
+
+
+    .slide {
+        flex: 0 0 calc((100% - 4 * 20px) / 5);
+        /* 💡 전체에서 gap 4개만큼 빼고 5등분 */
+        aspect-ratio: 16 / 9;
+        border-radius: 16px;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 0 15px rgba(249, 215, 28, 0.4);
+        transition: box-shadow 0.3s ease, filter 0.3s ease;
+        filter: brightness(0.85);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .slide:hover {
+        filter: brightness(1);
+        box-shadow:
+            0 0 20px #f9d71c,
+            0 0 40px #f9d71c,
+            0 0 60px #f9d71c;
+        z-index: 10;
+    }
+
+    .slide iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+        background: transparent;
+    }
+
+    /* @media (max-width: 1200px) {
+    .slide {
+      flex: 0 0 calc((100% - 3 * 20px) / 4);
+    }
+    }
+
+    @media (max-width: 992px) {
+    .slide {
+      flex: 0 0 calc((100% - 2 * 20px) / 3);
+    }
+    }
+
+    @media (max-width: 768px) {
+    .slide {
+      flex: 0 0 calc((100% - 1 * 20px) / 2);
+    }
+    }
+
+    @media (max-width: 480px) {
+    .slide {
+    flex: 0 0 100%;
+    }
+    } */
+
+    /* 오늘 대한민국의 TOP10 영화 */
+    .section-top10-movies h2 {
+        color: #fff;
+        text-align: center;
+        font-size: 28px;
+        margin: 50px 0 50px;
+        text-shadow: 0 0 10px #f9d71c;
+    }
+
+    /* 전체 슬라이더 */
+    .top10-slider {
+        display: flex;
+        /* 가로정렬 */
+        gap: 20px;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE, Edge */
+        padding: 0 20px;
+        cursor: grab;
+        user-select: none;
+        border-radius: 20px;
+        background-color: #111;
+        /* 어두운 배경 추천 */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .top10-slider::-webkit-scrollbar {
+        display: none;
+        /* ✅ Chrome, Safari 스크롤바 숨김 */
+    }
+
+    .top10-slider.active {
+        cursor: grabbing;
+    }
+
+    /* 개별 카드 */
+    .top10-slide {
+        display: flex;
+        flex: 0 0 calc((100% - 4 * 20px) / 5);
+        aspect-ratio: 16 / 9;
+        max-width: 20%;
+        /* 💡 최대 크기 제한 */
+        height: auto;
+        overflow: hidden;
+        cursor: pointer;
+        border-radius: 16px;
+        box-shadow: 0 0 15px rgba(249, 215, 28, 0.4);
+        transition: box-shadow 0.3s ease, filter 0.3s ease;
+        filter: brightness(0.85);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .top10-slide:hover {
+        box-shadow:
+            0 0 20px #f9d71c,
+            0 0 40px #f9d71c,
+            0 0 60px #f9d71c;
+        filter: brightness(1.05);
+    }
+
+    /* 숫자 영역 */
+    .number-area {
+        width: 40px;
+        /* height: 100%; */
+        background-color: #000;
+        color: #fff;
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+
+    /* 비디오 영역 */
+    .video-area {
+        flex: 1;
+        height: auto;
+    }
+
+    .video-area iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: inherit;
+        /* ✅ 카드와 같은 radius 적용 */
+    }
+
+    /* 이번 주 공개 콘텐츠 */
+    .section-title {
+        color: #fff;
+        text-align: center;
+        font-size: 28px;
+        margin: 50px 0 50px;
+        text-shadow: 0 0 10px #f9d71c;
+    }
+
+    .weekly-release-content {
+        display: flex;
+        gap: 20px;
+        flex-wrap: nowrap;
+        padding: 0 20px;
+        overflow-x: hidden;
+        cursor: grab;
+        user-select: none;
+    }
+
+    .weekly-release-content.active {
+        cursor: grabbing;
+    }
+
+    .weekly-release-content.slide {
+        flex: 0 0 calc((100% - 4 * 20px) / 5);
+        aspect-ratio: 16 / 9;
+        border-radius: 16px;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 0 15px rgba(249, 215, 28, 0.4);
+        transition: box-shadow 0.3s ease, filter 0.3s ease;
+        filter: brightness(0.85);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .weekly-release.slide:hover {
+        filter: brightness(1);
+        box-shadow:
+            0 0 20px #f9d71c,
+            0 0 40px #f9d71c,
+            0 0 60px #f9d71c;
+        z-index: 10;
+    }
+
+    .weekly-release.slide iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+        background: transparent;
+    }
+
