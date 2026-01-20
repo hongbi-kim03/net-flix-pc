@@ -38,37 +38,61 @@ if (wishlistLink) {
 🎞️ TOP 10 슬라이더
 ================================ */
 const slider = document.querySelector('.slider');
+const wrapper = document.querySelector('.slider-wrapper');
 const dots = document.querySelectorAll('.dot');
-const cardsPerPage = 4;
-const cardWidth = 284;
+
 const gap = 16;
+const card = document.querySelector('.card');
+const cardWidth = card.offsetWidth; // ⭐ 실제 카드 폭 사용
+const cardsPerPage = 4;
+
 const totalCards = document.querySelectorAll('.card').length;
 const totalPages = Math.ceil(totalCards / cardsPerPage);
 
+let currentPage = 0;
+
+/* ⭐ 최대 이동 가능 거리 */
+function getMaxTranslateX() {
+    return slider.scrollWidth - wrapper.clientWidth;
+}
+
 function moveSlider(pageIndex) {
-    const moveX = (cardWidth + gap) * cardsPerPage * pageIndex;
-    slider.style.transform = `translateX(-${moveX}px)`;
+    const moveX =
+        (cardWidth + gap) * cardsPerPage * pageIndex;
+
+    const maxX = getMaxTranslateX();
+    const finalX = Math.min(moveX, maxX); // ⭐ 핵심
+
+    slider.style.transform = `translateX(-${finalX}px)`;
 }
 
 function updateDots(activeIndex) {
     dots.forEach(dot => dot.classList.remove('active'));
-    dots[activeIndex].classList.add('active');
+    if (dots[activeIndex]) {
+        dots[activeIndex].classList.add('active');
+    }
 }
 
 dots.forEach(dot => {
     dot.addEventListener('click', () => {
         const index = Number(dot.dataset.index);
+        currentPage = index;
         moveSlider(index);
         updateDots(index);
     });
 });
 
-let currentPage = 0;
+/* 자동 슬라이드 */
 setInterval(() => {
     currentPage = (currentPage + 1) % totalPages;
     moveSlider(currentPage);
     updateDots(currentPage);
 }, 5000);
+
+/* 리사이즈 대응 (반응형 대비) */
+window.addEventListener('resize', () => {
+    moveSlider(currentPage);
+});
 
 /* ================================
 🎬 숏폼 콘텐츠 자동재생
