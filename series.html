@@ -14,53 +14,55 @@
 <body>
     <!-- html 시작 -->
     <header class="header">
-        <a  href="index.html" class="logo">
-            <img src="images/logo.png" alt="넷플릭스 로고">
-        </a>
+        <div class="header-inner">
+            <a  href="index.html" class="logo">
+                <img src="images/logo.png" alt="넷플릭스 로고">
+            </a>
 
-        <nav class="gnb">
-            <ul>
-                <li><a href="home.html">홈</a></li>
-                <li><a href="movies.html">영화</a></li>
-                <li><a href="new.html">NEW</a></li>
-                <li><a href="series.html">시리즈</a></li>
-                <li><a href="wishlist.html">내가찜한리스트</a></li>
-                <li><a href="language.html">언어</a></li>
-                <li><a href="login.html">로그인/회원가입</a></li>
-            </ul>
-        </nav>
-
-        <div class="nav-right">
-            <form class="search-box" action="search.html">
-                <input type="text" placeholder="제목, 사람, 장르">
-                <button type="submit" class="search-icon">🔍</button>
-            </form>
-
-            <!-- 알림 드롭다운 -->
-            <div class="dropdown notification">
-                <img class="icon notification" src="images/icon-bell.png" alt="알림">
-                <ul class="dropdown-menu">
-                    <li><a href="wishlist.html">❤️찜한 콘텐츠 업데이트</a></li>
-                    <li><a href="new.html">NEW! 신규 콘텐츠</a></li>
-                    <li><a href="series.html">🔥인기 콘텐츠</a></li>
-                    <li class="notice-item" data-title="폭군의 셰프">신규 콘텐츠<br> 폭군의 셰프</li>
+            <nav class="gnb">
+                <ul>
+                    <li><a href="home.html">홈</a></li>
+                    <li><a href="movies.html">영화</a></li>
+                    <li><a href="new.html">NEW</a></li>
+                    <li><a href="series.html">시리즈</a></li>
+                    <li><a href="wishlist.html">내가찜한리스트</a></li>
+                    <li><a href="language.html">언어</a></li>
+                    <li><a href="login.html">로그인/회원가입</a></li>
                 </ul>
-            </div>
+            </nav>
 
-            <!-- 프로필 드롭다운 -->
-            <div class="dropdown profile">
-                <img class="icon profile" src="images/icon-profile.png" alt="프로필">
-                <ul class="dropdown-menu">
-                    <!-- 메뉴 항목  -->
-                    <li><a href="profile.html">⚙️ 프로필관리</a></li>
-                    <li><a href="profile-transfer.html">🔁 프로필 이전</a></li>
-                    <li><a href="account.html">👤 계정</a></li>
-                    
-                    <!-- 여기가 메뉴 구분선 -->
-                    <li class="divider"></li>
+            <div class="nav-right">
+                <form class="search-box" action="search.html">
+                    <input type="text" placeholder="제목, 사람, 장르">
+                    <button type="submit" class="search-icon">🔍</button>
+                </form>
 
-                    <li><a href="logout.html">🚪 로그아웃</a></li>
-                </ul>
+                <!-- 알림 드롭다운 -->
+                <div class="dropdown notification">
+                    <img class="icon notification" src="images/icon-bell.png" alt="알림">
+                    <ul class="dropdown-menu">
+                        <li><a href="wishlist.html">❤️찜한 콘텐츠 업데이트</a></li>
+                        <li><a href="new.html">NEW! 신규 콘텐츠</a></li>
+                        <li><a href="series.html">🔥인기 콘텐츠</a></li>
+                        <li class="notice-item" data-title="폭군의 셰프">신규 콘텐츠<br> 폭군의 셰프</li>
+                    </ul>
+                </div>
+
+                <!-- 프로필 드롭다운 -->
+                <div class="dropdown profile">
+                    <img class="icon profile" src="images/icon-profile.png" alt="프로필">
+                    <ul class="dropdown-menu">
+                        <!-- 메뉴 항목  -->
+                        <li><a href="profile.html">⚙️ 프로필관리</a></li>
+                        <li><a href="profile-transfer.html">🔁 프로필 이전</a></li>
+                        <li><a href="account.html">👤 계정</a></li>
+                        
+                        <!-- 여기가 메뉴 구분선 -->
+                        <li class="divider"></li>
+
+                        <li><a href="logout.html">🚪 로그아웃</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
