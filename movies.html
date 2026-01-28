@@ -13,59 +13,57 @@
 </head>
 <body>
     <header class="header">
-        <a  href="index.html" class="logo">
-            <img src="images/logo.png" alt="넷플릭스 로고">
-        </a>
+        <div class="header-inner">
+            <a  href="index.html" class="logo">
+                <img src="images/logo.png" alt="넷플릭스 로고">
+            </a>
 
-        <nav class="gnb">
-            <ul>
-                <li><a href="index.html">홈</a></li>
-                <li><a href="movies.html">영화</a></li>
-                <li><a href="new.html">NEW</a></li>
-                <li><a href="series.html">시리즈</a></li>
-                <li><a href="wishlist.html">내가찜한리스트</a></li>
-                <li><a href="language.html">언어</a></li>
-                <li><a href="login.html">로그인/회원가입</a></li>
-            </ul>
-        </nav>
-
-        <div class="nav-right">
-            <form class="search-box" action="search.html">
-                <input type="text" placeholder="제목, 사람, 장르">
-                <button type="submit" class="search-icon">🔍</button>
-            </form>
-
-            <!-- 알림 드롭다운 -->
-            <div class="dropdown notification">
-                <img class="icon notification" src="images/icon-bell.png" alt="알림">
-                <ul class="dropdown-menu">
-                    <li><a href="wishlist.html">❤️찜한 콘텐츠 업데이트</a></li>
-                    <li><a href="new.html">NEW! 신규 콘텐츠</a></li>
-                    <li><a href="series.html">🔥인기 콘텐츠</a></li>
-                    <li class="notice-item" data-title="폭군의 셰프">신규 콘텐츠<br> 폭군의 셰프</li>
+            <nav class="gnb" aria-label="메인 메뉴">
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="movies.html">영화</a></li>
+                    <li><a href="new.html">NEW</a></li>
+                    <li><a href="series.html">시리즈</a></li>
+                    <li><a href="wishlist.html">내가찜한리스트</a></li>
+                    <li><a href="language.html">언어</a></li>
+                    <li><a href="login.html">로그인/회원가입</a></li>
                 </ul>
-            </div>
+            </nav>
 
-            <!-- 프로필 드롭다운 -->
-            <div class="dropdown profile">
-                <img class="icon profile" src="images/icon-profile.png" alt="프로필">
+            <div class="nav-right">
+                <form class="search-box" action="search.html">
+                    <input type="text" placeholder="제목, 사람, 장르">
+                    <button type="submit" class="search-icon">🔍</button>
+                </form>
 
-                <ul class="dropdown-menu">
-                    <!-- 메뉴 항목  -->
-                    <li><a href="profile.html">⚙️ 프로필관리</a></li>
-                    <li><a href="profile-transfer.html">🔁 프로필 이전</a></li>
-                    <li><a href="account.html">👤 계정</a></li>
-                    
-                    <!-- 여기가 메뉴 구분선 -->
-                    <li class="divider"></li>
+                <!-- 알림 드롭다운 -->
+                <div class="dropdown notification">
+                    <img class="icon notification" src="images/icon-bell.png" alt="알림">
+                    <ul class="dropdown-menu">
+                        <li><a href="wishlist.html">❤️찜한 콘텐츠 업데이트</a></li>
+                        <li><a href="new.html">NEW! 신규 콘텐츠</a></li>
+                        <li><a href="series.html">🔥인기 콘텐츠</a></li>
+                        <li class="notice-item" data-title="폭군의 셰프">신규 콘텐츠<br> 폭군의 셰프</li>
+                    </ul>
+                </div>
 
-                    <li><a href="logout.html">🚪 로그아웃</a></li>
-                </ul>
+                <!-- 프로필 드롭다운 -->
+                <div class="dropdown profile">
+                    <img class="icon profile" src="images/icon-profile.png" alt="프로필">
+                    <ul class="dropdown-menu">
+                        <!-- 메뉴 항목  -->
+                        <li><a href="profile.html">⚙️ 프로필관리</a></li>
+                        <li><a href="profile-transfer.html">🔁 프로필 이전</a></li>
+                        <li><a href="account.html">👤 계정</a></li>
+                        <li><a href="logout.html">🚪 로그아웃</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
 
-    <main>
+    <!-- main -->
+    <main class="main">
         <!-- ✅ 메인 배너 -->
         <section class="banner">
 
@@ -77,44 +75,60 @@
                 allowfullscreen>
             </iframe>
         </div>
-        
+
         <!-- 오버레이 콘텐츠 -->
         <div class="banner-content">
-            <img src="images/banner-title-movie-01.webp" alt="지금 가장 인기있는 콘텐츠">
-                <p class="banner-description">
-                    1유로에 쓰러져 가는 토스카나 저택을 산다고?딸이 사기당한 건 아닌지 의심하는 에릭.<br> 
-                    하지만 평화로운 전원도시와 생기 넘치는 시장을 만나면서 점차 마음을 빼앗긴다.
-                </p>
-                <div class="banner-buttons">
-                    <button class="btn play">▶ 재생</button>
-                    <button class="btn info">ℹ 상세 정보</button>
-                    <button class="btn bookmark">+ 찜하기</button>
-                </div>
-            </div>
-        </section>
+            <img class="banner-title-img" src="images/banner-title-movie-01.webp" alt="지금 가장 인기있는 콘텐츠">
         
-        <!-- 000님이 시청중인 콘텐츠 -->
-        <section class="section_watching">
-            <h2 class="section-title">000님이 시청중인 콘텐츠</h2>
+            <p class="banner-description">
+                1유로에 쓰러져 가는 토스카나 저택을 산다고?<br>
+                딸이 사기당한 건 아닌지 의심하는 에릭.<br>
+                하지만 평화로운 전원도시와 생기 넘치는 시장을 만나면서 점차 마음을 빼앗긴다.
+            </p>
+            <!-- 🔊 사운드 컨트롤 -->
+            <div class="banner-controls">
+                <button class="btn sound-toggle" aria-label="배너 영상 음소거 토글">🔇</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 000님이 시청중인 콘텐츠 -->
+    <section class="continue-watching-section">
+        <h2 class="continue-watching-title">000님이 시청중인 콘텐츠</h2>
 
-            <div class="watching-content">
-                <div class="slide"  style="background-image: url('https://img.youtube.com/vi/nldAfgJrBr8/hqdefault.jpg')">
-                    <iframe 
-                        src="https://www.youtube.com/embed/nldAfgJrBr8?enablejsapi=1&rel=0"
+        <div class="continue-watching-inner">
+            <div class="continue-watching-content">
+
+                <!-- 시청중인 콘텐츠 1 -->
+                <div class="continue-watching-video" data-video-id="nldAfgJrBr8">
+                    <div class="thumbnail"></div>
+                    <iframe src="https://www.youtube.com/embed/nldAfgJrBr8?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
                         allowfullscreen>
                     </iframe>
                 </div>
 
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/lTu7j2GOGwQ/hqdefault.jpg')">
-                    <iframe 
-                        src="https://www.youtube.com/embed/lTu7j2GOGwQ?enablejsapi=1&rel=0"
+                <!-- 시청중인 콘텐츠 2 -->
+                <div class="continue-watching-video" data-video-id="lTu7j2GOGwQ">
+                    <div class="thumbnail"></div>
+                    <iframe src="https://www.youtube.com/embed/lTu7j2GOGwQ?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
                         allowfullscreen>
                     </iframe>
                 </div>
 
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/RlKLEi-nr9c/hqdefault.jpg')">
+                <!-- 시청중인 콘텐츠 3 -->
+                <div class="continue-watching-video" data-video-id="RlKLEi-nr9c">
+                    <div class="thumbnail"></div>
+                    <iframe src="https://www.youtube.com/embed/RlKLEi-nr9c?enablejsapi=1&rel=0"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- 시청중인 콘텐츠 4 -->
+                <div class="continue-watching-video" data-video-id="RlKLEi-nr9c">
+                    <div class="thumbnail"></div>
                     <iframe 
                         src="https://www.youtube.com/embed/RlKLEi-nr9c?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
@@ -122,15 +136,9 @@
                     </iframe>
                 </div>
 
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/RlKLEi-nr9c/hqdefault.jpg')">
-                    <iframe 
-                        src="https://www.youtube.com/embed/RlKLEi-nr9c?enablejsapi=1&rel=0"
-                        allow="autoplay; encrypted-media"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/RlKLEi-nr9c/hqdefault.jpg')">
+                <!-- 시청중인 콘텐츠 5 -->
+                <div class="continue-watching-video" data-video-id="V4khcW7R9eU">
+                    <div class="thumbnail"></div>
                     <iframe 
                         src="https://www.youtube.com/embed/V4khcW7R9eU?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
@@ -138,14 +146,18 @@
                     </iframe>
                 </div>
 
-                <div class="slide"  style="background-image: url('https://img.youtube.com/vi/kQdEHQLHDAI/hqdefault.jpg')">
+                <!-- 시청중인 콘텐츠 6 -->
+                <div class="continue-watching-video" data-video-id="kQdEHQLHDAI">
+                    <div class="thumbnail"></div>
                     <iframe src="https://www.youtube.com/embed/kQdEHQLHDAI?enablejsapi=1&rel=0&autoplay=0"
                         allow="autoplay; encrypted-media"
                         allowfullscreen>
                     </iframe>
                 </div>
 
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/7QwY92QrZ00/maxresdefault.jpg')">
+                <!-- 시청중인 콘텐츠 7 -->
+                <div class="continue-watching-video" data-video-id="7QwY92QrZ00">
+                    <div class="thumbnail"></div>
                     <iframe 
                         src="https://www.youtube.com/embed/7QwY92QrZ00?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
@@ -153,7 +165,9 @@
                     </iframe>
                 </div>
 
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/ic2063VIGDE/maxresdefault.jpg')">
+                <!-- 시청중인 콘텐츠 8 -->
+                <div class="continue-watching-video" data-video-id="ic2063VIGDE">
+                    <div class="thumbnail"></div>
                     <iframe 
                         src="https://www.youtube.com/embed/ic2063VIGDE?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
@@ -161,7 +175,9 @@
                     </iframe>
                 </div>
 
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/xQnsFqn44uo/maxresdefault.jpg')">
+                <!-- 시청중인 콘텐츠 9 -->
+                <div class="continue-watching-video" data-video-id="xQnsFqn44uo">
+                    <div class="thumbnail"></div>
                     <iframe 
                         src="https://www.youtube.com/embed/xQnsFqn44uo?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
@@ -169,347 +185,409 @@
                     </iframe>
                 </div>
 
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/nhPWOV02-G0/maxresdefault.jpg')">
+                <!-- 시청중인 콘텐츠 10 -->
+                <div class="continue-watching-video" data-video-id="nhPWOV02-G0">
+                    <div class="thumbnail"></div>
                     <iframe src="https://www.youtube.com/embed/nhPWOV02-G0?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
                         allowfullscreen>
                     </iframe>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 오늘 대한민국의 TOP 10 영화 -->
-        <section class="section-top10-movies">
-            <h2 class="section-tittle">오늘 대한민국의 TOP 10 영화</h2>
+    <!-- 오늘 대한민국의 TOP 10 영화 -->
+    <section class="section-top10-movies">
+        <h2 class="top10-movies-title">오늘 대한민국의 TOP 10 영화</h2>
 
-                <div class="top10-slider">
-                <!-- 카드 1 -->
-                    <div class="top10-slide">
-                        <div class="number-area">
-                            <span class="top10-number">1</span>
-                        </div>
-                        <div class="video-area">
-                            <iframe
-                                src="https://www.youtube.com/embed/xQnsFqn44uo?enablejsapi=1&rel=0"
-                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-                            </iframe>
-                        </div>
+        <div class="top10-inner" >
+            <div class="top10-slider">
+
+                <!--TOP 10 영화 카드 1 -->
+                <div class="top10-slide">
+                    <div class="number-area">
+                        <span class="top10-number">1</span>
                     </div>
 
-                    <!-- 카드 2 -->
-                    <div class="top10-slide">
-                        <div class="number-area">
-                            <span class="top10-number">2</span>
-                        </div>
-                        <div class="video-area">
-                            <iframe 
-                                src="https://www.youtube.com/embed/J1-hw-tMQfA?enablejsapi=1&rel=0"
-                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-
-                    <!-- 카드 3 -->
-                    <div class="top10-slide">
-                        <div class="number-area">
-                            <span class="top10-number">3</span>
-                        </div>
-                        <div class="video-area">
-                            <iframe
-                                src="https://www.youtube.com/embed/QOk-7wazEX4?enablejsapi=1&rel=0" 
-                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-
-                    <!-- 카드 4 -->
-                    <div class="top10-slide">
-                        <div class="number-area">
-                            <span class="top10-number">4</span>
-                        </div>
-                        <div class="video-area">
-                            <iframe 
-                                src="https://www.youtube.com/embed/VzJit9Tnzyo?enablejsapi=1&rel=0"
-                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                            </iframe>
-                        </div>
-                    </div>
-
-                    <!-- 카드 5 -->
-                    <div class="top10-slide">
-                        <div class="number-area">
-                            <span class="top10-number">5</span>
-                        </div>
-                        <div class="video-area">
-                            <iframe 
-                                src="https://www.youtube.com/embed/BQGUnICIt-8?enablejsapi=1&rel=0" 
-                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-
-                    <!-- 카드 6 -->
-                    <div class="top10-slide">
-                        <div class="number-area">
-                            <span class="top10-number">6</span>
-                        </div>
-                        <div class="video-area">
-                            <iframe
-                                src="https://www.youtube.com/embed/nldAfgJrBr8?enablejsapi=1&rel=0"
-                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-
-                    <!-- 카드 7 -->
-                    <div class="top10-slide">
-                        <div class="number-area">
-                            <span class="top10-number">7</span>
-                        </div>
-                        <div class="video-area">
-                            <iframe src="https://www.youtube.com/embed/lTu7j2GOGwQ?enablejsapi=1&rel=0" 
-                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-
-                    <!-- 카드 8 -->
-                    <div class="top10-slide">
-                        <div class="number-area">
-                            <span class="top10-number">8</span>
-                        </div>
-                        <div class="video-area">
-                            <iframe
-                                src="https://www.youtube.com/embed/RlKLEi-nr9c?enablejsapi=1&rel=0" 
-                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-
-                    <!-- 카드 9 -->
-                    <div class="top10-slide">
-                        <div class="number-area">
-                            <span class="top10-number">9</span>
-                        </div>
-                        <div class="video-area">
-                            <iframe
-                                src="https://www.youtube.com/embed/KLyxElQGWX4?enablejsapi=1&rel=0" 
-                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-
-                    <!-- 카드 10 -->
-                    <div class="top10-slide">
-                        <div class="number-area">
-                            <span class="top10-number">10</span>
-                        </div>
-                        <div class="video-area">
-                            <iframe src="https://www.youtube.com/embed/V4khcW7R9eU?enablejsapi=1&rel=0"
-                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-                            </iframe>
-                        </div>
+                    <div class="top10-video"data-video-id="xQnsFqn44uo">
+                        <div class="thumbnail"></div>
+                        <iframe 
+                            src="https://www.youtube.com/embed/xQnsFqn44uo?enablejsapi=1&rel=0"
+                            allow="autoplay; encrypted-media"
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
-        </section>
 
-        <!-- 영화 -->
-        <section class="movies">
-            <h2 class="movies-title">영화</h2>
+                <!-- TOP 10 영화 카드 2 -->
+                <div class="top10-slide">
+                    <div class="number-area">
+                        <span class="top10-number">2</span>
+                    </div>
 
+                    <div class="top10-video"data-video-id="J1-hw-tMQfA">
+                        <div class="thumbnail"></div>
+                        <iframe 
+                            src="https://www.youtube.com/embed/J1-hw-tMQfA?enablejsapi=1&rel=0"
+                            allow="autoplay; encrypted-media"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- TOP 10 영화 카드 3 -->
+                <div class="top10-slide">
+                    <div class="number-area">
+                        <span class="top10-number">3</span>
+                    </div>
+
+                    <div class="top10-video"data-video-id="QOk-7wazEX4">
+                        <div class="thumbnail"></div>
+                        <iframe 
+                            src="https://www.youtube.com/embed/QOk-7wazEX4?enablejsapi=1&rel=0" 
+                            allow="autoplay; encrypted-media"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!--TOP 10 영화 카드 4-->
+                <div class="top10-slide">
+                    <div class="number-area">
+                        <span class="top10-number">4</span>
+                    </div>
+
+                    <div class="top10-video"data-video-id="VzJit9Tnzyo">
+                        <div class="thumbnail"></div>
+                        <iframe 
+                            src="https://www.youtube.com/embed/VzJit9Tnzyo?enablejsapi=1&rel=0"
+                            allow="autoplay; encrypted-media"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!--TOP 10 영화 카드 5-->
+                <div class="top10-slide">
+                    <div class="number-area">
+                        <span class="top10-number">5</span>
+                    </div>
+
+                    <div class="top10-video"data-video-id="BQGUnICIt-8">
+                        <div class="thumbnail"></div>
+                        <iframe 
+                            src="https://www.youtube.com/embed/BQGUnICIt-8?enablejsapi=1&rel=0" 
+                            allow="autoplay; encrypted-media"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!--TOP 10 영화 카드 6-->
+                <div class="top10-slide">
+                    <div class="number-area">
+                        <span class="top10-number">6</span>
+                    </div>
+
+                    <div class="top10-video"data-video-id="nldAfgJrBr8">
+                        <div class="thumbnail"></div>
+                        <iframe
+                            src="https://www.youtube.com/embed/nldAfgJrBr8?enablejsapi=1&rel=0"
+                            allow="autoplay; encrypted-media"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!--TOP 10 영화 카드 7-->
+                <div class="top10-slide">
+                    <div class="number-area">
+                        <span class="top10-number">7</span>
+                    </div>
+
+                    <div class="top10-video"data-video-id="lTu7j2GOGwQ">
+                        <div class="thumbnail"></div>
+                        <iframe 
+                            src="https://www.youtube.com/embed/lTu7j2GOGwQ?enablejsapi=1&rel=0" 
+                            allow="autoplay; encrypted-media"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!--TOP 10 영화 카드 8-->
+                <div class="top10-slide">
+                    <div class="number-area">
+                        <span class="top10-number">8</span>
+                    </div>
+
+                    <div class="top10-video"data-video-id="RlKLEi-nr9c">
+                        <div class="thumbnail"></div>
+                        <iframe 
+                            src="https://www.youtube.com/embed/RlKLEi-nr9c?enablejsapi=1&rel=0" 
+                            allow="autoplay; encrypted-media"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!--TOP 10 영화 카드 9-->
+                <div class="top10-slide">
+                    <div class="number-area">
+                        <span class="top10-number">9</span>
+                    </div>
+
+                    <div class="top10-video"data-video-id="KLyxElQGWX4">
+                        <div class="thumbnail"></div>
+                        <iframe 
+                            src="https://www.youtube.com/embed/KLyxElQGWX4?enablejsapi=1&rel=0" 
+                            allow="autoplay; encrypted-media"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!--TOP 10 영화 카드 10-->
+                <div class="top10-slide">
+                    <div class="number-area">
+                        <span class="top10-number">10</span>
+                    </div>
+
+                    <div class="top10-video"data-video-id="V4khcW7R9eU">
+                        <div class="thumbnail"></div>
+                        <iframe 
+                            src="https://www.youtube.com/embed/V4khcW7R9eU?enablejsapi=1&rel=0"
+                            allow="autoplay; encrypted-media"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 영화 -->
+    <section class="movies-content-section">
+        <h2 class="movies-title">영화</h2>
+
+        <div class="movies-inner" >
             <div class="movies-content">
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/NYZO4IKXpI4/hqdefault.jpg');">
-                    <iframe src="https://www.youtube.com/embed/NYZO4IKXpI4?nablejsapi=1&rel=0"
+
+                <!-- 영화 콘텐츠 1 -->
+                <div class="movies-video"data-video-id="NYZO4IKXpI4" >
+                    <div class="thumbnail"></div>
+                    <iframe src="https://www.youtube.com/embed/NYZO4IKXpI4?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
                         allowfullscreen>
                     </iframe>
                 </div>
 
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/fmi4Qc-cvis/hqdefault.jpg');">
+                <!-- 영화 콘텐츠 2 -->
+                <div class="movies-video"data-video-id="fmi4Qc-cvis" >
+                    <div class="thumbnail"></div>
                     <iframe src="https://www.youtube.com/embed/fmi4Qc-cvis?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
                         allowfullscreen>
                     </iframe>
                 </div>
 
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/gtz6YTIADDA/hqdefault.jpg');">
+                <!-- 영화 콘텐츠 3 -->
+                <div class="movies-video"data-video-id="gtz6YTIADDA" >
+                    <div class="thumbnail"></div>
                     <iframe src="https://www.youtube.com/embed/gtz6YTIADDA?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
                         allowfullscreen>
                     </iframe>
                 </div>
 
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/1KsgnZ9p1pI/hqdefault.jpg');">
+                <!-- 영화 콘텐츠 4 -->
+                <div class="movies-video"data-video-id="1KsgnZ9p1pI" >
+                    <div class="thumbnail"></div>
                     <iframe src="https://www.youtube.com/embed/1KsgnZ9p1pI?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
                         allowfullscreen>
                     </iframe>
                 </div>
 
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/FT3XhHf0yQI/hqdefault.jpg');">
+                <!-- 영화 콘텐츠 5 -->
+                <div class="movies-video"data-video-id="FT3XhHf0yQI" >
+                    <div class="thumbnail"></div>
                     <iframe src="https://www.youtube.com/embed/FT3XhHf0yQI?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
                         allowfullscreen>
                     </iframe>
                 </div>
 
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/NYZO4IKXpI4/hqdefault.jpg');">
-                    <iframe src="https://www.youtube.com/embed/NYZO4IKXpI4?nablejsapi=1&rel=0"
+                <!-- 영화 콘텐츠 6 -->
+                <div class="movies-video"data-video-id="NYZO4IKXpI4" >
+                    <div class="thumbnail"></div>
+                    <iframe src="https://www.youtube.com/embed/NYZO4IKXpI4?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
                         allowfullscreen>
                         </iframe>
                 </div>
 
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/fmi4Qc-cvis/hqdefault.jpg');">
+                <!-- 영화 콘텐츠 7 -->
+                <div class="movies-video"data-video-id="fmi4Qc-cvis" >
+                    <div class="thumbnail"></div>
                     <iframe src="https://www.youtube.com/embed/fmi4Qc-cvis?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
                         allowfullscreen>
                     </iframe>
                 </div>
 
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/gtz6YTIADDA/hqdefault.jpg');">
+                <!-- 영화 콘텐츠 8 -->
+                <div class="movies-video"data-video-id="gtz6YTIADDA" >
+                    <div class="thumbnail"></div>
                     <iframe src="https://www.youtube.com/embed/gtz6YTIADDA?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
                         allowfullscreen>
                     </iframe>
                 </div>
 
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/1KsgnZ9p1pI/hqdefault.jpg');">
+                <!-- 영화 콘텐츠 9 -->
+                <div class="movies-video"data-video-id="1KsgnZ9p1pI" >
+                    <div class="thumbnail"></div>
                     <iframe src="https://www.youtube.com/embed/1KsgnZ9p1pI?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
                         allowfullscreen>
                     </iframe>
                 </div>
 
-                <div class="slide" style="background-image: url('https://img.youtube.com/vi/FT3XhHf0yQI/hqdefault.jpg');">
+                <!-- 영화 콘텐츠 10 -->
+                <div class="movies-video"data-video-id="FT3XhHf0yQI" >
+                    <div class="thumbnail"></div>
                     <iframe src="https://www.youtube.com/embed/FT3XhHf0yQI?enablejsapi=1&rel=0"
                         allow="autoplay; encrypted-media"
                         allowfullscreen>
                     </iframe>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+</main>
 
-    <!-- ✅ modal -->
-    <!-- ✅ 폭군의 셰프 회차 목록 템플릿 -->
-    <template id="episodes-chef">
-        <div class="episode-scroll">
-            <h2 class="episode-title">회차</h2>
+<!-- ✅ modal -->
+<!-- ✅ 폭군의 셰프 회차 목록 템플릿 -->
+<template id="episodes-chef">
+    <div class="episode-scroll">
+        <h2 class="episode-title">회차</h2>
 
-                <div class="episode-list">
+            <div class="episode-list">
 
-                <!-- episode 1 -->
-                <div class="episode">
-                    <div class="episode-left">
-                        <span class="episode-number">1</span>
-                        <iframe src="https://www.youtube.com/embed/C_oUH_P_r5E?enablejsapi=1&rel=0"
-                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                    <div class="episode-right">
-                        <h3>Course Nº1 고추장 버터 비빔밥 <span class="duration">(79분)</span></h3>
-                        <p>가혹한 상황에 처한 지영은 자유를 되찾기 위해 연회를 준비한다. 하지만 예상치 못한 위기 앞에서 지영의 특별한 요리 솜씨도 무력해지고 마는데.</p>
-                    </div>
+            <!-- episode 1 -->
+            <div class="episode">
+                <div class="episode-left">
+                    <span class="episode-number">1</span>
+                    <iframe src="https://www.youtube.com/embed/C_oUH_P_r5E?enablejsapi=1&rel=0"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
-
-                <!-- episode 2 -->
-                <div class="episode">
-                    <div class="episode-left">
-                        <span class="episode-number">2</span>
-                        <iframe src="https://www.youtube.com/embed/RcCIYegl7dU?enablejsapi=1&rel=0"
-                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                    <div class="episode-right">
-                        <h3>Course Nº2 수비드 요리<span class="duration">(79분)</span></h3>
-                        <p>프랑스 요리 대회 우승자 연지영. 오래된 요리책을 통해 과거로 가게 된 그녀는 도착하자마자 폭군으로 알려진 이헌과 마주친다.</p>
-                    </div>
+                <div class="episode-right">
+                    <h3>Course Nº1 고추장 버터 비빔밥 <span class="duration">(79분)</span></h3>
+                    <p>가혹한 상황에 처한 지영은 자유를 되찾기 위해 연회를 준비한다. 하지만 예상치 못한 위기 앞에서 지영의 특별한 요리 솜씨도 무력해지고 마는데.</p>
                 </div>
+            </div>
 
-                <!-- episode 3 -->
-                <div class="episode">
-                    <div class="episode-left">
-                        <span class="episode-number">3</span>
-                        <iframe src="https://www.youtube.com/embed/WHt-YWMj6Gg?enablejsapi=1&rel=0"
-                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                    <div class="episode-right">
-                        <h3>Course Nº3 오뜨 퀴진<span class="duration">(80분)</span></h3>
-                        <p>프랑스 요리로 이헌을 사로잡은 지영은 새로운 대령숙수로 임명된다. 그러나 질투에 휩싸인 강목수가 지영을 음모에 빠뜨린다.</p>
-                    </div>
+            <!-- episode 2 -->
+            <div class="episode">
+                <div class="episode-left">
+                    <span class="episode-number">2</span>
+                    <iframe src="https://www.youtube.com/embed/RcCIYegl7dU?enablejsapi=1&rel=0"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
-
-                <!-- episode 4 -->
-                <div class="episode">
-                    <div class="episode-left">
-                        <span class="episode-number">4</span>
-                        <iframe src="https://www.youtube.com/embed/o9Ldf6INC4U?enablejsapi=1&rel=0"
-                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                    <div class="episode-right">
-                        <h3>Course Nº4 ** 시금치 된장국<span class="duration">(80분)</span></h3>
-                        <p>궁중에서 운명을 건 요리 경연에 나선 지영. 이어 슬픔에 젖은 이헌이 술에 취한 채 지영을 불러들인다.</p>
-                    </div>
+                <div class="episode-right">
+                    <h3>Course Nº2 수비드 요리<span class="duration">(79분)</span></h3>
+                    <p>프랑스 요리 대회 우승자 연지영. 오래된 요리책을 통해 과거로 가게 된 그녀는 도착하자마자 폭군으로 알려진 이헌과 마주친다.</p>
                 </div>
+            </div>
 
-                <!-- episode 5 -->
-                <div class="episode">
-                    <div class="episode-left">
-                        <span class="episode-number">5</span>
-                        <iframe src="https://www.youtube.com/embed/gTwONwrkc1Q?enablejsapi=1&rel=0"
-                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                    <div class="episode-right">
-                        <h3>Course Nº5 눈꽃 슈니첼<span class="duration">(76분)</span></h3>
-                        <p>뜻밖의 친밀한 시간을 보낸 뒤, 이헌은 지영의 식사를 거부하기 시작한다. 그러나 떨어져 있는 동안에도 두 사람의 마음은 서로를 향한다.</p>
-                    </div>
+            <!-- episode 3 -->
+            <div class="episode">
+                <div class="episode-left">
+                    <span class="episode-number">3</span>
+                    <iframe src="https://www.youtube.com/embed/WHt-YWMj6Gg?enablejsapi=1&rel=0"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
-
-                <!-- episode 6 -->
-                <div class="episode">
-                    <div class="episode-left">
-                        <span class="episode-number">6</span>
-                        <iframe src="https://www.youtube.com/embed/ok9bkGRz9EQ?enablejsapi=1&rel=0"
-                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                    <div class="episode-right">
-                        <h3>6화<span class="duration"></span></h3>
-                        <p>9월 7일 공개</p>
-                    </div>
+                <div class="episode-right">
+                    <h3>Course Nº3 오뜨 퀴진<span class="duration">(80분)</span></h3>
+                    <p>프랑스 요리로 이헌을 사로잡은 지영은 새로운 대령숙수로 임명된다. 그러나 질투에 휩싸인 강목수가 지영을 음모에 빠뜨린다.</p>
                 </div>
+            </div>
 
-                <!-- episode 7 -->
-                <div class="episode">
-                    <div class="episode-left">
-                        <span class="episode-number">7</span>
-                        <iframe src="https://www.youtube.com/embed/ok9bkGRz9EQ?enablejsapi=1&rel=0"
-                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                    <div class="episode-right">
-                        <h3>7화<span class="duration"></span></h3>
-                        <p>9월 13일 공개</p>
-                    </div>
+            <!-- episode 4 -->
+            <div class="episode">
+                <div class="episode-left">
+                    <span class="episode-number">4</span>
+                    <iframe src="https://www.youtube.com/embed/o9Ldf6INC4U?enablejsapi=1&rel=0"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="episode-right">
+                    <h3>Course Nº4 ** 시금치 된장국<span class="duration">(80분)</span></h3>
+                    <p>궁중에서 운명을 건 요리 경연에 나선 지영. 이어 슬픔에 젖은 이헌이 술에 취한 채 지영을 불러들인다.</p>
+                </div>
+            </div>
+
+            <!-- episode 5 -->
+            <div class="episode">
+                <div class="episode-left">
+                    <span class="episode-number">5</span>
+                    <iframe src="https://www.youtube.com/embed/gTwONwrkc1Q?enablejsapi=1&rel=0"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="episode-right">
+                    <h3>Course Nº5 눈꽃 슈니첼<span class="duration">(76분)</span></h3>
+                    <p>뜻밖의 친밀한 시간을 보낸 뒤, 이헌은 지영의 식사를 거부하기 시작한다. 그러나 떨어져 있는 동안에도 두 사람의 마음은 서로를 향한다.</p>
+                </div>
+            </div>
+
+            <!-- episode 6 -->
+            <div class="episode">
+                <div class="episode-left">
+                    <span class="episode-number">6</span>
+                    <iframe src="https://www.youtube.com/embed/ok9bkGRz9EQ?enablejsapi=1&rel=0"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="episode-right">
+                    <h3>6화<span class="duration"></span></h3>
+                    <p>9월 7일 공개</p>
+                </div>
+            </div>
+
+            <!-- episode 7 -->
+            <div class="episode">
+                <div class="episode-left">
+                    <span class="episode-number">7</span>
+                    <iframe src="https://www.youtube.com/embed/ok9bkGRz9EQ?enablejsapi=1&rel=0"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="episode-right">
+                    <h3>7화<span class="duration"></span></h3>
+                    <p>9월 13일 공개</p>
                 </div>
             </div>
         </div>
-    </template>
-
-    <div id="image-modal" class="modal">
-        <div class="modal-content wide">
-            <span class="close">&times;</span>
-
-            <img id="modal-img" src="#" alt="모달 이미지">
-            <h2 id="modal-title">제목</h2>
-            <p id="modal-description">설명</p>
-
-            <ul class="meta-info">
-                <li><strong>출연:</strong> <span id="modal-cast"></span></li>
-                <li><strong>장르:</strong> <span id="modal-genre"></span></li>
-                <li><strong>시리즈특징:</strong> <span id="modal-feature"></span></li>
-            </ul>
-
-            <div id="modal-episodes-container"></div>
-        </div>
     </div>
+</template>
+
+<!-- ✅ modal -->
+<div id="image-modal" class="modal">
+    <div class="modal-content wide">
+        <span class="close">&times;</span>
+
+        <img id="modal-img" src="#" alt="모달 이미지">
+        <h2 id="modal-title">제목</h2>
+        <p id="modal-description">설명</p>
+
+        <ul class="meta-info">
+            <li><strong>출연:</strong> <span id="modal-cast"></span></li>
+            <li><strong>장르:</strong> <span id="modal-genre"></span></li>
+            <li><strong>시리즈특징:</strong> <span id="modal-feature"></span></li>
+        </ul>
+
+        <div id="modal-episodes-container"></div>
+    </div>
+</div>
 
     <!-- ✅ footer -->
     <footer class="footer">
