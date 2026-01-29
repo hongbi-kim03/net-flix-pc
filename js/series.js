@@ -20,18 +20,42 @@ function postMessageToIframe(iframe, command) {
 function initBannerVideo() {
     const banner = document.querySelector(".yt-background");
     const iframe = banner?.querySelector("iframe");
+    const thumbnail = banner.querySelector(".thumbnail");
     const soundBtn = document.querySelector(".sound-toggle");
+    const videoId = banner.dataset.videoId;
 
     if (!banner || !iframe || !soundBtn) return;
 
     let isMuted = true;
 
-    // 초기 상태
+    /* =========================
+        1️⃣ 썸네일 먼저 표시
+    ========================= */
+    thumbnail.style.backgroundImage =
+        `url(https://img.youtube.com/vi/${videoId}/maxresdefault.jpg)`;
+
+    iframe.style.opacity = "0";
+    iframe.style.pointerEvents = "none";
+
+    /* =========================
+        2️⃣ iframe 로딩 후 교체
+    ========================= */
+    iframe.addEventListener("load", () => {
+        iframe.style.opacity = "1";
+        thumbnail.style.opacity = "0";
+        thumbnail.style.pointerEvents = "none";
+    });
+
+    /* =========================
+        3️⃣ 초기 재생 (무음)
+    ========================= */
     postMessageToIframe(iframe, "mute");
     postMessageToIframe(iframe, "playVideo");
     soundBtn.textContent = "🔇";
 
-    // 🔊 사운드 토글 (사용자 액션)
+    /* =========================
+        4️⃣ 사운드 토글
+    ========================= */
     soundBtn.addEventListener("click", () => {
         if (isMuted) {
             postMessageToIframe(iframe, "unMute");
@@ -43,7 +67,9 @@ function initBannerVideo() {
         isMuted = !isMuted;
     });
 
-    // 👀 화면 가시성 감지 (넷플릭스 방식)
+    /* =========================
+        5️⃣ 넷플릭스식 가시성 제어
+    ========================= */
     const observer = new IntersectionObserver(
         ([entry]) => {
             if (entry.isIntersecting) {
@@ -53,9 +79,6 @@ function initBannerVideo() {
                 soundBtn.textContent = "🔇";
             } else {
                 postMessageToIframe(iframe, "pauseVideo");
-                postMessageToIframe(iframe, "mute");
-                isMuted = true;
-                soundBtn.textContent = "🔇";
             }
         },
         { threshold: 0.3 }
