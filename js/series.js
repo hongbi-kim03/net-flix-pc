@@ -1,230 +1,311 @@
-/* ==============================
-    ✅ iframe 제어 함수
-============================== */
+/* ==================================================
+📩 YouTube iframe 공통 제어
+================================================== */
 function postMessageToIframe(iframe, command) {
     if (!iframe || !iframe.contentWindow) return;
-    iframe.contentWindow.postMessage(JSON.stringify({
-        event: 'command',
-        func: command,
-        args: []
-    }), '*');
+
+    iframe.contentWindow.postMessage(
+        JSON.stringify({
+            event: "command",
+            func: command,
+            args: []
+        }),
+        "*"
+    );
 }
 
-/* ==============================
-    ✅ 드롭다운 메뉴 스크롤 방지
-============================== */
-const dropdowns = document.querySelectorAll('.dropdown-menu');
+/* ==================================================
+🎬 넷플릭스 배너 비디오 (사운드 + 스크롤 제어)
+================================================== */
+function initBannerVideo() {
+    const banner = document.querySelector(".yt-background");
+    const iframe = banner?.querySelector("iframe");
+    const soundBtn = document.querySelector(".sound-toggle");
 
-dropdowns.forEach(menu => {
-    menu.addEventListener('wheel', function (e) {
-        const delta = e.deltaY;
-        const up = delta < 0;
-        const down = delta > 0;
+    if (!banner || !iframe || !soundBtn) return;
 
-        const scrollTop = menu.scrollTop;
-        const scrollHeight = menu.scrollHeight;
-        const offsetHeight = menu.offsetHeight;
+    let isMuted = true;
 
-        const atTop = scrollTop === 0;
-        const atBottom = scrollTop + offsetHeight >= scrollHeight - 1;
+    // 초기 상태
+    postMessageToIframe(iframe, "mute");
+    postMessageToIframe(iframe, "playVideo");
+    soundBtn.textContent = "🔇";
 
-        if ((up && atTop) || (down && atBottom)) {
-            e.preventDefault();
+    // 🔊 사운드 토글 (사용자 액션)
+    soundBtn.addEventListener("click", () => {
+        if (isMuted) {
+            postMessageToIframe(iframe, "unMute");
+            soundBtn.textContent = "🔊";
+        } else {
+            postMessageToIframe(iframe, "mute");
+            soundBtn.textContent = "🔇";
         }
-    }, { passive: false });
-});
-/* ==============================
-    ✅ 가로 드래그 슬라이더 + iframe 통합
-============================== */
-function makeDraggableSlider(sliderSelector) {
-    const slider = document.querySelector(sliderSelector);
-    if (!slider) return;
-
-    const slides = slider.querySelectorAll('.slide, .top10-slide, .drama.slide');
-
-    slides.forEach(slide => {
-        const iframe = slide.querySelector('iframe');
-        if (!iframe) return;
-
-        slide.addEventListener('mouseenter', () => postMessageToIframe(iframe, 'playVideo'));
-        slide.addEventListener('mouseleave', () => postMessageToIframe(iframe, 'pauseVideo'));
+        isMuted = !isMuted;
     });
 
-    window.addEventListener('load', () => {
-        slides.forEach(slide => {
-            const iframe = slide.querySelector('iframe');
-            if (!iframe) return;
-            postMessageToIframe(iframe, 'pauseVideo');
+    // 👀 화면 가시성 감지 (넷플릭스 방식)
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+                postMessageToIframe(iframe, "playVideo");
+                postMessageToIframe(iframe, "mute");
+                isMuted = true;
+                soundBtn.textContent = "🔇";
+            } else {
+                postMessageToIframe(iframe, "pauseVideo");
+                postMessageToIframe(iframe, "mute");
+                isMuted = true;
+                soundBtn.textContent = "🔇";
+            }
+        },
+        { threshold: 0.3 }
+    );
+
+    observer.observe(banner);
+}
+
+/* ==================================================
+🎬 넷플릭스 스타일 Hover 비디오
+================================================== */
+function initHoverVideo() {
+    const videoItems = document.querySelectorAll("[data-video-id]");
+    let activeItem = null;
+
+    videoItems.forEach(item => {
+        const iframe = item.querySelector("iframe");
+        const thumbnail = item.querySelector(".thumbnail");
+        const videoId = item.dataset.videoId;
+
+        if (!iframe || !thumbnail) return;
+
+        thumbnail.style.backgroundImage =
+            `url(https://img.youtube.com/vi/${videoId}/hqdefault.jpg)`;
+
+        item.addEventListener("mouseenter", () => {
+            if (activeItem && activeItem !== item) {
+                activeItem.classList.remove("playing");
+                postMessageToIframe(
+                    activeItem.querySelector("iframe"),
+                    "pauseVideo"
+                );
+            }
+
+            item.classList.add("playing");
+            postMessageToIframe(iframe, "playVideo");
+            activeItem = item;
         });
-    });
 
-    let isDragging = false;
-    let startX, scrollLeft;
-
-    slider.addEventListener('mousedown', e => {
-        isDragging = true;
-        slider.classList.add('active');
-        startX = e.pageX - slider.getBoundingClientRect().left;
-        scrollLeft = slider.scrollLeft;
-
-        slides.forEach(slide => {
-            const iframe = slide.querySelector('iframe');
-            if (iframe) iframe.style.pointerEvents = 'none';
+        item.addEventListener("mouseleave", () => {
+            if (activeItem === item) {
+                item.classList.remove("playing");
+                postMessageToIframe(iframe, "pauseVideo");
+                activeItem = null;
+            }
         });
-    });
-
-    ['mouseup', 'mouseleave'].forEach(evt => {
-        slider.addEventListener(evt, () => {
-            isDragging = false;
-            slider.classList.remove('active');
-            slides.forEach(slide => {
-                const iframe = slide.querySelector('iframe');
-                if (iframe) iframe.style.pointerEvents = 'auto';
-            });
-        });
-    });
-
-    slider.addEventListener('mousemove', e => {
-        if (!isDragging) return;
-        e.preventDefault();
-        const x = e.pageX - slider.getBoundingClientRect().left;
-        slider.scrollLeft = scrollLeft - (x - startX) * 2;
-    });
-
-    // 터치 이벤트
-    slider.addEventListener('touchstart', e => {
-        isDragging = true;
-        startX = e.touches[0].pageX - slider.getBoundingClientRect().left;
-        scrollLeft = slider.scrollLeft;
-        slides.forEach(slide => {
-            const iframe = slide.querySelector('iframe');
-            if (iframe) iframe.style.pointerEvents = 'none';
-        });
-    });
-
-    slider.addEventListener('touchend', () => {
-        isDragging = false;
-        slides.forEach(slide => {
-            const iframe = slide.querySelector('iframe');
-            if (iframe) iframe.style.pointerEvents = 'auto';
-        });
-    });
-
-    slider.addEventListener('touchmove', e => {
-        if (!isDragging) return;
-        const x = e.touches[0].pageX - slider.getBoundingClientRect().left;
-        slider.scrollLeft = scrollLeft - (x - startX) * 2;
     });
 }
 
-/* ==============================
-    ✅ 슬라이더 적용
-============================== */
-makeDraggableSlider('.watching-content');
-makeDraggableSlider('.top10-slider');
-makeDraggableSlider('.drama-content');
+/* ==================================================
+🔔 알림 드롭다운 스크롤 방지
+================================================== */
+function initDropdownScroll() {
+    document.querySelectorAll(".dropdown-menu").forEach(menu => {
+        menu.addEventListener(
+            "wheel",
+            e => {
+                const atTop = menu.scrollTop === 0;
+                const atBottom =
+                    menu.scrollTop + menu.offsetHeight >=
+                    menu.scrollHeight - 1;
 
-/* ==============================
-    ✅ 모달 기능 + 드래그 스크롤
-============================== */
-document.addEventListener("DOMContentLoaded", () => {
+                if ((e.deltaY < 0 && atTop) || (e.deltaY > 0 && atBottom)) {
+                    e.preventDefault();
+                }
+            },
+            { passive: false }
+        );
+    });
+}
+
+/* ==================================================
+❤️ 찜 페이지 이동
+================================================== */
+function initWishlistLink() {
+    const link = document.querySelector(
+        '.dropdown-menu a[href="wishlist.html"]'
+    );
+
+    if (!link) return;
+
+    link.addEventListener("click", e => {
+        e.preventDefault();
+        location.href = "wishlist.html";
+    });
+}
+
+/* ==================================================
+💖 찜하기 기능
+================================================== */
+function initWishlist() {
+    document.querySelectorAll(".btn.ticket").forEach(button => {
+        button.addEventListener("click", () => {
+            const card = button.closest(".card");
+            const source =
+                card?.querySelector(".modal-trigger") || button;
+
+            const { title, img, description } = source.dataset;
+
+            const isLiked = button.classList.toggle("active");
+            button.innerHTML = isLiked ? "❤️찜했어요" : "🤍찜하기";
+
+            let wishlist =
+                JSON.parse(localStorage.getItem("wishlist")) || [];
+
+            if (isLiked) {
+                if (!wishlist.some(item => item.title === title)) {
+                    wishlist.push({ title, img, description });
+                }
+            } else {
+                wishlist = wishlist.filter(item => item.title !== title);
+            }
+
+            localStorage.setItem(
+                "wishlist",
+                JSON.stringify(wishlist)
+            );
+        });
+    });
+}
+
+/* ==================================================
+✅ 모달 기능 + 드래그 스크롤
+================================================== */
+function initModal() {
     const modal = document.getElementById("image-modal");
+    if (!modal) return;
+
     const modalImg = document.getElementById("modal-img");
     const modalTitle = document.getElementById("modal-title");
     const modalDescription = document.getElementById("modal-description");
     const modalCast = document.getElementById("modal-cast");
     const modalGenre = document.getElementById("modal-genre");
     const modalFeature = document.getElementById("modal-feature");
-    const modalEpisodesContainer = document.getElementById("modal-episodes-container");
+    const modalEpisodesContainer =
+        document.getElementById("modal-episodes-container");
     const modalContent = modal.querySelector(".modal-content.wide");
     const closeBtn = modal.querySelector(".close");
-    const chefTemplate = document.getElementById("episodes-chef").content;
 
-    const noticeItem = document.querySelector('.notice-item[data-title="폭군의 셰프"]');
-    if (noticeItem) {
-        noticeItem.addEventListener("click", () => {
-            modalImg.src = "images/tyrant-chef-thumbnail.webp";
-            modalTitle.textContent = "폭군의 셰프";
-            modalDescription.innerHTML = `시간을 거슬러 과거로 가게된 현대의 셰프가 폭군으로 악명 높은 왕을 만난다.<br>
-                                        그녀는 탁월한 요리 솜씨로 왕의 마음과 입맛을 모두 사로잡을 수 있을까?`;
-            modalCast.textContent = "임윤아, 이세민, 강한나";
-            modalGenre.textContent = "로맨틱한 드라마, 드라마, 시대물";
-            modalFeature.textContent = "유쾌 발랄, 로맨틱";
+    const chefTemplate =
+        document.getElementById("episodes-chef")?.content;
+    const noticeItem =
+        document.querySelector('.notice-item[data-title="폭군의 셰프"]');
 
-            modalEpisodesContainer.innerHTML = "";
-            const clone = document.importNode(chefTemplate, true);
-            modalEpisodesContainer.appendChild(clone);
+    if (!noticeItem || !chefTemplate) return;
 
-            modal.classList.add("show");
-            document.body.style.overflow = "hidden";
+    /* 📌 모달 열기 */
+    noticeItem.addEventListener("click", () => {
+        modalImg.src = "images/tyrant-chef-thumbnail.webp";
+        modalTitle.textContent = "폭군의 셰프";
+        modalDescription.innerHTML = `
+            시간을 거슬러 과거로 가게 된 현대의 셰프가
+            폭군으로 악명 높은 왕을 만난다.<br>
+            그녀는 요리로 왕의 마음을 사로잡을 수 있을까?
+        `;
+        modalCast.textContent = "임윤아, 이세민, 강한나";
+        modalGenre.textContent = "로맨틱한 드라마, 시대물";
+        modalFeature.textContent = "유쾌 발랄, 로맨틱";
 
-            const iframes = modalEpisodesContainer.querySelectorAll("iframe");
-            iframes.forEach(iframe => postMessageToIframe(iframe, 'playVideo'));
+        modalEpisodesContainer.innerHTML = "";
+        modalEpisodesContainer.appendChild(
+            document.importNode(chefTemplate, true)
+        );
 
-            // 회차 가로 드래그
-            const episodeScroll = modalEpisodesContainer.querySelector(".episode-scroll");
-            let epDragging = false, epStartX = 0, epScrollLeft = 0;
+        modal.classList.add("show");
+        document.body.style.overflow = "hidden";
 
-            const startEpDrag = x => { epDragging = true; epStartX = x - episodeScroll.offsetLeft; epScrollLeft = episodeScroll.scrollLeft; };
-            const endEpDrag = () => { epDragging = false; };
-            episodeScroll.addEventListener('mousedown', e => { startEpDrag(e.pageX); episodeScroll.style.cursor = "grabbing"; });
-            episodeScroll.addEventListener('mouseup', e => { endEpDrag(); episodeScroll.style.cursor = "grab"; });
-            episodeScroll.addEventListener('mouseleave', e => { endEpDrag(); episodeScroll.style.cursor = "grab"; });
-            episodeScroll.addEventListener('mousemove', e => {
-                if (!epDragging) return;
-                e.preventDefault();
-                const x = e.pageX - episodeScroll.offsetLeft;
-                episodeScroll.scrollLeft = epScrollLeft - (x - epStartX) * 2;
-            });
-            episodeScroll.addEventListener('touchstart', e => startEpDrag(e.touches[0].pageX));
-            episodeScroll.addEventListener('touchend', endEpDrag);
-            episodeScroll.addEventListener('touchmove', e => {
-                if (!epDragging) return;
-                const x = e.touches[0].pageX - episodeScroll.offsetLeft;
-                episodeScroll.scrollLeft = epScrollLeft - (x - epStartX) * 2;
-            });
+        modalEpisodesContainer
+            .querySelectorAll("iframe")
+            .forEach(iframe =>
+                postMessageToIframe(iframe, "playVideo")
+            );
+
+        initEpisodeDrag();
+    });
+
+    /* ↔ 회차 가로 드래그 */
+    function initEpisodeDrag() {
+        const scroll =
+            modalEpisodesContainer.querySelector(".episode-scroll");
+        if (!scroll) return;
+
+        let dragging = false;
+        let startX = 0;
+        let scrollLeft = 0;
+
+        const start = x => {
+            dragging = true;
+            startX = x - scroll.offsetLeft;
+            scrollLeft = scroll.scrollLeft;
+            scroll.style.cursor = "grabbing";
+        };
+
+        const end = () => {
+            dragging = false;
+            scroll.style.cursor = "grab";
+        };
+
+        scroll.addEventListener("mousedown", e => start(e.pageX));
+        scroll.addEventListener("mouseup", end);
+        scroll.addEventListener("mouseleave", end);
+        scroll.addEventListener("mousemove", e => {
+            if (!dragging) return;
+            const x = e.pageX - scroll.offsetLeft;
+            scroll.scrollLeft =
+                scrollLeft - (x - startX) * 2;
+        });
+
+        scroll.addEventListener("touchstart", e =>
+            start(e.touches[0].pageX)
+        );
+        scroll.addEventListener("touchend", end);
+        scroll.addEventListener("touchmove", e => {
+            if (!dragging) return;
+            const x = e.touches[0].pageX - scroll.offsetLeft;
+            scroll.scrollLeft =
+                scrollLeft - (x - startX) * 2;
         });
     }
 
-    // 모달 내부 세로 드래그
-    let contentDragging = false, startY = 0, scrollTop = 0;
-    modalContent.addEventListener("mousedown", e => {
-        contentDragging = true;
-        startY = e.pageY - modalContent.offsetTop;
-        scrollTop = modalContent.scrollTop;
-        modalContent.style.cursor = "grabbing";
-    });
-    modalContent.addEventListener("mouseup", () => { contentDragging = false; modalContent.style.cursor = "default"; });
-    modalContent.addEventListener("mouseleave", () => { contentDragging = false; modalContent.style.cursor = "default"; });
-    modalContent.addEventListener("mousemove", e => {
-        if (!contentDragging) return;
-        e.preventDefault();
-        const y = e.pageY - modalContent.offsetTop;
-        const walk = (y - startY) * 1.5;
-        modalContent.scrollTop = scrollTop - walk;
-    });
-    modalContent.addEventListener("touchstart", e => {
-        contentDragging = true;
-        startY = e.touches[0].pageY - modalContent.offsetTop;
-        scrollTop = modalContent.scrollTop;
-    });
-    modalContent.addEventListener("touchend", () => { contentDragging = false; });
-    modalContent.addEventListener("touchmove", e => {
-        if (!contentDragging) return;
-        const y = e.touches[0].pageY - modalContent.offsetTop;
-        const walk = (y - startY) * 1.5;
-        modalContent.scrollTop = scrollTop - walk;
-    });
-
-    // 모달 닫기
+    /* ❌ 모달 닫기 */
     function closeModal() {
-        const iframes = modalEpisodesContainer.querySelectorAll("iframe");
-        iframes.forEach(iframe => postMessageToIframe(iframe, 'pauseVideo'));
+        modalEpisodesContainer
+            .querySelectorAll("iframe")
+            .forEach(iframe =>
+                postMessageToIframe(iframe, "pauseVideo")
+            );
+
         modalEpisodesContainer.innerHTML = "";
         modal.classList.remove("show");
         document.body.style.overflow = "auto";
     }
+
     closeBtn.addEventListener("click", closeModal);
-    modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
-    window.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+    modal.addEventListener("click", e => {
+        if (e.target === modal) closeModal();
+    });
+    window.addEventListener("keydown", e => {
+        if (e.key === "Escape") closeModal();
+    });
+}
+
+/* ==================================================
+🚀 실행
+================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+    initBannerVideo();
+    initHoverVideo();
+    initDropdownScroll();
+    initWishlistLink();
+    initWishlist();
+    initModal();
 });
