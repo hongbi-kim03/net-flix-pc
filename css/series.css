@@ -1,13 +1,8 @@
-    /* wrap */
+    /* 콘텐츠 정렬 + 기준 폭 */
     .wrap {
         min-width: 1280px;
         margin: 0 auto;
     }
-
-    body {
-        min-width: 1280px;
-        overflow-x: auto;
-        }
 
     /* 메인 배너*/
     .banner {
