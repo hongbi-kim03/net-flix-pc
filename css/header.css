@@ -88,7 +88,6 @@
 
     .search-box input:focus {
         outline: none;
-        width: 220px;
         background: rgba(255, 255, 255, 0.12);
     }
 

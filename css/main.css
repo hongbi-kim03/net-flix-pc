@@ -6,225 +6,202 @@
 
 /* main */
 /*TOP 순위시리즈 */
-.slider-title {
-    width: 1280px;        /* 🔥 카드 기준 폭 */
-    margin: 150px auto 60px;
-    font-size: 28px;
-    text-shadow: 0 0 10px #f9d71c;
-    text-align: center;     /* 카드 시작선 기준 */
-    white-space: nowrap; /* 줄바꿈 방지 (선택) */
-}
+    .slider-title {
+        width: 1280px;        /* 🔥 카드 기준 폭 */
+        margin: 150px auto 60px;
+        font-size: 28px;
+        text-shadow: 0 0 10px #f9d71c;
+        text-align: center;     /* 카드 시작선 기준 */
+        white-space: nowrap; /* 줄바꿈 방지 (선택) */
+    }
 
-/* 슬라이더 감싸는 영역 */
-.slider-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 1280px;
-    overflow: hidden;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-}
+    /* 슬라이더 감싸는 영역 */
+    .slider-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 1280px;
+        overflow: hidden;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    }
 
-/* 슬라이더 영역 */
-.slider {
-    display: flex;
-    gap: 16px;
-    width: max-content; 
-    transition: transform 0.5s ease-in-out;
-}
+    /* 슬라이더 영역 */
+    .slider {
+        display: flex;
+        gap: 14px;
+        width: max-content;
+    }
 
-/*카드 스타일 */
-.card {
-    position: relative;
-    flex: 0 0 303px;
-    height: 475px;
-    border-radius: 10px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: 0 0 10px rgba(249, 215, 28, 0.3);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.card-image {
-    width: 100%;
-    height: 100%;
-    margin: 10px;
-    border-radius: 4px;
-}
-
-/*카드 안에 버튼 스타일*/
-.card-buttons {
-    border-radius: 8px;
-    text-align: center;
-    padding: 10px;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(249, 215, 28, 0.6);
-}
-
-/* 카드 안에 순위 뱃지 */
-.rank-badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #ffffff;
-    padding: 0px 10px;
-    font-family: 'Bebas Neue', sans-serif;
-    line-height: 1.1;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 95px;
-    z-index: 1;
-    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.8);
-    transform: scale(1.05);
-}
+    /*카드 스타일 */
+    .card {
+        width: 240px;
+        border-radius: 20px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
     .card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 20px rgba(249, 215, 28, 0.6);
+        transform: translateY(-6px);
+        box-shadow:
+            0 0 0 1px rgba(255, 255, 255, 0.06);
     }
 
-/* 카드 버튼 영역 */
-.btn {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    border: none;
-    padding: 6px 40px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-    text-align: center;
-    white-space: nowrap;
-}
+    /* 이미지 감싸는 영역 */
+    .card-image-wrap {
+        position: relative;
+        aspect-ratio: 2 / 3;
+        border-radius: 16px;
+        overflow: hidden;     /* ⭐ 둥근 모서리 자르기 핵심 */
+    }
 
-.btn.like {
-    color: white;
-}
+    /* 실제 이미지 */
+    .card-image {
+        position: absolute;
+        inset: 0;                    /* 부모 꽉 채우기 */
+        background-size: cover;      /* ⭐ 꽉 차게 */
+        background-position: center; /* ⭐ 중앙 정렬 */
+        background-repeat: no-repeat;
+    }
 
-.btn:hover {
-    background-color: #f9d71c;
-    color: #111;
-}
+    /* 카드 안에 순위 뱃지 */
+    .rank-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #ffffff;
+        padding: 0px 10px;
+        font-family: 'Bebas Neue', sans-serif;
+        line-height: 1.1;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 95px;
+        z-index: 1;
+        text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.8);
+        transform: scale(1.05);
+    }
 
-.card-buttons .btn.ticket.active {
-    background-color: #e50914;
-    color: #fff;
-    box-shadow: 0 0 12px #e50914, 0 0 30px #f44336;
-    transform: scale(1.1);
-    animation: pulse-glow 1.2s infinite alternate;
-}
-
-.wishlist-card {
-    background-color: #222;
-    color: white;
-    padding: 16px;
-    margin: 12px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(249, 215, 28, 0.3);
-}
-
-/* 도트 스타일 */
-.pagination {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.dot {
-    width: 14px;
-    height: 14px;
-    margin: 0 5px;
-    border-radius: 50%;
-    border: none;
-    background-color: #bbb;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.page-dot {
-    width: 14px;
-    height: 14px;
-    background-color: #594e07;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.dot.active {
-    background: #f9d71c;
-    transform: scale(1.4);
-}
-
-.card01 {
-    background: url("../images/tyrant-chef-card.webp") no-repeat;
-}
-
-.card02 {
-    background: url("../images/esquire-card.jpg") no-repeat;
-}
-
-.card03 {
-    background: url("../images/aema-card.jpg") no-repeat;
-}
-
-.card04 {
-    background: url("../images/wednesday-s2-card.jpg") no-repeat;
-}
-
-.card05 {
-    background: url("../images/demon-slayer-card.webp") no-repeat;
-}
-
-.card06 {
-    background: url("../images/myturn-card.webp") no-repeat;
-}
-
-.card07 {
-    background: url("../images/island-hero-card.webp") no-repeat;
-}
-
-.card08 {
-    background: url("../images/trigger-card.jpg") no-repeat;
-}
-
-.card09 {
-    background: url("../images/try-card.jpg") no-repeat;
-}
-
-.card10 {
-    background: url("../images/survivor-card.jpg") no-repeat;
-}
-
-    /* 오늘 대한민국의 TOP 10 시리즈 상세보기,찜하기버튼 */
-    .buttons {
-        margin-top: 20px;
+    /*카드 안에 버튼 스타일*/
+    .card-buttons {
         display: flex;
         gap: 10px;
-        justify-content: center;
     }
 
-    .btn {
-        padding: 10px 16px;
-        font-size: 14px;
-        background-color: #444;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: all 0.2s ease;
+    /* TOP 10 시리즈 버튼 */
+    .top10 .card-buttons {
+        display: flex;
+        gap: 10px;
     }
+
+    /* 기본 버튼 */
+    .top10 .card-buttons .btn {
+        flex: 1;
+        height: 40px;
+
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 8px;
+
+        color: #eee;
+        font-size: 14px;
+        cursor: pointer;
+
+        transition:
+            background-color 0.25s ease,
+            color 0.25s ease,
+            border-color 0.25s ease,
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+    /* hover */
+    .top10 .card-buttons .btn:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.35);
+        color: #fff;
+    }
+
+    /* 찜하기 active */
+    .top10 .card-buttons .btn.ticket.active {
+        background-color: rgba(229, 9, 20, 0.18);
+        border-color: #e50914;
+        color: #fff;
+        box-shadow: 0 0 10px rgba(229, 9, 20, 0.6);
+    }
+
+    /* 도트 스타일 */
+    .pagination {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .dot {
+        width: 14px;
+        height: 14px;
+        margin: 0 5px;
+        border-radius: 50%;
+        border: none;
+        background-color: #bbb;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .page-dot {
+        width: 14px;
+        height: 14px;
+        background-color: #594e07;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .dot.active {
+        background: #f9d71c;
+        transform: scale(1.4);
+    }
+
+    .card-image.card01 {
+        background-image: url("../images/tyrant-chef-card.webp");
+    }
+
+    .card-image.card02 {
+        background-image: url("../images/esquire-card.jpg");
+    }
+
+    .card-image.card03 {
+        background-image: url("../images/aema-card.jpg");
+    }
+
+    .card-image.card04 {
+        background-image: url("../images/wednesday-s2-card.jpg");
+    }
+
+    .card-image.card05 {
+        background-image: url("../images/demon-slayer-card.webp");
+    }
+
+    .card-image.card06 {
+        background-image: url("../images/myturn-card.webp");
+    }
+
+    .card-image.card07 {
+        background-image: url("../images/island-hero-card.webp");
+    }
+
+    .card-image.card08 {
+        background-image: url("../images/trigger-card.jpg");
+    }
+
+    .card-image.card09 {
+        background-image: url("../images/try-card.jpg");
+    }
+
+    .card-image.card10 {
+        background-image: url("../images/survivor-card.jpg");
+    } 
 
 /* 메인 랜딩 페이지 (Hero Section) */
 .hero-section.with-background {
@@ -402,6 +379,14 @@
     align-items: center;
 }
 
+.society-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px; /* 이미지-버튼 간격 */
+}
+
+
 /* 포스터 이미지 */
 .poster-wrapper {
     position: relative;
@@ -467,129 +452,75 @@
     letter-spacing: 1px;
 }
 
-/* 버튼 */
-.buttons {
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
+/* =========================
+    공통 버튼 스타일 (TOP10 + 소사이어티 공용)
+========================= */
 
 .btn {
-    padding: 10px 16px;
+    flex: 1;
+    height: 40px;
+
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+
+    color: #eee;
     font-size: 14px;
-    background-color: #444;
-    color: white;
-    border: none;
-    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.2s ease;
-}
 
-/* 왼쪽 버튼 그룹 */
-.left-buttons .btn.info {
-    padding: 14px 26px;
-    font-size: 16px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.left-buttons .btn.ticket {
-    position: relative;
-    background-color: #444;
-    padding: 14px 26px;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 8px;
     display: flex;
     align-items: center;
+    justify-content: center;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* hover */
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.35);
+    color: #fff;
+}
+
+/* 찜하기 active (공통) */
+.btn.ticket.active {
+    background-color: rgba(229, 9, 20, 0.18);
+    border-color: #e50914;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.6);
+}
+
+/* ======================
+    넷플릭스 소사이어티 - 왼쪽
+====================== */
+
+.curation-left .buttons {
+    display: flex;
     gap: 10px;
-    user-select: none;
-    transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+    width: 100%;
 }
 
-/* 왼쪽 상세정보 버튼 hover */
-.left-buttons .btn.info:hover {
-    background-color: #f9d71c;
-    color: #000;
-    transition: background-color 0.3s ease;
+.curation-left .buttons .btn {
+    flex: 1;   /* 좌우 버튼 동일 폭 */
 }
 
-.left-buttons .btn.ticket:hover {
-    background-color: #f9d71c;
-    color: #111;
-}
-
-.left-buttons .btn.ticket.active {
-    background-color: #e50914;
-    color: #fff;
-    box-shadow: 0 0 15px #e50914, 0 0 30px #ff3b3b;
-    transform: scale(1.1);
-    animation: pulse-glow 1.2s infinite alternate;
-}
-
-/* 오른쪽 버튼 그룹 */
-.right-buttons .btn.info {
-    padding: 10px 18px;
-    font-size: 13px;
-    border-radius: 6px;
-    background-color: #333;
-    text-align: center;
-}
-
-.right-buttons .btn.ticket {
-    position: relative;
-    background-color: #333;
-    padding: 10px 18px;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 6px;
+/* ======================
+    넷플릭스 소사이어티 - 오른쪽
+====================== */
+.related-content .buttons {
     display: flex;
-    align-items: center;
-    gap: 6px;
-    user-select: none;
-    transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+    gap: 8px;
+    width: 100%;
 }
 
-.right-buttons .btn.ticket.active {
-    background-color: #e50914;
-    color: #fff;
-    box-shadow: 0 0 12px #e50914, 0 0 30px #f44336;
-    transform: scale(1.1);
-    animation: pulse-glow 1.2s infinite alternate;
-}
-
-/* 오른쪽 상세정보 버튼 hover */
-.right-buttons .btn.info:hover {
-    background-color: #f9d71c;
-    color: #000;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    cursor: pointer;
-}
-
-.right-buttons .btn.ticket:hover {
-    background-color: #f9d71c;
-    color: #111;
-}
-
-.right-buttons .btn.ticket.active {
-    background-color: #e50914;
-    color: #fff;
-    box-shadow: 0 0 12px #e50914, 0 0 30px #f44336;
-    transform: scale(1.1);
-    animation: pulse-glow 1.2s infinite alternate;
-}
-
-/* 하트 터지는 효과용 스팬 */
-.btn.ticket .heart {
-    display: inline-block;
-    transition: transform 0.3s ease;
-    transform-origin: center;
-}
-
-.btn.ticket.active .heart {
-    animation: heart-pop 0.4s ease forwards;
-}
+.related-content .buttons .btn {
+    flex: 1;    
+    }
 
 /* 오른쪽 콘텐츠 */
 .curation-right {

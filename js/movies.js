@@ -180,7 +180,7 @@ function initWishlist() {
             const { title, img, description } = source.dataset;
 
             const isLiked = button.classList.toggle("active");
-            button.innerHTML = isLiked ? "❤️찜했어요" : "🤍찜하기";
+            button.innerHTML = isLiked ? "❤️" : "🤍";
 
             let wishlist =
                 JSON.parse(localStorage.getItem("wishlist")) || [];

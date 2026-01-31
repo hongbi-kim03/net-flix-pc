@@ -29,49 +29,42 @@
     /* 슬라이더 영역 */
     .slider {
         display: flex;
-        gap: 16px;
+        gap: 14px;
         width: max-content;
-        transition: transform 0.5s ease-in-out;
     }
 
     /*카드 스타일 */
     .card {
-        position: relative;
-        flex: 0 0 303px;
-        height: 475px;
-        border-radius: 10px;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        box-shadow: 0 0 10px rgba(249, 215, 28, 0.3);
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 240px;
+        border-radius: 20px;
+        padding: 10px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
-    }
-
-    .card-image {
-        width: 100%;
-        height: 100%;
-        margin: 10px;
-        border-radius: 4px;
-    }
-
-    /*카드 안에 버튼 스타일*/
-    .card-buttons {
-        border-radius: 8px;
-        text-align: center;
-        padding: 10px;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+        gap: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 20px rgba(249, 215, 28, 0.6);
+        transform: translateY(-6px);
+        box-shadow:
+            0 0 0 1px rgba(255, 255, 255, 0.06);
+    }
+
+    /* 이미지 감싸는 영역 */
+    .card-image-wrap {
+        position: relative;
+        aspect-ratio: 2 / 3;
+        border-radius: 16px;
+        overflow: hidden;     /* ⭐ 둥근 모서리 자르기 핵심 */
+    }
+
+    /* 실제 이미지 */
+    .card-image {
+        position: absolute;
+        inset: 0;                    /* 부모 꽉 채우기 */
+        background-size: cover;      /* ⭐ 꽉 차게 */
+        background-position: center; /* ⭐ 중앙 정렬 */
+        background-repeat: no-repeat;
     }
 
     /* 카드 안에 순위 뱃지 */
@@ -91,49 +84,52 @@
         transform: scale(1.05);
     }
 
-    .card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 20px rgba(249, 215, 28, 0.6);
+    /*카드 안에 버튼 스타일*/
+    .card-buttons {
+        display: flex;
+        gap: 10px;
     }
 
-    /* 카드 버튼 영역 */
-    .btn {
-        background-color: rgba(255, 255, 255, 0.1);
-        color: #fff;
-        border: none;
-        padding: 6px 40px;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 14px;
-        transition: background-color 0.3s ease;
-        text-align: center;
-        white-space: nowrap;
+    /* TOP 10 시리즈 버튼 */
+    .top10 .card-buttons {
+        display: flex;
+        gap: 10px;
     }
 
-    .btn.like {
-        color: white;
-    }
+    /* 기본 버튼 */
+    .top10 .card-buttons .btn {
+        flex: 1;
+        height: 40px;
 
-    .btn:hover {
-        background-color: #f9d71c;
-        color: #111;
-    }
-
-    .card-buttons .btn.ticket.active {
-        background-color: #e50914;
-        color: #fff;
-        box-shadow: 0 0 12px #e50914, 0 0 30px #f44336;
-        transform: scale(1.1);
-        animation: pulse-glow 1.2s infinite alternate;
-    }
-
-    .wishlist-card {
-        background-color: #222;
-        color: white;
-        padding: 16px;
-        margin: 12px;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.18);
         border-radius: 8px;
-        box-shadow: 0 0 10px rgba(249, 215, 28, 0.3);
+
+        color: #eee;
+        font-size: 14px;
+        cursor: pointer;
+
+        transition:
+            background-color 0.25s ease,
+            color 0.25s ease,
+            border-color 0.25s ease,
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+    /* hover */
+    .top10 .card-buttons .btn:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.35);
+        color: #fff;
+    }
+
+    /* 찜하기 active */
+    .top10 .card-buttons .btn.ticket.active {
+        background-color: rgba(229, 9, 20, 0.18);
+        border-color: #e50914;
+        color: #fff;
+        box-shadow: 0 0 10px rgba(229, 9, 20, 0.6);
     }
 
     /* 도트 스타일 */
@@ -167,146 +163,127 @@
         transform: scale(1.4);
     }
 
-    .card01 {
-        background: url("../images/tyrant-chef-card.webp") no-repeat;
+    .card-image.card01 {
+        background-image: url("../images/tyrant-chef-card.webp");
     }
 
-    .card02 {
-        background: url("../images/esquire-card.jpg") no-repeat;
+    .card-image.card02 {
+        background-image: url("../images/esquire-card.jpg");
     }
 
-    .card03 {
-        background: url("../images/aema-card.jpg") no-repeat;
+    .card-image.card03 {
+        background-image: url("../images/aema-card.jpg");
     }
 
-    .card04 {
-        background: url("../images/wednesday-s2-card.jpg") no-repeat;
+    .card-image.card04 {
+        background-image: url("../images/wednesday-s2-card.jpg");
     }
 
-    .card05 {
-        background: url("../images/demon-slayer-card.webp") no-repeat;
+    .card-image.card05 {
+        background-image: url("../images/demon-slayer-card.webp");
     }
 
-    .card06 {
-        background: url("../images/myturn-card.webp") no-repeat;
+    .card-image.card06 {
+        background-image: url("../images/myturn-card.webp");
     }
 
-    .card07 {
-        background: url("../images/island-hero-card.webp") no-repeat;
+    .card-image.card07 {
+        background-image: url("../images/island-hero-card.webp");
     }
 
-    .card08 {
-        background: url("../images/trigger-card.jpg") no-repeat;
+    .card-image.card08 {
+        background-image: url("../images/trigger-card.jpg");
     }
 
-    .card09 {
-        background: url("../images/try-card.jpg") no-repeat;
+    .card-image.card09 {
+        background-image: url("../images/try-card.jpg");
     }
 
-    .card10 {
-        background: url("../images/survivor-card.jpg") no-repeat;
+    .card-image.card10 {
+        background-image: url("../images/survivor-card.jpg");
     } 
-
-    /* 오늘 대한민국의 TOP 10 시리즈 상세보기,찜하기버튼 */
-    .buttons {
-        margin-top: 20px;
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-    }
-
-    .btn {
-        padding: 10px 16px;
-        font-size: 14px;
-        background-color: #444;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: all 0.2s ease;
-    }
 
     /* 넷플릭스의 새로운 콘텐츠 */
 
-/* 섹션 전체 */
-.new-content-section {
-    padding: 120px 0 140px;
-    min-width: 1280px; /* 🔥 PC 고정형 명시 */
-}
+    /* 섹션 전체 */
+    .new-content-section {
+        padding: 120px 0 140px;
+        min-width: 1280px; /* 🔥 PC 고정형 명시 */
+    }
 
-/* 타이틀 */
-.new-title {
-    width: 1280px;
-    margin: 0 auto 50px;
-    font-size: 28px;
-    text-align: center;
-    color: #fff;
-    text-shadow: 0 0 10px #f9d71c;
-}
+    /* 타이틀 */
+    .new-title {
+        width: 1280px;
+        margin: 0 auto 50px;
+        font-size: 28px;
+        text-align: center;
+        color: #fff;
+        text-shadow: 0 0 10px #f9d71c;
+    }
 
-/* 가운데 정렬 래퍼 */
-.new-inner {
-    width: 1280px;
-    margin: 0 auto;
-    overflow: visible; /* hover 확대 허용 */
-}
+    /* 가운데 정렬 래퍼 */
+    .new-inner {
+        width: 1280px;
+        margin: 0 auto;
+        overflow: visible; /* hover 확대 허용 */
+    }
 
-/* 슬라이드 컨테이너 */
-.new-content {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 🔥 1줄 5개 */
-    gap: 20px;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-}
+    /* 슬라이드 컨테이너 */
+    .new-content {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* 🔥 1줄 5개 */
+        gap: 20px;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
 
-.new-content::-webkit-scrollbar {
-    display: none;
-}
+    .new-content::-webkit-scrollbar {
+        display: none;
+    }
 
-/* 개별 비디오 카드 */
-.new-video {
-    position: relative;
-    aspect-ratio: 16 / 9;
-    border-radius: 16px;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 8px 24px rgba(0,0,0,.6);
-    transition: transform .3s ease, box-shadow .3s ease;
-}
+    /* 개별 비디오 카드 */
+    .new-video {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        border-radius: 16px;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 8px 24px rgba(0,0,0,.6);
+        transition: transform .3s ease, box-shadow .3s ease;
+    }
 
-.new-video:hover {
-    transform: scale(1.06);
-    box-shadow: 0 12px 40px rgba(0,0,0,.9);
-    z-index: 5;
-}
+    .new-video:hover {
+        transform: scale(1.06);
+        box-shadow: 0 12px 40px rgba(0,0,0,.9);
+        z-index: 5;
+    }
 
-/* 썸네일 */
-.new-video .thumbnail {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    background-size: cover;
-    background-position: center;
-    opacity: 1;
-    transition: opacity .3s ease;
-}
+    /* 썸네일 */
+    .new-video .thumbnail {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        background-size: cover;
+        background-position: center;
+        opacity: 1;
+        transition: opacity .3s ease;
+    }
 
-/* 재생 상태 */
-.new-video.playing .thumbnail {
-    opacity: 0;
-    pointer-events: none;
-}
+    /* 재생 상태 */
+    .new-video.playing .thumbnail {
+        opacity: 0;
+        pointer-events: none;
+    }
 
-/* iframe */
-.new-video iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    z-index: 1;
-}
+    /* iframe */
+    .new-video iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        z-index: 1;
+    }
 
     /* 오늘 대한민국의 TOP10 영화 */
     .section-top10-movies {
@@ -414,81 +391,81 @@
         padding: 120px 0 140px;
     }
 
-/* 타이틀 */
-.weekly-release-title {
-    width: 1280px;
-    margin: 0 auto 50px;
-    font-size: 28px;
-    color: #fff;
-    text-align: center;
-}
+    /* 타이틀 */
+    .weekly-release-title {
+        width: 1280px;
+        margin: 0 auto 50px;
+        font-size: 28px;
+        color: #fff;
+        text-align: center;
+    }
 
-/* 고정 컨테이너 */
-.weekly-release-inner {
-    width: 1280px;
-    margin: 0 auto;
-    overflow: visible;
-}
+    /* 고정 컨테이너 */
+    .weekly-release-inner {
+        width: 1280px;
+        margin: 0 auto;
+        overflow: visible;
+    }
 
-/* 가로 슬라이드 영역 */
-.weekly-release-content {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 한 줄에 5개 */
-    grid-template-rows: repeat(2, auto);   /* 위/아래 2줄 */
-    gap: 20px;
-    /* overflow-x: auto;
-    padding: 10px 0 30px;
-    scrollbar-width: none; */
-}
+    /* 가로 슬라이드 영역 */
+    .weekly-release-content {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* 한 줄에 5개 */
+        grid-template-rows: repeat(2, auto);   /* 위/아래 2줄 */
+        gap: 20px;
+        /* overflow-x: auto;
+        padding: 10px 0 30px;
+        scrollbar-width: none; */
+    }
 
-.weekly-release-content::-webkit-scrollbar {
-    display: none;
-}
+    .weekly-release-content::-webkit-scrollbar {
+        display: none;
+    }
 
 
-/* 주간 공개 카드 */
-.weekly-slide {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #111;
-    cursor: pointer;
-    box-shadow: 0 8px 24px rgba(0,0,0,.6);
-    transition: transform .3s ease, box-shadow .3s ease;
-}
+    /* 주간 공개 카드 */
+    .weekly-slide {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #111;
+        cursor: pointer;
+        box-shadow: 0 8px 24px rgba(0,0,0,.6);
+        transition: transform .3s ease, box-shadow .3s ease;
+    }
 
-.weekly-slide:hover {
-    transform: scale(1.06);
-    z-index: 5;
-    box-shadow: 0 12px 40px rgba(0,0,0,.9);
-}
+    .weekly-slide:hover {
+        transform: scale(1.06);
+        z-index: 5;
+        box-shadow: 0 12px 40px rgba(0,0,0,.9);
+    }
 
-/* 썸네일 */
-.weekly-slide .thumbnail {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    background-size: cover;
-    background-position: center;
-    transition: opacity .25s ease;
-}
+    /* 썸네일 */
+    .weekly-slide .thumbnail {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        background-size: cover;
+        background-position: center;
+        transition: opacity .25s ease;
+    }
 
-/* 재생 상태 */
-.weekly-slide.playing .thumbnail {
-    opacity: 0;
-    pointer-events: none;
-}
+    /* 재생 상태 */
+    .weekly-slide.playing .thumbnail {
+        opacity: 0;
+        pointer-events: none;
+    }
 
-/* iframe */
-.weekly-slide iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    z-index: 1;
-}
+    /* iframe */
+    .weekly-slide iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        z-index: 1;
+    }
 
 
