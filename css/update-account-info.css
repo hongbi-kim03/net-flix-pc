@@ -5,70 +5,37 @@
     }
 
     body {
-        font-family: "맑은 고딕", "나눔고딕";
-        background-color: #fafafa;
-        color: #222;
+        color: white; /* 텍스트는 화이트*/
+        min-width: 1280px;
     }
 
     /* 상단 헤더 */
     .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-width: 1280px;
+        height: 60px;
+        z-index: 1000; /* 모바일 메뉴보다 낮게, 컨텐츠보단 높게 */
+        background-color: rgba(88, 53, 102, 0.5);
+        backdrop-filter: blur(4px);
+        border-bottom: 1px solid rgba(200, 180, 200, 0.4);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .header-inner {
+        width: 1280px;   /* ⭐ 핵심 */
+        margin: 0 auto;      /* ⭐ 중앙 정렬 */
+        padding: 0 20px;     /* 모바일 여백 */
+        height: 100%;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        padding: 16px 40px;
-        border-bottom: 1px solid #ddd;
-        background-color: #fff;
+        justify-content: space-between;
     }
 
-    .header .logo img {
+    .logo img {
         height: 28px;
-    }
-
-    
-    /* 프로필 관리 */
-    .profile-list {
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 16px 20px;
-    }
-
-    .profile-list h3 {
-        font-size: 16px;
-        margin-bottom: 12px;
-    }
-
-    .profile-list .profiles {
-        display: flex;
-        gap: 10px;
-    }
-
-    .profile-list .profiles img {
-        width: 48px;
-        height: 48px;
-        border-radius: 8px;
-        object-fit: cover;
-    }
-
-    .profiles img.active {
-        outline: 3px solid #e50914; 
-    }
-
-    /* 설정 버튼 */
-    .profile-settings-btn {
-        margin-left: auto;
-        margin-right: 40px;
-        background: none;
-        border: none;
-        font-size: 20px;
-        cursor: pointer;
-        color: #555;
-        transition: color 0.2s, transform 0.2s;
-    }
-
-    .profile-settings-btn:hover {
-        transform: scale(1.1);
-        color: #b0060f;
     }
 
     /* 드롭다운 메뉴 */
@@ -87,6 +54,13 @@
         position: relative;
         color: #fff;
         font-size: 16px;
+    }
+
+    .profile-toggle img {
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        object-fit: cover;
     }
 
     /* ▼ 화살표 기본 상태 */
@@ -112,27 +86,26 @@
         opacity: 0.8;
     }
 
-    .profile-toggle img {
-        width: 32px;
-        height: 32px;
-        border-radius: 4px;
-        object-fit: cover;
-    }
-
     .dropdown-menu {
         position: absolute;
         right: 0;
-        top: 45px;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-        width: 200px;
+        top: 55px; /* 헤더와의 간격을 조금 더 줌 */
+        width: 220px;
         display: none;
         opacity: 0;
-        transform: translateY(-10px);
-        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+        transform: translateY(10px); /* 아래에서 위로 올라오는 느낌 */
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); /* 더 쫀득한 애니메이션 */
         z-index: 100;
+        overflow: hidden; /* 테두리 곡선에 맞게 내부 요소 자름 */
+
+        background-color: rgba(20, 20, 20, 0.8); /* 아주 어두운 반투명 블랙 */
+        backdrop-filter: blur(20px); /* 배경을 강하게 흐리게 함 */
+        -webkit-backdrop-filter: blur(20px);
+
+        /* 핵심 2: 테두리와 그림자 */
+        border: 1px solid rgba(255, 255, 255, 0.1); /* 은은한 흰색 테두리 */
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
     }
 
     /* 드롭다운 활성화 상태 */
@@ -148,50 +121,82 @@
         margin: 0;
     }
 
-    .dropdown-menu li {
-        border-bottom: 1px solid #eee;
-    }
-
-    .dropdown-menu li:last-child {
-        border-bottom: none;
-    }
-
     .dropdown-menu a {
-        display: block;
-        padding: 12px 16px;
-        color: #333;
         text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 12px 20px;
+
+        /* 글자색: 반투명 화이트로 세련되게 */
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 500;
         font-size: 14px;
+        transition: all 0.2s ease;
+        position: relative;
     }
 
     .dropdown-menu a:hover {
-        background-color: #f5f5f5;
+        background-color: rgba(255, 255, 255, 0.05); /* 살짝 밝아지는 느낌 */
+        color: #ffffff; /* 글자색은 완전 흰색으로 */
     }
 
+    /* 포인트 3: 아이콘이나 이모지 공간 확보 (필요시) */
+    .dropdown-menu a::before {
+        content: "";
+        width: 3px;
+        height: 0;
+        background-color: #ff3366;
+        position: absolute;
+        left: 0;
+        transition: height 0.2s ease;
+    }
+
+    .dropdown-menu a:hover::before {
+        height: 18px; /* 호버 시 왼쪽 바 생성 */
+    }
+
+    /* 구분선 (로그아웃 버튼 등 강조용) */
+    .dropdown-menu li:last-child {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        margin-top: 4px;
+    }
+
+    .dropdown-menu li:last-child a {
+        color: rgba(255, 255, 255, 0.4); /* 로그아웃은 약간 더 흐리게 */
+    }
+
+    .dropdown-menu li:last-child a:hover {
+        color: #ff3366; /* 호버 시엔 브랜드 컬러로 */
+    }
+
+    /* 메인 영역 컨테이너 */
     main {
-        max-width: 440px;        
-        margin: 80px auto;       
-        padding: 0 20px;          
-        text-align: center;       
+        max-width: 480px; /* 약간 더 넓게 잡아 여유 부여 */
+        margin: 120px auto; 
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.03); /* 아주 은은한 박스 레이아웃 */
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     main h1 {
-        font-weight: 700;
-        font-size: 26px;
-        margin-bottom: 10px;    
+        letter-spacing: -0.5px;
+        color: #ffffff;
     }
 
     main p {
-        color: #555;          
-        font-size: 14px;
-        margin-bottom: 40px;      
+        color: #a0a0a0; /* 본문 텍스트는 가독성을 위해 중간 회색 */
+        font-size: 16px;
+        margin-bottom: 48px;    
     }
 
     /* 본인 확인 방법 목록 컨테이너 */
     .methods {
-        display: flex;
-        flex-direction: column;   
-        gap: 15px;               
+        background: rgba(255, 255, 255, 0.05); /* 다크 모드 카드 배경 */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 20px 24px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     /* 본인 확인 각 방법 박스 */
@@ -206,17 +211,16 @@
     }
 
     .method:hover {
-        background: #f2f2f2;     
-        border-color: #999;       
+        background: rgba(255, 255, 255, 0.1); 
+        /* border-color: #ff3366;  */
+        transform: translateY(-2px); /* 살짝 떠오르는 효과 */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
 
     /* 아이콘 스타일 */
     .method-icon {
-        font-size: 24px;
-        margin-right: 15px;
-        color: #555;
-        min-width: 30px;         
-        text-align: center;       
+        font-size: 28px;
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2)); /* 아이콘 글로우 효과 */
     }
 
     /* 텍스트 영역 */
@@ -226,56 +230,66 @@
     }
 
     .method-text strong {
-        display: block;
-        font-size: 16px;
-        margin-bottom: 4px;       
+        display: block; 
+        font-size: 17px;
+        color: #ffffff;
+        margin-bottom: 4px; /* 제목과 아래 정보 사이 간격 */
     }
 
     .method-text small {
-        font-size: 12px;
-        color: #777;             
+        display: block; /* 정보를 한 번 더 확실히 내림 */
+        font-size: 14px;
+        color: #888;
     }
 
     /* 고객센터 문의 문구 */
     .help {
         margin-top: 50px;
         font-size: 13px;
-        color: #555;
+        color: #888;
     }
 
     .help a {
-        color: #0071eb;
+        color: #4facfe;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .help a:hover {
         text-decoration: underline;
-        cursor: pointer;
     }
 
     /* Footer 영역 */
     .footer {
-        border-top: 1px solid #ddd;
-        background-color: #fafafa;
-        color: #555;
+        min-width: 1280px; /* 배경 잘림 방지 */
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: rgba(0, 0, 0, 0.4); /* 본문 배경과 어우러지는 반투명 블랙 */
+        color:#8c8c8c; /* 넷플릭스 푸터 특유의 회색 톤 */
         padding: 50px 0;
-        margin-top: 60px;
+        margin-top: 80px;
     }
 
     .footer-container {
-        max-width: 1000px;
+        width: 1280px;
         margin: 0 auto;
         padding: 0 20px;
     }
 
+    /* 질문 섹션 */
     .footer-question {
         font-size: 16px;
         margin-bottom: 30px;
+        color: #8c8c8c;
     }
 
     .footer-question a {
-        color: #0071eb;
+        color: #8c8c8c;
         text-decoration: none;
     }
 
     .footer-question a:hover {
-        text-decoration: underline;
+        color: #b3b3b3; /* 호버 시 약간 밝은 회색 */
+        text-decoration: underline; /* 링크임을 인지시킴 */
     }
 
     /* 링크 목록 */
@@ -283,27 +297,29 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         list-style: none;
-        gap: 12px 20px;
+        gap: 15px 20px;
         margin-bottom: 40px;
     }
 
     .footer-links a {
         text-decoration: none;
-        color: #333;
-        font-size: 14px;
+        color: #8c8c8c;
+        font-size: 13px;
+        transition: color 0.2s ease;
     }
 
     .footer-links a:hover {
         text-decoration: underline;
+        color: #ffffff; /* 호버 시에만 흰색으로 강조 */
     }
 
     /* 회사 정보 */
     .footer-info {
-        font-size: 12px;
-        line-height: 1.6;
-        color: #777;
+        font-size: 11px;
+        line-height: 1.8;
+        color: #666; /* 가장 눈에 안 띄어야 하는 정보이므로 더 어두운 회색 */
     }
 
     .footer-info p + p {
-        margin-top: 4px;
+        margin-top: 6px;
     }
