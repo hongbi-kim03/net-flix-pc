@@ -5,9 +5,9 @@
     }
 
     body {
-        font-family: "맑은 고딕", "Noto Sans KR", sans-serif;
         background: url(../images/gift-cards-background.jpg) no-repeat center/cover;
         background-color: #fafafa;
+        min-width: 1280px;
         color: #333;
     }
 
@@ -23,21 +23,34 @@
         z-index: -1;
     }
 
-    /* =========================
-    헤더
-    ========================= */
     header {
-        position: sticky;
+        position: fixed;
         top: 0;
-        z-index: 100;
-        height: 64px;
-        padding: 0 40px;
+        left: 0;
+        width: 100%;
+        min-width: 1280px;
+        height: 60px;
+        z-index: 1000; /* 모바일 메뉴보다 낮게, 컨텐츠보단 높게 */
+        background-color: rgba(88, 53, 102, 0.5);
+        backdrop-filter: blur(4px);
+        border-bottom: 1px solid rgba(200, 180, 200, 0.4);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .header-inner {
+        width: 1280px;   /* ⭐ 핵심 */
+        margin: 0 auto;      /* ⭐ 중앙 정렬 */
+        padding: 0 20px;     /* 모바일 여백 */
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: rgba(88, 53, 102, 0.55);
-        backdrop-filter: blur(6px);
-        border-bottom: 1px solid rgba(200, 180, 200, 0.35);
+    }
+
+    .left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
     }
 
     .logo img {
@@ -77,10 +90,8 @@
         box-shadow: none;
     }
 
-    /* =========================
-    메인 영역
-    ========================= */
-    main.gift {
+    /* main */
+    .gift-container {
         min-height: calc(100vh - 64px);
         display: flex;
         align-items: center;
@@ -164,9 +175,7 @@
         color: #888;
     }
 
-    /* =========================
-    접근성 (스크린 리더)
-    ========================= */
+    /* 접근성 (스크린 리더) */
     .sr-only {
         position: absolute;
         width: 1px;
@@ -180,6 +189,7 @@
 
     /* Footer 영역 */
     .footer {
+        min-width: 1280px; /* 배경 잘림 방지 */
         border-top: 1px solid #ddd;
         background-color: #fafafa;
         color: #555;
@@ -188,7 +198,8 @@
     }
 
     .footer-container {
-        max-width: 1000px;
+        /* max-width: 1000px; */
+        width: 1280px;
         margin: 0 auto;
         padding: 0 20px;
     }
@@ -235,22 +246,4 @@
 
     .footer-info p+p {
         margin-top: 4px;
-    }
-
-    /* =========================
-    모바일 대응
-    ========================= */
-    @media (max-width: 480px) {
-        header {
-            padding: 0 20px;
-        }
-
-        .gift-content {
-            padding: 32px 24px;
-        }
-
-        .logout-btn {
-            padding: 6px 14px;
-            font-size: 13px;
-        }
     }

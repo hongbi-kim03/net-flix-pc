@@ -4,35 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>기프트카드</title>
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/gift-cards.css">
 </head>
 <body>
-    <header>
-        <div class="left">
-            <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="넷플릭스 로고">
-            </a>
-        </div>
+    <header class="header">
+        <div class="header-inner">
+            <div class="left">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="넷플릭스 로고">
+                </a>
+            </div>
 
-        <div class="right">
-            <a href="logout.html" class="logout-btn">로그아웃</a>
+            <div class="right">
+                <a href="logout.html" class="logout-btn">로그아웃</a>
+            </div>
         </div>
     </header>
 
-    <main class="gift">
-        <div class="gift-content">
+    <main class="gift-container">
+        <section class="gift-content">
             <h1>기프트 사용</h1>
             <p class="desc">아래에 기프트 코드를 입력하세요.</p>
 
-            <label for="gift-code" class="sr-only">기프트 코드</label>
-            <input id="gift-code" type="text" placeholder="코드 또는 PIN 번호">
-
-            <button class="use-btn">사용하기</button>
+            <form id="gift-form" class="gift-form">
+                <div class="input-wrapper">
+                    <label for="gift-code" class="sr-only">기프트 코드</label>
+                    <input id="gift-code" type="text" placeholder="코드 또는 PIN 번호" required>
+                </div>
+                <button type="submit" class="use-btn">사용하기</button>
+            </form>
 
             <p class="help">
                 기프트카드의 코드 입력에 관해 도움이 필요하신가요?
             </p>
-        </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -64,7 +70,7 @@
             </div>
         </div>
     </footer>
-    
+
     <script src="js/gift-cards.js"></script>
 </body>
 </html>
