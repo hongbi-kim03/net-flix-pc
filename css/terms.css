@@ -1,333 +1,390 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* 공통 */
-body {
-    font-family: "맑은 고딕", "나눔고딕", "sans-serif";
-    background: #fafafa;
-    background-color: #fafafa;
-    /* 밝은 회색 */
-    color: #333;
-}
-
-/* 헤더 */
-header {
-    top: 0;
-    left: 0;
-    width: 100%;
-    /* 전체 너비 */
-    height: 60px;
-    display: flex;
-    background-color: rgba(88, 53, 102, 0.5);
-    backdrop-filter: blur(4px);
-    border-bottom: 1px solid rgba(200, 180, 200, 0.4);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-    align-items: center;
-    padding: 16px 40px;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    position: sticky;
-    z-index: 100;
-}
-
-.left {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.logo img {
-    cursor: pointer;
-}
-
-.help-title {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* 유저 드롭다운 */
-.user-dropdown {
-    position: relative;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-.user-dropdown .user-name {
-    margin-right: 5px;
-}
-
-.user-dropdown .arrow {
-    display: inline-block;
-    font-size: 12px;
-    transition: transform 0.3s ease;
-    transform-origin: center;
-    color: #ff3366;
-}
-
-/* active 클래스 있을 때 화살표 회전 */
-.user-dropdown.active .arrow {
-    transform: rotate(180deg);
-}
-
-.user-dropdown:hover .user-name,
-.user-dropdown:hover .arrow {
-    opacity: 0.8;
-}
-
-/* 드롭다운 메뉴 */
-.dropdown-menu {
-    /* display: none;  */
-    position: absolute;
-    top: 45px;
-    right: 0;
-    width: 180px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    display: none;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    z-index: 100;
-    list-style: none;
-}
-
-/* active 클래스 있을 때 메뉴 표시 */
-.user-dropdown.active .dropdown-menu {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.dropdown-menu ul {
-    padding: 8px 0;
-    margin: 0;
-}
-
-.dropdown-menu li {
-    border-bottom: 1px solid #eee;
-}
-
-.dropdown-menu li:last-child {
-    border-bottom: none;
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 12px 16px;
-    color: #000;
-    text-decoration: none;
-    font-size: 14px;
-    border-radius: 8px;
-}
-
-.dropdown-menu a:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-}
-
-/* =======================
-  메인 컨테이너
-  ======================= */
-.account-container {
-    display: flex;
-    padding: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 40px;
-}
-
-/* =======================
-  왼쪽 사이드바
-  ======================= */
-.sidebar {
-    width: 220px;
-}
-
-.sidebar .back-link {
-    display: inline-block;
-    font-size: 14px;
-    /* 크기 키우기 */
-    font-weight: 600;
-    /* 선명하게 */
-    color: #333;
-    /* 기본 텍스트 컬러 */
-    padding: 8px 12px;
-    /* 버튼처럼 여백 확보 */
-    border-radius: 8px;
-    /* 둥근 모서리 */
-    background-color: rgba(255, 255, 255, 0.8);
-    /* 반투명 배경으로 카드 느낌 */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-    transition: transform 0.2s ease, background-color 0.2s, color 0.2s;
-}
-
-.sidebar .back-link:hover {
-    transform: translateX(-4px) scale(1.05);
-    background-color: rgba(229, 9, 20, 0.1);
-    /* 넷플릭스 레드 계열 연하게 */
-    color: #ff3366;
-}
-
-.sidebar .back-link:active {
-    transform: translateX(-2px) scale(0.98);
-}
-
-.sidebar .menu {
-    list-style: none;
-    margin-top: 25px;
-    padding-left: 0;
-}
-
-.sidebar .menu li {
-    margin-bottom: 18px;
-}
-
-.sidebar .menu a {
-    text-decoration: none;
-    color: #444;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-/* hover */
-.sidebar .menu a:hover {
-    background-color: #f6f6f6;
-    color: #e50914;
-}
-
-/* active */
-.sidebar .menu a.active {
-    background-color: #f4f4f4;
-    border-left: 4px solid #e50914;
-    padding-left: 16px;
-    /* border-left 때문에 보정 */
-    color: #e50914;
-    font-weight: 700;
-}
-
-/* =======================
-  오른쪽 메인 콘텐츠
-  ======================= */
-.account-content {
-    flex: 1;
-}
-
-.account-content h1 {
-    font-size: 28px;
-    margin-bottom: 24px;
-}
-
-.terms-content {
-    flex: 1;
-    background: #fff;
-    padding: 20px 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    line-height: 1.6;
-}
-
-.terms-content h1 {
-    margin-bottom: 16px;
-    font-size: 26px;
-    font-weight: bold;
-}
-
-.terms-content p,
-.terms-content li {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-/* 아코디언 */
-.accordion-btn {
-    cursor: pointer;
-    padding: 12px 16px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    margin-bottom: 6px;
-    transition: background-color 0.2s;
-}
-
-.accordion-btn:hover {
-    background-color: #e9e9e9;
-}
-
-.toggle-content {
-    max-height: 0;
-    /* 처음엔 닫힘 */
-    overflow: hidden;
-    /* 넘치는 내용 숨김 */
-    padding: 0 16px;
-    /* 좌우 패딩 유지 */
-    background-color: #fff;
-    border-left: 3px solid #e50914;
-    margin-bottom: 12px;
-    border-radius: 0 8px 8px 0;
-    transition: max-height 0.5s ease, padding 0.3s ease;
-    /* 부드러운 열림/닫힘 */
-}
-
-.toggle-content.open {
-    max-height: 2000px;
-    /* 충분히 큰 값 */
-    padding: 12px 16px;
-}
-
-/* footer 영역 */
-footer {
-    border-top: 1px solid #ddd;
-    background-color: #fafafa;
-    padding: 50px 0;
-    margin-top: 60px;
-    color: #555;
-}
-
-/* 컨테이너 */
-.footer-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* 링크 목록 */
-.footer-links {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 12px 20px;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-links li {
-    list-style: none;
-}
-
-.footer-links a {
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-    .account-container {
-        flex-direction: column;
-        padding: 20px;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    .sidebar {
+    /* 공통 */
+    body {
+        background: #fafafa;
+        min-width: 1280px;
+        color: #333;
+    }
+
+    /* 헤더 */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
+        min-width: 1280px;
+        height: 60px;
+        z-index: 1000; /* 모바일 메뉴보다 낮게, 컨텐츠보단 높게 */
+        background-color: rgba(88, 53, 102, 0.5);
+        backdrop-filter: blur(4px);
+        border-bottom: 1px solid rgba(200, 180, 200, 0.4);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
     }
-}
+
+    .header-inner {
+        width: 1280px;   /* ⭐ 핵심 */
+        margin: 0 auto;      /* ⭐ 중앙 정렬 */
+        padding: 0 20px;     /* 모바일 여백 */
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .logo img {
+        cursor: pointer;
+    }
+
+    .help-title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    /* 유저 드롭다운 */
+    .user-dropdown {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 10px; /* 클릭 영역 확보 */
+    }
+
+    .user-dropdown .user-name {
+        margin-right: 5px;
+    }
+
+    .user-dropdown .arrow {
+        display: inline-block;
+        font-size: 12px;
+        transition: transform 0.3s ease;
+        transform-origin: center;
+        color: #ff3366;
+    }
+
+    /* active 클래스 있을 때 화살표 회전 */
+    .user-dropdown.active .arrow {
+        display: inline-block;
+        font-size: 12px;
+        color: #ff3366;
+        transition: transform 0.3s ease;
+        transform-origin: center;
+        transform: rotate(180deg);
+    }
+
+    /* 드롭다운 메뉴 */
+    .dropdown-menu {
+        position: absolute;
+        right: 0;
+        top: 55px; /* 헤더와의 간격 */
+        width: 220px;
+        
+        /* 애니메이션 초기 상태 */
+        display: none; 
+        opacity: 0;
+        transform: translateY(10px); 
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        
+        z-index: 100;
+        overflow: hidden;
+        list-style: none; /* ul 대신 부모에 list-style 제거 추가 */
+
+        /* 디자인: Glassmorphism */
+        background-color: rgba(20, 20, 20, 0.8); 
+        backdrop-filter: blur(20px); 
+        -webkit-backdrop-filter: blur(20px);
+
+        border: 1px solid rgba(255, 255, 255, 0.1); 
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        padding: 8px 0; /* 내부 여백 */
+    }
+
+    /* active 클래스 있을 때 메뉴 표시 */
+    .user-dropdown.active .dropdown-menu {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .dropdown-menu a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 12px 20px;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 500;
+        font-size: 14px;
+        transition: all 0.2s ease;
+        position: relative;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+        color: #ffffff;
+    }
+
+    /* 포인트: 왼쪽 핑크색 바 */
+    .dropdown-menu a::before {
+        content: "";
+        width: 3px;
+        height: 0;
+        background-color: #ff3366;
+        position: absolute;
+        left: 0;
+        transition: height 0.2s ease;
+    }
+
+    .dropdown-menu a:hover::before {
+        height: 18px; 
+    }
+
+    /* 구분선 및 로그아웃 강조 */
+    .dropdown-menu li:last-child {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        margin-top: 4px;
+    }
+
+    .dropdown-menu li:last-child a {
+        color: rgba(255, 255, 255, 0.4); 
+    }
+
+    .dropdown-menu li:last-child a:hover {
+        color: #ff3366; 
+    }
+
+    /* 메인 컨테이너 */
+    .account-container {
+        padding: 40px 20px; /* 좌우 패딩 추가 */
+        width: 1280px;
+        margin: 80px auto 0;
+        gap: 40px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    /* 사이드바 */
+    .sidebar {
+        width: 220px;
+    }
+
+    .sidebar .back-link {
+        display: inline-block;
+        font-size: 15px;
+        font-weight: 600;
+        color: #333;
+        padding: 8px 12px;         
+        border-radius: 8px;         
+        background-color: rgba(255, 255, 255, 0.1); 
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        text-decoration: none;
+        transition: transform 0.2s ease, background-color 0.2s, color 0.2s;
+    }
+
+    .sidebar .back-link:hover {
+        transform: translateX(-5px);
+        color: #ff3366;
+    }
+
+    .sidebar .menu {
+        list-style: none;
+        margin-top: 25px;
+        padding-left: 0;
+    }
+
+    .sidebar .menu li {
+        margin-bottom: 8px;
+    }
+
+    .sidebar .menu a {
+        text-decoration: none;
+        color: #444;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 16px;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+    }
+
+    /* hover */
+    .sidebar .menu a:hover {
+        background-color: rgba(255, 51, 102, 0.04); /* 아주 연한 핑크 */
+    }
+
+    /* active */
+    .sidebar .menu a.active {
+        font-weight: 600;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-left: 4px solid #ff3366; /* 넷플릭스 레드/핑크 포인트 */
+        padding-left: 12px; /* 보더 두께만큼 조절 */
+    }
+
+    /* 오른쪽 메인 콘텐츠 */
+    .account-content {
+        flex: 1;
+    }
+
+    .account-content h1 {
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+
+    .terms-content {
+        flex: 1;
+        background: linear-gradient(145deg, #fff, #fefefe);
+        padding: 30px 35px;
+        border-radius: 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .terms-content:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .terms-content h1 {
+        margin-bottom: 16px;
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    .terms-content p ,
+    .terms-content li {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    /* 리스트 스타일 커스텀 */
+    .terms-content ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .terms-content li {
+        position: relative;
+        padding-left: 15px;
+        margin-bottom: 12px;
+    }
+
+    /* ==============================
+    TOGGLE / ACCORDION
+    ============================== */
+    .toggle-section {
+        background-color: #f7f7f7;
+        border-left: 4px solid #ff3366;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        padding: 1rem 1.25rem;
+        transition: all 0.32s ease;
+    }
+
+        .toggle-title {
+        font-size: 16px;
+        color: #ff3366;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+    }
+
+    .toggle-title::after {
+        content: "▼";
+        font-size: 0.8rem;
+        transition: transform 0.32s ease;
+    }
+
+    .toggle-title[aria-expanded="true"]::after {
+        transform: rotate(-180deg);
+    }
+
+    /* 기본적으로 내용은 숨김 */
+    .toggle-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+        opacity: 0;
+        margin-top: 0.4rem;
+    }
+
+    /* 열릴 때 */
+    .toggle-content.open {
+        max-height: 2000px;
+        padding-bottom: 20px; /* 열렸을 때 하단 여백 확보 */
+        opacity: 1;
+    }
+
+    .last-update {
+        /* 1. 여백 설정 */
+        margin-top: 60px;       /* 본문과의 충분한 간격 */
+        padding-top: 20px;      /* 선과 글자 사이의 간격 */
+
+        /* 2. 구분선 추가 */
+        border-top: 1px solid #eee; 
+
+        /* 3. 텍스트 스타일링 */
+        font-size: 14px;
+        color: #999;            /* 본문보다 흐리게 하여 시선을 방해하지 않음 */
+        text-align: right;      /* 우측 정렬로 깔끔하게 마무리 */
+
+        /* 4. 최근 트렌드: 아이콘이나 폰트 강조 */
+        letter-spacing: -0.5px;
+        font-weight: 400;
+    }
+
+    /* footer 영역 */
+    footer {
+        border-top: 1px solid #ddd;
+        background-color: #fafafa;
+        padding: 50px 0;
+        margin-top: 60px;
+        color: #555;
+    }
+
+    /* 컨테이너 */
+    .footer-container {
+        width: 1280px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* 링크 목록 */
+    .footer-links {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px 20px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-links li {
+        list-style: none;
+    }
+
+    .footer-links a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+    }
+
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+
+

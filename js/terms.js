@@ -1,64 +1,62 @@
+/* ==============================
+1) 아코디언(토글 섹션) 기능 - 자연스러운 슬라이드
+============================== */
+const toggleTitles = document.querySelectorAll('.toggle-title');
 
-const accordionBtns = document.querySelectorAll(".accordion-btn");
+toggleTitles.forEach(title => {
+    const content = title.nextElementSibling;
 
-accordionBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-        const content = btn.nextElementSibling;
+    // 초기 높이 세팅
+    content.style.height = '0px';
+    content.style.overflow = 'hidden';
+    content.style.transition = 'height 0.35s ease';
 
-        if (content.classList.contains("open")) {
-            content.style.maxHeight = null;  // 닫기
-            content.classList.remove("open");
+    title.addEventListener('click', () => {
+        const isOpen = content.classList.toggle('open');
+
+        if (isOpen) {
+            // 열기: 실제 콘텐츠 높이 적용
+            content.style.height = content.scrollHeight + 'px';
         } else {
-            content.style.maxHeight = content.scrollHeight + "px"; // 열기
-            content.classList.add("open");
+            // 닫기: 현재 높이를 읽어서 0으로 변경
+            content.style.height = content.scrollHeight + 'px'; // 현재 높이 설정
+            requestAnimationFrame(() => {
+                content.style.height = '0px';
+            });
+        }
+    });
+
+    // transition 끝나면 열린 상태에서는 height를 auto로 설정
+    content.addEventListener('transitionend', () => {
+        if (content.classList.contains('open')) {
+            content.style.height = 'auto';
         }
     });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    // ===============================
-    // 1. 유저 드롭다운 토글
-    // ===============================
-    const userDropdown = document.querySelector(".user-dropdown");
-    const dropdownMenu = document.querySelector(".dropdown-menu");
+/* ==============================
+2) 유저 드롭다운
+============================== */
+const userDropdown = document.querySelector('.user-dropdown');
+const dropdownMenu = userDropdown.querySelector('.dropdown-menu');
 
-    if (userDropdown) {
-        userDropdown.addEventListener("click", (e) => {
-            e.stopPropagation(); // 외부 클릭시 닫기 위해
-            userDropdown.classList.toggle("active");
-        });
+userDropdown.addEventListener('click', (e) => {
+    e.stopPropagation(); // 클릭 이벤트 버블링 방지
+    userDropdown.classList.toggle('active');
+});
 
-        // 페이지 어디든 클릭하면 드롭다운 닫기
-        document.addEventListener("click", () => {
-            userDropdown.classList.remove("active");
-        });
+/* ==============================
+3) 문서 클릭 시 드롭다운 닫기
+============================== */
+document.addEventListener('click', () => {
+    userDropdown.classList.remove('active');
+});
+
+/* ==============================
+4) ESC 키로 드롭다운 닫기
+============================== */
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        userDropdown.classList.remove('active');
     }
-
-    // ===============================
-    // 2. 사이드바 메뉴 active 상태
-    // ===============================
-    const sidebarLinks = document.querySelectorAll(".sidebar .menu a");
-    sidebarLinks.forEach(link => {
-        link.addEventListener("click", () => {
-            // 기존 active 제거
-            sidebarLinks.forEach(l => l.classList.remove("active"));
-            // 클릭한 메뉴만 active
-            link.classList.add("active");
-        });
-    });
-
-    // ===============================
-    // 3. Optional: 스크롤 시 헤더 고정/효과
-    // ===============================
-    const header = document.querySelector("header");
-    let lastScroll = 0;
-    window.addEventListener("scroll", () => {
-        const currentScroll = window.pageYOffset;
-        if (currentScroll > lastScroll && currentScroll > 100) {
-            header.style.transform = "translateY(-100%)"; // 스크롤 다운 시 숨기기
-        } else {
-            header.style.transform = "translateY(0)"; // 스크롤 업 시 보이기
-        }
-        lastScroll = currentScroll;
-    });
 });
