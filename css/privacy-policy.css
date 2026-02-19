@@ -134,7 +134,7 @@
         color: #ffffff;
     }
 
-        /* 포인트: 왼쪽 핑크색 바 */
+    /* 포인트: 왼쪽 핑크색 바 */
     .dropdown-menu a::before {
         content: "";
         width: 3px;
@@ -311,7 +311,6 @@
     .toggle-title {
         font-size: 16px;
         color: #ff3366;
-
         font-weight: 600;
         cursor: pointer;
         display: flex;
@@ -343,6 +342,24 @@
     .toggle-content.open {
         max-height: 2000px;
         opacity: 1;
+    }
+
+    .last-update {
+        /* 1. 여백 설정 */
+        margin-top: 60px;       /* 본문과의 충분한 간격 */
+        padding-top: 20px;      /* 선과 글자 사이의 간격 */
+
+        /* 2. 구분선 추가 */
+        border-top: 1px solid #eee; 
+
+        /* 3. 텍스트 스타일링 */
+        font-size: 14px;
+        color: #999;            /* 본문보다 흐리게 하여 시선을 방해하지 않음 */
+        text-align: right;      /* 우측 정렬로 깔끔하게 마무리 */
+
+        /* 4. 최근 트렌드: 아이콘이나 폰트 강조 */
+        letter-spacing: -0.5px;
+        font-weight: 400;
     }
 
     /* footer 영역 */
