@@ -34,29 +34,27 @@ toggleTitles.forEach(title => {
     });
 });
 
-/* ==============================
-2) 유저 드롭다운
-============================== */
-const userDropdown = document.querySelector('.user-dropdown');
-const dropdownMenu = userDropdown.querySelector('.dropdown-menu');
+/* ================================
+    1) 우측 상단 프로필 드롭다운
+================================= */
+const profileBtn = document.getElementById('profile-btn');
+const dropdown = document.getElementById('dropdown');
 
-userDropdown.addEventListener('click', (e) => {
-    e.stopPropagation(); // 클릭 이벤트 버블링 방지
-    userDropdown.classList.toggle('active');
-});
+if (profileBtn && dropdown) {
+    const toggleDropdown = () => {
+    dropdown.classList.toggle('active');
+    profileBtn.classList.toggle('active'); 
+    };
 
-/* ==============================
-3) 문서 클릭 시 드롭다운 닫기
-============================== */
-document.addEventListener('click', () => {
-    userDropdown.classList.remove('active');
-});
+    profileBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleDropdown();
+    });
 
-/* ==============================
-4) ESC 키로 드롭다운 닫기
-============================== */
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        userDropdown.classList.remove('active');
+    profileBtn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleDropdown();
     }
-});
+    });
+}

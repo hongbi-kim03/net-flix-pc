@@ -51,29 +51,32 @@
         font-weight: bold;
     }
 
-    /* 유저 드롭다운 */
-    .user-dropdown {
+    /* 드롭다운 메뉴 */
+    .profile {
         position: relative;
+        display: inline-block;
         cursor: pointer;
+    }
+
+    .profile-toggle {
         display: flex;
         align-items: center;
-        padding: 10px; /* 클릭 영역 확보 */
+        gap: 6px;
+        cursor: pointer;
+        position: relative;
+        color: #fff;
+        font-size: 16px;
     }
 
-    .user-dropdown .user-name {
-        margin-right: 5px;
-    }
-
-    .user-dropdown .arrow {
+    .profile-toggle .arrow {
         display: inline-block;
         font-size: 12px;
+        color: #ff3366;
         transition: transform 0.3s ease;
         transform-origin: center;
-        color: #ff3366;
     }
 
-    /* active 클래스 있을 때 화살표 회전 */
-    .user-dropdown.active .arrow {
+    .profile-toggle.active .arrow {
         display: inline-block;
         font-size: 12px;
         color: #ff3366;
@@ -82,41 +85,46 @@
         transform: rotate(180deg);
     }
 
-    /* 드롭다운 메뉴 */
+    .profile-toggle:hover {
+        opacity: 0.8;
+    }
+
+    .profile-toggle img {
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        object-fit: cover;
+    }
+
     .dropdown-menu {
         position: absolute;
         right: 0;
-        top: 55px; /* 헤더와의 간격 */
+        top: 55px; /* 헤더와의 간격을 조금 더 줌 */
         width: 220px;
-        
-        /* 애니메이션 초기 상태 */
-        display: none; 
+        display: none;
         opacity: 0;
-        transform: translateY(10px); 
-        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-        
+        transform: translateY(10px); /* 아래에서 위로 올라오는 느낌 */
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); /* 더 쫀득한 애니메이션 */
         z-index: 100;
-        overflow: hidden;
-        list-style: none; /* ul 대신 부모에 list-style 제거 추가 */
+        overflow: hidden; /* 테두리 곡선에 맞게 내부 요소 자름 */
 
-        /* 디자인: Glassmorphism */
-        background-color: rgba(20, 20, 20, 0.8); 
-        backdrop-filter: blur(20px); 
+        background-color: rgba(20, 20, 20, 0.8); /* 아주 어두운 반투명 블랙 */
+        backdrop-filter: blur(20px); /* 배경을 강하게 흐리게 함 */
         -webkit-backdrop-filter: blur(20px);
 
-        border: 1px solid rgba(255, 255, 255, 0.1); 
+        /* 핵심 2: 테두리와 그림자 */
+        border: 1px solid rgba(255, 255, 255, 0.1); /* 은은한 흰색 테두리 */
         border-radius: 12px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-        padding: 8px 0; /* 내부 여백 */
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6); /* 더 깊고 어두운 그림자 */
     }
 
-    /* active 클래스 있을 때 메뉴 표시 */
-    .user-dropdown.active .dropdown-menu {
+    .dropdown-menu.active {
         display: block;
         opacity: 1;
         transform: translateY(0);
     }
 
+    /* 메뉴 항목 링크 스타일 */
     .dropdown-menu a {
         text-decoration: none;
         display: flex;
@@ -129,6 +137,7 @@
         position: relative;
     }
 
+    /* 호버 시 텍스트 변화 */
     .dropdown-menu a:hover {
         background-color: rgba(255, 255, 255, 0.08);
         color: #ffffff;
@@ -371,14 +380,12 @@
         color: #555;
     }
 
-    /* 컨테이너 */
     .footer-container {
-        width: 1280px;
+        max-width: 1000px;
         margin: 0 auto;
         padding: 0 20px;
     }
 
-    /* 링크 목록 */
     .footer-links {
         list-style: none;
         display: grid;
@@ -401,3 +408,4 @@
     .footer-links a:hover {
         text-decoration: underline;
     }
+
