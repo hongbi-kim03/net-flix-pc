@@ -35,37 +35,29 @@ document.querySelectorAll('a[href="#"]').forEach(link => {
     });
 });
 
-// ================================
-// 2) 유저 드롭다운
-// ================================
-const userDropdown = document.querySelector('.user-dropdown');
-const dropdownMenu = userDropdown.querySelector('.dropdown-menu');
-const arrow = userDropdown.querySelector('.arrow');
+/* ================================
+    1) 우측 상단 프로필 드롭다운
+================================= */
+const profileBtn = document.getElementById('profile-btn');
+const dropdown = document.getElementById('dropdown');
 
-userDropdown.addEventListener('click', (e) => {
-    e.stopPropagation(); // 클릭 이벤트 버블링 방지
-    userDropdown.classList.toggle('active');
-    // 메뉴 표시 토글
-    if (dropdownMenu.style.display === 'block') {
-        dropdownMenu.style.display = 'none';
-    } else {
-        dropdownMenu.style.display = 'block';
+if (profileBtn && dropdown) {
+    const toggleDropdown = () => {
+    dropdown.classList.toggle('active');
+    profileBtn.classList.toggle('active'); 
+    };
+
+    profileBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleDropdown();
+    });
+
+    profileBtn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleDropdown();
     }
-});
-
-document.addEventListener('click', () => {
-    userDropdown.classList.remove('active');
-    dropdownMenu.style.display = 'none';
-});
-
-// ================================
-// 3) ESC 키로 닫기
-// ================================
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        userDropdown.classList.remove('active');
-        dropdownMenu.style.display = 'none';
-    }
-});
+    });
+}
 
 
