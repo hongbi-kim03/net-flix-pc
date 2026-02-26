@@ -406,13 +406,15 @@
 }
 
 .poster-wrapper:hover {
+    /* 주황색(#F26522) 기반 네온 글로우 효과 */
     box-shadow:
-        0 0 10px #e50914,
-        0 0 20px #e50914,
-        0 0 30px #ff3b3b,
-        0 0 40px #ff6b6b;
+        0 0 10px #F26522,         /* 중심부: 진한 주황색 */
+        0 0 20px #F26522,         /* 중간: 진한 주황색 */
+        0 0 30px #ff8c52,         /* 외곽 1: 조금 더 밝은 주황색 */
+        0 0 40px #ffb38a;         /* 외곽 2: 아주 연한 주황색 (빛 확산) */
     border-radius: 10px;
     transform: scale(1.02);
+    transition: all 0.3s ease;    /* 부드러운 변화를 위해 */
 }
 
 .poster-wrapper img {
@@ -451,7 +453,7 @@
     position: absolute;
     top: -10px;
     right: 10px;
-    background-color: #e50914;
+    background-color:#F26522;
     color: white;
     padding: 10px;
     font-weight: bold;
