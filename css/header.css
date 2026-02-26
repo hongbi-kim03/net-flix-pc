@@ -114,7 +114,12 @@
     /* 알림+프로필 공통 드롭다운 */
     .dropdown {
         position: relative;
-        display: inline-block;
+        display: inline-flex; /* 내비게이션 아이템들과 정렬 맞춤 */
+        align-items: center;
+        justify-content: center;
+        width: 40px;          /* 아이콘보다 약간 넓게 영역 고정 */
+        height: 60px;         /* 헤더 높이와 맞춰서 호버 유지가 잘 되게 함 */
+        flex-shrink: 0;       /* 검색창이 밀리는 현상 방지 */
     }
 
     .dropdown:hover .dropdown-menu {
@@ -133,8 +138,10 @@
     }
 
     .icon.notification {
+        width: 24px;   /* 아이콘 크기 고정 */
+        height: 24px;
         filter: brightness(0) invert(1);
-        transition: filter 0.3s ease, transform 0.3s ease;
+        transition: transform 0.2s ease, filter 0.2s ease;
         cursor: pointer;
         display: inline-block;
     }
