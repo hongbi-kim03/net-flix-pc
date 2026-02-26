@@ -1,11 +1,11 @@
-/* wrap */
-.wrap {
-    width: 1280px;
-    margin: 0 auto;
-}
+    /* wrap */
+    .wrap {
+        width: 1280px;
+        margin: 0 auto;
+    }
 
-/* main */
-/*TOP 순위시리즈 */
+    /* main */
+    /*TOP 순위시리즈 */
     .slider-title {
         width: 1280px;        /* 🔥 카드 기준 폭 */
         margin: 150px auto 60px;
@@ -370,6 +370,16 @@
     align-items: flex-start;
 }
 
+.curation-container h2{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 0;
+}
+
 /* 왼쪽 포스터 + 버튼 */
 .curation-left {
     width: 320px;
@@ -656,6 +666,17 @@
     padding: 200px 0;
     color: #eee;
     text-align: center;
+}
+
+/* 고객센터 섹션 안의 h2 태그 숨기기 */
+.support-section h2 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 0;
 }
 
 /* 그리드 정렬 */
