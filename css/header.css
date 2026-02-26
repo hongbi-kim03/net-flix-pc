@@ -119,6 +119,9 @@
 
     .dropdown:hover .dropdown-menu {
         display: block;
+        opacity: 1;
+        transform: translateY(0);
+        animation: fadeDown 0.3s ease; /* ⭐ 애니메이션 연결 */
     }
 
     /* 알림 드롭다운 */
@@ -162,18 +165,27 @@
     .dropdown-menu {
         display: none;
         position: absolute;
-        top: 50px;
+        top: 55px;
         right: 0;
-        background-color: #222;
-        color: white;
-        list-style: none;
-        padding: 10px 0;
-        border-radius: 5px;
-        min-width: 180px;
-        max-height: 300px;
-        overflow-y: auto;
+        width: 220px;
+        opacity: 0;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); /* 더 쫀득한 애니메이션 */
+        overflow: hidden; /* 테두리 곡선에 맞게 내부 요소 자름 */
         z-index: 100;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+
+        /* 고급스러운 유리 효과 */
+        background-color: rgba(20, 20, 20, 0.8); /* 아주 어두운 반투명 블랙 */
+        backdrop-filter: blur(20px); /* 배경을 강하게 흐리게 함 */
+        -webkit-backdrop-filter: blur(20px);
+
+        /* 핵심 2: 테두리와 그림자 */
+        border: 1px solid rgba(255, 255, 255, 0.1); /* 은은한 흰색 테두리 */
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6); /* 더 깊고 어두운 그림자 */
+        overflow-y: auto; /* 스크롤 기능은 유지 */
+        /* 1. 파이어폭스, IE, 엣지용 스크롤바 숨기기 */
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;     /* Firefox */
     }
 
     /* 마우스 올리면 드롭다운 표시 */
@@ -181,39 +193,63 @@
         display: block;
         opacity: 1;
         transform: translateY(0);
+        animation: fadeDown 0.3s ease forwards;
+    }
+
+    /* 메뉴 리스트 스타일 */
+    .dropdown-menu ul {
+        list-style: none;
+        padding: 8px 0; /* 내부 여백 살짝 추가 */
     }
 
     .dropdown-menu li {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
         padding: 12px 20px;
-        cursor: pointer;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 500;
         font-size: 14px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        transition: background-color 0.2s ease;
+        transition: all 0.2s ease;
+        position: relative; /* 핑크 바의 기준점 */
+    }
+
+    .dropdown-menu li:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+        color: #ffffff;
     }
 
     .dropdown-menu li:last-child {
         border-bottom: none;
     }
 
-    .dropdown-menu li:hover {
-        background-color: rgba(255, 255, 255, 0.08);
+    /* 포인트: 왼쪽 핑크색 바 */
+    .dropdown-menu a::before {
+        content: "";
+        width: 3px;
+        height: 0;
+        background-color: #ff3366;
+        position: absolute;
+        left: 0;
+        transition: height 0.2s ease;
     }
 
-    /* 스크롤바 커스터마이징 */
-    .dropdown-menu::-webkit-scrollbar {
-        width: 6px;
+    .dropdown-menu a:hover::before {
+        height: 18px; 
     }
 
-    .dropdown-menu::-webkit-scrollbar-thumb {
-        background: #555;
-        border-radius: 3px;
+    /* 구분선 및 로그아웃 강조 */
+    .dropdown-menu li:last-child {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        margin-top: 4px;
     }
 
-    .dropdown-menu::-webkit-scrollbar-track {
-        background: transparent;
+    .dropdown-menu li:last-child a {
+        color: rgba(255, 255, 255, 0.4); 
+    }
+
+    .dropdown-menu li:last-child a:hover {
+        color: #ff3366; 
     }
 
     /* 프로필 드롭다운 썸네일 */
@@ -223,6 +259,12 @@
         gap: 10px;
         padding: 10px 20px;
         cursor: pointer;
+    }
+
+    /* 프로필 썸네일이 들어간 li의 경우 */
+    .profile-item a {
+        justify-content: center; /* 이미지 중앙 정렬 */
+        padding: 10px 0;        /* 상하 여백만 주기 */
     }
 
     .profile-item:hover {
