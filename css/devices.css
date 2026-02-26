@@ -425,3 +425,16 @@
     .footer-info p + p {
         margin-top: 6px;
     }
+
+    /* 주소 링크 스타일 */
+    .footer-address-link {
+        color: #ccc; /* 기존 텍스트와 색상 통일 */
+        text-decoration: none; /* 기본적으로 밑줄 표시 */
+        text-underline-offset: 4px; /* 밑줄과 글자 사이 간격 (가독성 향상) */
+        transition: color 0.3s, text-decoration-color 0.3s;
+    }
+
+    .footer-address-link:hover {
+        color: #fff; /* 마우스 올리면 하얗게 강조 */
+        border-bottom: 1px solid #F26522;
+    }
