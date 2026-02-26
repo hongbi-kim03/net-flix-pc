@@ -25,31 +25,27 @@ accordions.forEach(btn => {
     });
 });
 
-// ================================
-// 2) 유저 드롭다운
-// ================================
-const userDropdown = document.querySelector('.user-dropdown');
-const dropdownMenu = userDropdown.querySelector('.dropdown-menu');
+/* ================================
+    1) 우측 상단 프로필 드롭다운
+================================= */
+const profileBtn = document.getElementById('profile-btn');
+const dropdown = document.getElementById('dropdown');
 
-userDropdown.addEventListener('click', (e) => {
+if (profileBtn && dropdown) {
+    const toggleDropdown = () => {
+    dropdown.classList.toggle('active');
+    profileBtn.classList.toggle('active'); 
+    };
+
+    profileBtn.addEventListener('click', (e) => {
     e.stopPropagation();
-    userDropdown.classList.toggle('active');
-});
+    toggleDropdown();
+    });
 
-// 페이지 클릭 시 닫기
-document.addEventListener('click', () => {
-    userDropdown.classList.remove('active');
-});
-
-// ESC 키로 닫기
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        userDropdown.classList.remove('active');
-
-        // 아코디언도 닫기
-        document.querySelectorAll('.content.open').forEach(content => {
-            content.classList.remove("open");
-            content.style.maxHeight = "0px";
-        });
+    profileBtn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleDropdown();
     }
-});
+    });
+}
