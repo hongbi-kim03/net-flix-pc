@@ -70,7 +70,7 @@
         font-size: 14px;
         font-weight: 600;
         color: #fff;
-        background-color: #e50914;
+        background-color: #F26522;
         border-radius: 20px;
         text-decoration: none;
         transition:
@@ -80,9 +80,9 @@
     }
 
     .logout-btn:hover {
-        background-color: #ff3344;
+        background-color: #F26522;
         transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(229, 9, 20, 0.35);
+        box-shadow: 0 6px 16px rgba(242, 101, 34, 0.25);
     }
 
     .logout-btn:active {
@@ -136,8 +136,8 @@
 
     .gift-content input:focus {
         outline: none;
-        border-color: #e50914;
-        box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.15);
+        border-color: #F26522;
+        box-shadow: 0 0 0 3px 0 0 0 4px rgba(242, 101, 34, 0.25);
     }
 
     /* 사용하기 버튼 */
@@ -147,7 +147,7 @@
         font-size: 16px;
         font-weight: 700;
         color: #fff;
-        background-color: #e50914;
+        background-color: #F26522;
         border: none;
         border-radius: 8px;
         cursor: pointer;
@@ -158,9 +158,9 @@
     }
 
     .use-btn:hover {
-        background-color: #ff3344;
+        background-color: #F26522;
         transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(229, 9, 20, 0.3);
+        box-shadow: 0 8px 20px 0 0 0 4px rgba(242, 101, 34, 0.25);
     }
 
     .use-btn:active {
@@ -190,32 +190,34 @@
     /* Footer 영역 */
     .footer {
         min-width: 1280px; /* 배경 잘림 방지 */
-        border-top: 1px solid #ddd;
-        background-color: #fafafa;
-        color: #555;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: rgba(0, 0, 0, 0.4); /* 본문 배경과 어우러지는 반투명 블랙 */
+        color:#8c8c8c; /* 넷플릭스 푸터 특유의 회색 톤 */
         padding: 50px 0;
-        margin-top: 60px;
+        margin-top: 80px;
     }
 
     .footer-container {
-        /* max-width: 1000px; */
         width: 1280px;
         margin: 0 auto;
         padding: 0 20px;
     }
 
+    /* 질문 섹션 */
     .footer-question {
         font-size: 16px;
         margin-bottom: 30px;
+        color: #8c8c8c;
     }
 
     .footer-question a {
-        color: #0071eb;
+        color: #8c8c8c;
         text-decoration: none;
     }
 
     .footer-question a:hover {
-        text-decoration: underline;
+        color: #b3b3b3; /* 호버 시 약간 밝은 회색 */
+        text-decoration: underline; /* 링크임을 인지시킴 */
     }
 
     /* 링크 목록 */
@@ -223,27 +225,42 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         list-style: none;
-        gap: 12px 20px;
+        gap: 15px 20px;
         margin-bottom: 40px;
     }
 
     .footer-links a {
         text-decoration: none;
-        color: #333;
-        font-size: 14px;
+        color: #8c8c8c;
+        font-size: 13px;
+        transition: color 0.2s ease;
     }
 
     .footer-links a:hover {
         text-decoration: underline;
+        color: #ffffff; /* 호버 시에만 흰색으로 강조 */
     }
 
     /* 회사 정보 */
     .footer-info {
-        font-size: 12px;
-        line-height: 1.6;
-        color: #777;
+        font-size: 11px;
+        line-height: 1.8;
+        color: #666; /* 가장 눈에 안 띄어야 하는 정보이므로 더 어두운 회색 */
     }
 
-    .footer-info p+p {
-        margin-top: 4px;
+    .footer-info p + p {
+        margin-top: 6px;
+    }
+
+    /* 주소 링크 스타일 */
+    .footer-address-link {
+        color: #ccc; /* 기존 텍스트와 색상 통일 */
+        text-decoration: none; /* 기본적으로 밑줄 표시 */
+        text-underline-offset: 4px; /* 밑줄과 글자 사이 간격 (가독성 향상) */
+        transition: color 0.3s, text-decoration-color 0.3s;
+    }
+
+    .footer-address-link:hover {
+        color: #fff; /* 마우스 올리면 하얗게 강조 */
+        border-bottom: 1px solid #F26522;
     }
