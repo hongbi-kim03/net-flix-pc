@@ -466,7 +466,7 @@ footer {
 .footer-links {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px 20px;
     padding: 0;
     margin: 0;
