@@ -170,8 +170,9 @@
 
       <!-- search -->
       <div class="footer-search">
-        <form action="location.html">
-          <input type="text" placeholder="위치찾기" />
+        <form action="location.html?move=true#map-section">
+          <input type="hidden" name="move" value="true">
+          <input type="text" placeholder="위치찾기">
           <button type="submit" aria-label="search" >🔍</button>
         </form>
       </div>

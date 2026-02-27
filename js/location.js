@@ -133,7 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const searchOverlay = document.querySelector('.search-overlay');
         const placeItems = document.querySelectorAll('.place-item');
         const footerAddrLink = document.querySelector(".footer-address-link");
-
+        const footerSearchForm = document.querySelector('.footer-search form');
+        
         // 1) 검색창 포커스 이벤트
         if (keywordInput && searchOverlay) {
             keywordInput.addEventListener('focus', () => searchOverlay.classList.add('active'));
@@ -193,3 +194,4 @@ document.addEventListener("DOMContentLoaded", () => {
         if (searchOverlay) searchOverlay.classList.remove('active');
     }
 });
+

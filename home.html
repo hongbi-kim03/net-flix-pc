@@ -179,14 +179,15 @@
                 <div class="footer-language">
                     <span class="footer-language-icon">🌐</span>
                     <span class="footer-language-code">KR</span>
-                    <span class="footer-language__sep">·</span>
+                    <span class="footer-language_sep">·</span>
                     <span class="footer-language-code">EN</span>
                 </div>
 
                 <!-- search -->
                 <div class="footer-search">
-                    <form action="location.html">
-                        <input type="text" placeholder="위치찾기" />
+                    <form action="location.html?move=true#map-section">
+                        <input type="hidden" name="move" value="true">
+                        <input type="text" placeholder="위치찾기">
                         <button type="submit" aria-label="search" >🔍</button>
                     </form>
                 </div>
