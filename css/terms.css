@@ -365,14 +365,12 @@
         color: #555;
     }
 
-    /* 컨테이너 */
     .footer-container {
-        width: 1280px;
+        max-width: 1000px;
         margin: 0 auto;
         padding: 0 20px;
     }
 
-    /* 링크 목록 */
     .footer-links {
         list-style: none;
         display: grid;
