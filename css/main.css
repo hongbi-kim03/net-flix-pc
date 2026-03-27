@@ -268,7 +268,7 @@
 .hero-form button {
     padding: 14px 20px;
     font-size: 16px;
-    background-color: #e50914;
+    background-color: #F26522;
     color: white;
     border: none;
     border-radius: 4px;
@@ -276,7 +276,7 @@
 }
 
 .hero-form button:hover {
-    background-color: #f40612;
+    background-color: #F26522;
 }
 
 /* 숏폼 컨테이너 */
@@ -599,16 +599,12 @@
     color: white;
     border-radius: 4px;
     z-index: 5;
-}
-
-.label.red {
-    background-color: #e50914;
+    background-color: #F26522;
 }
 
 /* 가입해야 하는 내용 */
 .why-join-section {
-    width: 1200px;
-    max-width: 1200px;   /* 🔒 고정형 명확 */
+    width: 1280px;
     margin: 0 auto;
     padding: 120px 24px;   /* 🔥 PC 섹션 여백 */
     color: white;
@@ -683,8 +679,7 @@
 
 /* 그리드 정렬 */
 .support-grid {
-    width: 1200px;
-    max-width: 1200px; /* 🔒 고정형 명시 */
+    width: 1280px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
