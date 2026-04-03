@@ -71,7 +71,7 @@
     .profile-toggle .arrow {
         display: inline-block;
         font-size: 12px;
-        color: #ff3366;
+        color: #F26522;
         transition: transform 0.3s ease;
         transform-origin: center;
     }
@@ -79,7 +79,7 @@
     .profile-toggle.active .arrow {
         display: inline-block;
         font-size: 12px;
-        color: #ff3366;
+        color: #F26522;
         transition: transform 0.3s ease;
         transform-origin: center;
         transform: rotate(180deg);
@@ -140,15 +140,15 @@
     /* 호버 시 텍스트 변화 */
     .dropdown-menu a:hover {
         background-color: rgba(255, 255, 255, 0.08);
-        color: #ffffff;
+        color: #F26522;
     }
 
-    /* 포인트: 왼쪽 핑크색 바 */
+    /* 포인트: 왼쪽 주황색 바 */
     .dropdown-menu a::before {
         content: "";
         width: 3px;
         height: 0;
-        background-color: #ff3366;
+        background-color: #F26522;
         position: absolute;
         left: 0;
         transition: height 0.2s ease;
@@ -164,22 +164,24 @@
         margin-top: 4px;
     }
 
+    /* 로그아웃 항목은 평소에 조금 더 흐리게 보이도록 유지 */
     .dropdown-menu li:last-child a {
         color: rgba(255, 255, 255, 0.4); 
     }
 
+    /* 로그아웃 항목 호버 시에도 주황색 (위에 전체 설정을 했으므로 중복이지만 명시적임) */
     .dropdown-menu li:last-child a:hover {
-        color: #ff3366; 
+        color: #F26522; 
     }
 
-    /* 메인 제목 */
-    main {
+    /* main 영역 */
+    .main-wrapper {
         max-width: 900px;
-        margin: 80px auto 50px;
-        padding: 0 24px;
+        margin: 80px auto 120px;
+        padding: 100px 24px;
     }
 
-    h1 {
+    .main-wrapper h1 {
         font-size: 36px;
         text-align: center;
         margin-bottom: 30px;
@@ -264,7 +266,7 @@
 
     /* 아코디언 내용 */
     .content {
-        border-left: 3px solid #ff3366;
+        border-left: 3px solid #F26522;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.35s ease, padding 0.35s ease;
@@ -293,7 +295,7 @@
         position: absolute;
         left: -5px;
         top: 2px;
-        color: #ff3366;
+        color: #F26522;
         font-size: 16px;
         font-weight: bold;
     }
