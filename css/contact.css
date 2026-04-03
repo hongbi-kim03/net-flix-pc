@@ -70,7 +70,7 @@
     .profile-toggle .arrow {
         display: inline-block;
         font-size: 12px;
-        color: #ff3366;
+        color: #F26522;
         transition: transform 0.3s ease;
         transform-origin: center;
     }
@@ -78,7 +78,7 @@
     .profile-toggle.active .arrow {
         display: inline-block;
         font-size: 12px;
-        color: #ff3366;
+        color: #F26522;
         transition: transform 0.3s ease;
         transform-origin: center;
         transform: rotate(180deg);
@@ -139,15 +139,15 @@
     /* 호버 시 텍스트 변화 */
     .dropdown-menu a:hover {
         background-color: rgba(255, 255, 255, 0.08);
-        color: #ffffff;
+        color: #F26522;
     }
 
-    /* 포인트: 왼쪽 핑크색 바 */
+    /* 포인트: 왼쪽 주황색 바 */
     .dropdown-menu a::before {
         content: "";
         width: 3px;
         height: 0;
-        background-color: #ff3366;
+        background-color: #F26522;
         position: absolute;
         left: 0;
         transition: height 0.2s ease;
@@ -163,15 +163,17 @@
         margin-top: 4px;
     }
 
+    /* 로그아웃 항목은 평소에 조금 더 흐리게 보이도록 유지 */
     .dropdown-menu li:last-child a {
         color: rgba(255, 255, 255, 0.4); 
     }
 
+    /* 로그아웃 항목 호버 시에도 주황색 */
     .dropdown-menu li:last-child a:hover {
-        color: #ff3366; 
+        color: #F26522;
     }
 
-    /* 메인 컨테이너 */
+    /* main 영역 */
     .account-container {
         padding: 40px 20px; /* 좌우 패딩 추가 */
         max-width: 1200px;
@@ -202,7 +204,7 @@
 
     .sidebar .back-link:hover {
         transform: translateX(-5px);
-        color: #ff3366;
+        color: #F26522;
     }
 
     .sidebar .menu li {

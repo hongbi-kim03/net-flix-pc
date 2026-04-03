@@ -38,47 +38,7 @@
         height: 28px;
     }
 
-    /* 메인 컨테이너 */
-    .account-container {
-        width: 1280px;
-        margin: 0 auto;
-        max-width: 1280px; 
-        padding: 40px 20px; /* 좌우 패딩 추가 */
-        margin: 80px auto 0;
-        gap: 40px;
-        display: flex;
-    }
-
-    /* 왼쪽 사이드바 */
-    .sidebar {
-        width: 220px;
-    }
-
-    .sidebar .back-link {
-        display: inline-block;
-        font-size: 18px;            
-        font-weight: 600;           
-        color: #fff;                
-        padding: 8px 12px;         
-        border-radius: 8px;         
-        background-color: rgba(255, 255, 255, 0.05); 
-        backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        text-decoration: none;
-        transition: transform 0.2s ease, background-color 0.2s, color 0.2s;
-    }
-
-    .sidebar .back-link:hover {
-        transform: translateX(-5px);
-        color: #ff3366;
-    }
-
-    .sidebar .menu li {
-        margin-bottom: 8px;
-    }
-
-    /* 드롭다운 메뉴 */
+    /* 드롭다운 메뉴- 프로필*/
     .profile {
         position: relative;
         display: inline-block;
@@ -96,11 +56,18 @@
         font-size: 16px;
     }
 
+    .profile-toggle img {
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        object-fit: cover;
+    }
+
     /* ▼ 화살표 기본 상태 */
     .profile-toggle .arrow {
         display: inline-block;
         font-size: 12px;
-        color: #ff3366;
+        color: #F26522;
         transition: transform 0.3s ease;
         transform-origin: center;
     }
@@ -109,7 +76,7 @@
     .profile-toggle.active .arrow {
         display: inline-block;
         font-size: 12px;
-        color: #ff3366;
+        color: #F26522;
         transition: transform 0.3s ease;
         transform-origin: center;
         transform: rotate(180deg);
@@ -117,13 +84,6 @@
 
     .profile-toggle:hover {
         opacity: 0.8;
-    }
-
-    .profile-toggle img {
-        width: 32px;
-        height: 32px;
-        border-radius: 4px;
-        object-fit: cover;
     }
 
     .dropdown-menu {
@@ -185,7 +145,7 @@
         content: "";
         width: 3px;
         height: 0;
-        background-color: #ff3366;
+        background-color: #F26522;
         position: absolute;
         left: 0;
         transition: height 0.2s ease;
@@ -206,7 +166,48 @@
     }
 
     .dropdown-menu li:last-child a:hover {
-        color: #ff3366; /* 호버 시엔 브랜드 컬러로 */
+        color: #F26522; /* 호버 시엔 브랜드 컬러로 */
+    }
+
+    /* 메인 컨테이너 */
+    .account-container {
+        width: 1280px;
+        margin: 0 auto;
+        max-width: 1280px; 
+        padding: 40px 20px; /* 좌우 패딩 추가 */
+        margin: 80px auto 0;
+        gap: 40px;
+        display: flex;
+    }
+
+    .account-content h1 {
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+
+    /* 왼쪽 사이드바 */
+    .sidebar {
+        width: 220px;
+    }
+
+    .sidebar .back-link {
+        display: inline-block;
+        font-size: 18px;            
+        font-weight: 600;           
+        color: #fff;                
+        padding: 8px 12px;         
+        border-radius: 8px;         
+        background-color: rgba(255, 255, 255, 0.05); 
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        text-decoration: none;
+        transition: transform 0.2s ease, background-color 0.2s, color 0.2s;
+    }
+
+    .sidebar .back-link:hover {
+        transform: translateX(-5px);
+        color: #F26522;
     }
 
     /* MAIN – 디바이스 */
@@ -258,7 +259,7 @@
         border: none;
         background: transparent;
         text-align: left;
-    color: white;
+        color: white;
     }
 
     .device-summary .left h3 {
@@ -289,7 +290,7 @@
     /* 화살표 아이콘 */
     .device-summary .right {
         font-size: 14px;
-        color: #ff3366;
+        color:#F26522;
         transition: transform 0.3s ease;
     }
 
