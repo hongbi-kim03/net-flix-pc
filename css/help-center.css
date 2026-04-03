@@ -138,13 +138,13 @@ header {
     position: relative;
 }
 
-/* 호버 시 텍스트 변화 */
+/* 모든 메뉴 항목 호버 시 텍스트 변화 */
 .dropdown-menu a:hover {
     background-color: rgba(255, 255, 255, 0.08);
-    color: #ffffff;
+    color: #F26522;
 }
 
-/* 포인트: 왼쪽 핑크색 바 */
+/* 포인트: 왼쪽 주황색 바 */
 .dropdown-menu a::before {
     content: "";
     width: 3px;
@@ -165,10 +165,12 @@ header {
     margin-top: 4px;
 }
 
+/* 로그아웃 항목은 평소에 조금 더 흐리게 보이도록 유지 */
 .dropdown-menu li:last-child a {
     color: rgba(255, 255, 255, 0.4); 
 }
 
+/* 로그아웃 항목 호버 시에도 주황색 (위에 전체 설정을 했으므로 중복이지만 명시적임) */
 .dropdown-menu li:last-child a:hover {
     color: #F26522;
 }
@@ -323,16 +325,12 @@ header {
     background: #e8e0f0;
 }
 
-.accordion-btn:focus {
-    outline: 2px solid #F26522;
-}
-
 .content {
     max-height: 0;              
     overflow: hidden;            
     padding: 0 16px;             
     background: #fff;
-    border-left: 3px solid #5A3470;
+    border-left: 3px solid #F26522;
     color: #333;
     margin-bottom: 10px;
     border-radius: 4px;
