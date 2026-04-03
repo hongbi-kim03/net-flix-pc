@@ -38,15 +38,151 @@ body {
   height: 28px;
 }
 
+/* 드롭다운 메뉴 */
+.profile {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* 아이콘 + 화살표 묶음 */
+.profile-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  position: relative;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* ▼ 화살표 기본 상태 */
+.profile-toggle .arrow {
+  display: inline-block;
+  font-size: 12px;
+  color: #F26522;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+/* 드롭다운 열릴 때 화살표 회전 (▼ → ▲) */
+.profile-toggle.active .arrow {
+  display: inline-block;
+  font-size: 12px;
+  color: #F26522;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+  transform: rotate(180deg);
+}
+
+.profile-toggle:hover {
+  opacity: 0.8;
+}
+
+.profile-toggle img {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 55px; /* 헤더와의 간격을 조금 더 줌 */
+  width: 220px;
+  display: none;
+  opacity: 0;
+  transform: translateY(10px); /* 아래에서 위로 올라오는 느낌 */
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); /* 더 쫀득한 애니메이션 */
+  z-index: 100;
+  overflow: hidden; /* 테두리 곡선에 맞게 내부 요소 자름 */
+
+  background-color: rgba(20, 20, 20, 0.8); /* 아주 어두운 반투명 블랙 */
+  backdrop-filter: blur(20px); /* 배경을 강하게 흐리게 함 */
+  -webkit-backdrop-filter: blur(20px);
+
+  /* 핵심 2: 테두리와 그림자 */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* 은은한 흰색 테두리 */
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* 드롭다운 활성화 상태 */
+.dropdown-menu.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 리스트 스타일 제거 */
+.dropdown-menu ul {
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+
+/* 글자색: 반투명 화이트로 세련되게 */
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.05); /* 살짝 밝아지는 느낌 */
+  color: #ffffff; /* 글자색은 완전 흰색으로 */
+}
+
+/* 포인트 3: 아이콘이나 이모지 공간 확보 (필요시) */
+.dropdown-menu a::before {
+  content: "";
+  width: 3px;
+  height: 0;
+  background-color: #F26522;
+  position: absolute;
+  left: 0;
+  transition: height 0.2s ease;
+}
+
+.dropdown-menu a:hover::before {
+  height: 18px; /* 호버 시 왼쪽 바 생성 */
+}
+
+/* 구분선 (로그아웃 버튼 등 강조용) */
+.dropdown-menu li:last-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 4px;
+}
+
+.dropdown-menu li:last-child a {
+  color: rgba(255, 255, 255, 0.4); /* 로그아웃은 약간 더 흐리게 */
+}
+
+.dropdown-menu li:last-child a:hover {
+  color: #F26522; /* 호버 시엔 브랜드 컬러로 */
+}
+
 /* 메인 컨테이너 */
 .account-container {
-  width: 1280px;
   margin: 0 auto;
-  display: flex;
-  padding: 110px 20px 60px 20px;
-  width: 100%;
   max-width: 1280px; 
+  padding: 40px 20px; /* 좌우 패딩 추가 */
+  margin: 80px auto 0;
   gap: 40px;
+  display: flex;
+}
+
+.account-content h1 {
+  font-size: 28px;
+  margin-bottom: 24px;
 }
 
 /* 왼쪽 사이드바 */
@@ -70,7 +206,7 @@ body {
 
 .sidebar .back-link:hover {
   transform: translateX(-5px);
-  color: #ff3366;
+  color: #F26522;
 }
 
 .sidebar .menu li {
@@ -93,7 +229,7 @@ body {
   color: #ffffff;
   font-weight: 600;
   background-color: rgba(255, 255, 255, 0.1);
-  border-left: 4px solid #ff3366; /* 넷플릭스 레드/핑크 포인트 */
+  border-left: 4px solid #F26522; 
   padding-left: 12px; /* 보더 두께만큼 조절 */
 }
 
@@ -304,138 +440,6 @@ body {
   transform: scale(1.2) rotate(15deg); /* 살짝 회전하면서 커지는 효과 */
   color: #ff3366; 
   filter: drop-shadow(0 0 8px rgba(255, 51, 102, 0.6)); /* 네온 효과 추가 */
-}
-
-/* 드롭다운 메뉴 */
-.profile {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-/* 아이콘 + 화살표 묶음 */
-.profile-toggle {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-  position: relative;
-  color: #fff;
-  font-size: 16px;
-}
-
-/* ▼ 화살표 기본 상태 */
-.profile-toggle .arrow {
-  display: inline-block;
-  font-size: 12px;
-  color: #ff3366;
-  transition: transform 0.3s ease;
-  transform-origin: center;
-}
-
-/* 드롭다운 열릴 때 화살표 회전 (▼ → ▲) */
-.profile-toggle.active .arrow {
-  display: inline-block;
-  font-size: 12px;
-  color: #ff3366;
-  transition: transform 0.3s ease;
-  transform-origin: center;
-  transform: rotate(180deg);
-}
-
-.profile-toggle:hover {
-  opacity: 0.8;
-}
-
-.profile-toggle img {
-  width: 32px;
-  height: 32px;
-  border-radius: 4px;
-  object-fit: cover;
-}
-
-.dropdown-menu {
-  position: absolute;
-  right: 0;
-  top: 55px; /* 헤더와의 간격을 조금 더 줌 */
-  width: 220px;
-  display: none;
-  opacity: 0;
-  transform: translateY(10px); /* 아래에서 위로 올라오는 느낌 */
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); /* 더 쫀득한 애니메이션 */
-  z-index: 100;
-  overflow: hidden; /* 테두리 곡선에 맞게 내부 요소 자름 */
-
-  background-color: rgba(20, 20, 20, 0.8); /* 아주 어두운 반투명 블랙 */
-  backdrop-filter: blur(20px); /* 배경을 강하게 흐리게 함 */
-  -webkit-backdrop-filter: blur(20px);
-
-  /* 핵심 2: 테두리와 그림자 */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* 은은한 흰색 테두리 */
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-}
-
-/* 드롭다운 활성화 상태 */
-.dropdown-menu.active {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 리스트 스타일 제거 */
-.dropdown-menu ul {
-  list-style: none;
-  padding: 8px 0;
-  margin: 0;
-}
-
-.dropdown-menu a {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  padding: 12px 20px;
-
-/* 글자색: 반투명 화이트로 세련되게 */
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: 500;
-  font-size: 14px;
-  transition: all 0.2s ease;
-  position: relative;
-}
-
-.dropdown-menu a:hover {
-  background-color: rgba(255, 255, 255, 0.05); /* 살짝 밝아지는 느낌 */
-  color: #ffffff; /* 글자색은 완전 흰색으로 */
-}
-
-/* 포인트 3: 아이콘이나 이모지 공간 확보 (필요시) */
-.dropdown-menu a::before {
-  content: "";
-  width: 3px;
-  height: 0;
-  background-color: #ff3366;
-  position: absolute;
-  left: 0;
-  transition: height 0.2s ease;
-}
-
-.dropdown-menu a:hover::before {
-  height: 18px; /* 호버 시 왼쪽 바 생성 */
-}
-
-/* 구분선 (로그아웃 버튼 등 강조용) */
-.dropdown-menu li:last-child {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 4px;
-}
-
-.dropdown-menu li:last-child a {
-  color: rgba(255, 255, 255, 0.4); /* 로그아웃은 약간 더 흐리게 */
-}
-
-.dropdown-menu li:last-child a:hover {
-  color: #ff3366; /* 호버 시엔 브랜드 컬러로 */
 }
 
 /* Footer 영역 */

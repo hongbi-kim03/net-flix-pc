@@ -171,7 +171,6 @@
 
     /* 메인 컨테이너 */
     .account-container {
-        width: 1280px;
         margin: 0 auto;
         max-width: 1280px; 
         padding: 40px 20px; /* 좌우 패딩 추가 */
