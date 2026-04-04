@@ -8,6 +8,9 @@
     body {
         color: white; /* 텍스트는 화이트*/
         min-width: 1280px;
+        display: flex;           
+        flex-direction: column;  
+        min-height: 100vh;       
     }
 
     /* 상단 헤더 */
@@ -173,6 +176,7 @@
 
     /* 메인 컨테이너 */
     .account-container {
+        flex: 1;
         margin: 0 auto;
         max-width: 1280px; 
         padding: 40px 20px; /* 좌우 패딩 추가 */

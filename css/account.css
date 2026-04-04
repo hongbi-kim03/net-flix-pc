@@ -7,6 +7,9 @@
 body {
   color: white; /* 텍스트는 화이트*/
   min-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ⭐ 핵심 */
 }
 
 /* 상단 헤더 */
@@ -172,7 +175,7 @@ body {
 
 /* 메인 컨테이너 */
 .account-container {
-  margin: 0 auto;
+  flex: 1;
   max-width: 1280px; 
   padding: 40px 20px; /* 좌우 패딩 추가 */
   margin: 80px auto 0;
@@ -449,7 +452,6 @@ body {
   background-color: rgba(0, 0, 0, 0.4); /* 본문 배경과 어우러지는 반투명 블랙 */
   color:#8c8c8c; /* 넷플릭스 푸터 특유의 회색 톤 */
   padding: 50px 0;
-  margin-top: 80px;
 }
 
 .footer-container {

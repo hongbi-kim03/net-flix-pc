@@ -71,7 +71,7 @@
     .profile-toggle .arrow {
         display: inline-block;
         font-size: 12px;
-        color: #ff3366;
+        color: #F26522;
         transition: transform 0.3s ease;
         transform-origin: center;
     }
@@ -79,7 +79,7 @@
     .profile-toggle.active .arrow {
         display: inline-block;
         font-size: 12px;
-        color: #ff3366;
+        color: #F26522;
         transition: transform 0.3s ease;
         transform-origin: center;
         transform: rotate(180deg);
@@ -140,7 +140,7 @@
     /* 호버 시 텍스트 변화 */
     .dropdown-menu a:hover {
         background-color: rgba(255, 255, 255, 0.08);
-        color: #ffffff;
+        color: #F26522;
     }
 
     /* 포인트: 왼쪽 핑크색 바 */
@@ -148,7 +148,7 @@
         content: "";
         width: 3px;
         height: 0;
-        background-color: #ff3366;
+        background-color: #F26522;
         position: absolute;
         left: 0;
         transition: height 0.2s ease;
@@ -169,7 +169,7 @@
     }
 
     .dropdown-menu li:last-child a:hover {
-        color: #ff3366; 
+        color: #F26522; 
     }
 
     /* 메인 컨테이너 */
@@ -203,7 +203,7 @@
 
     .sidebar .back-link:hover {
         transform: translateX(-5px);
-        color: #ff3366;
+        color: #F26522;
     }
 
     .sidebar .menu {
@@ -230,14 +230,14 @@
 
     /* hover */
     .sidebar .menu a:hover {
-        background-color: rgba(255, 51, 102, 0.04); /* 아주 연한 핑크 */
+        background-color: #F26522; /* 아주 연한 핑크 */
     }
 
     /* active */
     .sidebar .menu a.active {
         font-weight: 600;
         background-color: rgba(255, 255, 255, 0.1);
-        border-left: 4px solid #ff3366; /* 넷플릭스 레드/핑크 포인트 */
+        border-left: 4px solid #F26522; /* 넷플릭스 레드/핑크 포인트 */
         padding-left: 12px; /* 보더 두께만큼 조절 */
     }
 
@@ -299,7 +299,7 @@
     /* 리스트 앞에 작은 점 추가 */
     .privacy-content li::before {
         content: "•";
-        color: #ff3366;
+        color: #F26522;
         font-weight: bold;
         position: absolute;
         left: 0;
@@ -310,7 +310,7 @@
     ============================== */
     .toggle-section {
         background-color: #f7f7f7;
-        border-left: 4px solid #ff3366;
+        border-left: 4px solid #F26522;
         border-radius: 8px;
         margin-bottom: 2rem;
         padding: 1rem 1.25rem;
@@ -319,7 +319,7 @@
 
     .toggle-title {
         font-size: 16px;
-        color: #ff3366;
+        color: #F26522;
         font-weight: 600;
         cursor: pointer;
         display: flex;
