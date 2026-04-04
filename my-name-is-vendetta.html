@@ -38,24 +38,24 @@
 
     <main class="detail-container">
 
-    <!-- 상단 콘텐츠 -->
-    <section class="detail-hero">
-        <div class="detail-info">
-        <h1 class="title-ko">마이 네임 이즈 벤데타</h1>
-        <p class="title-en">My Name Is Vendetta</p>
+        <!-- 상단 -->
+        <section class="detail-hero">
+            <div class="detail-info">
+                <h1 class="title-ko">마이 네임 이즈 벤데타</h1>
+                <p class="title-en">My Name Is Vendetta</p>
 
-            <div class="action-buttons">
-                <button class="btn-like" aria-label="찜하기">♡</button>
-                <button class="btn-share">공유하기</button>
+                <div class="action-buttons">
+                    <button class="btn-like" aria-label="찜하기">♡</button>
+                    <button class="btn-share">공유하기</button>
+                </div>
             </div>
-        </div>
 
             <div class="detail-poster">
                 <img src="images/my-name-is-vendetta-poster.jpg" alt="마이 네임 이즈 벤데타 포스터">
             </div>
         </section>
 
-        <!-- 평점 / 예매율 / 시청자 수 -->
+        <!-- 통계 -->
         <section class="detail-stats">
             <ul class="stats-list">
                 <li><strong>⭐평점</strong><span>8.1 / 10</span></li>
@@ -64,348 +64,343 @@
             </ul>
         </section>
 
-        <!-- 탭 메뉴 -->
+        <!-- 탭 -->
         <section class="detail-tabs">
+
             <ul class="tab-menu">
                 <li class="active"><button type="button">주요정보</button></li>
                 <li><button type="button">실관람평</button></li>
                 <li><button type="button">예고편 / 스틸컷</button></li>
             </ul>
 
-            <!-- 탭 콘텐츠 -->
+            <!-- 핵심: tab-content 안에 전부 들어감 -->
             <div class="tab-content">
 
-            <!-- 주요정보 -->
-            <section class="tab-panel active">
-                <h2 class="sr-only">주요정보</h2>
+                <!-- 주요정보 -->
+                <section class="tab-panel active">
 
-                <!-- 작품 설명 -->
-                <div class="summary">
-                    <p>
-                        전직 암살자와 그 딸이 오랜 적들을 상대로 복수를 펼치는 박진감 만점의 영화. 
-                        91개국에서 TOP 10 리스트에 진입했다.
-                    </p>
-                </div>
-
-                <!-- 상세 정보 리스트 -->
-                <dl class="info-list">
-                    <dt>감독</dt><dd>코시모 고메스</dd>
-                    <dt>출연</dt><dd>알레산드로 가스만,지네브라 프란체스코니,레모 지로네,알레시오 프라티코, 프란체스코 빌라노,가브리엘레 팔세타,마르첼로 마차렐라,마우로 라만나,지냐 디코스,루카 참페로니</dd>
-                    <dt>각본</dt><dd>산드로네 다치에리,코시모 고메스,안드레아 노빌레</dd>
-                    <dt>장르</dt><dd>이탈리아 작품,액션 & 어드벤처 영화</dd>
-                    <dt>영화 특징</dt><dd>폭력적인,긴장감 넘치는</dd>
-                    <dt>관람 등급</dt><dd>청소년 관람불가</dd>
-                </dl>
-
-                <!-- 리뷰 유도 영역 -->
-                <section class="review-cta">
-                    <p class="cta-title">
-                        마이 네임 이즈 벤데타에 대한 개성 있는 이야기가 있어요!
-                    </p>
-
-                    <div class="cta-box">
-                        <!-- 왼쪽: 아이콘 + Netflix -->
-                        <div class="curation-left">
-                            <img src="images/icon.png" alt="NETFLIX 아이콘" class="netflix-icon">
-                            <span class="netflix-text">Netflix</span>
-                        </div>
-
-                        <!-- 가운데: 텍스트 -->
-                        <div class="cta-center">
-                            <p>
-                                마이 네임 이즈 벤데타를 재미있게 보셨나요?<br>
-                                영화의 어떤 점이 좋았는지 이야기해주세요.
-                            </p>
-                        </div>
-                </div> <!-- ✅ cta-box 닫힘-->
-            </section> <!-- ✅ review-cta 닫힘-->
-
-            <!-- 관람평 작성 영역 -->
-            <section class="review-write" id="review-form">
-                <h4 class="review-form-title">관람평 작성</h4>
-
-                <!-- 안내 문구 -->
-                <p class="review-guide">
-                    ℹ️ 관람평 작성은 <strong>주요정보</strong> 탭에서만 가능합니다.
-                </p>
-
-                <!-- 유저 프로필 + 입력 -->
-                <div class="review-write-box">
-                    <div class="review-avatar">
-                        <img src="images/icon-user.png" alt="유저 아이콘">
-                    </div>
-
-                    <div class="review-input-area">
-                        <textarea class="review-input" placeholder="관람평을 남겨주세요." rows="2" maxlength="300"></textarea>
-
-                        <!-- 펼쳐지는 영역 -->
-                        <div class="review-expand">
-                            <!-- 별점 -->
-                            <div class="star-rating">
-                                <input type="radio" name="rating" id="rate5" value="5">
-                                <label for="rate5">★</label>
-
-                                <input type="radio" name="rating" id="rate4" value="4">
-                                <label for="rate4">★</label>
-
-                                <input type="radio" name="rating" id="rate3" value="3">
-                                <label for="rate3">★</label>
-
-                                <input type="radio" name="rating" id="rate2" value="2">
-                                <label for="rate2">★</label>
-
-                                <input type="radio" name="rating" id="rate1" value="1">
-                                <label for="rate1">★</label>
-                            </div>
-
-                            <!-- 글자 수 -->
-                            <span class="text-count">0 / 300</span>
-
-                            <!-- 버튼 -->
-                            <div class="review-actions">
-                                <button type="button" class="btn-cancel">취소</button>
-                                <button type="submit" class="btn-submit">등록</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 주요정보 관람평 작성 -->
-            <section class="review-preview">
-                <div class="review-header">
-                    <h3>관람평</h3>
-                </div>
-
-                <ul class="review-list">
-                    <li class="review-card">
-                        <div class="review-inner">
-
-                        <!-- 왼쪽: 유저 이미지 -->
-                        <div class="review-avatar">
-                            <img src="images/icon-user.png" alt="유저 아이콘">
-                        </div>
-
-                    <!-- 오른쪽: 리뷰 내용 -->
-                    <!-- 첫번째 리뷰 -->
-                    <div class="review-content">
-                    <div class="review-top">
-                        <span class="review-user">movie_lover</span>
-                        <span class="review-date">2026.01.03</span>
-                    </div>
-
-                    <div class="review-rating">
-                        ★★★★☆ <span class="score">4.0</span>
-                    </div>
-
-                    <p class="review-text">
-                        군더더기 없는 액션과 묵직한 분위기
-                        진짜 느와르가 뭔지 보여준다.
-                    </p>
-
-                    <div class="review-actions">
-                        <button class="btn-like">👍 12</button>
-                    </div>
-                    </li>
-
-                    <!-- 두번째 리뷰 -->
-                    <li class="review-card">
-                        <div class="review-inner">
-
-                        <!-- 왼쪽: 유저 이미지 -->
-                        <div class="review-avatar">
-                            <img src="images/icon-user.png" alt="유저 아이콘">
-                        </div>
-
-                        <!-- 오른쪽: 리뷰 내용 -->
-                        <div class="review-content">
-                            <div class="review-top">
-                                <span class="review-user">netflix_pick</span>
-                                <span class="review-date">2026.01.01</span>
-                            </div>
-
-                            <div class="review-rating">
-                                ★★★★☆ <span class="score">4.0</span>
-                            </div>
-
-                            <p class="review-text">
-                                말보다 눈빛으로 말하는 영화.
-                                액션 연출이 굉장히 현실적임.
-                            </p>
-
-                            <div class="review-actions">
-                                <button class="btn-like">👍 8</button>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-            </section> <!-- ✅ tab-panel 닫힘 -->
-
-        <!-- 실관람평 -->
-        <section class="tab-panel">
-            <h2 class="sr-only">실관람평</h2>
-
-            <!-- 리뷰 유도 영역 -->
-            <section class="review-cta">
-                <p class="cta-title">
-                    마이 네임 이즈 벤데타에 대한 개성 있는 이야기가 있어요!
-                </p>
-
-                <div class="cta-box">
-                    <!-- 왼쪽: 로고 + Netflix -->
-                    <div class="curation-left">
-                        <img src="images/icon.png" alt="NETFLIX 아이콘" class="netflix-icon">
-                        <span class="netflix-text">Netflix</span>
-                    </div>
-
-                    <!-- 가운데: 텍스트 -->
-                    <div class="cta-center">
+                    <!-- 작품 설명 -->
+                    <div class="summary">
                         <p>
-                            마이 네임 이즈 벤데타를 재미있게 보셨나요?<br>
-                            영화의 어떤 점이 좋았는지 이야기해주세요.
+                            전직 암살자와 그 딸이 오랜 적들을 상대로 복수를 펼치는 박진감 만점의 영화. 
+                            91개국에서 TOP 10 리스트에 진입했다.
                         </p>
                     </div>
-                </div> <!-- ✅ cta-box 닫힘-->
-            </section> <!-- ✅ review-cta 닫힘-->
 
-        <!-- 주요정보 관람평 작성 -->
-        <section class="review-preview">
-            <div class="review-header">
-                <h3>관람평</h3>
-            </div>
+                    <!-- 상세 정보 리스트 -->
+                    <dl class="info-list">
+                        <dt>감독</dt><dd>코시모 고메스</dd>
+                        <dt>출연</dt><dd>알레산드로 가스만,지네브라 프란체스코니,레모 지로네,알레시오 프라티코, 프란체스코 빌라노,가브리엘레 팔세타,마르첼로 마차렐라,마우로 라만나,지냐 디코스,루카 참페로니</dd>
+                        <dt>각본</dt><dd>산드로네 다치에리,코시모 고메스,안드레아 노빌레</dd>
+                        <dt>장르</dt><dd>이탈리아 작품,액션 & 어드벤처 영화</dd>
+                        <dt>영화 특징</dt><dd>폭력적인,긴장감 넘치는</dd>
+                        <dt>관람 등급</dt><dd>청소년 관람불가</dd>
+                    </dl>
 
-            <ul class="review-list">
-                <li class="review-card">
-                    <div class="review-inner">
-
-                    <!-- 왼쪽: 유저 이미지 -->
-                    <div class="review-avatar">
-                        <img src="images/icon-user.png" alt="유저 아이콘">
-                    </div>
-
-                    <!-- 오른쪽: 리뷰 내용 -->
-                    <!-- 첫번째 리뷰 -->
-                    <div class="review-content">
-                    <div class="review-top">
-                        <span class="review-user">movie_lover</span>
-                        <span class="review-date">2026.01.03</span>
-                    </div>
-
-                    <div class="review-rating">
-                        ★★★★☆ <span class="score">4.0</span>
-                    </div>
-
-                    <p class="review-text">
-                        군더더기 없는 액션과 묵직한 분위기.
-                        진짜 느와르가 뭔지 보여준다.
-                    </p>
-
-                    <div class="review-actions">
-                        <button class="btn-like">👍 12</button>
-                    </div>
-                    </li>
-
-                    <!-- 두번째 리뷰 -->
-                    <li class="review-card">
-                        <div class="review-inner">
-
-                        <!-- 왼쪽: 유저 이미지 -->
-                        <div class="review-avatar">
-                            <img src="images/icon-user.png" alt="유저 아이콘">
-                        </div>
-
-                        <!-- 오른쪽: 리뷰 내용 -->
-                        <div class="review-content">
-                            <div class="review-top">
-                                <span class="review-user">netflix_pick</span>
-                                <span class="review-date">2026.01.01</span>
+                    <!-- 리뷰 유도 영역 -->
+                    <section class="review-cta">
+                        <p class="cta-title">
+                            마이 네임 이즈 벤데타에 대한 개성 있는 이야기가 있어요!
+                        </p>
+                        <div class="cta-box">
+                            <!-- 왼쪽: 아이콘 + Netflix -->
+                            <div class="curation-left">
+                                <img src="images/icon.png" alt="NETFLIX 아이콘" class="netflix-icon">
+                                <span class="netflix-text">Netflix</span>
                             </div>
-
-                            <div class="review-rating">
-                                ★★★★☆ <span class="score">4.0</span>
+                            <!-- 가운데: 텍스트 -->
+                            <div class="cta-center">
+                                <p>
+                                    마이 네임 이즈 벤데타를 재미있게 보셨나요?<br>
+                                    영화의 어떤 점이 좋았는지 이야기해주세요.
+                                </p>
                             </div>
+                        </div> 
+                    </section> 
 
-                            <p class="review-text">
-                                화려하지 않아서 더 좋았던 작품.
-                                끝까지 긴장감 유지됨.
-                            </p>
+                    <!-- 리뷰 작성-->
+                    <section class="review-write" id="review-form">
 
-                            <div class="review-actions">
-                                <button class="btn-like">👍 8</button>
+                        <h4 class="review-form-title">관람평 작성</h4>
+
+                        <!-- 안내 문구 -->
+                        <p class="review-guide">ℹ️ 관람평 작성은 <strong>주요정보</strong> 탭에서만 가능합니다.</p>
+                        <!-- 유저 프로필 + 입력 -->
+                        <div class="review-write-box">
+                            <div class="review-avatar">
+                                <img src="images/icon-user.png" alt="유저 아이콘">
                             </div>
-                        </li>
-                    </ul>
-                </section>
-            </section> <!-- ✅ tab-panel 닫힘 -->
+                            <div class="review-input-area">
+                                <textarea class="review-input" placeholder="관람평을 남겨주세요." rows="2" maxlength="300"></textarea>
 
-    <!-- 예고편 / 스틸컷 -->
-    <section class="tab-panel">
-        <h2 class="sr-only">예고편 및 스틸컷</h2>
+                                <!-- 펼쳐지는 영역 -->
+                                <div class="review-expand">
+                                    <!-- 별점 -->
+                                    <div class="star-rating">
+                                        <input type="radio" name="rating" id="rate5" value="5">
+                                        <label for="rate5">★</label>
 
-        <!-- 예고편 영역 -->
-        <section class="trailer-section">
-            <h3 class="section-title">메인 예고편</h3>
+                                        <input type="radio" name="rating" id="rate4" value="4">
+                                        <label for="rate4">★</label>
 
-            <div class="trailer-slider grab-slider">
-                <ul class="trailer-list">
-                    <li class="slide">
-                        <div class="trailer-video">
-                            <iframe 
-                                src="https://www.youtube.com/embed/mKRYPFKQdZg?enablejsapi=1&rel=0"
-                                allow="autoplay; encrypted-media"
-                                allowfullscreen
-                                title="마이 네임 이즈 벤데타 예고편01">
-                            </iframe>
+                                        <input type="radio" name="rating" id="rate3" value="3">
+                                        <label for="rate3">★</label>
+
+                                        <input type="radio" name="rating" id="rate2" value="2">
+                                        <label for="rate2">★</label>
+
+                                        <input type="radio" name="rating" id="rate1" value="1">
+                                        <label for="rate1">★</label>
+                                    </div>
+
+                                    <!-- 글자 수 -->
+                                    <span class="text-count">0 / 300</span>
+
+                                    <!-- 버튼 -->
+                                    <div class="review-actions">
+                                        <button type="button" class="btn-cancel">취소</button>
+                                        <button type="submit" class="btn-submit">등록</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </li>
+                    </section>
 
-                    <li class="slide">
-                        <div class="trailer-video">
-                            <iframe 
-                                src="https://www.youtube.com/embed/vK_Uj1LQjt8?enablejsapi=1&rel=0"
-                                allow="autoplay; encrypted-media"
-                                allowfullscreen
-                                title="마이 네임 이즈 벤데타 예고편02">
-                            </iframe>
+                    <!-- 리뷰 리스트 -->
+                    <section class="review-preview">
+                        <div class="review-header">
+                            <h3>관람평</h3>
                         </div>
-                    </li>
 
-                    <li class="slide">
-                        <div class="trailer-video">
-                            <iframe 
-                                src="https://www.youtube.com/embed/vK_Uj1LQjt8?enablejsapi=1&rel=0"
-                                allow="autoplay; encrypted-media"
-                                allowfullscreen
-                                title="마이 네임 이즈 벤데타 예고편03">
-                            </iframe>
+                        <!-- 첫번째 리스트 -->
+                        <ul class="review-list">
+
+                            <li class="review-card">
+                                <div class="review-inner">
+                                    <div class="review-avatar">
+                                        <img src="images/icon-user.png" alt="유저 아이콘">
+                                    </div>
+                                    <div class="review-content">
+                                        <div class="review-top">
+                                            <span class="review-user">movie_lover</span>
+                                            <span class="review-date">2026.01.03</span>
+                                        </div>
+
+                                        <div class="review-rating">
+                                            ★★★★☆ <span class="score">4.0</span>
+                                        </div>
+
+                                        <p class="review-text">
+                                            군더더기 없는 액션과 묵직한 분위기
+                                            진짜 느와르가 뭔지 보여준다.
+                                        </p>
+
+                                        <div class="review-actions">
+                                            <button class="btn-like">👍 12</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        <ul>
+
+                        <!-- 두번째 리스트 -->
+                        <ul class="review-list">
+
+                            <li class="review-card">
+                                <div class="review-inner">
+                                    <div class="review-avatar">
+                                        <img src="images/icon-user.png" alt="유저 아이콘">
+                                    </div>
+
+                                    <div class="review-content">
+                                        <div class="review-top">
+                                            <span class="review-user">netflix_pick</span>
+                                            <span class="review-date">2026.01.01</span>
+                                        </div>
+
+                                        <div class="review-rating">
+                                            ★★★★☆ <span class="score">4.0</span>
+                                        </div>
+
+                                        <p class="review-text">
+                                            말보다 눈빛으로 말하는 영화.
+                                            액션 연출이 굉장히 현실적임.
+                                        </p>
+
+                                        <div class="review-actions">
+                                            <button class="btn-like">👍 8</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </section> 
+
+                <!-- 실관람평 -->
+                <section class="tab-panel">
+                    <h2 class="sr-only">실관람평</h2>
+
+                    <!-- 리뷰 유도 영역 -->
+                    <section class="review-cta">
+                        <p class="cta-title">
+                            마이 네임 이즈 벤데타에 대한 개성 있는 이야기가 있어요!
+                        </p>
+                        <div class="cta-box">
+                            <!-- 왼쪽: 로고 + Netflix -->
+                            <div class="curation-left">
+                                <img src="images/icon.png" alt="NETFLIX 아이콘" class="netflix-icon">
+                                <span class="netflix-text">Netflix</span>
+                            </div>
+                            <!-- 가운데: 텍스트 -->
+                            <div class="cta-center">
+                                <p>
+                                    마이 네임 이즈 벤데타를 재미있게 보셨나요?<br>
+                                    영화의 어떤 점이 좋았는지 이야기해주세요.
+                                </p>
+                            </div>
+                        </div> 
+                    </section> 
+
+                    <!-- 리뷰 리스트 -->
+                    <section class="review-preview">
+                        <div class="review-header">
+                            <h3>관람평</h3>
                         </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
 
-        <!-- 스틸컷 영역 -->
-        <section class="stillcut-section">
-            <h3 class="section-title">스틸컷</h3>
+                        <!-- 첫번째 리스트 -->
+                        <ul class="review-list">
 
-            <!-- 🔥 슬라이더 래퍼 추가 -->
-            <div class="stillcut-slider grab-slider">
-                <ul class="stillcut-list">
-                    <li class="slide">
-                        <img src="images/my-name-is-vendetta-still-01.webp" alt="마이 네임 이즈 벤데타 스틸컷 1">
-                    </li>
-                    <li class="slide">
-                        <img src="images/my-name-is-vendetta-still-02.webp" alt="마이 네임 이즈 벤데타 스틸컷 2">
-                    </li>
-                    <li class="slide">
-                        <img src="images/my-name-is-vendetta-still-03.webp" alt="마이 네임 이즈 벤데타 스틸컷 3">
-                    </li>
-                </ul>
-            </div>
-        </section>
-    </section>
-</main>
+                            <li class="review-card">
+                                <div class="review-inner">
+                                    <div class="review-avatar">
+                                        <img src="images/icon-user.png" alt="유저 아이콘">
+                                    </div>
+                                    <div class="review-content">
+                                        <div class="review-top">
+                                            <span class="review-user">movie_lover</span>
+                                            <span class="review-date">2026.01.03</span>
+                                        </div>
 
+                                        <div class="review-rating">
+                                            ★★★★☆ <span class="score">4.0</span>
+                                        </div>
+
+                                        <p class="review-text">
+                                            군더더기 없는 액션과 묵직한 분위기.
+                                            진짜 느와르가 뭔지 보여준다.
+                                        </p>
+
+                                        <div class="review-actions">
+                                            <button class="btn-like">👍 12</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        <ul>
+
+                        <!-- 두번째 리스트 -->
+                        <ul class="review-list">
+
+                            <li class="review-card">
+                                <div class="review-inner">
+                                    <div class="review-avatar">
+                                        <img src="images/icon-user.png" alt="유저 아이콘">
+                                    </div>
+                                    <div class="review-content">
+                                        <div class="review-top">
+                                            <span class="review-user">netflix_pick</span>
+                                            <span class="review-date">2026.01.01</span>
+                                        </div>
+
+                                        <div class="review-rating">
+                                            ★★★★☆ <span class="score">4.0</span>
+                                        </div>
+
+                                        <p class="review-text">
+                                            화려하지 않아서 더 좋았던 작품.
+                                            끝까지 긴장감 유지됨.
+                                        </p>
+
+                                        <div class="review-actions">
+                                            <button class="btn-like">👍 8</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </section> 
+
+                <!-- 예고편 / 스틸컷 -->
+                <section class="tab-panel">
+                    <h2 class="sr-only">예고편 및 스틸컷</h2>
+
+                    <!-- 예고편 영역 -->
+                    <section class="trailer-section">
+                        <h3 class="section-title">메인 예고편</h3>
+
+                        <div class="trailer-slider grab-slider">
+                            <ul class="trailer-list">
+                                <li class="slide">
+                                    <div class="trailer-video">
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/mKRYPFKQdZg?enablejsapi=1&rel=0"
+                                            allow="autoplay; encrypted-media"
+                                            allowfullscreen
+                                            title="마이 네임 이즈 벤데타 예고편01">
+                                        </iframe>
+                                    </div>
+                                </li>
+
+                                <li class="slide">
+                                    <div class="trailer-video">
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/vK_Uj1LQjt8?enablejsapi=1&rel=0"
+                                            allow="autoplay; encrypted-media"
+                                            allowfullscreen
+                                            title="마이 네임 이즈 벤데타 예고편02">
+                                        </iframe>
+                                    </div>
+                                </li>
+
+                                <li class="slide">
+                                    <div class="trailer-video">
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/vK_Uj1LQjt8?enablejsapi=1&rel=0"
+                                            allow="autoplay; encrypted-media"
+                                            allowfullscreen
+                                            title="마이 네임 이즈 벤데타 예고편03">
+                                        </iframe>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 스틸컷 영역 -->
+                    <section class="stillcut-section">
+                        <h3 class="section-title">스틸컷</h3>
+
+                        <!-- 🔥 슬라이더 래퍼 추가 -->
+                        <div class="stillcut-slider grab-slider">
+                            <ul class="stillcut-list">
+                                <li class="slide">
+                                    <img src="images/my-name-is-vendetta-still-01.webp" alt="마이 네임 이즈 벤데타 스틸컷 1">
+                                </li>
+                                <li class="slide">
+                                    <img src="images/my-name-is-vendetta-still-02.webp" alt="마이 네임 이즈 벤데타 스틸컷 2">
+                                </li>
+                                <li class="slide">
+                                    <img src="images/my-name-is-vendetta-still-03.webp" alt="마이 네임 이즈 벤데타 스틸컷 3">
+                                </li>
+                            </ul>
+                        </div>
+                    </section> <!-- ✅ stillcut-section 끝 -->
+                </section> <!-- ✅ tab-panel 끝 -->
+            </div> <!-- ✅ tab-content 끝 -->
+        </section> <!-- ✅ detail-tabs 끝 -->
+    </main>
 
     <!-- ✅ footer -->
     <footer class="footer">
@@ -479,7 +474,8 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
     <script src="js/detail.js"></script>
 </body>

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>케이팝 데몬 헌터스 | 상세정보</title>
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/detail.css">
-    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
@@ -14,13 +14,13 @@
         <div class="header-inner">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/logo.png" alt="넷플릭스 로고" />
+                    <img src="images/logo.png" alt="넷플릭스 로고">
                 </a>
             </div>
 
             <div class="profile">
                 <div class="profile-toggle" id="profile-btn">
-                    <img src="images/icon-profile.png" alt="프로필 아이콘"/>
+                    <img src="images/icon-profile.png" alt="프로필 아이콘">
                     <span class="arrow">▼</span>
                 </div>
                 <div class="dropdown-menu" id="dropdown">
@@ -37,22 +37,25 @@
     </header>
 
     <main class="detail-container">
-        <!-- 상단 콘텐츠 -->
+
+        <!-- 상단 -->
         <section class="detail-hero">
             <div class="detail-info">
                 <h1 class="title-ko">케이팝 데몬 헌터스</h1>
                 <p class="title-en">K-Pop Demon Hunters</p>
+
                 <div class="action-buttons">
                     <button class="btn-like" aria-label="찜하기">♡</button>
                     <button class="btn-share">공유하기</button>
                 </div>
             </div>
+
             <div class="detail-poster">
                 <img src="images/kpop-demon-hunters-poster.jpg" alt="케이팝 데몬 헌터스 포스터">
             </div>
         </section>
 
-        <!-- 평점 / 예매율 / 시청자 수 -->
+        <!-- 통계 -->
         <section class="detail-stats">
             <ul class="stats-list">
                 <li><strong>⭐평점</strong><span>9.1</span></li>
@@ -61,26 +64,24 @@
             </ul>
         </section>
 
-        <!-- 탭 메뉴 -->
+        <!-- 탭 -->
         <section class="detail-tabs">
+
             <ul class="tab-menu">
                 <li class="active"><button type="button">주요정보</button></li>
                 <li><button type="button">실관람평</button></li>
                 <li><button type="button">예고편 / 스틸컷</button></li>
             </ul>
 
-            <!-- 탭 콘텐츠 -->
+            <!-- 핵심: tab-content 안에 전부 들어감 -->
             <div class="tab-content">
-                <!-- 주요정보 -->
+
+                <!-- ✅ 주요정보 -->
                 <section class="tab-panel active">
-                    <h2 class="sr-only">주요정보</h2>
+
                     <!-- 작품 설명 -->
                     <div class="summary">
-                        <p>
-                            세 친구가 강력한 목소리를 발휘해 악마로부터 세상을 구한다.  
-                            액션, 코미디, 로맨스와 중독적인 케이팝 노래가
-                            스타일리시하게 어우러진 작품.
-                        </p>
+                        <p>세 친구가 강력한 목소리를 발휘해 악마로부터 세상을 구한다. 액션, 코미디, 로맨스와 중독적인 케이팝 노래가 스타일리시하게 어우러진 작품.</p>
                     </div>
 
                     <!-- 상세 정보 리스트 -->
@@ -108,16 +109,16 @@
                                     영화의 어떤 점이 좋았는지 이야기해주세요.
                                 </p>
                             </div>
-                        </div> <!-- ✅ cta-box 닫힘-->
-                    </section> <!-- ✅ review-cta 닫힘-->
+                        </div> 
+                    </section> 
 
-                    <!-- 관람평 작성 영역 -->
+                    <!-- 리뷰 작성-->
                     <section class="review-write" id="review-form">
+
                         <h4 class="review-form-title">관람평 작성</h4>
+
                         <!-- 안내 문구 -->
-                        <p class="review-guide">
-                            ℹ️ 관람평 작성은 <strong>주요정보</strong> 탭에서만 가능합니다.
-                        </p>
+                        <p class="review-guide">ℹ️ 관람평 작성은 <strong>주요정보</strong> 탭에서만 가능합니다.</p>
                         <!-- 유저 프로필 + 입력 -->
                         <div class="review-write-box">
                             <div class="review-avatar">
@@ -159,241 +160,240 @@
                         </div>
                     </section>
 
-                    <!-- 주요정보 관람평 작성 -->
+                    <!-- 리뷰 리스트 -->
                     <section class="review-preview">
                         <div class="review-header">
                             <h3>관람평</h3>
                         </div>
 
+                        <!-- 첫번째 리스트 -->
                         <ul class="review-list">
+
                             <li class="review-card">
                                 <div class="review-inner">
+                                    <div class="review-avatar">
+                                        <img src="images/icon-user.png" alt="유저 아이콘">
+                                    </div>
+                                    <div class="review-content">
+                                        <div class="review-top">
+                                            <span class="review-user">movie_lover</span>
+                                            <span class="review-date">2026.01.03</span>
+                                        </div>
 
-                                <!-- 왼쪽: 유저 이미지 -->
-                                <div class="review-avatar">
-                                    <img src="images/icon-user.png" alt="유저 아이콘">
-                                </div>
+                                        <div class="review-rating">
+                                            ★★★★☆ <span class="score">4.0</span>
+                                        </div>
 
-                                <!-- 오른쪽: 리뷰 내용 -->
-                                <!-- 첫번째 리뷰 -->
-                                <div class="review-content">
-                                <div class="review-top">
-                                    <span class="review-user">movie_lover</span>
-                                    <span class="review-date">2026.01.03</span>
-                                </div>
+                                        <p class="review-text">
+                                            케이팝과 액션을 이렇게 잘 섞을 수 있다니  
+                                            생각보다 스토리도 탄탄해서 몰입감이 좋았어요.
+                                        </p>
 
-                                <div class="review-rating">
-                                    ★★★★☆ <span class="score">4.0</span>
-                                </div>
-
-                                <p class="review-text">
-                                    케이팝과 액션을 이렇게 잘 섞을 수 있다니  
-                                    생각보다 스토리도 탄탄해서 몰입감이 좋았어요.
-                                </p>
-
-                                <div class="review-actions">
-                                    <button class="btn-like">👍 12</button>
+                                        <div class="review-actions">
+                                            <button class="btn-like">👍 12</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </li>
+                        </ul>
 
-                            <!-- 두번째 리뷰 -->
+                        <!-- 두번째 리스트 -->
+                        <ul class="review-list">
+
                             <li class="review-card">
                                 <div class="review-inner">
-
-                                <!-- 왼쪽: 유저 이미지 -->
-                                <div class="review-avatar">
-                                    <img src="images/icon-user.png" alt="유저 아이콘">
-                                </div>
-
-                                <!-- 오른쪽: 리뷰 내용 -->
-                                <div class="review-content">
-                                    <div class="review-top">
-                                        <span class="review-user">netflix_pick</span>
-                                        <span class="review-date">2026.01.01</span>
+                                    <div class="review-avatar">
+                                        <img src="images/icon-user.png">
                                     </div>
 
-                                    <div class="review-rating">
-                                        ★★★★☆ <span class="score">4.0</span>
+                                    <div class="review-content">
+                                        <div class="review-top">
+                                            <span class="review-user">netflix_pick</span>
+                                            <span class="review-date">2026.01.01</span>
+                                        </div>
+
+                                        <div class="review-rating">
+                                            ★★★★☆ <span class="score">4.0</span>
+                                        </div>
+
+                                        <p class="review-text">
+                                            음악 연출이 정말 좋고 아이들과 같이 보기에도 부담 없어요.
+                                        </p>
+
+                                        <div class="review-actions">
+                                            <button class="btn-like">👍 8</button>
+                                        </div>
                                     </div>
-
-                                    <p class="review-text">
-                                        음악 연출이 정말 좋고 아이들과 같이 보기에도 부담 없어요.
-                                    </p>
-
-                                    <div class="review-actions">
-                                        <button class="btn-like">👍 8</button>
-                                    </div>
-                                </li>
-                            </ul>
-                        </section>
-                    </section> <!-- ✅ tab-panel 닫힘 -->
-
-                    <!-- 실관람평 -->
-                    <section class="tab-panel">
-                        <h2 class="sr-only">실관람평</h2>
-
-                        <!-- 리뷰 유도 영역 -->
-                        <section class="review-cta">
-                            <p class="cta-title">
-                                케이팝 데몬 헌터스에 대한 개성 있는 이야기가 있어요!
-                            </p>
-
-                            <div class="cta-box">
-                                <!-- 왼쪽: 로고 + Netflix -->
-                                <div class="curation-left">
-                                    <img src="images/icon.png" alt="NETFLIX 아이콘" class="netflix-icon">
-                                    <span class="netflix-text">Netflix</span>
                                 </div>
+                            </li>
+                        </ul>
+                    </section>
+                </section> 
 
-                                <!-- 가운데: 텍스트 -->
-                                <div class="cta-center">
-                                    <p>
-                                        케이팝 데몬 헌터스를 재미있게 보셨나요?<br>
-                                        영화의 어떤 점이 좋았는지 이야기해주세요.
-                                    </p>
-                                </div>
-                            </div> <!-- ✅ cta-box 닫힘-->
-                        </section> <!-- ✅ review-cta 닫힘-->
+                <!-- 실관람평 -->
+                <section class="tab-panel">
+                    <h3 class="sr-only">실관람평</h3>
 
-                        <!-- 주요정보 관람평 작성 -->
-                        <section class="review-preview">
+                    <!-- 리뷰 유도 영역 -->
+                    <section class="review-cta">
+                        <p class="cta-title">케이팝 데몬 헌터스에 대한 개성 있는 이야기가 있어요!</p>
+                        <div class="cta-box">
+                            <!-- 왼쪽: 로고 + Netflix -->
+                            <div class="curation-left">
+                                <img src="images/icon.png" alt="NETFLIX 아이콘" class="netflix-icon">
+                                <span class="netflix-text">Netflix</span>
+                            </div>
+                            <!-- 가운데: 텍스트 -->
+                            <div class="cta-center">
+                                <p>
+                                    케이팝 데몬 헌터스를 재미있게 보셨나요?<br>
+                                    영화의 어떤 점이 좋았는지 이야기해주세요.
+                                </p>
+                            </div>
+                        </div> 
+                    </section> 
+
+                    <!-- 리뷰 리스트 -->
+                    <section class="review-preview">
                         <div class="review-header">
                             <h3>관람평</h3>
                         </div>
 
+                        <!-- 첫번째 리스트 -->
                         <ul class="review-list">
+
                             <li class="review-card">
                                 <div class="review-inner">
+                                    <div class="review-avatar">
+                                        <img src="images/icon-user.png">
+                                    </div>
+                                    <div class="review-content">
+                                        <div class="review-top">
+                                            <span class="review-user">movie_lover</span>
+                                            <span class="review-date">2026.01.03</span>
+                                        </div>
 
-                                <!-- 왼쪽: 유저 이미지 -->
-                                <div class="review-avatar">
-                                    <img src="images/icon-user.png" alt="유저 아이콘">
-                                </div>
+                                        <div class="review-rating">
+                                            ★★★★☆ <span class="score">4.0</span>
+                                        </div>
 
-                                <!-- 오른쪽: 리뷰 내용 -->
-                                <!-- 첫번째 리뷰 -->
-                                <div class="review-content">
-                                <div class="review-top">
-                                    <span class="review-user">movie_lover</span>
-                                    <span class="review-date">2026.01.03</span>
-                                </div>
+                                        <p class="review-text">
+                                            케이팝과 액션을 이렇게 잘 섞을 수 있다니  
+                                            생각보다 스토리도 탄탄해서 몰입감이 좋았어요.
+                                        </p>
 
-                                <div class="review-rating">
-                                    ★★★★☆ <span class="score">4.0</span>
-                                </div>
-
-                                <p class="review-text">
-                                    케이팝과 액션을 이렇게 잘 섞을 수 있다니  
-                                    생각보다 스토리도 탄탄해서 몰입감이 좋았어요.
-                                </p>
-
-                                <div class="review-actions">
-                                    <button class="btn-like">👍 12</button>
+                                        <div class="review-actions">
+                                            <button class="btn-like">👍 12</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </li>
+                        </ul>
 
-                            <!-- 두번째 리뷰 -->
+                        <!-- 두번째 리스트 -->
+                        <ul class="review-list">
+
                             <li class="review-card">
                                 <div class="review-inner">
+                                    <div class="review-avatar">
+                                        <img src="images/icon-user.png">
+                                    </div>
+                                    <div class="review-content">
+                                        <div class="review-top">
+                                            <span class="review-user">netflix_pick</span>
+                                            <span class="review-date">2026.01.01</span>
+                                        </div>
 
-                                <!-- 왼쪽: 유저 이미지 -->
-                                <div class="review-avatar">
-                                    <img src="images/icon-user.png" alt="유저 아이콘">
+                                        <div class="review-rating">
+                                            ★★★★☆ <span class="score">4.0</span>
+                                        </div>
+
+                                        <p class="review-text">
+                                            음악 연출이 정말 좋고 아이들과 같이 보기에도 부담 없어요.
+                                        </p>
+
+                                        <div class="review-actions">
+                                            <button class="btn-like">👍 8</button>
+                                        </div>
+                                    </div>
                                 </div>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
 
-                                <!-- 오른쪽: 리뷰 내용 -->
-                                <div class="review-content">
-                                    <div class="review-top">
-                                        <span class="review-user">netflix_pick</span>
-                                        <span class="review-date">2026.01.01</span>
+                <!-- 예고편 / 스틸컷 -->
+                <section class="tab-panel">
+                    <h2 class="sr-only">예고편 및 스틸컷</h2>
+
+                    <!-- 예고편 영역 -->
+                    <section class="trailer-section">
+                        <h3 class="section-title">메인 예고편</h3>
+
+                        <div class="trailer-slider grab-slider">
+                            <ul class="trailer-list">
+                                <li class="slide">
+                                    <div class="trailer-video">
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/xQnsFqn44uo?enablejsapi=1&rel=0"
+                                            allow="autoplay; encrypted-media"
+                                            allowfullscreen
+                                            title="케이팝 데몬 헌터스 예고편01">
+                                        </iframe>
                                     </div>
+                                </li>
 
-                                    <div class="review-rating">
-                                        ★★★★☆ <span class="score">4.0</span>
+                                <li class="slide">
+                                    <div class="trailer-video">
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/eny0BqmSwmM?enablejsapi=1&rel=0"
+                                            allow="autoplay; encrypted-media"
+                                            allowfullscreen
+                                            title="케이팝 데몬 헌터스 예고편02">
+                                        </iframe>
                                     </div>
+                                </li>
 
-                                    <p class="review-text">
-                                        음악 연출이 정말 좋고 아이들과 같이 보기에도 부담 없어요.
-                                    </p>
-
-                                    <div class="review-actions">
-                                        <button class="btn-like">👍 8</button>
+                                <li class="slide">
+                                    <div class="trailer-video">
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/eny0BqmSwmM?enablejsapi=1&rel=0"
+                                            allow="autoplay; encrypted-media"
+                                            allowfullscreen
+                                            title="케이팝 데몬 헌터스 예고편03">
+                                        </iframe>
                                     </div>
                                 </li>
                             </ul>
-                        </section>
-                    </section> <!-- ✅ tab-panel 닫힘 -->
-
-                    <!-- 예고편 / 스틸컷 -->
-                    <section class="tab-panel">
-                        <h2 class="sr-only">예고편 및 스틸컷</h2>
-
-                        <!-- 예고편 영역 -->
-                        <section class="trailer-section">
-                            <h3 class="section-title">메인 예고편</h3>
-
-                            <div class="trailer-slider grab-slider">
-                                <ul class="trailer-list">
-                                    <li class="slide">
-                                        <div class="trailer-video">
-                                            <iframe 
-                                                src="https://www.youtube.com/embed/xQnsFqn44uo?enablejsapi=1&rel=0"
-                                                allow="autoplay; encrypted-media"
-                                                allowfullscreen
-                                                title="케이팝 데몬 헌터스 예고편01">
-                                            </iframe>
-                                        </div>
-                                    </li>
-
-                                    <li class="slide">
-                                        <div class="trailer-video">
-                                            <iframe 
-                                                src="https://www.youtube.com/embed/eny0BqmSwmM?enablejsapi=1&rel=0"
-                                                allow="autoplay; encrypted-media"
-                                                allowfullscreen
-                                                title="케이팝 데몬 헌터스 예고편02">
-                                            </iframe>
-                                        </div>
-                                    </li>
-
-                                    <li class="slide">
-                                        <div class="trailer-video">
-                                            <iframe 
-                                                src="https://www.youtube.com/embed/eny0BqmSwmM?enablejsapi=1&rel=0"
-                                                allow="autoplay; encrypted-media"
-                                                allowfullscreen
-                                                title="케이팝 데몬 헌터스 예고편03">
-                                            </iframe>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </section>
-
-                        <!-- 스틸컷 영역 -->
-                        <section class="stillcut-section">
-                            <h3 class="section-title">스틸컷</h3>
-
-                            <!-- 🔥 슬라이더 래퍼 추가 -->
-                            <div class="stillcut-slider grab-slider">
-                                <ul class="stillcut-list">
-                                    <li class="slide">
-                                        <img src="images/kpop-still-01.jpeg" alt="케이팝 데몬 헌터스 스틸컷 1">
-                                    </li>
-                                    <li class="slide">
-                                        <img src="images/kpop-still-02.webp" alt="케이팝 데몬 헌터스 스틸컷 2">
-                                    </li>-
-                                    <li class="slide">
-                                        <img src="images/kpop-still-03.jpg" alt="케이팝 데몬 헌터스 스틸컷 3">
-                                    </li>-
-                                    <li class="slide">
-                                        <img src="images/kpop-still-04.jpg" alt="케이팝 데몬 헌터스 스틸컷 4">
-                                    </li>
-                                </ul>
-                            </div>
-                        </section>
+                        </div>
                     </section>
-                </main>
+
+                    <!-- 스틸컷 영역 -->
+                    <section class="stillcut-section">
+                        <h3 class="section-title">스틸컷</h3>
+
+                        <!-- 🔥 슬라이더 래퍼 추가 -->
+                        <div class="stillcut-slider grab-slider">
+                            <ul class="stillcut-list">
+                                <li class="slide">
+                                    <img src="images/kpop-still-01.jpeg" alt="케이팝 데몬 헌터스 스틸컷 1">
+                                </li>
+                                <li class="slide">
+                                    <img src="images/kpop-still-02.webp" alt="케이팝 데몬 헌터스 스틸컷 2">
+                                </li>
+                                <li class="slide">
+                                    <img src="images/kpop-still-03.jpg" alt="케이팝 데몬 헌터스 스틸컷 3">
+                                </li>
+                                <li class="slide">
+                                    <img src="images/kpop-still-04.jpg" alt="케이팝 데몬 헌터스 스틸컷 4">
+                                </li>
+                            </ul>
+                        </div>
+                    </section> <!-- ✅ stillcut-section 끝 -->
+                </section> <!-- ✅ tab-panel 끝 -->
+            </div> <!-- ✅ tab-content 끝 -->
+        </section> <!-- ✅ detail-tabs 끝 -->
+    </main> 
 
     <!-- ✅ footer -->
     <footer class="footer">
@@ -450,7 +450,7 @@
             <div class="footer-utils">
 
                 <!-- language display -->
-                    <div class="footer-language">
+                <div class="footer-language">
                     <span class="footer-language-icon">🌐</span>
                     <span class="footer-language-code">KR</span>
                     <span class="footer-language-sep">·</span>
@@ -461,13 +461,14 @@
                 <div class="footer-search">
                     <form action="location.html?move=true#map-section">
                         <input type="hidden" name="move" value="true">
-                        <input type="text" placeholder="위치찾기" />
+                        <input type="text" placeholder="위치찾기">
                         <button type="submit" aria-label="search" >🔍</button>
                     </form>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
     <script src="js/detail.js"></script>
 </body>

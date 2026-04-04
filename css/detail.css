@@ -4,10 +4,17 @@
         box-sizing: border-box;
     }
 
+    html {
+        overflow-y: scroll;
+    }
+
     body {
-        color: white; /* 텍스트는 화이트*/
+        color: white; 
         min-width: 1280px;
         padding-top: 60px;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
     }
 
     /* 근성 유틸리티 */
@@ -22,12 +29,6 @@
         white-space: nowrap;
         border: 0;
     }
-
-    /* wrap */
-    .wrap {
-        width: 1280px; /* 1280px 고정 */
-        margin: 0 auto;
-    } 
 
     img {
         max-width: 100%;
@@ -47,7 +48,6 @@
         top: 0;
         left: 0;
         width: 100%;
-        min-width: 1280px;
         height: 60px;
         z-index: 1000; /* 모바일 메뉴보다 낮게, 컨텐츠보단 높게 */
         background-color: rgba(88, 53, 102, 0.5);
@@ -57,8 +57,8 @@
     }
 
     .header-inner {
-        width: 1280px;   /* ⭐ 핵심 */
-        margin: 0 auto;      /* ⭐ 중앙 정렬 */
+        width: 1280px;   /* 콘텐츠 폭 고정 */
+        margin: 0 auto;      /* 가로 중앙 정렬 */
         padding: 0 20px;     /* 모바일 여백 */
         height: 100%;
         display: flex;
@@ -91,7 +91,7 @@
     .profile-toggle .arrow {
         display: inline-block;
         font-size: 12px;
-        color: #ff3366;
+        color: #F26522;
         transition: transform 0.3s ease;
         transform-origin: center;
     }
@@ -100,7 +100,7 @@
     .profile-toggle.active .arrow {
         display: inline-block;
         font-size: 12px;
-        color: #ff3366;
+        color: #F26522;
         transition: transform 0.3s ease;
         transform-origin: center;
         transform: rotate(180deg);
@@ -177,7 +177,7 @@
         content: "";
         width: 3px;
         height: 0;
-        background-color: #ff3366;
+        background-color: #F26522;
         position: absolute;
         left: 0;
         transition: height 0.2s ease;
@@ -198,7 +198,7 @@
     }
 
     .dropdown-menu li:last-child a:hover {
-        color: #ff3366; /* 호버 시엔 브랜드 컬러로 */
+        color: #F26522; /* 호버 시엔 브랜드 컬러로 */
     }
 
     /* 메인 컨테이너 */
@@ -213,9 +213,10 @@
 
     /* 컨테이너 */
     .detail-container {
+        flex: 1;           /* ⭐ 핵심: 콘텐츠가 적어도 이 영역이 늘어나서 푸터를 아래로 밀어냅니다 */
         max-width: 1200px;
         margin: 0 auto;
-        padding: 40px 20px 120px; /* 120px 하단 여백 */
+        padding: 40px 20px 120px;
     }
 
     /* 상단 히어로 영역 */
@@ -432,7 +433,7 @@
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     }
 
-    .cta-left {
+    .curation-left {
         display: flex;
         flex-direction: column;
         align-items: center;      /* 가로축 중앙 정렬 (핵심!) */
@@ -700,13 +701,13 @@
 
     /* 개별 관람평 카드 */
     .review-card {
-    background: rgba(255, 255, 255, 0.05); /* 기본 투명도를 살짝 올림 */
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1); /* 테두리를 조금 더 선명하게 */
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 16px; /* 카드 간격 확보 */
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* 애니메이션을 더 부드럽게 */
+        background: rgba(255, 255, 255, 0.05); /* 기본 투명도를 살짝 올림 */
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1); /* 테두리를 조금 더 선명하게 */
+        border-radius: 16px;
+        padding: 24px;
+        margin-bottom: 16px; /* 카드 간격 확보 */
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* 애니메이션을 더 부드럽게 */
     }
 
     .review-card:hover {

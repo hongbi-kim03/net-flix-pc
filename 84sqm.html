@@ -38,24 +38,24 @@
 
     <main class="detail-container">
 
-    <!-- 상단 콘텐츠 -->
-    <section class="detail-hero">
-        <div class="detail-info">
-        <h1 class="title-ko">84제곱미터</h1>
-        <p class="title-en">84 Square Meters</p>
+        <!-- 상단 -->
+        <section class="detail-hero">
+            <div class="detail-info">
+                <h1 class="title-ko">84제곱미터</h1>
+                <p class="title-en">84 Square Meters</p>
 
-            <div class="action-buttons">
-                <button class="btn-like" aria-label="찜하기">♡</button>
-                <button class="btn-share">공유하기</button>
+                <div class="action-buttons">
+                    <button class="btn-like" aria-label="찜하기">♡</button>
+                    <button class="btn-share">공유하기</button>
+                </div>
             </div>
-        </div>
 
             <div class="detail-poster">
                 <img src="images/84sqm-poster.jpg" alt="84제곱미터 포스터">
             </div>
         </section>
 
-        <!-- 평점 / 예매율 / 시청자 수 -->
+        <!-- 통계 -->
         <section class="detail-stats">
             <ul class="stats-list">
                 <li><strong>⭐평점</strong><span>7.9 / 10</span></li>
@@ -64,348 +64,342 @@
             </ul>
         </section>
 
-        <!-- 탭 메뉴 -->
+        <!-- 탭 -->
         <section class="detail-tabs">
+
             <ul class="tab-menu">
                 <li class="active"><button type="button">주요정보</button></li>
                 <li><button type="button">실관람평</button></li>
                 <li><button type="button">예고편 / 스틸컷</button></li>
             </ul>
 
-            <!-- 탭 콘텐츠 -->
+            <!-- 핵심: tab-content 안에 전부 들어감 -->
             <div class="tab-content">
 
-            <!-- 주요정보 -->
-            <section class="tab-panel active">
-                <h2 class="sr-only">주요정보</h2>
+                <!-- 주요정보 -->
+                <section class="tab-panel active">
 
-                <!-- 작품 설명 -->
-                <div class="summary">
-                    <p>
-                        영혼까지 끌어모아 84제곱미터 아파트를 장만한 남자.
-                        하지만 밤마다 들려오는 정체불명의 층간 소음이 그를 괴롭힌다. 
-                        날이 갈수록 격화되는 이웃과의 갈등 속에서 소음의 근원을 캐낼 수 있을까.
-                    </p>
-                </div>
-
-                <!-- 상세 정보 리스트 -->
-                <dl class="info-list">
-                    <dt>감독</dt><dd>김태준</dd>
-                    <dt>출연</dt><dd>강하늘,염혜란,서현우,전진오,김현정,박성일,강애심,이종구,윤정일,조한준  </dd>
-                    <dt>각본</dt><dd>김태준</dd>
-                    <dt>장르</dt><dd>스릴러 영화</dd>
-                    <dt>영화 특징</dt><dd>어두운,긴장감 넘치는</dd>
-                    <dt>관람 등급</dt><dd>15세 이상 관람가</dd>
-                </dl>
-
-                <!-- 리뷰 유도 영역 -->
-                <section class="review-cta">
-                    <p class="cta-title">
-                        84㎡(84제곱미터)에 대한 개성 있는 이야기가 있어요!
-                    </p>
-
-                    <div class="cta-box">
-                        <!-- 왼쪽: 아이콘 + Netflix -->
-                        <div class="curation-left">
-                            <img src="images/icon.png" alt="NETFLIX 아이콘" class="netflix-icon">
-                            <span class="netflix-text">Netflix</span>
-                        </div>
-
-                        <!-- 가운데: 텍스트 -->
-                        <div class="cta-center">
-                            <p>
-                                84㎡(84제곱미터)를 재미있게 보셨나요?<br>
-                                영화의 어떤 점이 좋았는지 이야기해주세요.
-                            </p>
-                        </div>
-                </div> <!-- ✅ cta-box 닫힘-->
-            </section> <!-- ✅ review-cta 닫힘-->
-
-            <!-- 관람평 작성 영역 -->
-            <section class="review-write" id="review-form">
-                <h4 class="review-form-title">관람평 작성</h4>
-
-                <!-- 안내 문구 -->
-                <p class="review-guide">
-                    ℹ️ 관람평 작성은 <strong>주요정보</strong> 탭에서만 가능합니다.
-                </p>
-
-                <!-- 유저 프로필 + 입력 -->
-                <div class="review-write-box">
-                    <div class="review-avatar">
-                        <img src="images/icon-user.png" alt="유저 아이콘">
-                    </div>
-
-                    <div class="review-input-area">
-                        <textarea class="review-input" placeholder="관람평을 남겨주세요." rows="2" maxlength="300"></textarea>
-
-                        <!-- 펼쳐지는 영역 -->
-                        <div class="review-expand">
-                            <!-- 별점 -->
-                            <div class="star-rating">
-                                <input type="radio" name="rating" id="rate5" value="5">
-                                <label for="rate5">★</label>
-
-                                <input type="radio" name="rating" id="rate4" value="4">
-                                <label for="rate4">★</label>
-
-                                <input type="radio" name="rating" id="rate3" value="3">
-                                <label for="rate3">★</label>
-
-                                <input type="radio" name="rating" id="rate2" value="2">
-                                <label for="rate2">★</label>
-
-                                <input type="radio" name="rating" id="rate1" value="1">
-                                <label for="rate1">★</label>
-                            </div>
-
-                            <!-- 글자 수 -->
-                            <span class="text-count">0 / 300</span>
-
-                            <!-- 버튼 -->
-                            <div class="review-actions">
-                                <button type="button" class="btn-cancel">취소</button>
-                                <button type="submit" class="btn-submit">등록</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 주요정보 관람평 작성 -->
-            <section class="review-preview">
-                <div class="review-header">
-                    <h3>관람평</h3>
-                </div>
-
-                <ul class="review-list">
-                    <li class="review-card">
-                        <div class="review-inner">
-
-                        <!-- 왼쪽: 유저 이미지 -->
-                        <div class="review-avatar">
-                            <img src="images/icon-user.png" alt="유저 아이콘">
-                        </div>
-
-                    <!-- 오른쪽: 리뷰 내용 -->
-                    <!-- 첫번째 리뷰 -->
-                    <div class="review-content">
-                    <div class="review-top">
-                        <span class="review-user">movie_lover</span>
-                        <span class="review-date">2026.01.03</span>
-                    </div>
-
-                    <div class="review-rating">
-                        ★★★★☆ <span class="score">4.0</span>
-                    </div>
-
-                    <p class="review-text">
-                        진짜 우리 집 이야기 같아서 더 무서웠어요.
-                        소리 연출이 특히 인상적입니다.
-                    </p>
-
-                    <div class="review-actions">
-                        <button class="btn-like">👍 12</button>
-                    </div>
-                    </li>
-
-                    <!-- 두번째 리뷰 -->
-                    <li class="review-card">
-                        <div class="review-inner">
-
-                        <!-- 왼쪽: 유저 이미지 -->
-                        <div class="review-avatar">
-                            <img src="images/icon-user.png" alt="유저 아이콘">
-                        </div>
-
-                        <!-- 오른쪽: 리뷰 내용 -->
-                        <div class="review-content">
-                            <div class="review-top">
-                                <span class="review-user">netflix_pick</span>
-                                <span class="review-date">2026.01.01</span>
-                            </div>
-
-                            <div class="review-rating">
-                                ★★★★☆ <span class="score">4.0</span>
-                            </div>
-
-                            <p class="review-text">
-                                큰 공포보다 현실적인 불안감이 계속 쌓이는 영화.
-                                엔딩까지 긴장감 유지 👍
-                            </p>
-
-                            <div class="review-actions">
-                                <button class="btn-like">👍 8</button>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-            </section> <!-- ✅ tab-panel 닫힘 -->
-
-        <!-- 실관람평 -->
-        <section class="tab-panel">
-            <h2 class="sr-only">실관람평</h2>
-
-            <!-- 리뷰 유도 영역 -->
-            <section class="review-cta">
-                <p class="cta-title">
-                    84㎡(84제곱미터)에 대한 개성 있는 이야기가 있어요!
-                </p>
-
-                <div class="cta-box">
-                    <!-- 왼쪽: 로고 + Netflix -->
-                    <div class="curation-left">
-                        <img src="images/icon.png" alt="NETFLIX 아이콘" class="netflix-icon">
-                        <span class="netflix-text">Netflix</span>
-                    </div>
-
-                    <!-- 가운데: 텍스트 -->
-                    <div class="cta-center">
+                    <!-- 작품 설명 -->
+                    <div class="summary">
                         <p>
-                            84㎡(84제곱미터)를 재미있게 보셨나요?<br>
-                            영화의 어떤 점이 좋았는지 이야기해주세요.
+                            영혼까지 끌어모아 84제곱미터 아파트를 장만한 남자.
+                            하지만 밤마다 들려오는 정체불명의 층간 소음이 그를 괴롭힌다. 
+                            날이 갈수록 격화되는 이웃과의 갈등 속에서 소음의 근원을 캐낼 수 있을까.
                         </p>
                     </div>
-                </div> <!-- ✅ cta-box 닫힘-->
-            </section> <!-- ✅ review-cta 닫힘-->
 
-        <!-- 주요정보 관람평 작성 -->
-        <section class="review-preview">
-            <div class="review-header">
-                <h3>관람평</h3>
-            </div>
+                    <!-- 상세 정보 리스트 -->
+                    <dl class="info-list">
+                        <dt>감독</dt><dd>김태준</dd>
+                        <dt>출연</dt><dd>강하늘,염혜란,서현우,전진오,김현정,박성일,강애심,이종구,윤정일,조한준  </dd>
+                        <dt>각본</dt><dd>김태준</dd>
+                        <dt>장르</dt><dd>스릴러 영화</dd>
+                        <dt>영화 특징</dt><dd>어두운,긴장감 넘치는</dd>
+                        <dt>관람 등급</dt><dd>15세 이상 관람가</dd>
+                    </dl>
 
-            <ul class="review-list">
-                <li class="review-card">
-                    <div class="review-inner">
-
-                    <!-- 왼쪽: 유저 이미지 -->
-                    <div class="review-avatar">
-                        <img src="images/icon-user.png" alt="유저 아이콘">
-                    </div>
-
-                    <!-- 오른쪽: 리뷰 내용 -->
-                    <!-- 첫번째 리뷰 -->
-                    <div class="review-content">
-                    <div class="review-top">
-                        <span class="review-user">movie_lover</span>
-                        <span class="review-date">2026.01.03</span>
-                    </div>
-
-                    <div class="review-rating">
-                        ★★★★☆ <span class="score">4.0</span>
-                    </div>
-
-                    <p class="review-text">
-                        진짜 우리 집 이야기 같아서 더 무서웠어요. 
-                        소리 연출이 특히 인상적입니다.
-                    </p>
-
-                    <div class="review-actions">
-                        <button class="btn-like">👍 12</button>
-                    </div>
-                    </li>
-
-                    <!-- 두번째 리뷰 -->
-                    <li class="review-card">
-                        <div class="review-inner">
-
-                        <!-- 왼쪽: 유저 이미지 -->
-                        <div class="review-avatar">
-                            <img src="images/icon-user.png" alt="유저 아이콘">
-                        </div>
-
-                        <!-- 오른쪽: 리뷰 내용 -->
-                        <div class="review-content">
-                            <div class="review-top">
-                                <span class="review-user">netflix_pick</span>
-                                <span class="review-date">2026.01.01</span>
+                    <!-- 리뷰 유도 영역 -->
+                    <section class="review-cta">
+                        <p class="cta-title">84㎡(84제곱미터)에 대한 개성 있는 이야기가 있어요!</p>
+                        <div class="cta-box">
+                            <!-- 왼쪽: 아이콘 + Netflix -->
+                            <div class="curation-left">
+                                <img src="images/icon.png" alt="NETFLIX 아이콘" class="netflix-icon">
+                                <span class="netflix-text">Netflix</span>
                             </div>
-
-                            <div class="review-rating">
-                                ★★★★☆ <span class="score">4.0</span>
+                            <!-- 가운데: 텍스트 -->
+                            <div class="cta-center">
+                                <p>
+                                    84㎡(84제곱미터)를 재미있게 보셨나요?<br>
+                                    영화의 어떤 점이 좋았는지 이야기해주세요.
+                                </p>
                             </div>
+                        </div> 
+                    </section> 
 
-                            <p class="review-text">
-                                답답한 공간 연출이 탁월함.
-                                혼자 보면 더 몰입됨.
-                            </p>
+                    <!-- 리뷰 작성-->
+                    <section class="review-write" id="review-form">
 
-                            <div class="review-actions">
-                                <button class="btn-like">👍 8</button>
+                        <h4 class="review-form-title">관람평 작성</h4>
+
+                        <!-- 안내 문구 -->
+                        <p class="review-guide">ℹ️ 관람평 작성은 <strong>주요정보</strong> 탭에서만 가능합니다.</p>
+                        <!-- 유저 프로필 + 입력 -->
+                        <div class="review-write-box">
+                            <div class="review-avatar">
+                                <img src="images/icon-user.png" alt="유저 아이콘">
                             </div>
-                        </li>
-                    </ul>
-                </section>
-            </section> <!-- ✅ tab-panel 닫힘 -->
+                            <div class="review-input-area">
+                                <textarea class="review-input" placeholder="관람평을 남겨주세요." rows="2" maxlength="300"></textarea>
 
-    <!-- 예고편 / 스틸컷 -->
-    <section class="tab-panel">
-        <h2 class="sr-only">예고편 및 스틸컷</h2>
+                                <!-- 펼쳐지는 영역 -->
+                                <div class="review-expand">
+                                    <!-- 별점 -->
+                                    <div class="star-rating">
+                                        <input type="radio" name="rating" id="rate5" value="5">
+                                        <label for="rate5">★</label>
 
-        <!-- 예고편 영역 -->
-        <section class="trailer-section">
-            <h3 class="section-title">메인 예고편</h3>
+                                        <input type="radio" name="rating" id="rate4" value="4">
+                                        <label for="rate4">★</label>
 
-            <div class="trailer-slider grab-slider">
-                <ul class="trailer-list">
-                    <li class="slide">
-                        <div class="trailer-video">
-                            <iframe 
-                                src="https://www.youtube.com/embed/nhPWOV02-G0?enablejsapi=1&rel=0"
-                                allow="autoplay; encrypted-media"
-                                allowfullscreen
-                                title="84㎡(84제곱미터) 예고편01">
-                            </iframe>
+                                        <input type="radio" name="rating" id="rate3" value="3">
+                                        <label for="rate3">★</label>
+
+                                        <input type="radio" name="rating" id="rate2" value="2">
+                                        <label for="rate2">★</label>
+
+                                        <input type="radio" name="rating" id="rate1" value="1">
+                                        <label for="rate1">★</label>
+                                    </div>
+
+                                    <!-- 글자 수 -->
+                                    <span class="text-count">0 / 300</span>
+
+                                    <!-- 버튼 -->
+                                    <div class="review-actions">
+                                        <button type="button" class="btn-cancel">취소</button>
+                                        <button type="submit" class="btn-submit">등록</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </li>
+                    </section>
 
-                    <li class="slide">
-                        <div class="trailer-video">
-                            <iframe 
-                                src="https://www.youtube.com/embed/KAYr3j19yXY?enablejsapi=1&rel=0"
-                                allow="autoplay; encrypted-media"
-                                allowfullscreen
-                                title="84㎡(84제곱미터) 예고편02">
-                            </iframe>
+                    <!-- 리뷰 리스트 -->
+                    <section class="review-preview">
+                        <div class="review-header">
+                            <h3>관람평</h3>
                         </div>
-                    </li>
 
-                    <li class="slide">
-                        <div class="trailer-video">
-                            <iframe 
-                                src="https://www.youtube.com/embed/KAYr3j19yXY?enablejsapi=1&rel=0"
-                                allow="autoplay; encrypted-media"
-                                allowfullscreen
-                                title="84㎡(84제곱미터) 예고편03">
-                            </iframe>
+                        <!-- 첫번째 리스트 -->
+                        <ul class="review-list">
+
+                            <li class="review-card">
+                                <div class="review-inner">
+                                    <div class="review-avatar">
+                                        <img src="images/icon-user.png" alt="유저 아이콘">
+                                    </div>
+                                    <div class="review-content">
+                                        <div class="review-top">
+                                            <span class="review-user">movie_lover</span>
+                                            <span class="review-date">2026.01.03</span>
+                                        </div>
+
+                                        <div class="review-rating">
+                                            ★★★★☆ <span class="score">4.0</span>
+                                        </div>
+
+                                        <p class="review-text">
+                                            진짜 우리 집 이야기 같아서 더 무서웠어요.
+                                            소리 연출이 특히 인상적입니다.
+                                        </p>
+
+                                        <div class="review-actions">
+                                            <button class="btn-like">👍 12</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        <ul>
+
+                        <!-- 두번째 리스트 -->
+                        <ul class="review-list">
+
+                            <li class="review-card">
+                                <div class="review-inner">
+                                    <div class="review-avatar">
+                                        <img src="images/icon-user.png" alt="유저 아이콘">
+                                    </div>
+
+                                    <div class="review-content">
+                                        <div class="review-top">
+                                            <span class="review-user">netflix_pick</span>
+                                            <span class="review-date">2026.01.01</span>
+                                        </div>
+
+                                        <div class="review-rating">
+                                            ★★★★☆ <span class="score">4.0</span>
+                                        </div>
+
+                                        <p class="review-text">
+                                            큰 공포보다 현실적인 불안감이 계속 쌓이는 영화.
+                                            엔딩까지 긴장감 유지 👍
+                                        </p>
+
+                                        <div class="review-actions">
+                                            <button class="btn-like">👍 8</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </section> 
+
+                <!-- 실관람평 -->
+                <section class="tab-panel">
+                    <h2 class="sr-only">실관람평</h2>
+
+                    <!-- 리뷰 유도 영역 -->
+                    <section class="review-cta">
+                        <p class="cta-title">
+                            84㎡(84제곱미터)에 대한 개성 있는 이야기가 있어요!
+                        </p>
+                        <div class="cta-box">
+                            <!-- 왼쪽: 로고 + Netflix -->
+                            <div class="curation-left">
+                                <img src="images/icon.png" alt="NETFLIX 아이콘" class="netflix-icon">
+                                <span class="netflix-text">Netflix</span>
+                            </div>
+                            <!-- 가운데: 텍스트 -->
+                            <div class="cta-center">
+                                <p>
+                                    84㎡(84제곱미터)를 재미있게 보셨나요?<br>
+                                    영화의 어떤 점이 좋았는지 이야기해주세요.
+                                </p>
+                            </div>
+                        </div> 
+                    </section> 
+
+                    <!-- 리뷰 리스트 -->
+                    <section class="review-preview">
+                        <div class="review-header">
+                            <h3>관람평</h3>
                         </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
 
-        <!-- 스틸컷 영역 -->
-        <section class="stillcut-section">
-            <h3 class="section-title">스틸컷</h3>
+                        <!-- 첫번째 리스트 -->
+                        <ul class="review-list">
 
-            <!-- 🔥 슬라이더 래퍼 추가 -->
-            <div class="stillcut-slider grab-slider">
-                <ul class="stillcut-list">
-                    <li class="slide">
-                        <img src="images/84sqm-still-01.webp" alt="84㎡(84제곱미터) 스틸컷 1">
-                    </li>
-                    <li class="slide">
-                        <img src="images/84sqm-still-02.webp" alt="84㎡(84제곱미터) 스틸컷 2">
-                    </li>
-                    <li class="slide">
-                        <img src="images/84sqm-still-03.webp" alt="84㎡(84제곱미터)스틸컷 3">
-                    </li>
-                </ul>
-            </div>
-        </section>
-    </section>
-</main>
+                            <li class="review-card">
+                                <div class="review-inner">
+                                    <div class="review-avatar">
+                                        <img src="images/icon-user.png" alt="유저 아이콘">
+                                    </div>
+                                    <div class="review-content">
+                                        <div class="review-top">
+                                            <span class="review-user">movie_lover</span>
+                                            <span class="review-date">2026.01.03</span>
+                                        </div>
+
+                                        <div class="review-rating">
+                                            ★★★★☆ <span class="score">4.0</span>
+                                        </div>
+
+                                        <p class="review-text">
+                                            진짜 우리 집 이야기 같아서 더 무서웠어요. 
+                                            소리 연출이 특히 인상적입니다.
+                                        </p>
+
+                                        <div class="review-actions">
+                                            <button class="btn-like">👍 12</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        <ul>
+
+                        <!-- 두번째 리스트 -->
+                        <ul class="review-list">
+
+                            <li class="review-card">
+                                <div class="review-inner">
+                                    <div class="review-avatar">
+                                        <img src="images/icon-user.png" alt="유저 아이콘">
+                                    </div>
+                                    <div class="review-content">
+                                        <div class="review-top">
+                                            <span class="review-user">netflix_pick</span>
+                                            <span class="review-date">2026.01.01</span>
+                                        </div>
+
+                                        <div class="review-rating">
+                                            ★★★★☆ <span class="score">4.0</span>
+                                        </div>
+
+                                        <p class="review-text">
+                                            답답한 공간 연출이 탁월함.
+                                            혼자 보면 더 몰입됨.
+                                        </p>
+
+                                        <div class="review-actions">
+                                            <button class="btn-like">👍 8</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </section> 
+
+                <!-- 예고편 / 스틸컷 -->
+                <section class="tab-panel">
+                    <h2 class="sr-only">예고편 및 스틸컷</h2>
+
+                    <!-- 예고편 영역 -->
+                    <section class="trailer-section">
+                        <h3 class="section-title">메인 예고편</h3>
+
+                        <div class="trailer-slider grab-slider">
+                            <ul class="trailer-list">
+                                <li class="slide">
+                                    <div class="trailer-video">
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/nhPWOV02-G0?enablejsapi=1&rel=0"
+                                            allow="autoplay; encrypted-media"
+                                            allowfullscreen
+                                            title="84㎡(84제곱미터) 예고편01">
+                                        </iframe>
+                                    </div>
+                                </li>
+
+                                <li class="slide">
+                                    <div class="trailer-video">
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/KAYr3j19yXY?enablejsapi=1&rel=0"
+                                            allow="autoplay; encrypted-media"
+                                            allowfullscreen
+                                            title="84㎡(84제곱미터) 예고편02">
+                                        </iframe>
+                                    </div>
+                                </li>
+
+                                <li class="slide">
+                                    <div class="trailer-video">
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/KAYr3j19yXY?enablejsapi=1&rel=0"
+                                            allow="autoplay; encrypted-media"
+                                            allowfullscreen
+                                            title="84㎡(84제곱미터) 예고편03">
+                                        </iframe>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 스틸컷 영역 -->
+                    <section class="stillcut-section">
+                        <h3 class="section-title">스틸컷</h3>
+
+                        <!-- 🔥 슬라이더 래퍼 추가 -->
+                        <div class="stillcut-slider grab-slider">
+                            <ul class="stillcut-list">
+                                <li class="slide">
+                                    <img src="images/84sqm-still-01.webp" alt="84㎡(84제곱미터) 스틸컷 1">
+                                </li>
+                                <li class="slide">
+                                    <img src="images/84sqm-still-02.webp" alt="84㎡(84제곱미터) 스틸컷 2">
+                                </li>
+                                <li class="slide">
+                                    <img src="images/84sqm-still-03.webp" alt="84㎡(84제곱미터)스틸컷 3">
+                                </li>
+                            </ul>
+                        </div>
+                    </section> <!-- ✅ stillcut-section 끝 -->
+                </section> <!-- ✅ tab-panel 끝 -->
+            </div> <!-- ✅ tab-content 끝 -->
+        </section> <!-- ✅ detail-tabs 끝 -->
+    </main>
 
     <!-- ✅ footer -->
     <footer class="footer">
@@ -479,7 +473,8 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
     <script src="js/detail.js"></script>
 </body>
