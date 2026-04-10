@@ -51,7 +51,7 @@
     }
 
     nav.gnb ul li a:hover {
-        color: #e50914;
+        color: #F26522; /* 로고 색상과 통일 */
     }
 
     /* GNB 오른쪽 영역 메뉴 스타일 오른쪽 검색, 알림, 프로필 */
@@ -235,7 +235,7 @@
         content: "";
         width: 3px;
         height: 0;
-        background-color: #ff3366;
+        background-color: #F26522; /* 로고 색상과 통일 */
         position: absolute;
         left: 0;
         transition: height 0.2s ease;
@@ -256,7 +256,7 @@
     }
 
     .dropdown-menu li:last-child a:hover {
-        color: #ff3366; 
+        color: #F26522; 
     }
 
     /* 프로필 드롭다운 썸네일 */

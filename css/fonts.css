@@ -4,27 +4,31 @@
 /* Typography System */
 body {
     font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 300; /* Body = Light */
+    font-weight: 300; /* 기본값: Light */
 }
 
 /* 제목 */
 .title {
-font-weight: 900; /* Black */
+    font-weight: 900; /* Black */
+    font-size: 32px;
 }
 
 /* 부제목 */
 .subtitle {
     font-weight: 500; /* Medium */
+    font-size: 24px;
 }
 
 /* 본문 */
 .body-text {
     font-weight: 300; /* Light */
+    font-size: 16px;
 }
 
 /* 서브 텍스트 */
 .sub-text {
     font-weight: 350; /* DemiLight */
+    font-size: 14px;
     color: #ccc;
 }
 
