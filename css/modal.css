@@ -163,7 +163,7 @@
 
 .series-title {
     font-size: 2rem;
-    color: #ff3366;
+    color: #F26522;
     font-weight: 700;
     margin: 0;
     flex: 1 1 auto;
@@ -241,13 +241,13 @@
     flex-shrink: 0;      /* 숫자가 찌그러지지 않게 고정 */
     font-size: 1.5rem;
     font-weight: 700;
-    color: #ff3366;
+    color: #F26522;
     min-width: 20px;
     text-align: center;
 }
 
 .episode:hover .episode-number {
-  color: #ff3366; /* 호버 시 포인트 컬러 */
+  color: #F26522; /* 호버 시 포인트 컬러 */
 }
 
 /* ✅ 공개 예정(Coming Soon) 에피소드 전용 스타일 */
@@ -322,7 +322,7 @@
 /* ⏱️ 재생 시간 */
 .duration {
     font-size: 0.85rem;
-    color: #ff3366; 
+    color: #F26522; 
     font-weight: 600;
 }
 
