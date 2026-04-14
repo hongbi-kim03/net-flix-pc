@@ -99,6 +99,6 @@ form.addEventListener('submit', function (e) {
 
     if (valid) {
         alert('로그인 성공');
-        window.location.href = "dashboard.html";
+        window.location.href = "index.html";
     }
 });
