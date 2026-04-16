@@ -4,6 +4,35 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ================================
+🚀 메인 랜딩 페이지: 서비스 진입 로직
+================================ */
+const heroForm = document.querySelector('.hero-form');
+
+if (heroForm) {
+    heroForm.addEventListener('submit', function (e) {
+        e.preventDefault(); // 기본 제출 동작 방지
+
+        const emailInput = this.querySelector('input[type="email"]');
+        const emailValue = emailInput.value.trim();
+
+        if (emailValue) {
+            // 1. 사용자 이메일 로컬 스토리지 저장 (개인화 준비)
+            localStorage.setItem('userEmail', emailValue);
+
+            // 2. 부드러운 전환 효과를 위해 버튼 텍스트 변경 (옵션)
+            const submitBtn = this.querySelector('button');
+            submitBtn.textContent = '로그인 중...';
+
+            // 3. 메인 콘텐츠 페이지로 이동
+            // 실제 작업하신 메인 파일명(예: series.html)으로 수정하세요.
+            setTimeout(() => {
+                window.location.href = 'series.html'; 
+            }, 800);
+        }
+    });
+}
+
+/* ================================
 📩 YouTube iframe 제어
 ================================ */
 function postMessageToIframe(iframe, command) {
