@@ -4,11 +4,9 @@
     box-sizing: border-box;
 }
 
-/* 텍스트 드래그 방지 (입력창 제외) */
-*:not(input):not(textarea) {
+/* 정말 드래그 방지가 필요한 UI 요소에만 아래 클래스를 추가하세요 */
+.no-drag {
     -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 }
 

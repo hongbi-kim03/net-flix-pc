@@ -74,28 +74,28 @@ const EPISODES = {
       title: "파일럿",
       duration: "43분",
       desc: "아버지가 돌아가신 충격에서 벗어나지 못하는 17살 엘레나는 새로 전학 온 스테판에게 관심을 두게 되지만 스테판에겐 숨기고 있는 비밀이 있는데...",
-      video: "https://www.youtube.com/embed/P17u5H4GJFQ?enablejsapi=1&rel=0"
+      video: "https://www.youtube.com/embed/rUw7yShLNJY?enablejsapi=1&rel=0"
     },
     {
       number: 2,
       title: "혜성의 밤",
       duration: "42분",
       desc: "엘레나는 스테판과 대화하기 위해 살바토레의 집으로 가지만, 스테판 대신 그곳에 있는 데이먼을 발견한다. 데이먼은 스테판의 놀라운 과거를 폭로한다.",
-      video: "https://www.youtube.com/embed/P17u5H4GJFQ?enablejsapi=1&rel=0"
+      video: "https://www.youtube.com/embed/rUw7yShLNJY?enablejsapi=1&rel=0"
     },
     {
       number: 3,
       title: "다른 희생자",
       duration: "42분",
       desc: "엘레나는 스테판과 보니가 친해지길 바라며 그 둘을 저녁 식사에 초대하지만, 저녁 식사는 데이먼과 캐롤라인이 예고 없이 등장하면서 방해를 받는다.",
-      video: "https://www.youtube.com/embed/P17u5H4GJFQ?enablejsapi=1&rel=0"
+      video: "https://www.youtube.com/embed/rUw7yShLNJY?enablejsapi=1&rel=0"
     },
     {
       number: 4,
       title: "가족 관계",
       duration: "43분",
       desc: "스테판은 마을 설립자의 파티에 데려간다. 데이먼은 엘레나에게 살바토레에 대해 이야기하고, 엘레나는 의문을 가지게 된다.",
-      video: "https://www.youtube.com/embed/P17u5H4GJFQ?enablejsapi=1&rel=0"
+      video: "https://www.youtube.com/embed/rUw7yShLNJY?enablejsapi=1&rel=0"
     }
   ],
 
@@ -474,112 +474,106 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==================================================
-  1. 커스텀 셀렉트 & 장르 필터링 (업데이트됨)
-================================================== */
-/* ==================================================
-  1. 통합 필터링 및 정렬 시스템 (수정본)
+  1. 커스텀 셀렉트 & 교차 필터링 
 ================================================== */
 function initCustomSelect() {
-    const selects = document.querySelectorAll(".custom-select");
-    const grid = document.querySelector(".content-grid"); // 카드가 담긴 컨테이너
-    const items = Array.from(document.querySelectorAll(".content-card")); // 배열로 변환
+  const selects = document.querySelectorAll(".custom-select");
+  
+  // 1. 모든 섹션에 흩어진 40개의 카드를 하나의 '원본 저장소'에 담습니다.
+  const allCards = Array.from(document.querySelectorAll(".content-card"));
+  const sections = document.querySelectorAll(".language-content");
+  const grids = document.querySelectorAll(".content-grid");
 
-    // 필터 상태를 저장할 객체
-    const currentFilters = {
-        category: 'all',
-        language: 'all',
-        sort: 'default'
-    };
+  const currentFilters = {
+    category: 'all',
+    language: 'all',
+    sort: 'default'
+  };
 
-    selects.forEach(select => {
-        const selected = select.querySelector(".selected");
-        const options = select.querySelector(".options");
-        const filterType = select.dataset.filter; 
+  selects.forEach(select => {
+    const selected = select.querySelector(".selected");
+    const options = select.querySelector(".options");
+    const filterType = select.dataset.filter; 
 
-        selected.addEventListener("click", e => {
-            e.stopPropagation();
-            // 다른 드롭다운 닫기
-            selects.forEach(s => s !== select && s.classList.remove("open"));
-            select.classList.toggle("open");
-        });
-
-        options.querySelectorAll("li").forEach(option => {
-            option.addEventListener("click", () => {
-                const value = option.getAttribute("data-value");
-                const text = option.textContent;
-
-                selected.textContent = text;
-                select.classList.remove("open");
-
-                // 상태 업데이트 및 필터 실행
-                if (filterType) {
-                    currentFilters[filterType] = value;
-                    applyFiltersAndSort();
-                }
-            });
-        });
+    selected.addEventListener("click", e => {
+      e.stopPropagation();
+      selects.forEach(s => s !== select && s.classList.remove("open"));
+      select.classList.toggle("open");
     });
 
-    function applyFiltersAndSort() {
-        // 1. 필터링 로직
-        const filteredItems = items.filter(item => {
-            // HTML의 data-category와 data-language 속성을 가져옴
-            const itemCat = item.getAttribute("data-category"); 
-            const itemLang = item.getAttribute("data-language");
+    options.querySelectorAll("li").forEach(option => {
+      option.addEventListener("click", () => {
+        const value = option.getAttribute("data-value");
+        selected.textContent = option.textContent;
+        select.classList.remove("open");
 
-            const catMatch = currentFilters.category === 'all' || itemCat === currentFilters.category;
-            const langMatch = currentFilters.language === 'all' || itemLang === currentFilters.language;
-
-            return catMatch && langMatch;
-        });
-
-        // 2. 정렬 로직
-        filteredItems.sort((a, b) => {
-            if (currentFilters.sort === 'title') {
-                const titleA = a.querySelector('img')?.dataset.title || "";
-                const titleB = b.querySelector('img')?.dataset.title || "";
-                return titleA.localeCompare(titleB, 'ko');
-            } else if (currentFilters.sort === 'category') {
-                return a.dataset.category.localeCompare(b.dataset.category);
-            } else if (currentFilters.sort === 'language') {
-                return a.dataset.language.localeCompare(b.dataset.language);
-            } else {
-                // 기본순 (data-sort 번호순)
-                return parseInt(a.dataset.sort) - parseInt(b.dataset.sort);
-            }
-        });
-
-        // 3. DOM 업데이트
-        // 모든 카드 일단 숨김
-        items.forEach(item => {
-            item.style.display = "none";
-            item.style.opacity = "0";
-        });
-
-        // 필터링 및 정렬된 카드만 순서대로 다시 노출
-        filteredItems.forEach(item => {
-            grid.appendChild(item); // 순서 재배치
-            item.style.display = "block";
-            // 애니메이션을 위해 약간의 지연 후 opacity 조절
-            setTimeout(() => {
-                item.style.opacity = "1";
-            }, 10);
-        });
-
-        // 결과가 없을 때 처리 (선택 사항)
-        if (filteredItems.length === 0) {
-            console.log("검색 결과가 없습니다.");
+        if (filterType) {
+          currentFilters[filterType] = value;
+          applyFiltersAndSort(); 
         }
-    }
-
-    // 빈 화면 클릭 시 드롭다운 닫기
-    document.addEventListener("click", () => {
-        selects.forEach(select => select.classList.remove("open"));
+      });
     });
+  });
+
+  function applyFiltersAndSort() {
+    // Step 1: 전체 카드에서 조건에 맞는 것들만 골라내기 (교차 필터)
+    const visibleItems = allCards.filter(item => {
+      const itemCat = item.getAttribute("data-category"); 
+      const itemLang = item.getAttribute("data-language");
+      const catMatch = currentFilters.category === 'all' || itemCat === currentFilters.category;
+      const langMatch = currentFilters.language === 'all' || itemLang === currentFilters.language;
+      return catMatch && langMatch;
+    });
+
+    // Step 2: 골라낸 아이템들 정렬
+    visibleItems.sort((a, b) => {
+      let valA, valB;
+      switch (currentFilters.sort) {
+        case 'title':
+          valA = a.querySelector('img')?.dataset.title || "";
+          valB = b.querySelector('img')?.dataset.title || "";
+          return valA.localeCompare(valB, 'ko');
+        case 'language':
+          valA = a.getAttribute('data-language') || "";
+          valB = b.getAttribute('data-language') || "";
+          return valA.localeCompare(valB, 'ko');
+        default:
+          valA = parseInt(a.getAttribute("data-sort")) || 0;
+          valB = parseInt(b.getAttribute("data-sort")) || 0;
+          return valA - valB;
+      }
+    });
+
+    // Step 3: 모든 그리드를 일단 비우고 섹션을 숨깁니다.
+    grids.forEach(grid => grid.innerHTML = "");
+    sections.forEach(sec => sec.style.display = "none");
+
+    // Step 4: [핵심] 필터링된 아이템들을 1번 줄부터 차례대로 10개씩 채웁니다.
+    visibleItems.forEach((item, index) => {
+      const targetGridIndex = Math.floor(index / 10); // 10개마다 다음 줄로
+      if (grids[targetGridIndex]) {
+        item.style.display = "block";
+        grids[targetGridIndex].appendChild(item);
+        sections[targetGridIndex].style.display = "block"; // 아이템이 들어간 줄만 보임
+      }
+    });
+
+    // 모든 그리드 가로 레이아웃 유지 및 스크롤 리셋
+    grids.forEach(grid => {
+      grid.style.display = "flex";
+      grid.scrollLeft = 0;
+    });
+  }
+
+  document.addEventListener("click", () => {
+    selects.forEach(select => select.classList.remove("open"));
+  });
 }
+
 /* ==================================================
   2. 콘텐츠 슬라이더 (기존 기능 유지)
 ================================================== */
+
 function initContentSlider() {
   document.querySelectorAll(".content-grid").forEach(slider => {
     let isDragging = false;
@@ -612,9 +606,14 @@ function initContentSlider() {
     }
 
     slider.addEventListener("mousedown", e => {
+      if (e.currentTarget.parentElement.style.display === "none") return;
+
       isDragging = true;
-      startX = e.pageX;
+      isDraggingGlobal = false; // 🔥 초기화
+
+      startX = e.pageX - slider.offsetLeft;
       scrollLeft = slider.scrollLeft;
+
       stopAuto();
       cancelAnimationFrame(rafId);
       slider.classList.add("active");
@@ -622,18 +621,37 @@ function initContentSlider() {
 
     slider.addEventListener("mousemove", e => {
       if (!isDragging) return;
-      const walk = e.pageX - startX;
+
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1.5;
+
+      // 🔥 드래그 감지 핵심
+      if (Math.abs(walk) > 5) {
+        isDraggingGlobal = true;
+      }
+
+      const prevScroll = slider.scrollLeft;
       slider.scrollLeft = scrollLeft - walk;
-      velocity = (scrollLeft - slider.scrollLeft) * 0.5;
+
+      velocity = slider.scrollLeft - prevScroll;
     });
 
-    window.addEventListener("mouseup", () => {
+    const stopDragging = () => {
       if (!isDragging) return;
+
       isDragging = false;
       slider.classList.remove("active");
       inertia();
       startAuto();
-    });
+
+      // 🔥 클릭 이벤트랑 충돌 방지 (딜레이 초기화)
+      setTimeout(() => {
+        isDraggingGlobal = false;
+      }, 50);
+    };
+
+    window.addEventListener("mouseup", stopDragging);
+    slider.addEventListener("mouseleave", stopDragging);
 
     startAuto();
   });
@@ -682,16 +700,21 @@ function initModal() {
   }
 
   document.addEventListener("click", e => {
+    if (isDraggingGlobal) return;
+
     const target = e.target.closest(".modal-trigger");
     if (target) openModal(target);
   });
 
   closeBtn.addEventListener("click", closeModal);
-  // 배경 클릭 시 닫기 (배경인 .modal을 정확히 클릭했을 때만)
+
   modal.addEventListener("click", e => {
     if (e.target === modal) closeModal();
   });
-  document.addEventListener("keydown", e => e.key === "Escape" && closeModal());
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") closeModal();
+  });
 }
 
 /* ==================================================
