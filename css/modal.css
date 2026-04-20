@@ -81,7 +81,7 @@
 }
 
 .close:hover {
-    color: rgba(255, 51, 102, 0.9);
+    color: #F26522;
     transform: scale(1.05);
     transform: rotate(90deg); /* 호버 시 회전 애니메이션 */
 }
