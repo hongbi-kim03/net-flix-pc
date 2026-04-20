@@ -1,8 +1,10 @@
+    /* wrap */
     .wrap {
         max-width: 1280px;
         width: 100%;
         margin: 0 auto;
         position: relative;
+        overflow-x: hidden; /* 모바일에서 좌우 흔들림 방지 */
     } 
 
     .container {
@@ -193,7 +195,6 @@
         -webkit-user-drag: none;
     }
 
-
     /* ✅modal  */
     .modal {
         display: flex; /* 기본적으로 중앙 정렬 준비는 해둠 */
@@ -222,10 +223,7 @@
     /* ✅ 모달 콘텐츠 */
     .modal-content.wide {
         position: relative;
-        /* 🔥 PC 고정형 핵심 */
-        width: 1280px;
-        min-width: 1280px;
-        max-width: 1280px;
+        width: 90%;
         background-color: rgba(0, 0, 0, 0.7);
         cursor: grab;
         border-radius: 8px;
@@ -286,7 +284,6 @@
         from { opacity: 0; transform: translateY(30px); }
         to { opacity: 1; transform: translateY(0); }
     }
-
 
     /* ✅ 모달 헤더 이미지 (배너처럼 보이게) */
     #modal-img {
@@ -387,7 +384,7 @@
     /* ✅ 에피소드 전체 영역 */
     /* 드래그 스크롤 영역 */
     .episode-scroll {
-        overflow-x: hidden;
+            overflow-x: hidden;
         overflow-y: auto;
         scroll-behavior: smooth;
     }
@@ -395,7 +392,7 @@
     .episode-list {
         display: flex;
         flex-direction: column;
-        gap: 20px; 
+        gap: 20px; /* 에피소드 간 간격 */
     }
 
     /* 2. 에피소드 개별 아이템 (Flexbox) */
@@ -439,7 +436,7 @@
     }
 
     .episode:hover .episode-number {
-    color: #F26522;  /* 호버 시 포인트 컬러 */
+        color: #F26522;  /* 호버 시 포인트 컬러 */
     }
 
     /* ✅ 공개 예정(Coming Soon) 에피소드 전용 스타일 */
@@ -514,7 +511,7 @@
     /* ⏱️ 재생 시간 */
     .duration {
         font-size: 0.85rem;
-        color: #F26522;  
+        color: #F26522; 
         font-weight: 600;
     }
 
