@@ -83,7 +83,7 @@
 
     .sidebar .back-link:hover {
         transform: translateX(-5px);
-        color: #ff3366;
+        color: #F26522;
     }
 
     /* 지도가 들어갈 오른쪽 콘텐츠 전체 영역 */
@@ -173,6 +173,11 @@
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
+    /* 리스트가 열려있을 때(active), 검색창 하단 모서리를 직각(0px)으로 변경 */
+    .search-overlay.active .search-input-box {
+        border-radius: 12px 12px 0 0; /* 좌상, 우상, 우하, 좌하 */
+    }
+
     /* 검색창 내부 입력 필드: 화이트 */
     #keyword {
         flex: 1;
@@ -217,7 +222,7 @@
 
     /* 하단 검색 결과 컨테이너 */
     .search-result-container {
-        margin-top: 0; /* 테두리를 이미 위에서 지웠으므로 0으로 딱 붙임 */
+        display: none; /* 검색 결과창을 기본적으로 숨깁니다 */
         border-radius: 0 0 12px 12px;
         border-top: none; /* 위쪽 테두리 제거 */
         max-height: 400px;
@@ -225,12 +230,18 @@
         background: rgba(242, 101, 34, 0.5);
         backdrop-filter: blur(15px); /* 뒤에 지도가 은은하게 비침 */
         -webkit-backdrop-filter: blur(15px);
-        position: relative;
+        z-index: 10;
+
+        position: absolute;   /* 👈 중요: 부모(search-overlay)를 기준으로 절대 위치 */
+        top: 100%;            /* 👈 검색창 바로 아래에 위치 */
+        left: 0;
+        width: 100%;          /* 검색창 너비와 동일하게 */
         z-index: 10;
     }
 
-    .place-item:last-child {
-        border-bottom: none;
+    /* 활성화 상태 */
+    .search-overlay.active .search-result-container {
+        display: block; /* JS에서 active 클래스가 붙으면 보여줌 */
     }
 
     #placesList {
