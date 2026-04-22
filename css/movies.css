@@ -4,11 +4,6 @@
         margin: 0 auto;
     }
 
-    body {
-        overflow-x: hidden; /* 페이지 전체 가로 스크롤 방지 */
-        width: 100%;
-    }
-
     /* 메인 배너 */
     .banner {
         margin-top: 15px;
