@@ -4,6 +4,11 @@
         margin: 0 auto;
     }
 
+    body {
+        overflow-x: hidden; /* 페이지 전체 가로 스크롤 방지 */
+        width: 100%;
+    }
+
     /* 메인 배너 */
     .banner {
         margin-top: 15px;
@@ -32,9 +37,8 @@
     }
 
     .banner-controls {
-        opacity: 0.85;
+        opacity: 0.9;
         transition: opacity .2s ease;
-        bottom: 120px;   /* 배너 하단 기준 */
         margin-top: 8px;
         margin-left: 24px;  /* 👉 오른쪽으로 이동 */
     }
@@ -97,14 +101,14 @@
     }
 
     .banner-title-img {
-        width: 420px;      /* 👈 여기서 크기 조절 */
+        width: 280px;      /* 👈 여기서 크기 조절 */
         max-width: 100%;
-        margin-bottom: 24px;
     }
 
     /* 000 님이 시청중인 콘텐츠  */
     .continue-watching-section{
-        padding: 60px 0 140px;
+        padding: 50px 0 50px;
+        padding-top: 36px;
         min-width: 1280px; /* 🔥 PC 고정형 명시 */
     }
 
