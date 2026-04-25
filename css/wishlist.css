@@ -1,6 +1,5 @@
     body {
-        /* display: flex; */
-        display: block; /* flex 제거 */
+        display: block; 
         flex-direction: column;
         align-items: center;
         padding: 40px 20px;
