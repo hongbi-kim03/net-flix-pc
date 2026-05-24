@@ -150,6 +150,13 @@
         font-weight: 600;
     }
 
+    .footer-language-icon {
+        width: 15px;
+        height: 15px;
+        object-fit: contain;
+        opacity: 0.8;
+    }
+
     .footer-language-code {
         color: #ddd;
     }
