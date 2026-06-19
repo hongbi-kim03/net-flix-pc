@@ -1,10 +1,12 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;350;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
 
 /* Typography System */
 body {
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 300; /* 기본값: Light */
+    line-height:1.6;
+    color:#fff;
 }
 
 /* 제목 */
@@ -27,9 +29,9 @@ body {
 
 /* 서브 텍스트 */
 .sub-text {
-    font-weight: 350; /* DemiLight */
+    font-weight: 400; /* DemiLight */
     font-size: 14px;
-    color: #ccc;
+    color: #ccc; /* 본문 흰색(#fff) 대비 자연스러운 톤다운 */
 }
 
 
