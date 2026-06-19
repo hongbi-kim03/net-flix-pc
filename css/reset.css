@@ -13,9 +13,7 @@
 /* Body 및 공통 스타일 */
 body {
     width: 100%;
-    max-width: 100vw; /* 화면 너비를 절대 넘지 않게 고정 */
     overflow-x: hidden; /* 가로로 튀어나온 부분은 숨김 */
-    font-family: 'Noto Sans KR Light',sans-serif;
     background: linear-gradient(135deg, #2b0f3e, #000000);  
     color: white;
     line-height: 1.6; /* 가독성을 위해 추가 추천 */
