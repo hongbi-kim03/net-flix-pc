@@ -5,7 +5,7 @@
         width: 100%;
         min-width: 1280px;
         height: 60px;
-        z-index: 10;
+        z-index: 1000;
         background-color: rgba(88, 53, 102, 0.5);
         backdrop-filter: blur(4px);
         border-bottom: 1px solid rgba(200, 180, 200, 0.4);
@@ -178,7 +178,7 @@
         opacity: 0;
         transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); /* 더 쫀득한 애니메이션 */
         overflow: hidden; /* 테두리 곡선에 맞게 내부 요소 자름 */
-        z-index: 100;
+        z-index: 10;
 
         /* 고급스러운 유리 효과 */
         background-color: rgba(20, 20, 20, 0.8); /* 아주 어두운 반투명 블랙 */
